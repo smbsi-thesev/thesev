@@ -179,65 +179,7 @@ var admin_batchJob = function() {
 
 
 		u : {}, //u
-		e : {
 
-
-
-
-//NOTE -> the batch_exec will = REPORT for reports.
-			showReport : function($btn)	{
-				if($btn.closest('tr').data('batch_exec') == 'REPORT')	{
-					$btn.button({text: false,icons: {primary: "ui-icon-image"}}).show();
-					$btn.off('click.showReport').on('click.showReport',function(event){
-						event.preventDefault();
-						var $table = $btn.closest('table');
-						
-						$table.stickytab({'tabtext':'batch jobs','tabID':'batchJobsStickyTab'});
-						$('button',$table).removeClass('ui-state-focus'); //removes class added by jqueryui onclick.
-						$('button',$table).removeClass('ui-state-highlight');
-						$btn.addClass('ui-state-highlight');
-						app.ext.admin_batchJob.a.showReport($(app.u.jqSelector('#',app.ext.admin.vars.tab+"Content")),$btn.closest('tr').data());
-//make sure buttons and links in the stickytab content area close the sticktab on click. good usability.
-						$('button, a',$table).each(function(){
-							$(this).off('close.stickytab').on('click.closeStickytab',function(){
-								$table.stickytab('close');
-								})
-							})
-						});
-					}
-				else	{
-//btn hidden by default. no action needed.
-					}
-				},
-			
-			execBatchCleanup : function($btn)	{
-				var $row = $btn.closest('tr');
-				if($row.data('status') == 'ERROR' || $row.data('status') == 'finished' || $row.data('status') == 'abort')	{
-					$btn.show({text: false,icons: {primary: "ui-icon-trash"}});
-					$btn.button(); //daisy-chaining the button on the show didn't work. button didn't get classes.
-					$btn.off('click.execBatchCleanup').on('click.execBatchCleanup',function(){
-						var jobid = $btn.closest('[data-jobid]').data('jobid');
-						if(jobid)	{
-							$('#batchJobStatusModal').empty().addClass('loadingBG');
-							app.ext.admin.calls.adminBatchJobCleanup.init(jobid,{'callback':'showMessaging','message':'Batch job has been cleaned up','parentID':'batchJobStatus_'+jobid},'immutable');
-							app.model.dispatchThis('immutable');
-							}
-						else	{
-							$('.appMessaging').anymessage({'message':'In admin_batchJob.e.execBatchCleanup, unable to ascertain jobID from DOM tree.','gMessage':true});
-							}
-						});
-					}
-
-				else	{} //do nothing (do NOT show button.
-				}
-			
-			}, //renderFormats
-
-
-////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-
-		u : {}, //u
 		e : {
 
 
@@ -287,7 +229,31 @@ var admin_batchJob = function() {
 				else	{
 //btn hidden by default. no action needed.
 					}
+				},
+
+
+			
+			execBatchCleanup : function($btn)	{
+				var $row = $btn.closest('tr');
+				if($row.data('status') == 'ERROR' || $row.data('status') == 'finished' || $row.data('status') == 'abort')	{
+					$btn.show({text: false,icons: {primary: "ui-icon-trash"}});
+					$btn.button(); //daisy-chaining the button on the show didn't work. button didn't get classes.
+					$btn.off('click.execBatchCleanup').on('click.execBatchCleanup',function(){
+						var jobid = $btn.closest('[data-jobid]').data('jobid');
+						if(jobid)	{
+							$('#batchJobStatusModal').empty().addClass('loadingBG');
+							app.ext.admin.calls.adminBatchJobCleanup.init(jobid,{'callback':'showMessaging','message':'Batch job has been cleaned up','parentID':'batchJobStatus_'+jobid},'immutable');
+							app.model.dispatchThis('immutable');
+							}
+						else	{
+							$('.appMessaging').anymessage({'message':'In admin_batchJob.e.execBatchCleanup, unable to ascertain jobID from DOM tree.','gMessage':true});
+							}
+						});
+					}
+
+				else	{} //do nothing (do NOT show button.
 				}
+
 			
 			} //e
 
