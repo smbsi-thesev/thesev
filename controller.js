@@ -1844,6 +1844,7 @@ tag = boolean. Set to true to output the <img tag. set to false or blank to just
 
 app.u.makeImage({"name":"","w":150,"h":150,"b":"FFFFFF","class":"prodThumb","tag":1});
 */
+
 		makeImage : function(a)	{
 //			app.u.dump(a);
 // ** 201318 -> other libs are no longer supported. forced to username
@@ -1866,12 +1867,12 @@ app.u.makeImage({"name":"","w":150,"h":150,"b":"FFFFFF","class":"prodThumb","tag
 //In an admin session, the config.js isn't loaded. The secure domain is set as a global var when a domain is selected or can be retrieved from adminDomainList
 			if(app.vars.thisSessionIsAdmin)	{
 				url = 'https:\/\/'+(app.vars.https_domain || app.ext.admin.a.getDataForDomain(app.vars.domain,'https'))+"\/"
-				url += "media\/img\/"+app.vars.username+"\/";
 				}
 			else	{
 				url = location.protocol === 'https:' ? zGlobals.appSettings.https_app_url : zGlobals.appSettings.http_app_url;
-				url += "media\/img\/"+app.vars.username+"\/";
 				}
+
+			url += "media\/img\/"+app.vars.username+"\/";
 		
 			if((a.w == '') && (a.h == ''))
 				url += '-';
