@@ -571,7 +571,8 @@
 		
 			</div>
 		
-			<div class='buttonset'><button data-app-event="admin_batchJob|execAdminBatchJobCreate">Build Report</button></div>
+			<div class='buttonset'><button data-app-event="admin_reports|execAdminReportCreate">Build Report</button></div>
+
 		
 			</form>		
 		</section>
@@ -586,7 +587,7 @@
 				<label><input type="radio" value="INVENTORY_MISSING" name="REPORT"> Products w/o Inventory Configured</label>
 			</fieldset>
 			<div class='buttonset'>
-				<button data-app-event="admin_batchJob|execAdminBatchJobCreate">Build Report</button>
+				<button data-app-event="admin_reports|execAdminReportCreate">Build Report</button>
 			</div>
 			</form>		
 		</section>
@@ -607,6 +608,6 @@
 <table>
 <tr id='reportsRowTemplate'>
 	<td data-bind="var: user(TITLE); format:truncText; numCharacters:45;"></td>
-	<td><button data-app-event="admin_batchJob|showReport" class='displayNone'>View Report</button>
+	<td><button data-app-event="admin_batchJob|showReport" class='displayNone'>View Report</button></td>
 </tr>
 </table>

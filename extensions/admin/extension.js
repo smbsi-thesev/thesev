@@ -2377,6 +2377,11 @@ else if(opts.tab)	{
 	if(opts.tab != 'product')	{
 		app.ext.admin_prodEdit.u.handleProductListTab('deactivate');
 		}
+
+	if(opts.tab != 'reports')	{
+		$('#batchJobsStickyTab').stickytab('destroy');
+		}
+	
 	}
 //no tab was specified. use the open tab, if it's set.
 else if(app.ext.admin.vars.tab)	{
@@ -2662,7 +2667,9 @@ set as onSubmit="app.ext.admin.a.processForm($(this)); app.model.dispatchThis('m
 					else	{
 						partition = app.ext.admin.a.getDataForDomain(domain,'prt');
 						}
+					app.vars.https_domain = app.ext.admin.a.getDataForDomain(domain,'https');
 					app.vars.partition = partition;
+
 					$('.partition','#appView').text(partition || "");
 	//get entire auth localstorage var (flattened on save, so entire object must be retrieved and saved)
 	//something here is causing session to not persist on reload.
@@ -2968,16 +2975,18 @@ app.ext.admin.calls.appResource.init('shipcodes.json',{},'immutable'); //get thi
 
 //show the domain chooser if no domain is set. see showDomainChooser function for more info on why.
 //if a domain is already set, this is a return visit. Get the list of domains  passively because they'll be used.
-				if (!domain) {
+				if(!domain) {
 					//the selection of a domain name will load the page content. (but we'll still need to nav)
 					app.ext.admin.a.showDomainChooser(); //does not dispatch itself.
 					}
 				else {
+
 					app.ext.admin.calls.adminDomainList.init({'callback':function(rd){
 						if(app.model.responseHasErrors(rd)){app.u.throwMessage(rd);}
 						else	{
 							app.vars.partition = app.ext.admin.a.getDataForDomain(domain,'prt');
-							$('.partition').text(app.vars.partition)
+							$('.partition').text(app.vars.partition);
+							app.vars.https_domain = app.ext.admin.a.getDataForDomain(domain,'https');
 							}
 						}},'immutable');
 					$('.domain','#appView').text(domain);

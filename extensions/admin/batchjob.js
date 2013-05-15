@@ -50,8 +50,9 @@ var admin_batchJob = function() {
 				app.ext.admin_batchJob.a.showBatchJobStatus(app.data[tagObj.datapointer].jobid);
 				},
 			onError : function(responseData)	{
-				$(app.u.jqSelector('#',tagObj.parentID)).hideLoading();
-				app.u.throwMessage(responseData);
+				var $target = $(app.u.jqSelector('#',responseData._rtag.parentID));
+				$target.hideLoading();
+				$target.anymessage({'message':responseData,'persistent':true});
 				}
 			},
 		
@@ -98,11 +99,10 @@ var admin_batchJob = function() {
 						$target = $("<div \/>").attr({'id':'batchJobStatusModal','title':'Batch Job Status'}).appendTo('body');
 						$target.dialog({'modal':true,'width':500,'height':300,'autoOpen':false});
 						}
-					$target.append(app.renderFunctions.createTemplateInstance('batchJobStatusTemplate',{'jobid':jobid}));
 					$target.dialog('open');
-					app.ext.admin.calls.adminBatchJobStatus.init(jobid,{'callback':'translateSelector','selector':'#batchJobStatusModal'},'immutable');
+					$target.showLoading({'message':'Fetching Batch Job Details'});
+					app.ext.admin.calls.adminBatchJobStatus.init(jobid,{'callback':'anycontent','jqObj':$target,'templateID':'batchJobStatusTemplate','dataAttribs': {'jobid':jobid}},'immutable');
 					app.model.dispatchThis('immutable');
-					$target.showLoading();
 					}
 				else	{
 					app.u.throwMessage("No jobid specified in admin_batchJob.a.showBatchJobStatus");
@@ -132,10 +132,12 @@ var admin_batchJob = function() {
 									for(var i = 0; i < L; i += 1)	{
 										tableHeads.push(app.data[rd.datapointer]['@HEAD'][i].name);
 										}
-		
+
+									$target.append("<h1>"+app.data[rd.datapointer].title || ""+"<\/h1>");
+									$target.append("<h2>"+app.data[rd.datapointer].subtitle || ""+"<\/h2>");
 									$target.append($("<div \/>",{'id':reportElementID+"_toolbar"})); //add element to dom for visualization toolbar
 									$target.append($("<div \/>",{'id':reportElementID}).addClass('smallTxt')); //add element to dom for visualization table
-									
+
 									app.ext.admin_reports.u.drawTable(reportElementID,tableHeads,app.data[rd.datapointer]['@BODY']);
 									app.ext.admin_reports.u.drawToolbar(reportElementID+"_toolbar");
 									
@@ -145,7 +147,7 @@ var admin_batchJob = function() {
 									for(index in vars)	{
 										errorDetails += "<br>"+index+": "+vars[index];
 										}
-									$target.anymessage({'message':'The number of columns in the data do not match the number of columns in the head. This will cause a fatal error in visualization. Details:'+errorDetails,'gMessage':true,'persistent':true});
+									$target.anymessage({'message':'The number of columns in the data do not match the number of columns in the head. This is likely due to an old report being opened in the new report interface. <b>Please re-run the report and open the new copy.</b>  If the error persist, please report to support with the following error details:'+errorDetails,'persistent':true});
 									}
 								
 								
@@ -170,25 +172,62 @@ var admin_batchJob = function() {
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 		renderFormats : {
-//job status is passed in.
-//if status = error, finished or abort should show this button
-//button is hidden by default and shown if needed.
-			cleanUpButton : function($tag,data)	{
-				if(data.value == 'ERROR' || data.value == 'finished' || data.value == 'abort')	{
-					$tag.show();
-					$tag.button(); //daisy-chaining the button on the show didn't work. button didn't get classes.
-					$tag.on('click',function(){
-						var jobid = $tag.closest('[data-jobid]').data('jobid');
+			}, //renderFormats
+
+
+////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+		u : {}, //u
+		e : {
+
+
+
+
+//NOTE -> the batch_exec will = REPORT for reports.
+			showReport : function($btn)	{
+				if($btn.closest('tr').data('batch_exec') == 'REPORT')	{
+					$btn.button({text: false,icons: {primary: "ui-icon-image"}}).show();
+					$btn.off('click.showReport').on('click.showReport',function(event){
+						event.preventDefault();
+						var $table = $btn.closest('table');
+						
+						$table.stickytab({'tabtext':'batch jobs','tabID':'batchJobsStickyTab'});
+						$('button',$table).removeClass('ui-state-focus'); //removes class added by jqueryui onclick.
+						$('button',$table).removeClass('ui-state-highlight');
+						$btn.addClass('ui-state-highlight');
+						app.ext.admin_batchJob.a.showReport($(app.u.jqSelector('#',app.ext.admin.vars.tab+"Content")),$btn.closest('tr').data());
+//make sure buttons and links in the stickytab content area close the sticktab on click. good usability.
+						$('button, a',$table).each(function(){
+							$(this).off('close.stickytab').on('click.closeStickytab',function(){
+								$table.stickytab('close');
+								})
+							})
+						});
+					}
+				else	{
+//btn hidden by default. no action needed.
+					}
+				},
+			
+			execBatchCleanup : function($btn)	{
+				var $row = $btn.closest('tr');
+				if($row.data('status') == 'ERROR' || $row.data('status') == 'finished' || $row.data('status') == 'abort')	{
+					$btn.show({text: false,icons: {primary: "ui-icon-trash"}});
+					$btn.button(); //daisy-chaining the button on the show didn't work. button didn't get classes.
+					$btn.off('click.execBatchCleanup').on('click.execBatchCleanup',function(){
+						var jobid = $btn.closest('[data-jobid]').data('jobid');
 						if(jobid)	{
 							$('#batchJobStatusModal').empty().addClass('loadingBG');
 							app.ext.admin.calls.adminBatchJobCleanup.init(jobid,{'callback':'showMessaging','message':'Batch job has been cleaned up','parentID':'batchJobStatus_'+jobid},'immutable');
 							app.model.dispatchThis('immutable');
 							}
 						else	{
-							app.u.dump("Unable to ascertain jobid for click action on button in admin_batch.renderFormats.cleanUpButton");
+							$('.appMessaging').anymessage({'message':'In admin_batchJob.e.execBatchCleanup, unable to ascertain jobID from DOM tree.','gMessage':true});
 							}
 						});
 					}
+
 				else	{} //do nothing (do NOT show button.
 				}
 			
@@ -213,6 +252,14 @@ var admin_batchJob = function() {
 						app.ext.admin_batchJob.a.adminBatchJobCreate(sfo);
 						}
 					else	{} //validateForm handles error display.
+				});
+				},
+			
+			showBatchDetail : function($btn)	{
+				$btn.button({text: false,icons: {primary: "ui-icon-info"}});
+				$btn.off('click.showBatchDetail').on('click.showBatchDetail',function(event){
+					event.preventDefault();
+					app.ext.admin_batchJob.a.showBatchJobStatus($btn.closest("tr").data('id'));
 					});
 				},
 
@@ -242,7 +289,7 @@ var admin_batchJob = function() {
 					}
 				}
 			
-			} //u
+			} //e
 
 
 		} //r object.

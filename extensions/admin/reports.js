@@ -113,8 +113,9 @@ var admin_reports = function() {
 						}
 					else	{
 						var reports = new Array(), //used to store a small portion of the batch list. 10 reports.
-						L = app.data[rd.datapointer]['@JOBS'].length;
-						for(var i = 0; i < L; i += 1)	{
+						L = app.data[rd.datapointer]['@JOBS'].length - 1;
+//reports are in chronological order, oldest to newest. here, we want to show the ten newest.
+						for(var i = L; i >= 0; i -= 1)	{
 							if(app.data[rd.datapointer]['@JOBS'][i].BATCH_EXEC == 'REPORT')	{
 								reports.push(app.data[rd.datapointer]['@JOBS'][i]);
 								}
@@ -686,6 +687,7 @@ if(graphVars.graph == 'pie')	{
 				color: '#000000',
 				connectorColor: '#000000',
 				formatter: function() {return (this.percentage == 0) ? null : '<b>'+ this.point.name +'</b>: '+ (Math.round(this.percentage*100)/100 ) +' %';}
+
 				}
 			}
 		}
@@ -717,6 +719,7 @@ else	{
 				}
 			}
 		}
+
 	highChartObj.series = myDataSet
 
 	}
@@ -927,7 +930,7 @@ else	{
 				}, //showChartAdd
 
 
-			
+
 			showKPIGraphPreview : function($btn)	{
 				$btn.button({icons: {primary: "ui-icon-image"},text: true});
 				
@@ -1244,6 +1247,7 @@ $btn.off('click.execAdminKPIDBCollectionUpdate').on('click.execAdminKPIDBCollect
 
 				}, //execAdminKPIDBCollectionUpdate
 			
+
 			ebayReportView : function($btn)	{
 				$btn.button();
 				$btn.off('ebayReportCreate').on('click.ebayReportCreate',function(event){
@@ -1277,7 +1281,7 @@ $btn.off('click.execAdminKPIDBCollectionUpdate').on('click.execAdminKPIDBCollect
 					app.model.dispatchThis('mutable');
 					});
 				}, //ebayReportView
-			
+
 			handleCollectionMenu : function($btn)	{
 				$btn.button({text: false,icons: {primary: "ui-icon-wrench"}}).addClass('floatRight');
 
@@ -1343,7 +1347,24 @@ $btn.off('click.execAdminKPIDBCollectionUpdate').on('click.execAdminKPIDBCollect
 //show the input container desired. make all inputs within required.
 					$ele.closest('fieldset').find('.formPeriodRange-'+$(this).val()).show().effect('highlight',{},1500).find('input,select').each(function(){$(this).attr('required','required')});
 					});
+				},
+
+
+			execAdminReportCreate : function($btn)	{
+				$btn.button();
+				$btn.off('click.execAdminReportCreate').on('click.execAdminReportCreate',function(event){
+					event.preventDefault();
+					var $form = $btn.closest('form');
+					if(app.u.validateForm($form))	{
+						var sfo = {'%vars':$form.serializeJSON()}
+						sfo.type = 'REPORT';
+						sfo.guid = app.u.guidGenerator();
+						app.ext.admin_batchJob.a.adminBatchJobCreate(sfo);
+						}
+					else	{} //validateForm handles error display.
+					});
 				}
+
 			
 			
 			} //E / Events
