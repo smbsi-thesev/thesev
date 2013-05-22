@@ -16,3 +16,5 @@ API Calls Input/Output Reference:
 Examples are stored in examples sub-directory.
 Extensions are stored in the extensions sub-directory.
 
+Please see the folder labeled Build Notes & Design Files.  Make sure you review the build notes prior to starting development and let Ray know if you have any questions!
+
