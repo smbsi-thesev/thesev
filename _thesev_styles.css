@@ -1,3 +1,13 @@
 @viewport, @-o-viewport, @-moz-viewport, @-webkit-viewport {
     width: device-width;
-	}
+}
+
+.sprite {background-image:url(images/sprites-500x500.png);}
+
+
+
+	
+#appPreView {}
+#appPreView .logo {height:209px; width:388px; background-image:url(images/the-sev-logo_388x209.png);}
+#appView {}
+
