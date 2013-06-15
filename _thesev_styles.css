@@ -2,12 +2,17 @@
     width: device-width;
 }
 
+.primaryColor {background-color:#ed0d53;}
+.primaryColor:hover {background-color:#ff0066;}
+.secondaryColor {background-color:#0c8a96;}
+.secondaryColor:hover {background-color:#07adbd;}
+.tertiaryColor {background-color:#ffc70e;}
+.tertiaryColor:hover {background-color:#ffcc00;}
+
 .sprite {background-image:url(images/sprites-500x500.png);}
-
-
-
 	
 #appPreView {}
 #appPreView .logo {height:209px; width:388px; background-image:url(images/the-sev-logo_388x209.png);}
+
 #appView {}
 
