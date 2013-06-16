@@ -11,8 +11,9 @@
 
 .sprite {background-image:url(images/sprites-500x500.png);}
 	
-#appPreView {}
-#appPreView .logo {height:209px; width:388px; background-image:url(images/the-sev-logo_388x209.png);}
+#appPreView {font-family:montserrat; text-align:center;}
+#appPreView .logo {height:209px; width:388px; margin:40% auto 10% auto; background-image:url(images/the-sev-logo_388x209.png);}
+#appPreView .alignCenter {margin:10px 0;}
 
 #appView {}
 
