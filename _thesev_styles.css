@@ -4,6 +4,11 @@
 
 body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg);}
 
+.outerGutter {width:8%;}
+.innerMarginLeft {margin:0 0 0 1.78%;}
+.innerMarginRight {margin:0 1.78% 0 0;}
+.mainColumnWidth {width:26.8%;}
+
 .primaryColor {background-color:#ed0d53;}
 .primaryColor:hover {background-color:#ff0066;}
 .secondaryColor {background-color:#0c8a96;}
@@ -18,4 +23,17 @@ body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675
 #appPreView .alignCenter {margin:10px 0;}
 
 #appView {}
+
+
+/****************************************
+PERSISTENT CONTENT
+****************************************/
+
+/*************************************************************************************
+HEADER
+*************************************************************************************/
+
+
+.header {height:0; width:100%; padding:0 0 4.46% 0; background-color:#000000;}
+
 
