@@ -1,20 +1,42 @@
+/*Global Styles*/
+
 @viewport, @-o-viewport, @-moz-viewport, @-webkit-viewport {
     width: device-width;
 }
 
-body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg);}
+body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size:62.5%;}
+a {text-decoration:none;}
 
 .outerGutter {width:8%;}
 .innerMarginLeft {margin:0 0 0 1.78%;}
 .innerMarginRight {margin:0 1.78% 0 0;}
-.mainColumnWidth {width:26.8%;}
+.mainColWide {width:26.8%;}
 
+/*Static app background colors (always the same color)*/
 .primaryColor {background-color:#ed0d53;}
-.primaryColor:hover {background-color:#ff0066;}
 .secondaryColor {background-color:#0c8a96;}
-.secondaryColor:hover {background-color:#07adbd;}
 .tertiaryColor {background-color:#ffc70e;}
-.tertiaryColor:hover {background-color:#ffcc00;}
+
+/*App background colors with hover state (change when mouse hovers over)*/
+.primaryColorHover {background-color:#ed0d53;}
+.primaryColorHover:hover {background-color:#ff0066;}
+.secondaryColorHover{background-color:#0c8a96;}
+.secondaryColorHover:hover {background-color:#07adbd;}
+.tertiaryColorHover {background-color:#ffc70e;}
+.tertiaryColorHover:hover {background-color:#ffcc00;}
+
+/*Static app font colors (always the same color)*/
+.primaryCT {color:#ed0d53;}
+.secondaryCT  {color:#0c8a96;}
+.tertiaryCT {color:#ffc70e;}
+
+/*Hoverable app background colors (change when mouse hovers over)*/
+.primaryCTH {color:#ed0d53;}
+.primaryCTH:hover {color:#ff0066;}
+.secondaryCTH {color:#0c8a96;}
+.secondaryCTH:hover {color:#07adbd;}
+.tertiaryCTH{color:#ffc70e;}
+.tertiaryCTH:hover {color:#ffcc00;}
 
 .sprite {background-image:url(images/sprites-500x500.png);}
 	
@@ -34,6 +56,16 @@ HEADER
 *************************************************************************************/
 
 
-.header {height:0; width:100%; padding:0 0 4.46% 0; background-color:#000000;}
+.header {height:0; width:100%; padding:0 0 3.46% 0; background-color:#000000; font-family:"open sans"; font-size:1.2em;}
+.header span {color:#ffffff; font-weight:normal;}
 
+.headerHomeLink {height:0; width:34%; padding:40% 0 0 0; margin:auto; background-position:0 -2%;}
 
+/* Adds user name to "Welcome" in header if logged in */
+.buyerLoggedIn .hideIfLoggedIn {display:none;}
+.hideIfLoggedOut {display:none;}
+.buyerLoggedIn .hideIfLoggedOut {display: block;} /* may be 'block' */
+.buyerLoggedIn span.hideIfLoggedOut {display: inline;} /* ensures inline on span elements */
+
+.headerLogin {padding:1% 0 0 0;}
+.headerLogin a {height:100%; font-weight:bold;}
