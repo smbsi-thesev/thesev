@@ -2,6 +2,8 @@
     width: device-width;
 }
 
+body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg);}
+
 .primaryColor {background-color:#ed0d53;}
 .primaryColor:hover {background-color:#ff0066;}
 .secondaryColor {background-color:#0c8a96;}
