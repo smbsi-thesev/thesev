@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130615121300",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130623202400",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -111,7 +111,7 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 
 <div class='header'>
 	<div class='floatLeft outerGutter'>
-		<div class='pointer sprite headerHomeLink' onClick="return showContent('homepage',{});"></div>
+		<div class='pointer headerHomeLink' onClick="return showContent('homepage',{});"><img src='images/home-icon_32x26.png' /></div>
 	</div>
 	<div class='floatLeft headerLogin mainColWide'>
 		<span class='playFont fontSize14PX'>Hey, <span class='username'>Guest! </span></span>
@@ -121,8 +121,20 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 		<a href="#!customer?show=newsletter" class='bindByAnchor primaryCTH' title='Create an account by signing up for our newsletter'> Sign Up!</a>
 		<span>)</span>
 	</div>
-	<div class='floatLeft'></div>
-	<div class='floatLeft'></div>
+	<div class='floatLeft innerMarginLeft mainColWide fullHeight'>
+		<div class='findItContainer fullHeight'>
+			<form name='headerSearchFrm' action='#' class='productSearchForm fullHeight' method="get" id="searchFunc">
+				<input class="search pointer button headerSearchButton primaryColorHover" type="image" src="images/search-icon_30x31.png" alt="Submit" />
+				<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault form headerSearchBar" placeholder=' Find it here...' />
+			</form>
+		</div>
+	</div>
+	<div class='floatLeft innerMarginLeft mainColWide fullHeight'>
+		<div class='headerLinks fullHeight floatLeft'><img src='images/info-icon_36x34.png' /></div>
+		<div class='headerLinks fullHeight floatLeft'><img src='images/email-icon_36x34.png' /></div>
+		<div class='headerLinks fullHeight floatLeft'><img src='images/newsletter-icon_36x34.png' /></div>
+		<div class='headerLinks fullHeight floatLeft'><img src='images/cart-icon_36x34.png' /></div>
+	</div>
 	<div class='floatLeft'></div>
 </div>
 

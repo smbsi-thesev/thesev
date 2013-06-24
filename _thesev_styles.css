@@ -1,16 +1,43 @@
 /*Global Styles*/
 
 @viewport, @-o-viewport, @-moz-viewport, @-webkit-viewport {
-    width: device-width;
+	width: device-width;
+}
+@media screen and (max-width: 1920px) {
+	body {font-size:79.3%;}
+}
+@media screen and (max-width: 1279px) {
+	body {font-size:70%;}
+}
+@media screen and (max-width: 979px) {
+	body {font-size:59.5%;}
+}
+@media screen and (max-width: 899px) {
+	body {font-size:49%;}
+}
+@media screen and (max-width: 767px) {
+	body {font-size:39%;}
+}
+@media screen and (max-width: 639px) {
+	body {font-size:28.5%;}
+}
+@media screen and (max-width: 479px) {
+	body {font-size:22.5%;}
+}
+@media screen and (max-width: 319px) {
+	body {font-size:20%;}
 }
 
-body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size:62.5%;}
+body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg);}
 a {text-decoration:none;}
+
+img {max-width:100%;}
 
 .outerGutter {width:8%;}
 .innerMarginLeft {margin:0 0 0 1.78%;}
 .innerMarginRight {margin:0 1.78% 0 0;}
 .mainColWide {width:26.8%;}
+.fullHeight {height:100%;}
 
 /*Static app background colors (always the same color)*/
 .primaryColor {background-color:#ed0d53;}
@@ -56,10 +83,10 @@ HEADER
 *************************************************************************************/
 
 
-.header {height:0; width:100%; padding:0 0 3.46% 0; background-color:#000000; font-family:"open sans"; font-size:1.2em;}
+.header {height:40px; width:100%; background-color:#000000; font-family:"open sans"; font-size:1.2em;} /*padding:0 0 3.46% 0;*/
 .header span {color:#ffffff; font-weight:normal;}
 
-.headerHomeLink {height:0; width:34%; padding:40% 0 0 0; margin:auto; background-position:0 -2%;}
+.headerHomeLink {height:0; width:34%; padding:10% 0 0 0; margin:auto;} /*padding:40% 0 0 0; background-position:0 -2%;*/
 
 /* Adds user name to "Welcome" in header if logged in */
 .buyerLoggedIn .hideIfLoggedIn {display:none;}
@@ -69,3 +96,16 @@ HEADER
 
 .headerLogin {padding:1% 0 0 0;}
 .headerLogin a {height:100%; font-weight:bold;}
+
+.headerSearchButton {border:none; float:right; height:100%; width:16%;}
+.productSearchKeyword {border:none; float:right; height:100%; padding:0 0 0 8%; width:75%; font-size:1em; font-weight:normal; font-family:montserrat;}
+
+.headerLinks {margin:0 4%; width:16.7%;}
+.headerLinks img {margin:6% 0 0 9%;}
+
+
+
+
+
+
+
