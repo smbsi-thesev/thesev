@@ -1,42 +1,11 @@
 /*Global Styles*/
-
 @viewport, @-o-viewport, @-moz-viewport, @-webkit-viewport {
 	width: device-width;
 	zoom: 1.0;
 }
-
 * {margin:0; padding:0;}
-
-/*
-@media screen and (max-width: 1920px) {
-	body {font-size:79.3%;}
-}
-@media screen and (max-width: 1279px) {
-	body {font-size:70%;}
-}
-@media screen and (max-width: 979px) {
-	body {font-size:59.5%;}
-}
-@media screen and (max-width: 899px) {
-	body {font-size:49%;}
-}
-@media screen and (max-width: 767px) {
-	body {font-size:39%;}
-}
-@media screen and (max-width: 639px) {
-	body {font-size:28.5%;}
-}
-@media screen and (max-width: 479px) {
-	body {font-size:22.5%;}
-}
-@media screen and (max-width: 319px) {
-	body {font-size:20%;}
-}
-*/
-
 body {background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size: 62.5%;}
 a {text-decoration:none;}
-
 img {max-width:100%;}
 
 .outerGutter {height:100%; width:21.951%;} /* 90 / 1120 */

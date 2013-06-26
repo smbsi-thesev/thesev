@@ -112,85 +112,39 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 
 <header>
 	<div class='dummyMargin'>
-	<div class='rightCol'>
-		<div class='headerLinks floatLeft'><img src='images/info-icon_36x34.png' /></div>
-		<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img src='images/email-icon_36x34.png' /></a></div>
-		<div class='headerLinks floatLeft'><img src='images/newsletter-icon_36x34.png' /></div>
-		<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{});"><span>0</span><img src='images/cart-icon_36x34.png' /></div>
-		<div class='outerGutter floatRight'></div>
-	</div>
-	<div class='midCol findItContainer'>
-		<form name='headerSearchFrm' action='#' class='productSearchForm fullHeight' method="get" id="searchFunc">
-			<input class="search pointer button headerSearchButton primaryColorHover" type="image" src="images/search-icon_30x31.png" alt="Submit" />
-			<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault form headerSearchBar" placeholder=' Find it here...' />
-		</form>
-	</div>
-	<div class='leftCol'>
-		<div class='outerGutter floatLeft'>
-			<div class='pointer headerHomeLink' onClick="return showContent('homepage',{});"><img src='images/home-icon_32x26.png' /></div>
+		<div class='rightCol'>
+			<div class='headerLinks floatLeft'><img src='images/info-icon_36x34.png' /></div>
+			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img src='images/email-icon_36x34.png' /></a></div>
+			<div class='headerLinks floatLeft'><img src='images/newsletter-icon_36x34.png' /></div>
+			<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{});"><span>0</span><img src='images/cart-icon_36x34.png' /></div>
+			<div class='outerGutter floatRight'></div>
 		</div>
-		<div class='logIn'>
-			<div>
-				<span class=''>Hey, <span class='username'>Guest! </span></span>
-				<span>(Not you?</span> 
-				<span class='lineBreak'>
-					<a href="#!customer?show=myaccount" class='bindByAnchor primaryCTH fontBold' title='Log into your account'> Sign In</a>
-					<span>or </span>
-					<a href="#!customer?show=newsletter" class='bindByAnchor primaryCTH fontBold' title='Create an account/sign up for our newsletter'> Sign Up!</a>
-					<span>)</span>
-				</span>
-			</div>
-		</div>
-	</div>
-	</div>
-</header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-<div class='header'>
-	<div class='floatRight outerGutter'></div>
-	<div class='floatLeft innerMarginLeft mainColWide'>
-		<div class='headerLinks fullHeight floatLeft'><img src='images/info-icon_36x34.png' /></div>
-		<div class='headerLinks fullHeight floatLeft'><img src='images/email-icon_36x34.png' /></div>
-		<div class='headerLinks fullHeight floatLeft'><img src='images/newsletter-icon_36x34.png' /></div>
-		<div class='headerLinks fullHeight floatLeft'><img src='images/cart-icon_36x34.png' /></div>
-	</div>
-	<div class='floatLeft innerMarginLeft mainColWide'>
-		<div class='findItContainer fullHeight'>
+		<div class='midCol findItContainer'>
 			<form name='headerSearchFrm' action='#' class='productSearchForm fullHeight' method="get" id="searchFunc">
 				<input class="search pointer button headerSearchButton primaryColorHover" type="image" src="images/search-icon_30x31.png" alt="Submit" />
 				<input type='search' name='KEYWORDS' class="productSearchKeyword handleDefault form headerSearchBar" placeholder=' Find it here...' />
 			</form>
 		</div>
+		<div class='leftCol'>
+			<div class='outerGutter floatLeft'>
+				<div class='pointer headerHomeLink' onClick="return showContent('homepage',{});"><img src='images/home-icon_32x26.png' /></div>
+			</div>
+			<div class='logIn'>
+				<div>
+					<span class=''>Hey, <span class='username'>Guest! </span></span>
+					<span>(Not you?</span> 
+					<span class='lineBreak'>
+						<a href="#!customer?show=myaccount" class='bindByAnchor primaryCTH fontBold' title='Log into your account'> Sign In</a>
+						<span>or </span>
+						<a href="#!customer?show=newsletter" class='bindByAnchor primaryCTH fontBold' title='Create an account/sign up for our newsletter'> Sign Up!</a>
+						<span>)</span>
+					</span>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class='floatLeft headerLogin mainColWide'>
-		<span class='playFont fontSize14PX'>Hey, <span class='username'>Guest! </span></span>
-		<span>(Not you?</span>     
-		<a href="#!customer?show=myaccount" class='bindByAnchor primaryCTH' title='Log into your account'> Sign In</a>
-		<span>or </span>
-		<a href="#!customer?show=newsletter" class='bindByAnchor primaryCTH' title='Create an account by signing up for our newsletter'> Sign Up!</a>
-		<span>)</span>
-	</div>
-	<div class='floatRight outerGutter'>
-		<div class='pointer headerHomeLink' onClick="return showContent('homepage',{});"><img src='images/home-icon_32x26.png' /></div>
-	</div>
-</div>
--->
+</header>
+
 
 <div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
