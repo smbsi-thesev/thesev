@@ -86,7 +86,7 @@ FOOTER
 *************************************************************************************/
 
 footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; line-height:700%; font-weight:normal;}
-footer .logoCarousel {height:57.142%; width:100%; border-bottom:2px dotted #cccccc;}
+footer .logoCarousel {height:57.142%; width:100%; border-bottom:4px dotted #cccccc;}
 footer .dummyMargin {height:75px; width:100%;}
 .copyright span {color:#000000;}
 .copyright span:hover {cursor:pointer; font-weight:bold;}
