@@ -39,7 +39,7 @@ a {text-decoration:none;}
 
 img {max-width:100%;}
 
-.outerGutter {height:100%; width:21.951%; background:purple;} /* 90 / 1120 */
+.outerGutter {height:100%; width:21.951%;} /* 90 / 1120 */
 .innerMarginLeft {margin:0 0 0 1.78%;}
 .innerMarginRight {margin:0 1.78% 0 0;}
 .mainColWide {height:50px; width:26.8%; float:right;}
@@ -90,28 +90,62 @@ HEADER
 *************************************************************************************/
 
 header {height:50px; width:100%; background:#000000;}
-.rightCol {height:100%; width:36.607%; background:red; float:right;} /* 410 / 1120*/
+header .dummyMargin {height:50px; width:auto;}
+.rightCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
 .headerLinks {margin:1% 4%; width:10.7%;}
 .headerLinks img {margin:6% 0 0 9%;}
 
-.midCol {height:100%; width:26.785%; background:blue; float:right;} /* 410 / 1120*/
+.midCol {height:100%; width:26.785%; float:right;} /* 410 / 1120*/
 .productSearchForm {height:100%; width:100%;}
 .headerSearchButton {border:none; float:right; height:100%; width:20%;}
 .productSearchKeyword {border:none; float:right; height:100%; padding:0 0 0 8%; width:71%; font-size:1.2em; font-weight:normal; font-family:montserrat;}
 
-.leftCol {height:100%; width:36.607%; background:green; float:right;} /* 410 / 1120*/
+.leftCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
 .headerHomeLink {height:80%; width:69%; padding:10% 0 0 30%;} /*padding:40% 0 0 0;*/
-header .logIn {height:100%; width:78.048%; background: yellow; float:right; font-size:1.0em; text-align:center; line-height:460%; font-family:montserrat; font-weight:normal;} /* 320 / 410 */
+header .logIn {height:100%; width:78.048%; float:right; color:#ffffff; font-size:1.0em; text-align:center; line-height:460%; font-family:montserrat; font-weight:normal;} /* 320 / 410 */
 /* Adds user name to "Welcome" in header if logged in */
 .buyerLoggedIn .hideIfLoggedIn {display:none;}
 .hideIfLoggedOut {display:none;}
 .buyerLoggedIn .hideIfLoggedOut {display: block;} /* may be 'block' */
 .buyerLoggedIn span.hideIfLoggedOut {display: inline;} /* ensures inline on span elements */
 
+
+
 @media screen and (max-width: 800px) {
+	.headerHomeLink {padding:10% 0 0 20%;}
 	header .logIn {line-height:120%;}
-	header .logIn > div {padding:5% 0 0 0;}
+	header .logIn > div {padding:4% 0 0 0;}
 	.lineBreak {width:100%; display:block;}
+	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
+}
+
+@media screen and (max-width: 650px) {
+	header {height:100px;}
+	header .dummyMargin {height:100px; width:401px; margin:auto;}
+	.lineBreak {width:auto; display:inline;}
+	.rightCol {height:50%; width:200px;}
+	.rightCol .headerLinks {width:15.7%; margin:3% 4%;}
+	.rightCol .outerGutter {display:none;}
+	.midCol {height:50%; width:200px;}
+	.headerSearchButton {width:25%;}
+	.productSearchKeyword {width:66%;}
+	.leftCol {height:50%; width:400px;}
+	.headerHomeLink {padding:14% 0 0 30%;}
+	header .logIn {line-height:170%;}
+}
+
+@media screen and (max-width: 425px) {
+	header .dummyMargin {height:150px; width:320px; margin:auto;}
+	header {height:150px;}
+	.rightCol {height:33%; width:320px;}
+	.rightCol .headerLinks {width:15.7%; margin:2% 0 0 7%;}
+	.rightCol .outerGutter {display:none;}
+	.midCol {height:33%; width:320px;}
+	.headerSearchButton {width:17%;}
+	.productSearchKeyword {width:75%;}
+	.leftCol {height:34%; width:320px;}
+	.headerHomeLink {padding:17% 0 0 25%;}
+	header .logIn {line-height:290%;}
 }
 
 
