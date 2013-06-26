@@ -79,6 +79,20 @@ header .logIn {height:100%; width:78.048%; float:right; color:#ffffff; font-size
 .buyerLoggedIn .hideIfLoggedOut {display: block;} /* may be 'block' */
 .buyerLoggedIn span.hideIfLoggedOut {display: inline;} /* ensures inline on span elements */
 
+/* END HEADER************************************************************************/
+
+/*************************************************************************************
+FOOTER
+*************************************************************************************/
+
+footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; line-height:700%; font-weight:normal;}
+footer .logoCarousel {height:57.142%; width:100%; border-bottom:2px dotted #cccccc;}
+footer .dummyMargin {height:75px; width:100%;}
+.copyright span {color:#000000;}
+.copyright span:hover {cursor:pointer; font-weight:bold;}
+footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer;}
+.acwLink {font-weight:bold; text-align:right; line-height:700%;}
+.acwLink a {color:#000000;}
 
 
 @media screen and (max-width: 800px) {
