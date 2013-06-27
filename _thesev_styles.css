@@ -9,6 +9,7 @@ a {text-decoration:none;}
 img {max-width:100%;}
 
 .outerGutter {height:100%; width:21.951%;} /* 90 / 1120 */
+.outerMargin{height:100%; width:8.0357%;}
 .innerMarginLeft {margin:0 0 0 1.78%;}
 .innerMarginRight {margin:0 1.78% 0 0;}
 .mainColWide {height:50px; width:26.8%; float:right;}
@@ -86,7 +87,9 @@ FOOTER
 *************************************************************************************/
 
 footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; font-weight:normal;}
-footer .logoCarousel {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
+footer .logoCarouselCont {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
+footer .logoCarousel li {float:left;}
+
 footer .dummyMargin {height:75px; width:100%;}
 footer span {display:inline-block; margin:auto; text-align:center;}
 .copyright {padding:31px 0 0 0;}
