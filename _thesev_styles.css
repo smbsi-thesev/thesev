@@ -85,26 +85,39 @@ header .logIn {height:100%; width:78.048%; float:right; color:#ffffff; font-size
 FOOTER
 *************************************************************************************/
 
-footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; line-height:700%; font-weight:normal;}
-footer .logoCarousel {height:57.142%; width:100%; border-bottom:4px dotted #cccccc;}
+footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; font-weight:normal;}
+footer .logoCarousel {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
 footer .dummyMargin {height:75px; width:100%;}
-.copyright span {color:#000000;}
-.copyright span:hover {cursor:pointer; font-weight:bold;}
+footer span {display:inline-block; margin:auto; text-align:center;}
+.copyright {padding:31px 0 0 0;}
+.copyright .zoovyLink {color:#000000;}
+.copyright .zoovyLink:hover {cursor:pointer; font-weight:bold;}
 footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer;}
-.acwLink {font-weight:bold; text-align:right; line-height:700%;}
+.acwLink {font-weight:bold; text-align:right; padding:31px 0 0 0;}
 .acwLink a {color:#000000;}
 
 
+@media screen and (max-width: 1125px) {
+	.copyright {padding:20px 0 0 0;}
+	.copyright span {display:block;}
+}
+
 @media screen and (max-width: 800px) {
+/*HEADER*/
 	.headerHomeLink {padding:10% 0 0 20%;}
 	header .logIn {line-height:120%;}
 	header .logIn > div {padding:4% 0 0 0;}
 	.lineBreak {width:100%; display:block;}
 	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
 	.rightCol .headerLinks span {width:100%; top:4%;}
+/*FOOTER*/
+	.copyright {padding:10px 0 0 0;}
+	.acwLink {padding:20px 0 0 0;}
+	.acwLink span {display:block;}
 }
 
 @media screen and (max-width: 650px) {
+/*HEADER*/
 	header {height:100px;}
 	header .dummyMargin {height:100px; width:401px; margin:auto;}
 	.lineBreak {width:auto; display:inline;}
@@ -118,9 +131,15 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	.leftCol {height:50%; width:400px;}
 	.headerHomeLink {padding:14% 0 0 30%;}
 	header .logIn {line-height:170%;}
+/*FOOTER*/	
+	footer {height:225px;}
+	footer .dummyMargin {height:125px; width:400px; margin:auto;}
+	footer .leftCol {height:30%;}
+	footer .leftCol .outerGutter {display:none}
 }
 
 @media screen and (max-width: 425px) {
+/*HEADER*/
 	header .dummyMargin {height:150px; width:320px; margin:auto;}
 	header {height:150px;}
 	.rightCol {height:33%; width:320px;}
@@ -133,6 +152,14 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	.leftCol {height:34%; width:320px;}
 	.headerHomeLink {padding:17% 0 0 25%;}
 	header .logIn {line-height:290%;}
+/*FOOTER*/
+	footer {height:250px;}
+	footer .dummyMargin {height:150px; width:100%;}
+	footer .leftCol {width:100%;}
+	footer .midCol {float:left; width:100%;}
+	footer .midCol img {padding:3% 0 0 0;}
+	footer .rightCol {width:100%;}
+	.acwLink {padding:14px 0 0 0;}
 }
 
 
