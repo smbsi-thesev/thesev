@@ -90,6 +90,7 @@ footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; f
 footer .logoCarouselCont {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
 footer .footerFredWrap {height:auto; width:83%;}
 footer .logoCarousel li {float:left;}
+footer .logoCarousel li img {margin:auto; padding:15% 0 0 0; display:block;} /* PADDING WILL NEED TO CHANGE WHEN MAKE IMAGE USED*/
 
 footer .dummyMargin {height:75px; width:100%;}
 footer span {display:inline-block; margin:auto; text-align:center;}

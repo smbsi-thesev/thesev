@@ -100,16 +100,16 @@ var store_thesev = function() {
 											min	: 1,
 											max	: 5
 										},
-							width	:	125,
-							heigth	:	100
+							width	:	125,//'variable',
+							height	:	'variable'//100
 						},
 						swipe: {
 							onMouse	: 	true,
 							onTouch	: 	true
 						},
 						auto		: 	false,
-						prev		:	'footerPrev',
-						next		:	'footerNext'
+						prev		:	'.footerPrev',
+						next		:	'.footerNext'
 					});
 				},2000);
 			}
