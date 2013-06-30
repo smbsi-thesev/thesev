@@ -35,7 +35,7 @@ var store_thesev = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
-				runFooterCarousel();
+				app.ext.store_thesev.u.runFooterCarousel();
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -71,27 +71,6 @@ var store_thesev = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
-		
-			runFooterCarousel : function() {
-				var $target = $('.logoCarousel');
-				if($target.data('isCarousel')) {} //only make it a carousel once (even though it's in the footer)
-				setTimeout(function(){	//for whatever reason, caroufredsel needs to be executed after a moment
-					$target.carouFredSel({
-						responsive	:	true,
-						width		: 	variable,
-						height		:	100,
-						items 		:	5,
-						swipe: {
-							onMouse	: 	true,
-							onTouch	: 	true
-						},
-						auto		: 	false,
-						prev		:	'footerPrev',
-						next		:	'footerNext'
-					});
-				},1000);
-			}
-
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -107,6 +86,35 @@ var store_thesev = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
+		
+			runFooterCarousel : function() {
+				var $target = $('.logoCarousel');
+				if($target.data('isCarousel')) {} //only make it a carousel once (even though it's in the footer)
+				setTimeout(function(){	//for whatever reason, caroufredsel needs to be executed after a moment
+					$target.carouFredSel({
+						responsive	:	true,
+						width		: 	'100%',
+						height		:	100,
+						items: { 	
+							visible	:	{
+											min	: 1,
+											max	: 5
+										},
+							width	:	125,
+							heigth	:	100
+						},
+						swipe: {
+							onMouse	: 	true,
+							onTouch	: 	true
+						},
+						auto		: 	false,
+						prev		:	'footerPrev',
+						next		:	'footerNext'
+					});
+				},2000);
+			}
+
+		
 			}, //u [utilities]
 
 //app-events are added to an element through data-app-event="extensionName|functionName"
