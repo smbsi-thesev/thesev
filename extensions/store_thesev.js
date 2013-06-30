@@ -45,7 +45,21 @@ var store_thesev = function() {
 //you may or may not need it.
 				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
+			},
+			
+			startExtension : {
+				onSuccess : function() {
+					if(app.ext.myRIA && app.ext.myRIA.template){
+						app.u.dump("store_thesev Extension Started");
+					} else	{
+						setTimeout(function(){app.ext.store_thesev.callbacks.startExtension.onSuccess()},250);
+					}
+				},
+				onError : function (){
+					app.u.dump('BEGIN app.ext.store_thesev.callbacks.startExtension.onError');
+				}
 			}
+			
 		}, //callbacks
 
 
