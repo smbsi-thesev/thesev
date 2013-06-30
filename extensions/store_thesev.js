@@ -108,8 +108,8 @@ var store_thesev = function() {
 							onTouch	: 	true
 						},
 						auto		: 	false,
-						prev		:	'.footerPrev',
-						next		:	'.footerNext'
+						next		:	'.footerPrev',
+						prev		:	'.footerNext'
 					});
 				},2000);
 			}

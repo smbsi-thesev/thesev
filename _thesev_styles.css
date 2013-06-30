@@ -87,10 +87,13 @@ FOOTER
 *************************************************************************************/
 
 footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; font-weight:normal;}
+/*FOOTER CAROUSEL*/
 footer .logoCarouselCont {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
 footer .footerFredWrap {height:auto; width:83%;}
 footer .logoCarousel li {float:left;}
 footer .logoCarousel li img {margin:auto; padding:15% 0 0 0; display:block;} /* PADDING WILL NEED TO CHANGE WHEN MAKE IMAGE USED*/
+.footerPrev {height:25px; width:24px; background-position: 60px 0; margin:40% 0 0 0; float:right;}
+.footerNext {height:25px; width:24px; background-position: 24px 0; margin:40% 0 0 0;}
 
 footer .dummyMargin {height:75px; width:100%;}
 footer span {display:inline-block; margin:auto; text-align:center;}
