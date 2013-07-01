@@ -50,10 +50,13 @@ img {max-width:100%;}
 
 #appView {}
 
-.fluidList li {margin:1.78%; border:10px solid #ffffff; box-shadow: inset inset 0px 0px 86px -34px;}
-.thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:120px; width:150px;/*END REMOVE*/position:relative;}120
+.fluidList li {margin:10px; border:10px solid #ffffff; box-shadow: inset inset 0px 0px 86px -34px;}
+.thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:120px; width:150px;/*END REMOVE*/position:relative;}
 .catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding: 6%; font-family:montserrat; font-weight:normal; font-size:1.2em; text-align:center; position:absolute; bottom:0;}
-
+.categoryList > li:nth-child(even) {height:50px; width:200px;}
+.anyMasonry.masonry2 {height:200px; width:100px;}
+/*.masonry {background: #EEE; max-width: 640px;}
+.masonry .anyMasonry {width:60px; height:60px;}*/
 
 /****************************************
 PERSISTENT CONTENT
@@ -221,3 +224,10 @@ productTemplate
 /*************************************************************************************
 productTemplateQuickView
 *************************************************************************************/
+
+
+
+/*************************************************************************************
+breadcrumb
+*************************************************************************************/
+.breadcrumb.fluidList li {border:none; box-shadow:0 0 0 0; margin:0;}

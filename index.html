@@ -292,7 +292,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 <!-- used to display a category within a 'list', usually in the body of a category or the homepage. -->
 <ul>
-<li id='categoryListTemplate' class='categoryListTemplate'>
+<li id='categoryListTemplate' class='categoryListTemplate anyMasonry' data-bind='useParentData:true; format:addClass; extension:store_thesev;'>
 	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
 		<div class='thumbContainer'>
 			<img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='120' height='120' />

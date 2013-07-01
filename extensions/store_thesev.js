@@ -36,6 +36,10 @@ var store_thesev = function() {
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
 				app.ext.store_thesev.u.runFooterCarousel();
+				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev.u.runHomepageMasonry($context);
+				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -80,7 +84,15 @@ var store_thesev = function() {
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
 		
-			}, //renderFormats
+			addClass : function($tag) {
+				$tag.eq(1).css('background','blue');//.addClass('masonry2');
+			},
+		
+			getInfo : function($tag, data) {
+				//app.u.dump('*** '); app.u.dump(data.value);
+			}
+			
+		}, //renderFormats
 ////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 //utilities are typically functions that are exected by an event or action.
@@ -112,8 +124,18 @@ var store_thesev = function() {
 						prev		:	'.footerNext'
 					});
 				},2000);
+			},
+			
+			runHomepageMasonry : function($context) {
+				var $container = $('.categoryList', $context);
+				//initialize
+				$container.masonry({
+					columnWidth		:	600,
+					itemSelector	:	'.anyMasonry',
+				});
+				var poo = $container.data('masonry');
+				app.u.dump("****"); app.u.dump(poo);
 			}
-
 		
 			}, //u [utilities]
 
