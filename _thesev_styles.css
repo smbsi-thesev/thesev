@@ -50,6 +50,10 @@ img {max-width:100%;}
 
 #appView {}
 
+.fluidList li {margin:1.78%; border:10px solid #ffffff; box-shadow: inset inset 0px 0px 86px -34px;}
+.thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:120px; width:150px;/*END REMOVE*/position:relative;}120
+.catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding: 6%; font-family:montserrat; font-weight:normal; font-size:1.2em; text-align:center; position:absolute; bottom:0;}
+
 
 /****************************************
 PERSISTENT CONTENT
@@ -106,6 +110,7 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 
 
 @media screen and (max-width: 1125px) {
+/*FOOTER*/
 	.copyright {padding:20px 0 0 0;}
 	.copyright span {display:block;}
 }
@@ -171,3 +176,48 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 }
 
 
+/****************************************
+END PERSISTENT CONTENT
+****************************************/
+
+
+/*************************************************************************************
+homepageTemplate
+*************************************************************************************/
+
+
+
+/*************************************************************************************
+categoryTemplate
+*************************************************************************************/
+
+
+
+/*************************************************************************************
+categoryListTemplate
+*************************************************************************************/
+
+.categoryListTemplate .thumbContainer img {background:#ffeeff;}
+
+/*************************************************************************************
+productListTemplate
+*************************************************************************************/
+
+
+
+/*************************************************************************************
+END productListTemplate
+*************************************************************************************/
+/*productListTemplateATC
+productListTemplateBuyerList
+productListTemplateResults
+productListTemplateResultsNoPreview*/
+/*************************************************************************************
+productTemplate
+*************************************************************************************/
+
+
+
+/*************************************************************************************
+productTemplateQuickView
+*************************************************************************************/
