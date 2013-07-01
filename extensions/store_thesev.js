@@ -84,8 +84,17 @@ var store_thesev = function() {
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
 		
-			addClass : function($tag) {
-				$tag.eq(1).css('background','blue');//.addClass('masonry2');
+			pickClass : function($tag) {
+				//app.u.dump($tag);
+				var a = Math.random()*4+1;
+				var b = a.toString().split('.');
+				var number = b[0];
+				switch(number) {
+					case '1'	:	$tag.addClass('masonOne'); break;
+					case '2'	:	$tag.addClass('masonTwo'); break;
+					case '3'	:	$tag.addClass('masonThree'); break;
+					case '4'	:	$tag.addClass('masonFour'); break;
+				}
 			},
 		
 			getInfo : function($tag, data) {
@@ -127,15 +136,17 @@ var store_thesev = function() {
 			},
 			
 			runHomepageMasonry : function($context) {
-				var $container = $('.categoryList', $context);
+				var $target = $('.categoryList', $context);
 				//initialize
-				$container.masonry({
-					columnWidth		:	600,
-					itemSelector	:	'.anyMasonry',
-				});
-				var poo = $container.data('masonry');
+				setTimeout(function() {
+					$target.masonry({
+						columnWidth		:	50,
+						itemSelector	:	'.anyMasonry',
+					});
+				},2000);
+				var poo = $target.data('masonry');
 				app.u.dump("****"); app.u.dump(poo);
-			}
+			} //end runHomepageMasonry
 		
 			}, //u [utilities]
 
