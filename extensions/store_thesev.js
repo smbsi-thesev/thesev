@@ -140,8 +140,10 @@ var store_thesev = function() {
 				//initialize
 				setTimeout(function() {
 					$target.masonry({
-						columnWidth		:	50,
+						columnWidth		:	177,
 						itemSelector	:	'.anyMasonry',
+						gutterWidth		:	1,
+						isFitWidth		:	true
 					});
 				},2000);
 				var poo = $target.data('masonry');
