@@ -230,7 +230,7 @@ homepageTemplate
 categoryTemplate
 *************************************************************************************/
 
-
+.templateWrapper {height:auto; width:1070px; margin:0 auto;}
 
 /*************************************************************************************
 categoryListTemplate
