@@ -295,7 +295,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 <!-- used to display a category within a 'list', usually in the body of a category or the homepage. -->
 <ul>
-<li id='categoryListTemplate' class='categoryListTemplate anyMasonry' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
+<li id='categoryListTemplate' class='categoryListTemplate anyMasonry hovBorderWhite10px' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	<div class='pointer boxShadower' onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});"></div>
 	<div class='fullHeightWidth'>
 		<div class='thumbContainer'>
@@ -323,7 +323,7 @@ Used for the product in a product list (prodlist), usually in the body of a cate
 the loadingBG class is removed (must be that classname) when the template is translated.
 remember to NOT put the button inside the 'onclick' container or two events will occur onclick.
 -->
-<li id='productListTemplate' class='loadingBG anyMasonry productListTemplate' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
+<li id='productListTemplate' class='loadingBG anyMasonry productListTemplate hovBorderWhite10px' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
 	<div class='boxShadower'></div>
 	
