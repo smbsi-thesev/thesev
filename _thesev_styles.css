@@ -242,7 +242,9 @@ categoryListTemplate
 productListTemplate
 *************************************************************************************/
 
-
+.productListTemplate .prodListDesc {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding: 6%; font-family:montserrat; position:absolute; bottom:0;}
+.productListTemplate .prodListDesc h5 {font-weight:normal; font-size:1.2em; text-align:left;}
+.productListTemplate .prodListDesc h6 {font-weight:normal; font-size:1.2em; text-align:right;}
 
 /*************************************************************************************
 END productListTemplate
