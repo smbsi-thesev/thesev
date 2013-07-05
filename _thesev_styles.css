@@ -263,7 +263,7 @@ productListTemplateResultsNoPreview*/
 productTemplate
 *************************************************************************************/
 
-.productPageThumbCont {position:relative;}
+.productPageThumbCont {position:relative; box-shadow:0 0 2px 0;}
 
 /*************************************************************************************
 productTemplateQuickView
