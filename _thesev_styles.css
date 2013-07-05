@@ -135,12 +135,12 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	.copyright {padding:20px 0 0 0;}
 	.copyright span {display:block;}
 /*MAIN CONTENT*/
-#mainContentArea .homeTemplate {width:890px;}	
+#mainContentArea .templateWrapper {width:890px;}	
 }
 
 @media screen and (max-width: 900px) {
 /*MAIN CONTENT*/
-	#mainContentArea .homeTemplate {width:713px;}	
+	#mainContentArea .templateWrapper {width:713px;}	
 }
 
 @media screen and (max-width: 800px) {
@@ -156,7 +156,7 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	.acwLink {padding:20px 0 0 0;}
 	.acwLink span {display:block;}
 /*HOMEPAGE*/
-	#mainContentArea .homeTemplate {width:536px;}	
+	#mainContentArea .templateWrapper {width:536px;}	
 }
 
 @media screen and (max-width: 650px) {
@@ -180,7 +180,7 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	footer .leftCol {height:30%;}
 	footer .leftCol .outerGutter {display:none}
 /*HOMEPAGE*/
-	#mainContentArea .homeTemplate {width:359px;}
+	#mainContentArea .templateWrapper {width:359px;}
 }
 
 @media screen and (max-width: 425px) {
@@ -206,7 +206,7 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 	footer .rightCol {width:100%;}
 	.acwLink {padding:14px 0 0 0;}
 /*HOMEPAGE*/
-	#mainContentArea .homeTemplate {width:320px;}
+	#mainContentArea .templateWrapper {width:320px;}
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
@@ -229,7 +229,6 @@ END PERSISTENT CONTENT
 homepageTemplate
 *************************************************************************************/
 
-.homeTemplate  {height:auto; width:1070px; margin:0 auto;}
 .mushPot {height:300px; width:300px; background:#ffffff; box-shadow:0 0 2px 0px;}
 
 /*************************************************************************************
