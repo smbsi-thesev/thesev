@@ -496,7 +496,7 @@ this will likely become more flexible in the future. ###
 					<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix hovBorderWhite10px productPageThumbCont'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 						<div class='boxShadower'></div>
 						<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-						<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
+						<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='280' />
 					</div>
 				</div>
 
@@ -520,14 +520,34 @@ this will likely become more flexible in the future. ###
 			</td>
 
 			<td class='prodSummaryContainer marginBottom no_underline'>
-				<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
-
-				<hgroup class='marginBottom'>
-					<h5 class='stid' ></h5>
-					<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
-					<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
-				</hgroup>
-
+				<div class='prodSummaryWrapper'>
+					<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
+					<hgroup class='marginBottom'>
+						<h5 class='stid' ></h5>
+						<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: By ;'></h5>
+						<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
+					</hgroup>
+					
+					<div class="socialLinks"></div>
+					<table class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
+						<tbody data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></tbody>
+					</table>
+					<div data-app-role='timeInTransit' class='displayNone'></div>
+					
+					<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
+					<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
+				</div>	
+				<section class='marginBottom productReview'>
+					<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
+<!--					<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span> -->
+				</section>
+				<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
+					<a class='readReview'>See what others are saying!</a>
+					<a class='writeReview' href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</a>	|
+				</menu>
+				
+			</td>
+			<td class='prodBuyerContainer'>
 				<div class='priceContainer marginBottom'>
 					<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
 					<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
@@ -536,17 +556,6 @@ this will likely become more flexible in the future. ###
 						<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 					</span>
 				</div>
-				<div class="socialLinks"></div>
-
-
-				<table class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
-					<tbody data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></tbody>
-				</table>
-
-
-				
-				<div data-app-role='timeInTransit' class='displayNone'></div>
-
 				<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
 					<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
@@ -554,21 +563,8 @@ this will likely become more flexible in the future. ###
 
 					<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
 				</form>
-
-				<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
-				<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
-
-				<section class='marginBottom'>
-					<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
-					<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
-				</section>
-
-				<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
-					<a href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Write Review</a>	|
-					<a href='#' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;">Add to Wishlist</a>
-				</menu>
-
-			</td>
+				<a href='#' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;">Add to Wishlist</a>
+				</td>
 		</tr>
 <!--
 		<tr>
