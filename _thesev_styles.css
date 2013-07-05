@@ -263,7 +263,13 @@ productListTemplateResultsNoPreview*/
 productTemplate
 *************************************************************************************/
 
+.prodViewerContainer tr:first-child {background:#000000;}
+.prodThumPad {padding:0 20px 20px 20px; background-image:url(images/view-bkgrnd_2040x675.jpg);}
 .productPageThumbCont {position:relative; box-shadow:0 0 2px 0;}
+.addtnlProdInfo {background:#000000; padding:0 35px;}
+.addtnlProdInfo .thumbLogo img {display:block; margin:5px auto 0 auto;}
+.addtnlProdInfo .thumbText {font-family:montserrat; font-size:1.2em; font-weight:normal; text-align:right; color:#ffffff;}
+.addtnlProdInfo .thumbText span {font-weight:bold; color:#666666;}
 
 /*************************************************************************************
 productTemplateQuickView
