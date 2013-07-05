@@ -86,8 +86,8 @@ header .dummyMargin {height:50px; width:auto;}
 
 .midCol {height:100%; width:26.785%; float:right;} /* 410 / 1120*/
 .productSearchForm {height:100%; width:100%;}
-.headerSearchButton {border:none; float:right; height:100%; width:20%;}
-.productSearchKeyword {border:none; float:right; height:100%; padding:0 0 0 8%; width:71%; font-size:1.2em; font-weight:normal; font-family:montserrat;}
+.headerSearchButton {border:none; float:right; height:100%; width:17%;}
+.productSearchKeyword {border:none; float:right; height:100%; padding:0 0 0 8%; width:75%; font-size:1.2em; font-weight:normal; font-family:montserrat;}
 
 .leftCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
 .headerHomeLink {height:80%; width:69%; padding:10% 0 0 30%;} /*padding:40% 0 0 0;*/
