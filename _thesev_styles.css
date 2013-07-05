@@ -60,6 +60,8 @@ img {max-width:100%;}
 .fullHeightWidth {height:100%; width:100%;}
 .fontBold {font-weight:bold;}
 
+.templateWrapper {height:auto; width:1070px; margin:0 auto;}
+
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative;}
 .catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding: 6%; font-family:montserrat; font-weight:normal; font-size:1.2em; text-align:center; position:absolute; bottom:0;}
@@ -235,7 +237,6 @@ homepageTemplate
 categoryTemplate
 *************************************************************************************/
 
-.templateWrapper {height:auto; width:1070px; margin:0 auto;}
 
 /*************************************************************************************
 categoryListTemplate
@@ -262,7 +263,7 @@ productListTemplateResultsNoPreview*/
 productTemplate
 *************************************************************************************/
 
-
+.productPageThumbCont {position:relative;}
 
 /*************************************************************************************
 productTemplateQuickView
