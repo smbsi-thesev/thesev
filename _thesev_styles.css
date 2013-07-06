@@ -284,9 +284,9 @@ productTemplate
 .writeReview {float:right; margin:10px 15px 0 0;}
 
 /*Right Column*/
-.prodBuyerContainer {width:10%; padding:10px 20px 0 10px;}
-.workWithMe {height:140px; width:180px; padding:50px 20px 20px 20px; background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent; font-size:1.2em; overflow:auto;}
-.priceContainer {height:58px; width:auto; padding:30px 10px 0 0; overflow:hidden;}
+.prodBuyerContainer {width:10%; padding:10px 0 0 10px;}
+.workWithMe {height:140px; width:180px; margin:0 10px 0 0; padding:50px 20px 20px 20px; background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent; font-size:1.2em; overflow:auto;}
+.priceContainer {height:58px; width:auto; padding:30px 25px 0 0; overflow:hidden;}
 .priceFloat {height:auto; width:100%; text-align:center; font-family:montserrat; color:#ffffff;}
 .halfPrice {height:auto; width:50%;}
 .basePrice {font-size:3.0em;}
@@ -295,6 +295,10 @@ productTemplate
 .forYou {font-size:1.2em;}
 .forRetail {font-size:1.2em; color:#666666;}
 .productPage  .cents {text-decoration:underline;}
+.prodViewerAddToCartForm {margin:0 0 5px 0;}
+.productPage .addToCartButton, .productPage .addToWishlistButton {height:80px; width:100%; font-family:montserrat; font-size:1.8em; font-weight:bold; border:none; color:#ffffff;}
+.productPage .addToCartButton span {height:27px; width:35px; background:blue;}
+.productPage .addToWishlistButton span {height:25px; width:30px; background:red;}
 
 /*************************************************************************************
 productTemplateQuickView
