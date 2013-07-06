@@ -4,7 +4,7 @@
 	zoom: 1.0;
 }
 html {height:auto; width:100%;}
-body {height:auto; width:100%; background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size: 62.5%;}
+body {height:auto; width:100%; background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size: 62.5%; font-family:"open sans";}
 * {margin:0; padding:0;}
 a {text-decoration:none;}
 img {max-width:100%;}
@@ -275,7 +275,7 @@ productTemplate
 .addtnlProdInfo .thumbText span {font-weight:bold; color:#666666;}
 
 /*Middle Column*/
-.prodSummaryContainer {width:40%;}
+.prodSummaryContainer {width:40%; padding:0 10px 12px 0;}
 .prodSummaryWrapper {max-height:380px; scroll:auto; margin:10px; padding:20px; background:#ffffff; font-family:"open sans"; font-size:1.2em; font-weight:normal;} 
 .prodSummaryWrapper h1 {font-family:oswald; font-size:1.8em; font-weight:normal;}
 .productReview {margin:30px 0 0 0; text-align:center;}
@@ -284,7 +284,17 @@ productTemplate
 .writeReview {float:right; margin:10px 15px 0 0;}
 
 /*Right Column*/
-.prodBuyerContainer {}
+.prodBuyerContainer {width:10%; padding:10px 20px 0 10px;}
+.workWithMe {height:140px; width:180px; padding:50px 20px 20px 20px; background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent; font-size:1.2em; overflow:auto;}
+.priceContainer {height:58px; width:auto; padding:30px 10px 0 0; overflow:hidden;}
+.priceFloat {height:auto; width:100%; text-align:center; font-family:montserrat; color:#ffffff;}
+.halfPrice {height:auto; width:50%;}
+.basePrice {font-size:3.0em;}
+.prodMSRP  {font-size:3.0em; text-decoration:line-through;}
+.basePriceAlone {height:auto; width:100%; font-size:3.0em;}
+.forYou {font-size:1.2em;}
+.forRetail {font-size:1.2em; color:#666666;}
+.productPage  .cents {text-decoration:underline;}
 
 /*************************************************************************************
 productTemplateQuickView
