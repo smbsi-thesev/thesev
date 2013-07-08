@@ -493,11 +493,14 @@ this will likely become more flexible in the future. ###
 			<td class='imageContainer'>
 
 				<div class='prodThumPad'>
-					<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix hovBorderWhite10px productPageThumbCont'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
-						<div class='boxShadower'></div>
+					<div  class='clearfix hovBorderWhite10px productPageThumbCont'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+
 						<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-						<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='280' />
-					</div>
+						<!--<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='280' />-->
+						<ul class='listStyleNone prodPageCarousel' data-bind="var: product(pid); format: productImages; extension: store_thesev;"></ul>
+						<a href='#' class='prodPrev sprite displayNone'><span>prev</span></a>
+						<a href='#' class='prodNext sprite displayNone'><span>next</span></a>
+					</div>				
 				</div>
 
 				<div class='addtnlProdInfo'>

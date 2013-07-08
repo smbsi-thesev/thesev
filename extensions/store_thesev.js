@@ -40,6 +40,11 @@ var store_thesev = function() {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runHomepageMasonry($context);
 				}]);
+				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev.u.runProductPageCarousel($context);
+				}]);
+				
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -83,6 +88,23 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
+		
+			productImages : function($tag,data)	{
+//				app.u.dump("BEGIN myRIA.renderFormats.productImages ["+data.value+"]");
+				var pdata = app.data['appProductGet|'+data.value]['%attribs']; //short cut to product object in memory.
+				var imgs = ''; //all the html for all the images. appended to $tag after loop.
+				var imgName; //recycled in loop.
+				var pid = data.value;
+				for(i = 1; i < 30; i += 1)	{
+					app.u.dump('-------->'); app.u.dump(pid);
+					imgName = pdata['zoovy:prod_image'+i];
+//					app.u.dump(" -> "+i+": "+imgName);
+					if(app.u.isSet(imgName)) {
+						imgs += "<li onClick='app.ext.store_product.u.showPicsInModal({\"pid\":\""+pid+"\",\"int\":\""+i+"\"});' class='floatLeft'><div class='boxShadower pointer'></div><img src='"+app.u.makeImage({'tag':0,'w':280,'h':280,'name':imgName,'b':'ffffff'})+"' \/><\/li>";
+					}
+				}
+				$tag.append(imgs);
+			}, //productImages
 		
 			pickClass : function($tag) {
 				//app.u.dump($tag);
@@ -131,6 +153,33 @@ var store_thesev = function() {
 						auto		: 	false,
 						next		:	'.footerPrev',
 						prev		:	'.footerNext'
+					});
+				},2000);
+			},
+			
+			runProductPageCarousel : function($context) {
+				var $target = $('.prodPageCarousel', $context);
+				if($target.data('isCarousel')) {} //only make it a carousel once (even though it's in the footer)
+				setTimeout(function(){	//for whatever reason, caroufredsel needs to be executed after a moment
+					$target.carouFredSel({
+						responsive	:	true,
+						width		: 	280,//'100%',
+						height		:	280,
+						items: { 	
+							visible	:	{
+											min	: 1,
+											max	: 1
+										},
+							width	:	280,//'variable',
+							height	:	280//100
+						},
+						swipe: {
+							onMouse	: 	true,
+							onTouch	: 	true
+						},
+						auto		: 	false,
+						next		:	'.prodPrev',
+						prev		:	'.prodNext'
 					});
 				},2000);
 			},
