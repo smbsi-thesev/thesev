@@ -100,7 +100,7 @@ var store_thesev = function() {
 					imgName = pdata['zoovy:prod_image'+i];
 //					app.u.dump(" -> "+i+": "+imgName);
 					if(app.u.isSet(imgName)) {
-						imgs += "<li onClick='app.ext.store_product.u.showPicsInModal({\"pid\":\""+pid+"\",\"int\":\""+i+"\"});' class='floatLeft'><div class='boxShadower pointer'></div><img src='"+app.u.makeImage({'tag':0,'w':280,'h':280,'name':imgName,'b':'ffffff'})+"' \/><\/li>";
+						imgs += "<li onClick='app.ext.store_product.u.showPicsInModal({\"pid\":\""+pid+"\",\"int\":\""+i+"\"});' class='floatLeft'><div class='productPageBoxShadower pointer'></div><img src='"+app.u.makeImage({'tag':0,'w':280,'h':280,'name':imgName,'b':'ffffff'})+"' \/><\/li>";
 					}
 				}
 				$tag.append(imgs);
