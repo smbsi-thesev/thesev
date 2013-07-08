@@ -244,6 +244,9 @@ media querries
 /*MAIN CONTENT*/
 	#mainContentArea .templateWrapper {width:713px;}	
 /*PRODUCT PAGE*/
+/*****LEFT COLUMN*/
+.productPageThumbCont {height:200px; width:200px;}
+.productPageBoxShadower {width:200px;}
 /*****CENTER COLUMN*/
 	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
 	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}
