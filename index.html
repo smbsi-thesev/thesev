@@ -544,7 +544,7 @@ this will likely become more flexible in the future. ###
 				</section>
 				<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
 					<a class='readReview'>See what others are saying!</a>
-					<a class='writeReview' href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</a>	|
+					<a class='writeReview' href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</a>
 				</menu>
 				
 			</td>
@@ -581,8 +581,14 @@ this will likely become more flexible in the future. ###
 					<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
 					<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone displayNone'></fieldset>
 					<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all addToCartButton primaryColorHover displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-				</form>
-				<button class='addToWishlistButton secondaryColor' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;"><span class='sprite'></span>Favorite</button>
+					<div class='iconATC sprite'></div>
+					<div class='hoverWrapper'>
+						<div class='iconATW sprite'></div>
+						<button class='addToWishlistButton secondaryColor' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;"><span class='sprite'></span>Favorite</button>
+					</div>
+					</form>
+			
+				
 			</td>
 		</tr>
 <!--
