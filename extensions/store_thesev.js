@@ -163,7 +163,7 @@ var store_thesev = function() {
 				setTimeout(function(){	//for whatever reason, caroufredsel needs to be executed after a moment
 					$target.carouFredSel({
 						responsive	:	true,
-						width		: 	280,//'100%',
+						width		: 	'100%',
 						height		:	280,
 						items: { 	
 							visible	:	{
@@ -171,7 +171,7 @@ var store_thesev = function() {
 											max	: 1
 										},
 							width	:	280,//'variable',
-							height	:	280//100
+							height	:	'variable'
 						},
 						swipe: {
 							onMouse	: 	true,

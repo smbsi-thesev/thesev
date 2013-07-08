@@ -132,96 +132,6 @@ footer .midCol img {display:block; margin:auto; padding:5% 0 0 0; cursor:pointer
 
 /*END FOOTER**************************************************************************/
 
-@media screen and (max-width: 1125px) {
-/*FOOTER*/
-	.copyright {padding:20px 0 0 0;}
-	.copyright span {display:block;}
-/*MAIN CONTENT*/
-#mainContentArea .templateWrapper {width:890px;}	
-}
-
-@media screen and (max-width: 900px) {
-/*MAIN CONTENT*/
-	#mainContentArea .templateWrapper {width:713px;}	
-}
-
-@media screen and (max-width: 800px) {
-/*HEADER*/
-	.headerHomeLink {padding:10% 0 0 20%;}
-	header .logIn {line-height:120%;}
-	header .logIn > div {padding:4% 0 0 0;}
-	.lineBreak {width:100%; display:block;}
-	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
-	.rightCol .headerLinks span {width:100%; top:4%;}
-/*FOOTER*/
-	.copyright {padding:10px 0 0 0;}
-	.acwLink {padding:20px 0 0 0;}
-	.acwLink span {display:block;}
-/*HOMEPAGE*/
-	#mainContentArea .templateWrapper {width:536px;}	
-}
-
-@media screen and (max-width: 650px) {
-/*HEADER*/
-	header {height:100px;}
-	header .dummyMargin {height:100px; width:401px; margin:auto;}
-	.lineBreak {width:auto; display:inline;}
-	.rightCol {height:50%; width:200px;}
-	.rightCol .headerLinks {width:15.7%; margin:3% 4%;}
-	.rightCol .headerLinks span {width:101%; top:5%;}
-	.rightCol .outerGutter {display:none;}
-	.midCol {height:50%; width:200px;}
-	.headerSearchButton {width:25%;}
-	.productSearchKeyword {width:66%;}
-	.leftCol {height:50%; width:400px;}
-	.headerHomeLink {padding:14% 0 0 30%;}
-	header .logIn {line-height:170%;}
-/*FOOTER*/	
-	footer {height:225px;}
-	footer .dummyMargin {height:125px; width:400px; margin:auto;}
-	footer .leftCol {height:30%;}
-	footer .leftCol .outerGutter {display:none}
-/*HOMEPAGE*/
-	#mainContentArea .templateWrapper {width:359px;}
-}
-
-@media screen and (max-width: 425px) {
-/*HEADER*/
-	header .dummyMargin {height:150px; width:320px; margin:auto;}
-	header {height:150px;}
-	.rightCol {height:33%; width:320px;}
-	.rightCol .headerLinks {width:15.7%; margin:2% 0 0 7%;}
-	.rightCol .headerLinks span {width:78%; top:12%;}
-	.rightCol .outerGutter {display:none;}
-	.midCol {height:33%; width:320px;}
-	.headerSearchButton {width:17%;}
-	.productSearchKeyword {width:75%;}
-	.leftCol {height:34%; width:320px;}
-	.headerHomeLink {padding:17% 0 0 25%;}
-	header .logIn {line-height:290%;}
-/*FOOTER*/
-	footer {height:250px;}
-	footer .dummyMargin {height:150px; width:100%;}
-	footer .leftCol {width:100%;}
-	footer .midCol {float:left; width:100%;}
-	footer .midCol img {padding:3% 0 0 0;}
-	footer .rightCol {width:100%;}
-	.acwLink {padding:14px 0 0 0;}
-/*HOMEPAGE*/
-	#mainContentArea .templateWrapper {width:320px;}
-/*MASONRY*/
-	.fluidList li {margin:8px 0;}
-	.anyMasonry.masonOne {height:296px; width:296px;}
-	.anyMasonry.masonOne img {box-shadow: inset 0px 0px 86px -34px;}
-	.anyMasonry.masonTwo  {height:120px; width:115px;}
-	.anyMasonry.masonTwo img {height:120px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
-	.anyMasonry.masonThree {height:120px; width:296px;}
-	.anyMasonry.masonThree img {height:120px; width:296px; box-shadow: inset 0px 0px 86px -34px;}
-	.anyMasonry.masonFour {height:296px; width:115px;}
-	.anyMasonry.masonFour img {height:296px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
-}
-
-
 /****************************************
 END PERSISTENT CONTENT
 ****************************************/
@@ -314,3 +224,102 @@ productTemplateQuickView
 breadcrumb
 *************************************************************************************/
 .breadcrumb.fluidList li {border:none; box-shadow:0 0 0 0; margin:0;}
+
+
+
+/*************************************************************************************
+media querries
+*************************************************************************************/
+
+@media screen and (max-width: 1125px) {
+/*FOOTER*/
+	.copyright {padding:20px 0 0 0;}
+	.copyright span {display:block;}
+/*MAIN CONTENT*/
+#mainContentArea .templateWrapper {width:890px;}	
+}
+
+@media screen and (max-width: 900px) {
+/*MAIN CONTENT*/
+	#mainContentArea .templateWrapper {width:713px;}	
+/*PRODUCT PAGE*/
+/*****CENTER COLUMN*/
+	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
+	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}
+}
+
+@media screen and (max-width: 800px) {
+/*HEADER*/
+	.headerHomeLink {padding:10% 0 0 20%;}
+	header .logIn {line-height:120%;}
+	header .logIn > div {padding:4% 0 0 0;}
+	.lineBreak {width:100%; display:block;}
+	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
+	.rightCol .headerLinks span {width:100%; top:4%;}
+/*FOOTER*/
+	.copyright {padding:10px 0 0 0;}
+	.acwLink {padding:20px 0 0 0;}
+	.acwLink span {display:block;}
+/*HOMEPAGE*/
+	#mainContentArea .templateWrapper {width:536px;}	
+}
+
+@media screen and (max-width: 650px) {
+/*HEADER*/
+	header {height:100px;}
+	header .dummyMargin {height:100px; width:401px; margin:auto;}
+	.lineBreak {width:auto; display:inline;}
+	.rightCol {height:50%; width:200px;}
+	.rightCol .headerLinks {width:15.7%; margin:3% 4%;}
+	.rightCol .headerLinks span {width:101%; top:5%;}
+	.rightCol .outerGutter {display:none;}
+	.midCol {height:50%; width:200px;}
+	.headerSearchButton {width:25%;}
+	.productSearchKeyword {width:66%;}
+	.leftCol {height:50%; width:400px;}
+	.headerHomeLink {padding:14% 0 0 30%;}
+	header .logIn {line-height:170%;}
+/*FOOTER*/	
+	footer {height:225px;}
+	footer .dummyMargin {height:125px; width:400px; margin:auto;}
+	footer .leftCol {height:30%;}
+	footer .leftCol .outerGutter {display:none}
+/*HOMEPAGE*/
+	#mainContentArea .templateWrapper {width:359px;}
+}
+
+@media screen and (max-width: 425px) {
+/*HEADER*/
+	header .dummyMargin {height:150px; width:320px; margin:auto;}
+	header {height:150px;}
+	.rightCol {height:33%; width:320px;}
+	.rightCol .headerLinks {width:15.7%; margin:2% 0 0 7%;}
+	.rightCol .headerLinks span {width:78%; top:12%;}
+	.rightCol .outerGutter {display:none;}
+	.midCol {height:33%; width:320px;}
+	.headerSearchButton {width:17%;}
+	.productSearchKeyword {width:75%;}
+	.leftCol {height:34%; width:320px;}
+	.headerHomeLink {padding:17% 0 0 25%;}
+	header .logIn {line-height:290%;}
+/*FOOTER*/
+	footer {height:250px;}
+	footer .dummyMargin {height:150px; width:100%;}
+	footer .leftCol {width:100%;}
+	footer .midCol {float:left; width:100%;}
+	footer .midCol img {padding:3% 0 0 0;}
+	footer .rightCol {width:100%;}
+	.acwLink {padding:14px 0 0 0;}
+/*HOMEPAGE*/
+	#mainContentArea .templateWrapper {width:320px;}
+/*MASONRY*/
+	.fluidList li {margin:8px 0;}
+	.anyMasonry.masonOne {height:296px; width:296px;}
+	.anyMasonry.masonOne img {box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonTwo  {height:120px; width:115px;}
+	.anyMasonry.masonTwo img {height:120px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonThree {height:120px; width:296px;}
+	.anyMasonry.masonThree img {height:120px; width:296px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonFour {height:296px; width:115px;}
+	.anyMasonry.masonFour img {height:296px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
+}
