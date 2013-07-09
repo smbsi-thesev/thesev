@@ -60,7 +60,7 @@ img {max-width:100%;}
 .fullHeightWidth {height:100%; width:100%;}
 .fontBold {font-weight:bold;}
 
-.templateWrapper {height:auto; width:940px; margin:0 auto;} /*width:1070px;*/
+.templateWrapper {height:auto; width:1070px; margin:0 auto;} 
 
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative;}
@@ -173,6 +173,7 @@ productListTemplateResultsNoPreview*/
 productTemplate
 *************************************************************************************/
 
+.productPage.templateWrapper {width:940px;}
 .prodViewerContainer {height:100%; width:100%; background:#000000; display:inline-block;}
 
 /*Left Column*/
