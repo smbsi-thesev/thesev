@@ -60,7 +60,7 @@ img {max-width:100%;}
 .fullHeightWidth {height:100%; width:100%;}
 .fontBold {font-weight:bold;}
 
-.templateWrapper {height:auto; width:1070px; margin:0 auto;}
+.templateWrapper {height:auto; width:940px; margin:0 auto;} /*width:1070px;*/
 
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative;}
@@ -173,10 +173,10 @@ productListTemplateResultsNoPreview*/
 productTemplate
 *************************************************************************************/
 
-.prodViewerContainer tr:first-child {background:#000000;}
+.prodViewerContainer {height:100%; width:100%; background:#000000; display:inline-block;}
 
 /*Left Column*/
-.imageContainer {width:10%; padding:0;}
+.imageContainer {width:34.0425%; padding:0;}
 .prodThumPad {padding:0 20px 20px 0; background-image:url(images/view-bkgrnd_2040x675.jpg);}
 .productPageThumbCont {height:280px; width:280px; position:relative; box-shadow:0 0 2px 0;}
 .productPageBoxShadower {height:100%; width:280px; position:absolute; box-shadow:inset 0 0 86px -34px; z-index:1;}
@@ -189,7 +189,7 @@ a.prodPrev span, a.prodNext span {display:none;}
 .addtnlProdInfo .thumbText span {font-weight:bold; color:#666666;}
 
 /*Middle Column*/
-.prodSummaryContainer {width:78%; padding:0 10px 12px 0;}
+.prodSummaryContainer {width:39.3617%; padding:0 10px 12px 0;}
 .prodSummaryWrapper {max-height:380px; overflow:auto; margin:10px; padding:20px; background:#ffffff; font-family:"open sans"; font-size:1.2em; font-weight:normal;} 
 .prodSummaryWrapper h1 {font-family:oswald; font-size:1.8em; font-weight:normal;}
 .productReview {margin:30px 0 0 0; text-align:center;}
@@ -198,7 +198,7 @@ a.prodPrev span, a.prodNext span {display:none;}
 .writeReview {float:right; margin:10px 15px 0 0;}
 
 /*Right Column*/
-.prodBuyerContainer {width:8%; padding:10px 0 0 10px;}
+.prodBuyerContainer {width:24.5957%; padding:10px 0 0 0;}
 .workWithMe {height:140px; width:180px; margin:0 10px 0 0; padding:50px 20px 20px 20px; background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent; font-size:1.2em; overflow:auto;}
 .priceContainer {height:58px; width:auto; padding:30px 25px 0 0; overflow:hidden;}
 .priceFloat {height:auto; width:100%; text-align:center; font-family:montserrat; color:#ffffff;}
@@ -237,7 +237,7 @@ media querries
 	.copyright {padding:20px 0 0 0;}
 	.copyright span {display:block;}
 /*MAIN CONTENT*/
-#mainContentArea .templateWrapper {width:890px;}	
+/*#mainContentArea .templateWrapper {width:890px;}	*/
 }
 
 @media screen and (max-width: 900px) {
@@ -245,12 +245,19 @@ media querries
 	#mainContentArea .templateWrapper {width:713px;}	
 /*PRODUCT PAGE*/
 /*****LEFT COLUMN*/
-.productPageThumbCont {height:200px; width:200px;}
+.imageContainer {width:45.043%;}
+/*.productPageThumbCont {height:200px; width:200px;}
 .productPageBoxShadower {width:200px;}
-.prodPrev, .prodNext {top:85px;}
+.prodPrev, .prodNext {top:85px;}*/
 /*****CENTER COLUMN*/
-	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
-	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}
+.prodSummaryContainer {width:54.762%; padding:0 0 12px 0;}
+/*	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
+	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}*/
+/*****RIGHT COLUMN*/	
+	.prodBuyerContainer {width:100%;}
+	.workWithMe {margin:0 0 2% 6%; float:left;}
+	.priceContainer {width:33%; float:left; padding:30px 0 0 0;}
+	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block; }
 }
 
 @media screen and (max-width: 800px) {
