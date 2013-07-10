@@ -225,9 +225,8 @@ productTemplateQuickView
 /*************************************************************************************
 breadcrumb
 *************************************************************************************/
-.breadcrumb.fluidList li {border:none; box-shadow:0 0 0 0; margin:0;}
 
-
+.breadcrumb.fluidList li {border:none; box-shadow:0 0 0 0; margin:0; background:transparent;}
 
 /*************************************************************************************
 media querries
