@@ -47,7 +47,8 @@ img {max-width:100%;}
 #appPreView .alignCenter {margin:10px 0;}
 
 #appView {height:auto; width:100%;}
-/*#mainContentArea {height:auto; width:1120px; margin:0 auto;}*/
+#appNav .prodDetailPrevItemButton {top:51px; left:0;}
+#appNav .prodDetailNextItemButton {top:51px; right:0;}
 
 .contentWrapper {height:100%; width:77%; margin:0 11.2%;}
 .outerGutter {height:100%; width:21.951%;} 
@@ -245,14 +246,12 @@ media querries
 	#mainContentArea .templateWrapper {width:713px;}	
 /*PRODUCT PAGE*/
 /*****LEFT COLUMN*/
-.imageContainer {width:45.043%;}
+	.imageContainer {width:45.043%;}
 /*.productPageThumbCont {height:200px; width:200px;}
 .productPageBoxShadower {width:200px;}
 .prodPrev, .prodNext {top:85px;}*/
 /*****CENTER COLUMN*/
-.prodSummaryContainer {width:54.762%; padding:0 0 12px 0;}
-/*	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
-	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}*/
+	.prodSummaryContainer {width:54.762%; padding:0 0 12px 0;}
 /*****RIGHT COLUMN*/	
 	.prodBuyerContainer {width:100%;}
 	.workWithMe {margin:0 0 2% 6%; float:left;}
@@ -274,6 +273,20 @@ media querries
 	.acwLink span {display:block;}
 /*HOMEPAGE*/
 	#mainContentArea .templateWrapper {width:536px;}	
+/*PRODUCT PAGE*/
+	.productPage.templateWrapper {width:606px;}
+/*****LEFT COLUMN*/
+	.productPageThumbCont {height:200px; width:200px;}
+	.productPageBoxShadower {width:200px;}
+	.prodPrev, .prodNext {top:85px;}
+/*****CENTER COLUMN*/
+	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
+	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}
+/*****RIGHT (LOWER) COLUMN*/
+	.priceContainer {width:22%;}
+	.productPage .addToCartButton, .productPage .addToWishlistButton {height:90px;}
+	.productPage .iconATC  {top: auto; bottom:115px; left:42%;}
+	.productPage .iconATW  {top: auto; bottom:16px; left:42%;}
 }
 
 @media screen and (max-width: 650px) {
