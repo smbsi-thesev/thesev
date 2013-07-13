@@ -290,6 +290,7 @@ media querries
 }
 
 @media screen and (max-width: 650px) {
+	#appNav .prodDetailPrevItemButton, #appNav .prodDetailNextItemButton {top:101px;}
 /*HEADER*/
 	header {height:100px;}
 	header .dummyMargin {height:100px; width:401px; margin:auto;}
@@ -309,8 +310,21 @@ media querries
 	footer .dummyMargin {height:125px; width:400px; margin:auto;}
 	footer .leftCol {height:30%;}
 	footer .leftCol .outerGutter {display:none}
+	footer .midCol {width:62px; float:none; margin:0 auto 0 auto;}
+	footer .midCol img {padding:29% 0 0 0;}
+	footer .rightCol {display:none;}
 /*HOMEPAGE*/
 	#mainContentArea .templateWrapper {width:359px;}
+/*PRODUCT PAGE*/
+	.prodSummaryContainer {clear:both;}
+/*****LEFT (TOP) COLUMN*/
+	.imageContainer {width:100%;}
+	.prodThumPad {margin:0 13% 5% 13%; padding:0 12% 5% 6.5%;}
+/*****CENTER (MIDDLE) COLUMN*/
+	.prodSummaryContainer {width:100%; clear:both;}
+/*****RIGHT (LOWER) COLUMN*/
+	.prodBuyerContainer {width:100%;}
+	.priceContainer, .prodViewerAddToCartForm {width:50%;}
 }
 
 @media screen and (max-width: 425px) {
@@ -337,6 +351,9 @@ media querries
 	.acwLink {padding:14px 0 0 0;}
 /*HOMEPAGE*/
 	#mainContentArea .templateWrapper {width:320px;}
+	
+	.prodThumPad {margin:0 9% 5% 13%;}
+	
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
