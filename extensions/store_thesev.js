@@ -123,7 +123,7 @@ var store_thesev = function() {
 				var imgName; //recycled in loop.
 				var pid = data.value;
 				for(i = 1; i < 30; i += 1)	{
-					app.u.dump('-------->'); app.u.dump(pid);
+//					app.u.dump('-------->'); app.u.dump(pid);
 					imgName = pdata['zoovy:prod_image'+i];
 //					app.u.dump(" -> "+i+": "+imgName);
 					if(app.u.isSet(imgName)) {
