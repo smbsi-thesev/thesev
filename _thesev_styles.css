@@ -191,7 +191,7 @@ a.prodPrev span, a.prodNext span {display:none;}
 .addtnlProdInfo .thumbText span {font-weight:bold; color:#666666;}
 
 /*Middle Column*/
-.prodSummaryContainer {width:39.3617%; padding:0 10px 12px 0;}
+.prodSummaryContainer, .prodReviewContainer {width:39.3617%; padding:0 10px 12px 0;}
 .prodSummaryWrapper {max-height:380px; overflow:auto; margin:10px; padding:20px; background:#ffffff; font-family:"open sans"; font-size:1.2em; font-weight:normal;} 
 .prodSummaryWrapper h1 {font-family:oswald; font-size:1.8em; font-weight:normal;}
 .productReview {margin:30px 0 0 0; text-align:center;}

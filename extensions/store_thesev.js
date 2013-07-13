@@ -80,6 +80,41 @@ var store_thesev = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+		
+			//places customer reviews on the product page
+			showReviews : function(pid) {
+				var $context = $('#productTemplate_'+app.u.makeSafeHTMLId(pid));
+				
+				app.u.dump('SHOW REVIEW');
+			
+				$('.readReview', $context).animate(1000);
+				setTimeout(function() {
+					$('.prodSummaryContainer', $context).hide();
+					$('.prodReviewContainer', $context).show();
+		/*			$('.prodSelectSeeReviewButton', $context).hide();
+					$('.prodSelectSeeDescriptionButton', $context).show();
+					$('.prodSelectSeeDescriptionButton', $context).unbind();
+		*/			$('.prodSelectSeeDescriptionButton', $context).click(app.ext.store_thesev.a.showDescription);
+				}, 250);
+			}, //END showReviews
+			
+			//reverts customer reveiws to the product description on the product page
+			showDescription : function(pid) {
+				var $context = $('#productTemplate_'+app.u.makeSafeHTMLId(pid));
+				
+				app.u.dump('SHOW DESC');
+				
+				$('.prodSelectSeeDescriptionButton', $context).animate(1000);
+				setTimeout(function() {
+					$('.prodReviewContainer', $context).hide();
+					$('.prodSummaryContainer', $context).show();
+					$('.prodSelectSeeDescriptionButton', $context).hide();
+					$('.prodSelectSeeReviewButton', $context).show();
+					$('.prodSelectSeeReviewButton', $context).unbind();
+					$('.prodSelectSeeReviewButton', $context).click(app.ext.store_thesev.a.showReviews);
+				}, 250);
+			}, //END showDescription
+		
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

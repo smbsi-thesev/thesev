@@ -548,11 +548,16 @@ this will likely become more flexible in the future. ###
 <!--					<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span> -->
 			</section>
 			<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
-				<a class='readReview'>See what others are saying!</a>
+				<a href="#" class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"));'>See what others are saying!</a>
 				<a class='writeReview' href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</a>
 			</menu>
 			
 		</div>
+		
+		<div class='prodReviewContainer displayNone floatLeft'>
+			<img src='images/work-with-me_220x210.png' width='220' height='210' />
+		</div>
+		
 		<div class='prodBuyerContainer floatRight'>
 			<div class='workWithMe'>
 				<!--<img src='images/work-with-me_220x210.png' width='220' height='210' />-->
