@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130709213600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130713160900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -551,13 +551,12 @@ this will likely become more flexible in the future. ###
 				<div class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"));'>See what others are saying!</div>
 				<div class='writeReview' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</div>
 			</menu>
-			
 		</div>
 		
 		<div class='prodReviewContainer displayNone floatLeft'>
 			<div class='prodSummaryWrapper' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 				<button class='floatRight reviewbutton reviewClose sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"));'></button> <!--  -->
-				<button class='floatRight reviewbutton sprite' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmTemplate"});' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></button>
+				<button class='floatRight reviewbutton sprite' onClick='app.ext.store_thesev.u.showReviewFrmInline({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmInlineTemplate"});' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></button>
 				<h1>What others are saying...</h1>
 				<div class='reviewSort'></div>
 				<div class='beFirst'>
@@ -567,6 +566,10 @@ this will likely become more flexible in the future. ###
 				<button class='prodSelectWriteReviewButton prodSelectSmallButtons ui-button ui-state-default floatRight' >Write a Review</button> -->
 			</div>
         </div>
+		
+		<div class='prodWriteReviewContainer displayNone floatLeft'>
+		
+		</div>
 		
 		<div class='prodBuyerContainer floatRight'>
 			<div class='workWithMe'>
@@ -742,8 +745,44 @@ this will likely become more flexible in the future. ###
 
 
 
+<!-- CUSTOM IN-LINE REVIEW TEMPLATE FOR PRODUCT PAGE -->
+<div id='reviewFrmInlineTemplate'>
+	<form name="reviewFrm" id="reviewFrm" action="#" onSubmit="app.ext.store_crm.u.handleReviews('reviewFrm'); return false;">
+		<input type='hidden' name='pid' id='reviewsPid' value='' data-bind='var: product(pid); format:popVal;' />
+			<!--<label for='reviewsCustomerName'>Your Name:</label>-->
+		<input type="text" name="CUSTOMER_NAME" id='reviewsCustomerName' value="" MAXLENGTH="30" placeholder='Tell us your name...' />
+		<br>
+			<!--<label for='reviewsLocation'>Location:</label>-->
+		<input type="text" MAXLENGTH="30" name="LOCATION" id='reviewsLocation' value="" placeholder='Tell us where you are...' />
+		<br>
+			<!--<label for='reviewsSubject'>Subject:</label>-->
+		<input type="text" MAXLENGTH="60" name="SUBJECT" id='reviewsSubject' placeholder='Leave us a title...' />
+		<br>
+			<!--<label for='reviewsMessage'>Review:</label>-->
+		<textarea name="MESSAGE" id='reviewsMessage' placeholder='Tell us about the product... e.g. "Slides on easy, built to last, vibrant strokes...'></textarea>
+		<br>
 
+		<label for='reviewsRating'>Score:</label>
+		<select name="RATING" id='reviewsRating'>
+			<option value="10">5</option>
+			<option value="9">4.5</option>
+			<option value="8">4</option>
+			<option value="7">3.5</option>
+			<option value="6">3</option>
+			<option value="5">2.5</option>
+			<option value="4">2</option>
+			<option value="3">1.5</option>
+			<option value="2">1</option>
+			<option value="1">.5</option>
+		</select>
+		<br>
 
+		<div class='inlineRevButCont'>
+			<input type="submit" value="PUBLISH THIS REVIEW" class='inlineReviewButton ui-button-text ui-button ui-state-default ui-corner-all' />
+			<div class='iconPubRev sprite'></div>
+		</div>
+	</form>
+</div>
 
 
 

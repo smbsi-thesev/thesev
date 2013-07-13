@@ -191,8 +191,8 @@ a.prodPrev span, a.prodNext span {display:none;}
 .addtnlProdInfo .thumbText span {font-weight:bold; color:#666666;}
 
 /*Middle Column*/
-.prodSummaryContainer, .prodReviewContainer {width:39.3617%; padding:0 10px 12px 0;}
-.prodSummaryWrapper {max-height:380px; overflow:auto; margin:10px; padding:20px; background:#ffffff; font-family:"open sans"; font-size:1.2em; font-weight:normal;} 
+.prodSummaryContainer, .prodReviewContainer, .prodWriteReviewContainer {width:39.3617%; padding:0 10px 12px 0;}
+.prodSummaryWrapper, #reviewFrm {max-height:380px; overflow:auto; margin:10px; padding:20px; background:#ffffff; font-family:"open sans"; font-size:1.2em; font-weight:normal;} 
 .prodSummaryWrapper h1 {font-family:oswald; font-size:1.8em; font-weight:normal;}
 .CRMButtonMenu div {color:#ffffff; font-family:montserrat; font-weight:normal; font-size:1.2em; text-decoration:underline; cursor:pointer;}
 .readReview {float:left; margin:10px 0 0 15px;}
@@ -208,6 +208,14 @@ a.prodPrev span, a.prodNext span {display:none;}
 .prodReviewInfo li.reviewSprite {clear:both; margin:4% 30%;}
 .productReviewsTemplateDetail blockquote {clear:both; margin:0;}
 .reviewLineItem {border-bottom:2px solid #000000;}
+
+.prodWriteReviewContainer  input, #reviewsMessage {height:auto; width:95%; font-family:montserrat; font-weight:normal; font-size:1.2em; padding:3% 0 3% 4%; color:#666666; border:2px solid #000000;}
+.prodWriteReviewContainer #reviewsMessage {height:110px;}
+.inlineRevButCont {height:60px; width:100;}
+.prodWriteReviewContainer .inlineRevButCont .inlineReviewButton {width:100%; background:#000000; color:#ffffff; font-size:1.4em; font-weight:bold; padding:15px 40px; text-align:right; float:none;}
+.iconPubRev {height:24px; width:26px; background-position:-83px -60px; position:relative; top:-44px; left:7%;}
+.inlineRevButCont:hover .inlineReviewButton {background:#ffc70e; color:#000000;}
+.inlineRevButCont:hover .iconPubRev {background-position:-42px -60px;}
 
 /*Right Column*/
 .prodBuyerContainer {width:24.5957%; padding:10px 0 0 0;}

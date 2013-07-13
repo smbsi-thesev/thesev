@@ -157,6 +157,40 @@ var store_thesev = function() {
 //any functions that are recycled should be here.
 		u : {
 		
+			/*
+P.pid, P.templateID are both required.
+modal id is fixed. data-pid is updated each time a new modal is created.
+if a modal is opened and p.pid matches data-pid, do NOT empty it. could be a modal that was closed (populated) but not submitted. preserve data.
+if the P.pid and data-pid do not match, empty the modal before openeing/populating.
+!!! incomplete.
+*/
+			showReviewFrmInline : function(P)	{
+				if(!P.pid || !P.templateID)	{
+					app.u.dump(" -> pid or template id left blank");
+					}
+				else	{
+					var $parent = $('#review-wrapper');
+//if no review wrapper has been created before, create one. 
+					if($parent.length == 0)	{
+						app.u.dump(" -> wrapper doesn't exist. create it.");
+						app.u.dump($("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}));
+						app.u.dump(('.prodWriteReviewContainer','#productTemplate_'+P.pid));
+						$parent = $("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}).appendTo('.prodWriteReviewContainer','#productTemplate_'+P.pid);
+						}
+					else	{
+						app.u.dump(" -> use existing wrapper. empty it.");
+//this is a new product being displayed in the viewer.
+						$parent.empty();
+						}
+				//	$parent.dialog({modal: true,width: ($(window).width() > 500) ? 500 : '90%',height:500,autoOpen:false,"title":"Write a review for "+P.pid});
+//the only data needed in the reviews form is the pid.
+//the entire product record isn't passed in because it may not be available (such as in invoice or order history, or a third party site).
+					$parent.append(app.renderFunctions.transmogrify({id:'review-wrapper_'+P.pid},P.templateID,{'pid':P.pid}));
+					$('.prodReviewContainer','#productTemplate_'+P.pid).css('display','none');
+					$('.prodWriteReviewContainer','#productTemplate_'+P.pid).css('display','block');
+					}
+				},
+		
 			runFooterCarousel : function() {
 				var $target = $('.logoCarousel');
 				if($target.data('isCarousel')) {} //only make it a carousel once (even though it's in the footer)
