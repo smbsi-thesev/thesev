@@ -91,10 +91,6 @@ var store_thesev = function() {
 				setTimeout(function() {
 					$('.prodSummaryContainer', $context).hide();
 					$('.prodReviewContainer', $context).show();
-		/*			$('.prodSelectSeeReviewButton', $context).hide();
-					$('.prodSelectSeeDescriptionButton', $context).show();
-					$('.prodSelectSeeDescriptionButton', $context).unbind();
-		*/			$('.prodSelectSeeDescriptionButton', $context).click(app.ext.store_thesev.a.showDescription);
 				}, 250);
 			}, //END showReviews
 			
@@ -104,16 +100,12 @@ var store_thesev = function() {
 				
 				app.u.dump('SHOW DESC');
 				
-				$('.prodSelectSeeDescriptionButton', $context).animate(1000);
+				$('.reviewClose', $context).animate(1000);
 				setTimeout(function() {
 					$('.prodReviewContainer', $context).hide();
 					$('.prodSummaryContainer', $context).show();
-					$('.prodSelectSeeDescriptionButton', $context).hide();
-					$('.prodSelectSeeReviewButton', $context).show();
-					$('.prodSelectSeeReviewButton', $context).unbind();
-					$('.prodSelectSeeReviewButton', $context).click(app.ext.store_thesev.a.showReviews);
 				}, 250);
-			}, //END showDescription
+			} //END showDescription
 		
 			}, //Actions
 

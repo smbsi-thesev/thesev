@@ -548,15 +548,25 @@ this will likely become more flexible in the future. ###
 <!--					<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span> -->
 			</section>
 			<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
-				<a href="#" class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"));'>See what others are saying!</a>
-				<a class='writeReview' href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</a>
+				<div class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"));'>See what others are saying!</div>
+				<div class='writeReview' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</div>
 			</menu>
 			
 		</div>
 		
 		<div class='prodReviewContainer displayNone floatLeft'>
-			<img src='images/work-with-me_220x210.png' width='220' height='210' />
-		</div>
+			<div class='prodSummaryWrapper' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+				<button class='floatRight reviewbutton reviewClose sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"));'></button> <!--  -->
+				<button class='floatRight reviewbutton sprite' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmTemplate"});' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></button>
+				<h1>What others are saying...</h1>
+				<div class='reviewSort'></div>
+				<div class='beFirst'>
+					<ul class='listStyleNone clearfix productReviewsList noReviews' id='prodViewerReviews' data-bind="var: reviews(reviews.@reviews); format:processList; loadsTemplate:productReviewsTemplateDetail;"></ul>
+				</div>
+			   <!-- <button class='prodSelectSeeDescriptionButton prodSelectSmallButtons inReview ui-button ui-state-default displayNone floatRight' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"));'>Close</button> 
+				<button class='prodSelectWriteReviewButton prodSelectSmallButtons ui-button ui-state-default floatRight' >Write a Review</button> -->
+			</div>
+        </div>
 		
 		<div class='prodBuyerContainer floatRight'>
 			<div class='workWithMe'>
@@ -1238,16 +1248,16 @@ used on a product layout. Some product have 'children' which may represent the s
 
 <!-- individual review template -->
 <ul>
-	<li id='productReviewsTemplateDetail' class='reviewLineItem clearfix'>
+	<li id='productReviewsTemplateDetail' class='reviewLineItem clearfix productReviewsTemplateDetail'>
 	<ul class='prodReviewInfo'>
-		<li data-bind='var:review(RATING); format:addClass; format:addClass; className:review_;' class='reviewSprite'></li>
+		<h2 data-bind='var:review(SUBJECT); format:text;'></h2>
 		<li data-bind='var:review(CUSTOMER_NAME); format:text;'></li>
-		<li data-bind='var:review(LOCATION); format:text; pretext:of ;'></li>
-		<li data-bind='var:review(CREATED_GMT); format:unix2mdy; pretext:on ;'></li>
-
+		<li data-bind='var:review(LOCATION); format:text; pretext: of ;'></li>
+		<li data-bind='var:review(CREATED_GMT); format:unix2mdy; pretext: on ;'></li>
+		<li data-bind='var:review(RATING); format:addClass; format:addClass; className:review_;' class='reviewSprite'></li>
+		
 	</ul>
 	<blockquote>
-		<h2 data-bind='var:review(SUBJECT); format:text;'></h2>
 		<p data-bind='var:review(MESSAGE); format:text; ;'></p>
 	</blockquote>
 	</li>
