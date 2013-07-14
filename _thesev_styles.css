@@ -211,9 +211,9 @@ a.prodPrev span, a.prodNext span {display:none;}
 
 .prodWriteReviewContainer  input, #reviewsMessage {height:auto; width:95%; font-family:montserrat; font-weight:normal; font-size:1.2em; padding:3% 0 3% 4%; color:#666666; border:2px solid #000000;}
 .prodWriteReviewContainer #reviewsMessage {height:110px;}
-.inlineRevButCont {height:60px; width:100;}
-.prodWriteReviewContainer .inlineRevButCont .inlineReviewButton {width:100%; background:#000000; color:#ffffff; font-size:1.4em; font-weight:bold; padding:15px 40px; text-align:right; float:none;}
-.iconPubRev {height:24px; width:26px; background-position:-83px -60px; position:relative; top:-44px; left:7%;}
+.inlineRevButCont {height:60px; width:100%;}
+.prodWriteReviewContainer .inlineRevButCont .inlineReviewButton {width:100%; background:#000000; color:#ffffff; font-size:1.4em; font-weight:bold; padding:15px 40px; text-align:right; float:none; margin:0 0 5px 0;}
+.iconPubRev {height:24px; width:26px; background-position:-83px -60px; position:relative; top:15px; left:7%;}
 .inlineRevButCont:hover .inlineReviewButton {background:#ffc70e; color:#000000;}
 .inlineRevButCont:hover .iconPubRev {background-position:-42px -60px;}
 
