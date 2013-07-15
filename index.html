@@ -748,6 +748,24 @@ this will likely become more flexible in the future. ###
 <!-- CUSTOM IN-LINE REVIEW TEMPLATE FOR PRODUCT PAGE -->
 <div id='reviewFrmInlineTemplate'>
 	<form name="reviewFrm" id="reviewFrm" action="#" onSubmit="app.ext.store_crm.u.handleReviews('reviewFrm'); return false;">
+		<button class='floatRight reviewbutton sprite'></button>
+		<h1>Let us know what you think!</h1>
+		
+		<label for='reviewsRating'>What would you rate this product?:</label>
+		<select name="RATING" id='reviewsRating'>
+			<option class='sprite' value="10">5</option>
+			<option class='sprite'value="9">4.5</option>
+			<option class='sprite' value="8">4</option>
+			<option class='sprite' value="7">3.5</option>
+			<option class='sprite' value="6">3</option>
+			<option class='sprite' value="5">2.5</option>
+			<option class='sprite' value="4">2</option>
+			<option class='sprite' value="3">1.5</option>
+			<option class='sprite' value="2">1</option>
+			<option class='sprite' value="1">.5</option>
+		</select>
+		<br>
+		
 		<input type='hidden' name='pid' id='reviewsPid' value='' data-bind='var: product(pid); format:popVal;' />
 			<!--<label for='reviewsCustomerName'>Your Name:</label>-->
 		<input type="text" name="CUSTOMER_NAME" id='reviewsCustomerName' value="" MAXLENGTH="30" placeholder='Tell us your name...' />
@@ -760,21 +778,6 @@ this will likely become more flexible in the future. ###
 		<br>
 			<!--<label for='reviewsMessage'>Review:</label>-->
 		<textarea name="MESSAGE" id='reviewsMessage' placeholder='Tell us about the product... e.g. "Slides on easy, built to last, vibrant strokes...'></textarea>
-		<br>
-
-		<label for='reviewsRating'>Score:</label>
-		<select name="RATING" id='reviewsRating'>
-			<option value="10">5</option>
-			<option value="9">4.5</option>
-			<option value="8">4</option>
-			<option value="7">3.5</option>
-			<option value="6">3</option>
-			<option value="5">2.5</option>
-			<option value="4">2</option>
-			<option value="3">1.5</option>
-			<option value="2">1</option>
-			<option value="1">.5</option>
-		</select>
 		<br>
 
 		<div class='inlineRevButCont'>
