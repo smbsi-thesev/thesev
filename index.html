@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130713160900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130714195600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -548,15 +548,17 @@ this will likely become more flexible in the future. ###
 <!--					<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span> -->
 			</section>
 			<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
-				<div class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"));'>See what others are saying!</div>
-				<div class='writeReview' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</div>
+				<div class='readReview' onClick='app.ext.store_thesev.a.showReviews($(this).parent().data("pid"), $(this), ".prodSummaryContainer", ".prodReviewContainer");'>See what others are saying!</div>
+				<div class='writeReview' onClick='app.ext.store_thesev.u.showReviewFrmInline({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmInlineTemplate"}, ".prodSummaryContainer"); return false;' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>Tell us what you think!</div>
+				<!-- ORIG SHOW REVIEW IN MODAL
+				<div class='writeReview' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Tell us what you think!</div>-->
 			</menu>
 		</div>
 		
 		<div class='prodReviewContainer displayNone floatLeft'>
 			<div class='prodSummaryWrapper' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
-				<button class='floatRight reviewbutton reviewClose sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"));'></button> <!--  -->
-				<button class='floatRight reviewbutton sprite' onClick='app.ext.store_thesev.u.showReviewFrmInline({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmInlineTemplate"});' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></button>
+				<button class='floatRight reviewbutton reviewClose sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"), $(this), ".prodReviewContainer", ".prodSummaryContainer");'></button> <!--  -->
+				<button class='floatRight reviewbutton sprite' onClick='app.ext.store_thesev.u.showReviewFrmInline({"pid":$(this).attr("data-pid"),"templateID":"reviewFrmInlineTemplate"}, ".prodReviewContainer");' data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></button>
 				<h1>What others are saying...</h1>
 				<div class='reviewSort'></div>
 				<div class='beFirst'>
@@ -748,7 +750,9 @@ this will likely become more flexible in the future. ###
 <!-- CUSTOM IN-LINE REVIEW TEMPLATE FOR PRODUCT PAGE -->
 <div id='reviewFrmInlineTemplate'>
 	<form name="reviewFrm" id="reviewFrm" action="#" onSubmit="app.ext.store_crm.u.handleReviews('reviewFrm'); return false;">
-		<button class='floatRight reviewbutton sprite'></button>
+		<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+			<div class='floatRight reviewbutton sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"), $(this), ".prodWriteReviewContainer", ".prodSummaryContainer");'></div>
+		</div>
 		<h1>Let us know what you think!</h1>
 		
 		<label for='reviewsRating'>What would you rate this product?:</label>

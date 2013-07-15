@@ -82,28 +82,29 @@ var store_thesev = function() {
 		a : {
 		
 			//places customer reviews on the product page
-			showReviews : function(pid) {
+			showReviews : function(pid, action, hide, show) {
 				var $context = $('#productTemplate_'+app.u.makeSafeHTMLId(pid));
 				
 				app.u.dump('SHOW REVIEW');
 			
-				$('.readReview', $context).animate(1000);
+				$(action, $context).animate(1000);
 				setTimeout(function() {
-					$('.prodSummaryContainer', $context).hide();
-					$('.prodReviewContainer', $context).show();
+					$(hide, $context).hide();
+					$(show, $context).show();
 				}, 250);
 			}, //END showReviews
 			
 			//reverts customer reveiws to the product description on the product page
-			showDescription : function(pid) {
+			showDescription : function(pid, action, hide, show) {
 				var $context = $('#productTemplate_'+app.u.makeSafeHTMLId(pid));
 				
 				app.u.dump('SHOW DESC');
+				app.u.dump(pid);
 				
-				$('.reviewClose', $context).animate(1000);
+				$(action, $context).animate(1000);
 				setTimeout(function() {
-					$('.prodReviewContainer', $context).hide();
-					$('.prodSummaryContainer', $context).show();
+					$(hide, $context).hide();
+					$(show, $context).show();
 				}, 250);
 			} //END showDescription
 		
@@ -164,7 +165,7 @@ if a modal is opened and p.pid matches data-pid, do NOT empty it. could be a mod
 if the P.pid and data-pid do not match, empty the modal before openeing/populating.
 !!! incomplete.
 */
-			showReviewFrmInline : function(P)	{
+			showReviewFrmInline : function(P, hide)	{
 				if(!P.pid || !P.templateID)	{
 					app.u.dump(" -> pid or template id left blank");
 					}
@@ -173,8 +174,8 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 //if no review wrapper has been created before, create one. 
 					if($parent.length == 0)	{
 						app.u.dump(" -> wrapper doesn't exist. create it.");
-						app.u.dump($("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}));
-						app.u.dump(('.prodWriteReviewContainer','#productTemplate_'+P.pid));
+//						app.u.dump($("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}));
+//						app.u.dump(('.prodWriteReviewContainer','#productTemplate_'+P.pid));
 						$parent = $("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}).appendTo('.prodWriteReviewContainer','#productTemplate_'+P.pid);
 						}
 					else	{
@@ -186,7 +187,7 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 //the only data needed in the reviews form is the pid.
 //the entire product record isn't passed in because it may not be available (such as in invoice or order history, or a third party site).
 					$parent.append(app.renderFunctions.transmogrify({id:'review-wrapper_'+P.pid},P.templateID,{'pid':P.pid}));
-					$('.prodReviewContainer','#productTemplate_'+P.pid).css('display','none');
+					$(hide,'#productTemplate_'+P.pid).css('display','none');
 					$('.prodWriteReviewContainer','#productTemplate_'+P.pid).css('display','block');
 					}
 				},
