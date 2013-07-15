@@ -43,6 +43,7 @@ var store_thesev = function() {
 				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runProductPageCarousel($context);
+					app.ext.store_thesev.u.sansReviews($context);
 				}]);
 				
 				
@@ -158,7 +159,27 @@ var store_thesev = function() {
 //any functions that are recycled should be here.
 		u : {
 		
-			/*
+			sansReviews : function($context) {
+				if($('.noReviews', $context).children().length === 0) {
+					app.u.dump('No reviews. Running existing messge check');
+					if(($('.reviewsCont', $context).length === 0) || ($('.reviewsCont', $context).length === null)) {
+						app.u.dump('No message exists. Display message');
+						$('.beFirst', $context).append(
+						'<p class="reviewsCont">'
+						+'Be the <strong>First</strong> to Review This Product!'
+						+'</p>');
+						app.u.dump('Reveiw message displaying for : '+$context);
+					}
+					else {
+						app.u.dump('Message exists, do nothing');
+					}
+				}
+				else {
+					app.u.dump('Reviews exist, function aborted. Reviews length: '+$('.reviewsBind').children.length);
+				}
+			},
+		
+/*
 P.pid, P.templateID are both required.
 modal id is fixed. data-pid is updated each time a new modal is created.
 if a modal is opened and p.pid matches data-pid, do NOT empty it. could be a modal that was closed (populated) but not submitted. preserve data.
@@ -171,7 +192,7 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 					}
 				else	{
 					var $parent = $('#review-wrapper'+P.pid);
-//if no review wrapper has been created before, create one. 
+					//if no review wrapper has been created before, create one. 
 					if($parent.length == 0)	{
 						app.u.dump(" -> wrapper doesn't exist. create it.");
 //						app.u.dump($("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}));
@@ -180,10 +201,10 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 						}
 					else	{
 						app.u.dump(" -> use existing wrapper. empty it.");
-//this is a new product being displayed in the viewer.
+						//this is a new product being displayed in the viewer.
 						$parent.empty();
 						}
-				//	$parent.dialog({modal: true,width: ($(window).width() > 500) ? 500 : '90%',height:500,autoOpen:false,"title":"Write a review for "+P.pid});
+//	$parent.dialog({modal: true,width: ($(window).width() > 500) ? 500 : '90%',height:500,autoOpen:false,"title":"Write a review for "+P.pid});
 //the only data needed in the reviews form is the pid.
 //the entire product record isn't passed in because it may not be available (such as in invoice or order history, or a third party site).
 					$parent.append(app.renderFunctions.transmogrify({id:'review-wrapper_'+P.pid},P.templateID,{'pid':P.pid}));
