@@ -384,8 +384,8 @@ media querries
 	.acwLink {padding:14px 0 0 0;}
 /*HOMEPAGE*/
 	#mainContentArea .templateWrapper {width:320px;}
-	
-	.prodThumPad {margin:0 9% 5% 13%;}
+/*PRODUCT PAGE*/
+	.prodThumPad {margin:0 9% 5% 9%;}
 	
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
