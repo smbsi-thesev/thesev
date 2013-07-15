@@ -170,13 +170,13 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 					app.u.dump(" -> pid or template id left blank");
 					}
 				else	{
-					var $parent = $('#review-wrapper');
+					var $parent = $('#review-wrapper'+P.pid);
 //if no review wrapper has been created before, create one. 
 					if($parent.length == 0)	{
 						app.u.dump(" -> wrapper doesn't exist. create it.");
 //						app.u.dump($("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}));
 //						app.u.dump(('.prodWriteReviewContainer','#productTemplate_'+P.pid));
-						$parent = $("<div \/>").attr({"id":"review-wrapper",'data-pid':P.pid}).appendTo('.prodWriteReviewContainer','#productTemplate_'+P.pid);
+						$parent = $("<div \/>").attr({"id":"review-wrapper"+P.pid,'data-pid':P.pid}).appendTo('.prodWriteReviewContainer','#productTemplate_'+P.pid);
 						}
 					else	{
 						app.u.dump(" -> use existing wrapper. empty it.");
