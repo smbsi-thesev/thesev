@@ -63,6 +63,7 @@ img {max-width:100%;}
 
 .templateWrapper {height:auto; width:1070px; margin:0 auto;} 
 
+.quickView {border:none; color:#ffffff; font-family:montserrat; padding:4px;}
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .thumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative;}
 .catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding: 6%; font-family:montserrat; font-weight:normal; font-size:1.2em; text-align:center; position:absolute; bottom:0;}
@@ -395,11 +396,11 @@ media querries
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
-	.anyMasonry.masonOne img {box-shadow: inset 0px 0px 86px -34px;}
-	.anyMasonry.masonTwo  {height:120px; width:115px;}
+	.anyMasonry.masonOne img {height:296px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonTwo  {height:120px; width:115px; margin:8px 11px;}
 	.anyMasonry.masonTwo img {height:120px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
 	.anyMasonry.masonThree {height:120px; width:296px;}
-	.anyMasonry.masonThree img {height:120px; width:296px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonThree img {height:120px; width:120px; box-shadow: inset 0px 0px 86px -34px;}
 	.anyMasonry.masonFour {height:296px; width:115px;}
-	.anyMasonry.masonFour img {height:296px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonFour img {height:115px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
 }
