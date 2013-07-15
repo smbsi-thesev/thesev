@@ -3009,8 +3009,14 @@ else	{
 					var cartObj = app.ext.store_product.u.buildCartItemAppendObj($form);
 					if(cartObj)	{
 						if(cartObj)	{
-							app.calls.cartItemAppend.init(cartObj,{},'immutable');
-							app.model.destroy('cartDetail');
+/*THESEV*/					app.calls.cartItemAppend.init(cartObj,{'callback':function(rd){
+/*THESEV*/						if(obj.action === 'message') {
+/*THESEV*/			//				app.u.throwMessage('Product successfully added to cart');
+/*THESEV*/							}
+/*THESEV*/					}},'immutable');
+/*THESEV*/					app.model.destroy('cartDetail');
+/*THESEV*/					$('.prodAddedToCart').show();
+/*THESEV*/					setTimeout(function() {$('.prodAddedToCart').hide();},10000);
 							app.calls.cartDetail.init({'callback':function(rd){
 								if(obj.action === "modal"){
 									showContent('cart',obj);

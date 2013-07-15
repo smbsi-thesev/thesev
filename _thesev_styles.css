@@ -249,6 +249,7 @@ a.prodPrev span, a.prodNext span {display:none;}
 .productPage  .cents {text-decoration:underline;}
 .prodViewerAddToCartForm {margin:0 0 5px 0; position:relative;}
 .productPage .addToCartButton, .productPage .addToWishlistButton {height:80px; width:100%; font-family:montserrat; font-size:1.8em; font-weight:bold; border:none; color:#ffffff; margin:0 0 10px 0;}
+.prodAddedToCart {height:63px; width:100%; padding:17px 0 0 0; position:absolute; z-index:5; top:12px; background:#dbf8fb; text-align:center; font-family:montserrat; font-size:2em; font-weight:bold;}
 .productPage .iconATC {height:27px; width:35px; position:absolute; top:36px; left:20px; background-position:-328px 0;}
 .productPage .iconATW {height:25px; width:30px; position:absolute; top:129px; left:35px; background-position:-248px 0;}
 .hoverWrapper:hover .iconATW {background-position:-288px 0;}
@@ -322,6 +323,7 @@ media querries
 /*****RIGHT (LOWER) COLUMN*/
 	.priceContainer {width:22%;}
 	.productPage .addToCartButton, .productPage .addToWishlistButton {height:90px;}
+	.prodAddedToCart  {height:73px;}
 	.productPage .iconATC  {top: auto; bottom:115px; left:42%;}
 	.productPage .iconATW  {top: auto; bottom:16px; left:42%;}
 }

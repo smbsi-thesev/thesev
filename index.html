@@ -600,9 +600,10 @@ this will likely become more flexible in the future. ###
 					<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
 					<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 				</span>
-
+				
 			</div>
-			<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
+			<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'message'}); return false;">
+				<div class='prodAddedToCart primaryCT displayNone'>We've put it in your cart!</div>
 				<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
 				<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone displayNone'></fieldset>
 				<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all addToCartButton primaryColorHover displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
@@ -611,7 +612,7 @@ this will likely become more flexible in the future. ###
 					<div class='iconATW sprite'></div>
 					<button class='addToWishlistButton secondaryColor' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;"><span class='sprite'></span>Favorite</button>
 				</div>
-				</form>
+			</form>
 		
 			
 		</div>
