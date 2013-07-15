@@ -286,7 +286,7 @@ media querries
 .productPageBoxShadower {width:200px;}
 .prodPrev, .prodNext {top:85px;}*/
 /*****CENTER COLUMN*/
-	.prodSummaryContainer, .prodReviewContainer {width:54.762%; padding:0 0 12px 0;}
+	.prodSummaryContainer, .prodReviewContainer, .prodWriteReviewContainer {width:54.762%; padding:0 0 12px 0;}
 /*****RIGHT COLUMN*/	
 	.prodBuyerContainer {width:100%;}
 	.workWithMe {margin:0 0 2% 6%; float:left;}
@@ -317,6 +317,7 @@ media querries
 /*****CENTER COLUMN*/
 	.readReview {margin:5px 0 0 0; text-align:center; width:100%;}	
 	.writeReview {margin:5px 0 0 0; text-align:center; width:100%;}
+	.iconPubRev {display:none;}
 /*****RIGHT (LOWER) COLUMN*/
 	.priceContainer {width:22%;}
 	.productPage .addToCartButton, .productPage .addToWishlistButton {height:90px;}
@@ -356,7 +357,9 @@ media querries
 	.imageContainer {width:100%;}
 	.prodThumPad {margin:0 13% 5% 13%; padding:0 12% 5% 6.5%;}
 /*****CENTER (MIDDLE) COLUMN*/
-	.prodSummaryContainer, .prodReviewContainer {width:100%; clear:both;}
+	.prodSummaryContainer, .prodReviewContainer, .prodWriteReviewContainer {width:100%; clear:both;}
+	.prodWriteReviewContainer .inlineRevButCont .inlineReviewButton {padding:15px 30px;}
+	.iconPubRev {display:block;}
 /*****RIGHT (LOWER) COLUMN*/
 	.prodBuyerContainer {width:100%;}
 	.priceContainer, .prodViewerAddToCartForm {width:50%;}
@@ -388,7 +391,7 @@ media querries
 	#mainContentArea .templateWrapper {width:320px;}
 /*PRODUCT PAGE*/
 	.prodThumPad {margin:0 9% 5% 9%;}
-	
+	.iconPubRev {display:none;}
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
