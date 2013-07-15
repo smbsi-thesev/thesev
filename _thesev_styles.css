@@ -211,9 +211,10 @@ a.prodPrev span, a.prodNext span {display:none;}
 .productReviewsTemplateDetail blockquote {clear:both; margin:0;}
 .reviewLineItem {border-bottom:2px solid #000000;}
 
-.prodWriteReviewContainer h1 {font-size:1.52em; float:left;}
+.prodWriteReviewContainer h1 {font-size:1.42em; float:left;}
 .prodWriteReviewContainer #reviewFrm label {height:auto; width:100%; text-align:center; margin:10px 0 6px 0;}
 .prodWriteReviewContainer #reviewFrm select {height:auto; width:200px; margin:5px 0 0 18%; clear:both; display:block;}
+.prodWriteReviewContainer #reviewFrm .reviewbutton.bToReviewButton {height:28px; width:29px; background-position:-124px -58px; margin:0;}
 #reviewFrm select#reviewsRating option {height:28px;}
 #reviewFrm select#reviewsRating option[value='10'] {background-position:-322px -185px;}
 #reviewFrm select#reviewsRating option[value='9'] {background-position:-322px -217px;}

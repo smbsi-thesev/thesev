@@ -752,6 +752,7 @@ this will likely become more flexible in the future. ###
 	<form name="reviewFrm" id="reviewFrm" action="#" onSubmit="app.ext.store_crm.u.handleReviews('reviewFrm'); return false;">
 		<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 			<div class='floatRight reviewbutton sprite' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"), $(this), ".prodWriteReviewContainer", ".prodSummaryContainer");'></div>
+			<div class='floatRight reviewbutton sprite bToReviewButton' onClick='app.ext.store_thesev.a.showDescription($(this).parent().data("pid"), $(this), ".prodWriteReviewContainer", ".prodReviewContainer");'></div>
 		</div>
 		<h1>Let us know what you think!</h1>
 		
