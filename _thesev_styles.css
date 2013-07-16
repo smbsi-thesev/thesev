@@ -275,6 +275,11 @@ Cart
 .qtySelectStyler {height:28px; width:98%; margin:10px 0 0 0; color:#999999; border:2px solid #000000; background-repeat:no-repeat; background-position:188px -100px; border-right:3px solid #000; overflow:hidden; display:inline-block; font-size:1.2em;}
 .qtySelectStyler .qtyInput {height:28px; width:109%; padding:3% 1% 1% 1%; color:#999999; border:none; background:transparent;}
 .qtySelectStyler .qtyInput option {height:20px; width:100%; padding:4px 0 0 4px;}
+#cartStuffList .removeButton.ui-state-default {height:50px; width:50px; background:url(images/sprites-500x500.png) 342px -48px transparent; border:none; margin:10px 0 0 0;}
+#cartStuffList .removeButton.ui-state-default span {display:none;}
+#cartStuffList .moveToWishlist {height:50px; width:170px; background:#000000; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right;}
+#cartStuffList .moveToWishlist:hover {background:#0c8a96;}
+#cartStuffList .moveToWishlist span {height:32px; width:38px; background-position:-205px -55px; position:absolute; bottom:22px; left:9px; z-index:1;}
 
 /*************************************************************************************
 breadcrumb
