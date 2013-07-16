@@ -267,6 +267,10 @@ productTemplateQuickView
 Cart
 *************************************************************************************/
 
+/*cartTemplate*/
+.cartStuffContainer {}
+.cartSummaryTotalsContainer {height:auto; width:220px; margin:20px 8px 0 0;}
+
 /*productListTemplateCart*/
 #cartStuffList.fluidList li {height:360px; width:220px; background:none; box-shadow:0 0 0 0; border:none; float:left;}
 #cartStuffList.lineItemProdlist > li {width:220px !important;}
