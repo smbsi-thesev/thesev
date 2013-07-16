@@ -796,7 +796,45 @@ this will likely become more flexible in the future. ###
 </div>
 
 
+<!-- cart line-item template -->
+<ul>
+	<li id='productListTemplateCart' class='padMargBorderBottom'>
 
+			
+		
+			<div class='floatLeft cartImageCont'>
+				<div class='boxShadower'></div>
+				<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='200' height='200' />
+				<div class='prodListDesc'>
+					<span data-bind='var: product(prod_name); format:text; '></span>
+					<span data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; pretext: x ;' ></span>
+				</div>
+			</div>
+			<!-- <span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span> -->
+			<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
+			
+			<div class='qtySelectStyler sprite'>
+				<select type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;'>
+				<option value='1'>Quantity: 1</option>
+				<option value='2'>Quantity: 2</option>
+				<option value='3'>Quantity: 3</option>
+				<option value='4'>Quantity: 4</option>
+				<option value='5'>Quantity: 5</option>
+				<option value='6'>Quantity: 6</option>
+				</select>
+				<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
+			</div>
+	<!--		
+			<input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
+			<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->	
+		
+		
+		<button class='floatRight removeButton' data-bind='format:removeItemBtn; extension:store_cart; useParentData:true;' >Remove Item From Cart</button>
+		<button class='floatRight moveToWishlist marginRight' data-bind='format:moveToWishlistButton; extension:myRIA; useParentData:true;' >Move to Wishlist</button>
+		
+		<!-- <div class='ztable_row_small prodOptions' data-bind='var: variations(%options); format:selectedOptionsDisplay;'></div> -->
+	</li>
+</ul>
 
 
 
@@ -1243,30 +1281,7 @@ So the cart template should contain these two elements and the extension should 
 
 
 
-<!-- cart line-item template -->
-<ul>
-	<li id='productListTemplateCart' class='padMargBorderBottom clearfix'>
 
-		<button class='floatRight removeButton' data-bind='format:removeItemBtn; extension:store_cart; useParentData:true;' >Remove Item From Cart</button>
-		<button class='floatRight moveToWishlist marginRight' data-bind='format:moveToWishlistButton; extension:myRIA; useParentData:true;' >Move to Wishlist</button>
-
-		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='75' height='75' /></div>
-
-		<h4 data-bind='var: product(prod_name); format:text; '></h4>
-
-		<div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div>
-
-		<div>
-		qty: <input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
-		<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
-		<span data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; pretext: x ;' ></span>
-		<span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span>
-
-		</div>
-
-		<div class='ztable_row_small prodOptions' data-bind='var: variations(%options); format:selectedOptionsDisplay;'></div>
-	</li>
-</ul>
 
 
 
