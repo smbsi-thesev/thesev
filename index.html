@@ -819,47 +819,48 @@ So the cart template should contain these two elements and the extension should 
 			</div>
 
 			<div class='cartSummaryTotalsContainer floatRight'>
-				<div class='ui-widget ui-widget-content ui-helper-clearfix ui-corner-all'>
-					<h2 class='ui-widget-header ui-helper-clearfix ui-corner-all ui-header'>Cart Totals</h2>
-					<div class='cartSummaryContainer'>
-						<section id='cartTemplateCostSummary' class='cartSummary'>
-							<div data-bind="var: cart(sum/items_total); format:money; className:orderSubtotal; hideZero:false; currencySign: $; pretext:Subtotal: ; "></div>
-							<div data-bind='var: cart(sum/tax_total); format:money; className:orderTax; hideZero:true;currencySign: $; pretext:Tax: ; '></div>
-							<div data-bind='var: cart(want/shipping_id); format:shipInfoById; className:orderShipping; hideZero:false; extension:store_cart;'></div>
-							<div data-bind='var: cart(sum/order_total); format:money; className:orderTotal; hideZero:false; currencySign: $; pretext:Order Total: ; '></div>
-							<div data-bind='var: cart(sum/gfc_total); format:money; className:orderGiftcardTotal; hideZero:false; currencySign: $; pretext:Giftcard(s): ; '></div>
-							<div data-bind='var: cart(sum/pnt_total); format:money; className:rewardPointsTotal; hideZero:false; currencySign: $; pretext:Reward Points: ; '></div>
-							<div data-bind='var: cart(sum/rmc_total); format:money; className:returnsCreditTotal; hideZero:false; currencySign: $; pretext:Returns Credit: ; '></div>
-							<div data-bind='var: cart(sum/balance_due_total); format:orderBalance; className:orderBalanceDue; hideZero:false; currencySign: $; pretext:Estimated Total: ; extension:store_cart;'></div>
-						</section>
+				<div class='cartSummaryContainer'>
+					<section id='cartTemplateCostSummary' class='cartSummary'>
+						<div class='cartSubTot'data-bind="var: cart(sum/items_total); format:money; className:orderSubtotal; hideZero:false; currencySign: ; "></div>
+						<div class='cartSubTotText'>SUBTOTAL</div>
+						<!--
+						<div data-bind='var: cart(sum/tax_total); format:money; className:orderTax; hideZero:true;currencySign: $; pretext:Tax: ; '></div>
+						<div data-bind='var: cart(want/shipping_id); format:shipInfoById; className:orderShipping; hideZero:false; extension:store_cart;'></div>
+						<div data-bind='var: cart(sum/order_total); format:money; className:orderTotal; hideZero:false; currencySign: $; pretext:Order Total: ; '></div>
+						<div data-bind='var: cart(sum/gfc_total); format:money; className:orderGiftcardTotal; hideZero:false; currencySign: $; pretext:Giftcard(s): ; '></div>
+						<div data-bind='var: cart(sum/pnt_total); format:money; className:rewardPointsTotal; hideZero:false; currencySign: $; pretext:Reward Points: ; '></div>
+						<div data-bind='var: cart(sum/rmc_total); format:money; className:returnsCreditTotal; hideZero:false; currencySign: $; pretext:Returns Credit: ; '></div>
+						<div data-bind='var: cart(sum/balance_due_total); format:orderBalance; className:orderBalanceDue; hideZero:false; currencySign: $; pretext:Estimated Total: ; extension:store_cart;'></div>
+						-->
+					</section>
 
-						<section id='cartTemplateShippingContainer'>
-							<h3>Shipping:</h3>
-							<ul class='noPadOrMargin listStyleNone cartShipMethods' data-bind='var: cart(@SHIPMETHODS); format:shipMethodsAsRadioButtons; extension:store_cart;'></ul>
-						</section>
-
-						<section class='stdMargin'>
-							<div class='cartZipCodeContainer'>
-								<label for='data-ship_zip'>Zip/Postal Code:</label>
-								<input type='text' size='6'  name='ship/postal' id='data-ship_zip' value='' data-bind='var: cart(ship/postal); format:popVal;' maxlength='10' onChange="app.calls.cartSet.init({'ship/postal':this.value, 'ship/region':''});
-								app.ext.store_cart.u.updateCartSummary();
-								app.ext.store_cart.calls.cartShippingMethodsWithUpdate.init();
-								app.model.dispatchThis('immutable');"  />
-							</div>
-
-							<!-- some buttons that are alternatives to checkout. fewer is better -->
-							<menu class='cartAltButtonsContainer noPadOrMargin'>
-								<button class='ui-button-text ui-button ui-state-default ui-corner-all continueShoppingButton' onClick="$('#modalCart').dialog('close');">Continue Shopping</button>
-							</menu>
-
-							<div class='checkoutButtonsContainer'>
-								<span title='proceed to secure checkout'><button class='ui-button ui-button-text ui-state-default ui-corner-all checkoutButton' onClick="showContent('checkout',{});">Store Checkout</button></span>
-								<span id='paypalECButton' data-bind='var: cart(cart/cartid); format:paypalECButton;'></span>
-								<span id='googleCheckoutButton' class='pointer' data-bind='var: cart(sum/items_total); format:googleCheckoutButton;'></span>
-								<span id='amazonCheckoutButton' class='pointer' data-bind='var: cart(cart/cartid); format:amazonCheckoutButton;'></span>
-							</div>
-						</section>
-					</div>
+		<!-- Was asked to remove this section from cart and leave for checkout page 
+					<section id='cartTemplateShippingContainer'>
+						<h3>Shipping:</h3>
+						<ul class='noPadOrMargin listStyleNone cartShipMethods' data-bind='var: cart(@SHIPMETHODS); format:shipMethodsAsRadioButtons; extension:store_cart;'></ul>
+					</section>
+					<section class='stdMargin'>
+						<div class='cartZipCodeContainer'>
+							<label for='data-ship_zip'>Zip/Postal Code:</label>
+							<input type='text' size='6'  name='ship/postal' id='data-ship_zip' value='' data-bind='var: cart(ship/postal); format:popVal;' maxlength='10' onChange="app.calls.cartSet.init({'ship/postal':this.value, 'ship/region':''});
+							app.ext.store_cart.u.updateCartSummary();
+							app.ext.store_cart.calls.cartShippingMethodsWithUpdate.init();
+							app.model.dispatchThis('immutable');"  />
+						</div>
+		
+						<!-- some buttons that are alternatives to checkout. fewer is better
+						<menu class='cartAltButtonsContainer noPadOrMargin'>
+							<button class='ui-button-text ui-button ui-state-default ui-corner-all continueShoppingButton' onClick="$('#modalCart').dialog('close');">Continue Shopping</button>
+						</menu>
+		-->
+					<section>
+						<div class='checkoutButtonsContainer'>
+							<span title='proceed to secure checkout'><button class='checkoutButton primaryColorHover' onClick="showContent('checkout',{});"><span class='iconCkOt sprite'></span>CHECK OUT<br><span class='safeSec'>100% SAFE & SECURE</span></button></span>
+							<span id='paypalECButton' data-bind='var: cart(cart/cartid); format:paypalECButton;'></span>
+							<!--<span id='googleCheckoutButton' class='pointer' data-bind='var: cart(sum/items_total); format:googleCheckoutButton;'></span>
+							<span id='amazonCheckoutButton' class='pointer' data-bind='var: cart(cart/cartid); format:amazonCheckoutButton;'></span> -->
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
