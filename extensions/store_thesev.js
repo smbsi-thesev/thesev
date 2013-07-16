@@ -44,6 +44,7 @@ var store_thesev = function() {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runProductPageCarousel($context);
 					app.ext.store_thesev.u.sansReviews($context);
+		//			app.ext.store_thesev.u.runScroll($context);
 				}]);
 				
 				
@@ -159,6 +160,12 @@ var store_thesev = function() {
 //any functions that are recycled should be here.
 		u : {
 		
+	/*		runScroll : function($context) {
+				$('.prodSummaryWrapper', $context).jScrollPane({
+					autoReinitialise : true
+					});
+			},
+	*/	
 			sansReviews : function($context) {
 				if($('.noReviews', $context).children().length === 0) {
 					app.u.dump('No reviews. Running existing messge check');
