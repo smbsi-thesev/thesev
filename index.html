@@ -1604,56 +1604,41 @@ The 'data-action' attribute is used to assign an onclick.
 
 
 <div id='loginFormForModal' class='loginOption displayNone' title='Please log in'>
+	<!-- the contents of this div/id are toggled on/off when login/logout occurs. don't change the ID -->
+	<p id='loginMessaging' class='marginBottom appMessaging'></p>
 
-<!-- the contents of this div/id are toggled on/off when login/logout occurs. don't change the ID -->
+	<div id='loginFormContainer'>
+		<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin1").val(),$("#modalLoginpassword").val()); return false;' id='modalLoginForm'>
+			<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+				<fieldset>
+				
+				<div class='createAccount'>
+					<h1 class='smallcaps'>First Time With Us?</h1>
+					<p>If you have never made a purchase at this web site and have never subscribed to this store's mailing list,
+						please choose this option.</p>
+					<button class='smallcaps modalCreateButton' onClick="return showContent('customer',{'show':'createaccount'});">Create an Account</button>
+				</div>
 
-
-<p id='loginMessaging' class='marginBottom appMessaging'></p>
-
-<div id='loginFormContainer'>
-<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin").val(),$("#modalLoginpassword").val()); return false;' id='modalLoginForm'>
-<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-	<fieldset>
+				<div id="gotAccount"> 
+					<h1 class='smallcaps'>Welcome Back</h1>
+					<!-- Third parameter is id of message destination -->
+					<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin1").val(),$("#modalLoginpassword").val(),$("#loginMessaging")); return false;' id='modalLoginForm'>
+						<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+						<fieldset>
+							<input type='email' class='zform_textbox zform_email' name='login' id='modalLoginlogin1' value='' size='20' placeholder='E-mail address' />
+							<input type='password' class='zform_textbox zform_password' name='password' id='modalLoginpassword' value='' size='20' placeholder='Password' />
+							<input type='submit' value='Log In' class='smallcaps ui-button-text ui-button ui-state-default ui-corner-all ' />
+						</fieldset>
+					</form>
+					<a href="#" onClick="app.calls.appBuyerPasswordRecover.init($('#modalLoginLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'loginMessaging'}); app.model.dispatchThis('immutable'); return false;">Forgot your password?<br> Enter your username and click hear to retrieve it!</a>
+				</div>
+			</fieldset>
+		</form>
+	</div><!-- /recoverPasswordContainer -->
 
 	<div>
-	<label for='modalLoginlogin'>Login/Email</label>
-	<input type='email' class='zform_textbox zform_email'  name='login' id='modalLoginlogin' value='' size='25' />
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
 	</div>
-
-	<div>
-	<label for='modalLoginpassword'>Password</label>
-	<input type='password' class='zform_textbox zform_password'   name='password' id='modalLoginpassword' value='' size='25' />
-	</div>
-
-	<div>
-	<input type='submit' value='log in' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
-	</div>
-	</fieldset>
-</form>
-
-<div id='recoverPasswordContainer'>
-<hr />
-
-<h3 class='marginBottom'>Recover Password</h3>
-<div id='recoverPasswordMessaging'></div>
-<form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'recoverPasswordMessaging'}); app.model.dispatchThis('immutable'); return false;">
-<fieldset>
-<div class='marginBottom'><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
-
-<div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all ' value='Email Password to Me' /></div>
-
-</fieldset>
-</form>
-
-</div><!-- /recoverPasswordContainer -->
-
-<div>
-<hr />
-<button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
-</div>
-
-
-
 </div>
 
 <!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
