@@ -346,18 +346,18 @@ customerTemplate
 .field.mname {width:82px;}
 .fieldM input, .fieldM select {height:30px; width:100px; margin:0 7px; padding:0 9px; border-radius:0; font-family:montserrat; border:2px solid #000000;}
 .fieldM option {height:20px; padding:5px 0 0 5px;}
-.fieldM input.textflast {width:123px;}
+.fieldM input.textflast {width:127px;}
 .fieldM input.textfmname {width:15px;}
 .fieldM input.textfadd {width:280px;}
 .fieldM input.textfadd1 {width:150px;}
-.fieldM input.textfcity {width:176px;}
+.fieldM input.textfcity {width:196px;}
 .fieldM.stateFix {position:relative; top:-6px;}
 .selectWrapperS {height:30px; width:60px; display:inline-block; overflow:hidden; border:2px solid #000000; margin:0 7px; position:relative; bottom:-13px;}
 .fieldM select.textfstate {height:30px; width:80px; padding:6px 0px 3px 2px; border:none; background-position:33px -100px; margin:0;}
 .fieldM .selectField {position:relative; bottom:10px;}
 .selectWrapperC {height:30px; width:245px; display:inline-block; overflow:hidden; border:2px solid #000000; margin:0 7px;}
 .fieldM select.textfcountry {width:285px; padding:7px 3px 3px 3px; background-position:216px -100px; border:none; margin:0;}
-.fieldM input.textfmail {width:140px; margin:0 24px 0 7px;}
+.fieldM input.textfmail {width:140px; margin:0 26px 0 7px;}
 .fieldM input.textfpass {width:140px;}
 .fieldM input.textfphone {width:180px;}
 .Account .createButton {color:#ffffff; padding:15px; margin:10px auto; border:none; display:block; font-family:montserrat; font-weight:bold; font-size:1.8em;}
