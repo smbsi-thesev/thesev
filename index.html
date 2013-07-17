@@ -118,6 +118,8 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 			<div class='headerLinks floatLeft'><img alt="info/help" src='images/info-icon_36x34.png' width="36" height="34" /></div>
 			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
 			<div class='headerLinks floatLeft'><img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" /></div>
+			<!-- duplicates cart if called more than once, must destroy first before this can be used
+				<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{'show':'inline'});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>-->
 			<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>
 			<div class='outerGutter floatRight'></div>
 		</div>
@@ -883,8 +885,8 @@ So the cart template should contain these two elements and the extension should 
 		<!-- <span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span> -->
 		<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
 			
-		<div class='qtySelectStyler sprite'>
-			<select type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;'>
+		<div class='qtySelectStyler'>
+			<select type='number' class='qtyInput numberInput sprite' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;'>
 			<option value='1'>Quantity: 1</option>
 			<option value='2'>Quantity: 2</option>
 			<option value='3'>Quantity: 3</option>
