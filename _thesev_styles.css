@@ -331,7 +331,7 @@ customerTemplate
 .buyerLoggedIn .hideIfLoggedOut	{display: block;} /* may be 'block' */
 .buyerLoggedIn span.hideIfLoggedOut, .buyerLoggedIn a.hideIfLoggedOut{display: inline;} /* ensures inline on span elements */
 
-.CreatAccount {height:auto; width:940px; margin:20px 0 0 40px;}
+#createaccountArticle .creatAccount {height:auto; width:940px; margin:20px 11% 0 11%;}
 #gotAccount1 {height:270px; width:300px; float:left; background:#000000; font-family:oswald; font-weight:bold;}
 #gotAccount1 h1 {color:#ffffff; text-align:center; margin:29px 0 0 0;}
 #gotAccount1 fieldset {padding:0; border:0}
