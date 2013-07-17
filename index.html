@@ -1120,7 +1120,16 @@ subscribeListsArticle is used for authenticated buyers
 						<!--<div class="passwordInput"><b>Password</b><input name="password" size="30" placeholder="Password" required /></div>-->
 						<div class="fieldM"><span class="field">Address</span> <input name='address1' type='text' size='30' placeholder='Address' class='textfadd' required='required' /> 
 						<input name='address2' type='text' size='30' placeholder='Address (Line 2)' class='textfadd1'/></div>
-						<div class="fieldM"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity'/> 	<b>State</b> <input name='region' type='text' size='5' placeholder='State' class='textfstate' /> <b>Zip</b> <input name='postal' type='text' size='10' placeholder='00000-0000' class='textfzip'/></div>
+						<div class="fieldM stateFix"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity'/> 	
+							<b>State</b> 
+							<div class='selectWrapperS'>
+								<select name='region' class='textfstate sprite'>
+									<option>AL</option>
+									<option>AR</option>
+								</select>
+							</div>
+							<b>Zip</b> <input name='postal' type='text' size='10' placeholder='00000-0000' class='textfzip'/>
+						</div>
 						<div class="fieldM">
 							<div class="field selectField">Country</div> 
 							<div class='selectWrapperC'>

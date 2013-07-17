@@ -351,7 +351,9 @@ customerTemplate
 .fieldM input.textfadd {width:280px;}
 .fieldM input.textfadd1 {width:150px;}
 .fieldM input.textfcity {width:176px;}
-.fieldM input.textfstate {width:60px;}
+.fieldM.stateFix {position:relative; top:-6px;}
+.selectWrapperS {height:30px; width:60px; display:inline-block; overflow:hidden; border:2px solid #000000; margin:0 7px; position:relative; bottom:-13px;}
+.fieldM select.textfstate {height:30px; width:80px; padding:6px 0px 3px 2px; border:none; background-position:33px -100px; margin:0;}
 .fieldM .selectField {position:relative; bottom:10px;}
 .selectWrapperC {height:30px; width:245px; display:inline-block; overflow:hidden; border:2px solid #000000; margin:0 7px;}
 .fieldM select.textfcountry {width:285px; padding:7px 3px 3px 3px; background-position:216px -100px; border:none; margin:0;}
