@@ -167,16 +167,25 @@ categoryListTemplate
 productListTemplate
 *************************************************************************************/
 
-.productListTemplate .prodListDesc {height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding: 6%; font-family:montserrat; position:absolute; bottom:0;}
-.productListTemplate .prodListDesc h5 {font-weight:normal; font-size:1.2em; text-align:left;}
-.productListTemplate .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:5px 0 0 0;}
+.productListTemplate .prodListDesc, #cartStuffList .prodListDesc, .productListTemplateResults .prodListDesc 
+	{height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding: 6%; font-family:montserrat; position:absolute; bottom:0;}
+.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.2em; text-align:left;}
+.productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:5px 0 0 0;}
 
 /*************************************************************************************
 END productListTemplate
 *************************************************************************************/
+
+
+/*************************************************************************************
+productListTemplateResults
+*************************************************************************************/
+
+ 
+
+
 /*productListTemplateATC
 productListTemplateBuyerList
-productListTemplateResults
 productListTemplateResultsNoPreview*/
 /*************************************************************************************
 productTemplate
@@ -295,7 +304,6 @@ Cart
 #cartStuffList.fluidList li {height:360px; width:220px; background:none; box-shadow:0 0 0 0; border:none; float:left;}
 #cartStuffList.lineItemProdlist > li {width:220px !important;}
 .cartImageCont {height:200px; width:200px; border:10px solid #ffffff; box-shadow:0 0 2px 0; position:relative;}
-#cartStuffList .prodListDesc {height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding: 6%; font-family:montserrat; position:absolute; bottom:0;}
 .qtySelectStyler {height:28px; width:98%; margin:10px 0 0 0; color:#999999; border:2px solid #000000; border-right:3px solid #000; overflow:hidden; display:inline-block; font-size:1.2em;}
 .qtySelectStyler .qtyInput {height:28px; width:109%; padding:3% 1% 1% 1%; color:#999999; border:none; background-repeat:no-repeat; background-position:188px -100px;}
 .qtySelectStyler .qtyInput option {height:20px; width:100%; padding:4px 0 0 4px;}
