@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130716215100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130718124000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -578,11 +578,14 @@ this will likely become more flexible in the future. ###
 		</div>
 		
 		<div class='prodBuyerContainer floatRight'>
+			<div class='workTape sprite'></div>
 			<div class='workWithMe'>
-				<!--<img src='images/work-with-me_220x210.png' width='220' height='210' />-->
-				Please provide a product that has the work with me data pouplated.<br>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec nulla risus, ut bibendum mauris. 
-				Nullam eget massa in magna vestibulum rutrum. 
+				<p>
+					Please provide a product that has the work with me data pouplated.<br>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec nulla risus, ut bibendum mauris. 
+					Nullam eget massa in magna vestibulum rutrum. 
+				</p>
+				<div class='workCorner sprite'></div>
 			</div>
 			<div class='priceContainer marginBottom'>
 				<div class='displayNone priceFloat' data-bind='var:product(zoovy:prod_msrp; format:showIfSet;'>
