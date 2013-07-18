@@ -436,10 +436,11 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
-<li id='productListTemplateResults' class='loadingBG searchResultsProduct anyMasonry hovBorderWhite10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
-	<div class='boxShadower'></div>
+<li id='productListTemplateResults' class='loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
-	<div onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));" class='pointer'>
+	<div class='boxShadower pointer' onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));"></div>
+	
+	<div>
 		<div class='prodThumbContainer'>
 			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='120' height='120' />
 		</div>

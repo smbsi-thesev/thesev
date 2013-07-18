@@ -41,6 +41,8 @@ img {max-width:100%;}
 /*Hoverable app border colors (change when mouse hovers over)*/
 .hovBorderWhite10px {border:10px solid #ffffff;}
 .hovBorderWhite10px:hover {border:10px solid #ed0d53;}
+.hovBorderWhiteBlue10px {border:10px solid #ffffff;}
+.hovBorderWhiteBlue10px:hover {border:10px solid #0c8a96;}
 
 .cents {font-size:50%; vertical-align: super;}
 .sprite {background-image:url(images/sprites-500x500.png);}
