@@ -260,9 +260,9 @@ a.prodPrev span, a.prodNext span {display:none;}
 .workTape {height:34px; width:140px; background-position:-360px -53px; position:absolute; top:10px; left:-70px; margin:0 0 0 50%; z-index:1;}
 .workCorner {height:45px; width:50px; background-position:-295px -44px; position:absolute; right:0; bottom:0;}
 .workWithMe:hover .workCorner {background-position:-295px -94px;}
-.priceContainer {height:58px; width:auto; padding:30px 25px 0 0; overflow:hidden;}
+.priceContainer {height:68px; width:auto; padding:30px 25px 0 0; overflow:hidden;}
 .priceFloat {height:auto; width:100%; text-align:center; font-family:montserrat; color:#ffffff;}
-.halfPrice {height:auto; width:50%;}
+.halfPrice {height:auto; width:50%; margin:0 0 10px 0;}
 .basePrice {font-size:3.0em;}
 .prodMSRP  {font-size:3.0em; text-decoration:line-through;}
 .basePriceAlone {height:auto; width:100%; font-size:3.0em;}

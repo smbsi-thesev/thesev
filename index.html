@@ -608,12 +608,12 @@ this will likely become more flexible in the future. ###
 					<h4 class='basePriceAlone' data-bind='var: product(zoovy:base_price); format:money; hideZero:true;'></h4>
 					<span class='primaryCT forYou'>FOR YOU</span>
 				</div>
-
+			<!--
 				<span class='savings'>
 					<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
 					<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 				</span>
-				
+			-->	
 			</div>
 			<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'message'}); return false;">
 				<div class='prodAddedToCart primaryCT displayNone'>We've put it in your cart!</div>
