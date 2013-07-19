@@ -683,16 +683,14 @@ this will likely become more flexible in the future. ###
 
 <!-- a template used for a quickview link off of a category page -->
 <div id='productTemplateQuickView' class='productTemplateQuickView'>
-	<table class='prodViewerContainer'>
-		<tr>
-			<td class='imageContainer'>
-				<div>
-					<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-					<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='240' height='240' /></div>
-				</div>
-			</td>
+	<div class='prodViewerContainer'>
 
-			<td class='prodSummaryContainer marginBottom no_underline'>
+			<div class='imageContainer'>
+				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
+				<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='240' /></div>
+			</div>
+
+			<div class='prodSummaryContainer marginBottom no_underline'>
 				<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 				<h6 class='ztable_row_small stid' data-bind='var: product(pid); format:text; className: stid; pretext: Sku#: ;'></h6>
 
@@ -713,14 +711,13 @@ this will likely become more flexible in the future. ###
 				</section>
 
 				<div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan='2'>
+			</div>
+
+			<div>
 				<ul class='listStyleNone clearfix productReviewsList'  data-bind="var: reviews(reviews.@reviews); format:processList; loadsTemplate:productReviewsTemplateDetail;"></ul>
-			</td>
-		</tr>
-	</table>
+			</div>
+
+	</div>
 </div><!-- productTemplateQuickView -->
 
 
