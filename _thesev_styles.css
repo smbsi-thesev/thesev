@@ -195,7 +195,23 @@ productListTemplateResultsNoPreview*/
 productTemplateQuickView
 *************************************************************************************/
 
-.productTemplateQuickView {color:#ffffff;}
+.tempQV {color:#ffffff;}
+.tempQV .prodViewerContainer {padding:0 0 20px 0;}
+.tempQV .imageContainer {height:280px; width:280px; float:left; padding:0 20px 20px 0; background:url("images/view-bkgrnd_2040x675.jpg") repeat scroll 0 0 transparent;}
+.tempQV .boxShadower {height:260px; width:260px; box-shadow:0 0 86px -34px #000000 inset; border:10px solid #ffffff;}
+.tempQV .prodSummaryContainer {float:left; margin:10px 0 0 10px; font-size:1.2em;}
+.tempQV .prodSummaryContainer h1 {font-family:oswald; font-weight:normal; font-size:1.8em;}
+.tempQV .prodSummaryContainer h3 {font-family:"Open Sans"; font-weight:normal; font-size:0.8em;}
+.tempQV .prodSummaryContainer h4 {font-family:"Open Sans"; font-weight:normal; font-size:1.8em;}
+.tempQV .prodSummaryContainer h5, .tempQV .prodSummaryContainer h6 {font-family:"Open Sans"; font-weight:normal; font-size:1.2em;}
+.tempQV .prodSummaryContainer h4 span {color:#ED0D53; font-size:0.7em;}
+.tempQV .prodSummaryContainer h6 span,.tempQV .prodSummaryContainer h5 span, .tempQV .prodSummaryContainer h3 span {color:#666666;}
+.tempQV .prodSummaryContainer span.cents {color:#ffffff; font-size:50%;}
+.tempQV .prodSummaryContainer .priceContainer {height:auto;}
+.tempQV .productReviewsList {height:auto; width:100%; clear:both; background:#000000;}
+
+.buttonBar button.ui-button {padding:0.5em 1em; margin:2em 0.8em 0 0;}
+
 
 /*************************************************************************************
 productTemplate

@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130718124000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130718210800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -682,21 +682,23 @@ this will likely become more flexible in the future. ###
 
 
 <!-- a template used for a quickview link off of a category page -->
-<div id='productTemplateQuickView' class='productTemplateQuickView'>
+<div id='productTemplateQuickView' class='productTemplateQuickView tempQV'>
 	<div class='prodViewerContainer'>
-
+			
 			<div class='imageContainer'>
+				<div class='boxShadower' ></div> <!-- ADD IN CORRECT PLACE... onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});"  -->
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-				<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='240' /></div>
+				<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='280' /></div>
 			</div>
 
 			<div class='prodSummaryContainer marginBottom no_underline'>
 				<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
-				<h6 class='ztable_row_small stid' data-bind='var: product(pid); format:text; className: stid; pretext: Sku#: ;'></h6>
+				<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: By ;'></h5>
+				<h3 class='ztable_row_small stid' data-bind='var: product(pid); format:text; className: stid; pretext: <span>Item/SKU #: </span>;'></h3>
 
 				<div class='priceContainer'>
-					<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
-					<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+					<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: <span>FOR YOU: </span>;'></h4>
+					<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: <span>RETAIL: </span>;'></h5>
 					<span class='savings'>
 						<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
 						<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
