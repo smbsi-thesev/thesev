@@ -183,7 +183,7 @@ END productListTemplate
 productListTemplateResults
 *************************************************************************************/
 
- 
+.searchResultsProduct .moreDetails {height:10px; width:60px; color:#ffffff; position:absolute; bottom:-10px; left:0; font-family:montserrat; font-size:1.1em; line-height:10px; text-align:center;}
 
 
 /*productListTemplateATC
