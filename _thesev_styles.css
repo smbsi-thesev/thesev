@@ -406,6 +406,11 @@ customerTemplate
 CompanyTemplate
 *************************************************************************************/
 
+/*sideline*/
+.sideline {height:auto; width:230px; margin:24px; background:#000000; border:1px solid #000000; font-family:montserrat; font-weight:normal;}
+.sideline .headline {height:70px; width:100%; line-height:70px; color:#ffffff; font-family:oswald; font-size:2.4em; font-weight:bold;}
+.sideline > li {height:50px; width:100%; line-height:50px; background:#ffffff; color:#000000;  font-size:1.8em;}
+
 /*contactArticle*/
 #contactForm {float:left; margin:20px 0 12px 12px;}
 #contactForm fieldset {border:none; position:relative;}
