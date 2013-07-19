@@ -412,6 +412,7 @@ $display.appendTo($tag);
 //				app.u.dump("BEGIN store_product.renderFunctions.addToCartButton");
 //				app.u.dump(" -> ID before any manipulation: "+$tag.attr('id'));
 				var pid = data.value;
+				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
 				var pData = app.data['appProductGet|'+pid];
 				if(app.ext.store_product.u.productIsPurchaseable(pid))	{
 					if(pData && pData['%attribs'] && pData['%attribs']['is:preorder'])	{
@@ -424,6 +425,7 @@ $display.appendTo($tag);
 					}
 				else	{
 					$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>This item is not available for purchase<\/span>"); //hide button, item is not purchaseable.
+/*SMBSI*/			$('.iconATC', $context).addClass('displayNone');
 					}
 
 //				app.u.dump(" -> ID at end: "+$tag.attr('id'));
