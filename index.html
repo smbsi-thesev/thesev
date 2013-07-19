@@ -915,21 +915,6 @@ So the cart template should contain these two elements and the extension should 
 </div>
 
 
-<!--
-
-############################
-
-MOST OFTEN YOU WANT TO LEAVE THESE TEMPLATES ALONE
-if modified, be careful about changing id's or classes.
-adding classes is not likely to have any bad effects.
-if you change these, you should move them above this comment so that when you (or the next person) does an upgrade, you know what isn't default
-
-############################
-
--->
-
-
-
 
 
 <!--  used in breadcrumb -->
@@ -943,7 +928,7 @@ if you change these, you should move them above this comment so that when you (o
 
 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
-<div id='companyTemplate' class='clearfix loadingBG'>
+<div id='companyTemplate' class='clearfix loadingBG templateWrapper'>
 
 	<div class='sideline' >
 <nav id='companyNav'>
@@ -968,18 +953,17 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div id='contactArticle' class='displayNone textContentArea'>
-			<h1>Contact Information</h1>
 			<form action='#' onSubmit="app.calls.appSendMessage.init($(this).serializeJSON(),{'callback':'showMessaging','parentID':'contactFormMessaging','message':'Thank you, your message has been sent'},'immutable'); app.model.dispatchThis('immutable');  return false;" id='contactForm' name='contactForm'>
-			<fieldset>
-				<legend>Contact Us</legend>
-				<div id='contactFormMessaging'></div>
-				<div><label for='contactFormSender'>Email Address: </label><input type='email' name='sender' required='required' id='contactFormSender' /></div>
-				<div><label for='contactFormSubject'>Subject: </label><input type='text' name='subject' id='contactFormSubject' /></div>
-				<div><label for='contactFormOID'>Order ID: </label><input type='text' name='OID' id='contactFormOID' /></div>
-				<div><label for='contactFormBody'>Message: </label><textarea name='body' required='required' id='contactFormBody'></textarea></div>
-				<div class='alignRight'><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all' value='Send Message' />
-				</div>
-			</fieldset>
+				<fieldset>
+					<legend>Contact Us</legend>
+					<div id='contactFormMessaging'></div>
+					<div><input placeholder='Full Name' type='text' name='name' required='required' id='contactFormName' /></div>
+					<div><input placeholder='Email Address' type='email' name='sender' required='required' id='contactFormSender' /></div>
+					<div><input placeholder='Subject' type='text' name='subject' id='contactFormSubject' /></div>
+					<div><input placeholder='Order Number (if applicable)' type='text' name='OID' id='contactFormOID' /></div>
+					<div><textarea placeholder="What's it about?" name='body' required='required' id='contactFormBody'></textarea></div>
+					<input type='submit' class='ui-button-text ui-button ui-corner-all contactButton blackSecondaryColorHover' value='SEND MESSAGE'><span class='iconContact sprite'></span></input>
+				</fieldset>
 			</form>
 			<div data-bind='var: profile(zoovy:contact); format:wiki; wikiFormats:myRIA;' id='contactContent'></div>
 		</div>
@@ -1286,6 +1270,22 @@ subscribeListsArticle is used for authenticated buyers
 	</div>
 
 </div>
+
+
+
+<!--
+
+############################
+
+MOST OFTEN YOU WANT TO LEAVE THESE TEMPLATES ALONE
+if modified, be careful about changing id's or classes.
+adding classes is not likely to have any bad effects.
+if you change these, you should move them above this comment so that when you (or the next person) does an upgrade, you know what isn't default
+
+############################
+
+-->
+
 
 
 

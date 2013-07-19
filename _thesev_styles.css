@@ -401,6 +401,20 @@ customerTemplate
 .fieldM input.textfphone {width:180px;}
 .Account .createButton {color:#ffffff; padding:15px; margin:10px auto; border:none; display:block; font-family:montserrat; font-weight:bold; font-size:1.8em;}
 
+
+/*************************************************************************************
+CompanyTemplate
+*************************************************************************************/
+
+/*contactArticle*/
+#contactForm {float:left; margin:20px 0 12px 12px;}
+#contactForm fieldset {border:none; position:relative;}
+#contactForm fieldset legend {font-family:oswald; font-size:2.4em; font-weight:bold;}
+#contactForm input, #contactForm textarea {height:33px; width:220px; font-family:montserrat; font-size:1.2em; color:#666666; padding:0 0 0 5px; border:1px solid #000000;}
+#contactForm textarea {height:130px; padding:5px 0 0 5px}
+#contactForm input.contactButton.blackSecondaryColorHover {height:50px; width:100%; color:#ffffff; padding:0 30px 0 0; text-align:right; font-size:1.4em; font-weight:bold; position:relative;}
+.iconContact {height:27px; width:35px; position:absolute; top:364px; left:40px; background-position:-118px 0;}
+
 /*************************************************************************************
 breadcrumb
 *************************************************************************************/
