@@ -282,8 +282,10 @@ a.prodPrev span, a.prodNext span {display:none;}
 .prodBuyerContainer {width:24.5957%; padding:10px 0 0 0; position:relative;}
 .workWithMe {height:140px; width:180px; margin:15px 10px 0 0; background:#fff65d; padding:35px 20px 20px 20px; font-size:1.2em; overflow:hidden; position:relative;} /*background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent;*/
 .workTape {height:34px; width:140px; background-position:-360px -53px; position:absolute; top:10px; left:-70px; margin:0 0 0 50%; z-index:1;}
-.workCorner {height:45px; width:50px; background-position:-295px -44px; position:absolute; right:0; bottom:0;}
-.workWithMe:hover .workCorner {background-position:-295px -94px;}
+.workWithMe .workCorner {height:45px; width:50px; background-position:-295px -44px; position:absolute; right:0; bottom:0; display:none;}
+.workWithMe.addWork .workCorner {display:block;}
+/*less {background-position:-240px -95px;}  less:hover {background-position:-182px -95px;}*/
+.workWithMe.addWork:hover .workCorner {background-position:-295px -94px;}
 .workWithMe p {height:131px; width:100%; overflow:hidden; position:relative;}
 .elipsis {height:16px; width:85px; background-image:url(images/elipsis-shade_85x25.png); position:absolute; bottom:0; right:6px; text-align:right; line-height:10px; }
 .priceContainer {height:68px; width:auto; padding:30px 25px 0 0; overflow:hidden;}

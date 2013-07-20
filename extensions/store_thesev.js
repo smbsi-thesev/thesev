@@ -143,17 +143,29 @@ var store_thesev = function() {
 		
 					
 		/*	$('#mydiv').text().length
-			240 words
+			240 characters
 		*/	
 		
 			showMoreWork : function($tag, data) {
 				var pid = data.value.pid;
+				var work = data.value['%attribs']['zoovy:prod_detail'];
 				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
 				
-				if($tag.text().length > 257) {
-					$('.elipsis', $tag).removeClass('displayNone')
+				if(work) {
+					$('.workWithMe p', $context).text(work);
+					if(work.length > 240) {
+						//$('.elipsis', $tag).removeClass('displayNone');
+						$('.workWithMe p', $context).append("<span class='elipsis'>. . . .</span>");
+						$tag.addClass('addWork');
+					}
 				}
-				app.u.dump('The text is: '); app.u.dump($tag.text().length); app.u.dump($tag.text());
+				else {
+					// to be used if workWithMe section should be hidden when no content in zoovy:prod_detail.
+						//otherwise the message currently in the index will be shown as a default.
+					//$tag.css('display','none');
+					//$('.workTape', $context).hide();
+				}
+				app.u.dump('The text is: '); app.u.dump(work.length); app.u.dump(work);
 			},
 		
 			productImages : function($tag,data)	{
