@@ -141,6 +141,18 @@ var store_thesev = function() {
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
 		
+					
+		/*	$('#mydiv').text().length
+			240 words
+		*/	
+		
+			showMoreWork : function($tag, data) {
+				var pid = data.value.pid;
+				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
+				
+				app.u.dump('The text is: '); app.u.dump($tag.text());
+			},
+		
 			productImages : function($tag,data)	{
 //				app.u.dump("BEGIN myRIA.renderFormats.productImages ["+data.value+"]");
 				var pdata = app.data['appProductGet|'+data.value]['%attribs']; //short cut to product object in memory.
@@ -188,6 +200,24 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			handleAppLoginCreate : function($form)	{
+			/*	if($form)	{
+					var formObj = $form.serializeJSON();
+					app.calls.appBuyerCreate.init(formObj,{'callback':function(rd){
+						if(app.model.responseHasErrors(rd)){
+							$form.anymessage({'message':rd});
+							}
+						else	{
+							$form.empty().anymessage({'message':'Thank you, your account request has been submitted. you will be notified by email when you are approved.'})
+							}
+						}});
+					app.model.dispatchThis('immutable');
+					}
+				else	{
+					$('#globalMessaging').anymessage({'message':'$form not passed into myRIA.u.handleBuyerAccountCreate','gMessage':true});
+					}
+			*/	},
+	
 			sansReviews : function($context) {
 				if($('.noReviews', $context).children().length === 0) {
 					app.u.dump('No reviews. Running existing messge check');

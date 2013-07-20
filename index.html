@@ -585,11 +585,12 @@ this will likely become more flexible in the future. ###
 		
 		<div class='prodBuyerContainer floatRight'>
 			<div class='workTape sprite'></div>
-			<div class='workWithMe'>
+			<div class='workWithMe' data-bind="useParentData:true; format:showMoreWork; extension:store_thesev;">
 				<p>
 					Please provide a product that has the work with me data pouplated.<br>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.Phasellus nec nulla risus, ut bibendum mauris. 
 					Nullam eget massa in magna vestibulum rutrum. 
+					<span class='elipsis diplayNone'>. . . .</span>
 				</p>
 				<div class='workCorner sprite'></div>
 			</div>
@@ -1119,7 +1120,8 @@ subscribeListsArticle is used for authenticated buyers
 					<a class='primaryCTH' href="#" onClick="app.calls.appBuyerPasswordRecover.init($('#modalLoginLogin').val(),{'callback':'showMessaging','message':'Thank you, you will receive an email shortly','targetID':'loginMessagingInline'}); app.model.dispatchThis('immutable'); return false;">Forgot your password?<br> Enter your username and click hear to retrieve it!</a>
 				</div>
 				<div class="Account" >
-					<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.myRIA.u.handleAppBuyerCreate($(this)); return false;">
+					<!--<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.myRIA.u.handleAppBuyerCreate($(this)); return false;">-->
+					<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.store_thesev.u.handleAppLoginCreate($(this)); return false;">
 						<input type="hidden" name="vendor" value="thesev"/>
 						<h1>First Time With Us?</h1><input type='hidden' name='form' value='wholesale' />
 						<div class="fieldM"><span class="field">First Name</span> <input name='firstname' type='text' size='30' class='textfname' placeholder='First Name' required='required' />
