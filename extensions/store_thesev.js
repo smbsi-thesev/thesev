@@ -104,6 +104,20 @@ var store_thesev = function() {
 					$errorDiv.anymessage({'message':errors});
 					}
 			}, //loginFrmSubmit
+			
+			//expands product page work with me container to show additional content (if it is there)
+			//by removing and adding classes to top section element to show and hide functional elements
+			showMoreWork : function(pid, _tag) {
+				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
+				$('.workWithMe', $context).removeClass('addMoreWork').addClass('addLessWork');
+			},
+			
+			//(revearse of showMoreWork function) reduces product page work with me container to hide additional content
+			//by removing and adding classes to top section element to show and hide functional elements
+			showLessWork : function(pid, _tag) {
+				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
+				$('.workWithMe', $context).removeClass('addLessWork').addClass('addMoreWork');
+			},
 		
 			//places customer reviews on the product page
 			showReviews : function(pid, action, hide, show) {
@@ -140,23 +154,21 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
-		
-					
-		/*	$('#mydiv').text().length
-			240 characters
-		*/	
-		
+			
+			//puts "Work with me" text into div if present, and if more than 240 characters, adds ellipses and button
+			//to expand container to show rest of content.
 			showMoreWork : function($tag, data) {
 				var pid = data.value.pid;
 				var work = data.value['%attribs']['zoovy:prod_detail'];
 				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
 				
-				if(work) {
+				if(data.value['%attribs']['zoovy:prod_detail']) {
+					//if there's content, add it; someone will read it.
 					$('.workWithMe p', $context).text(work);
+					//if there's more content than space, make it obvious and add stuff to show that content.
 					if(work.length > 240) {
-						//$('.elipsis', $tag).removeClass('displayNone');
 						$('.workWithMe p', $context).append("<span class='elipsis'>. . . .</span>");
-						$tag.addClass('addWork');
+						$tag.addClass('addMoreWork');
 					}
 				}
 				else {
