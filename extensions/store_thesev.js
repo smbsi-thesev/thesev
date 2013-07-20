@@ -150,7 +150,10 @@ var store_thesev = function() {
 				var pid = data.value.pid;
 				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
 				
-				app.u.dump('The text is: '); app.u.dump($tag.text());
+				if($tag.text().length > 257) {
+					$('.elipsis', $tag).removeClass('displayNone')
+				}
+				app.u.dump('The text is: '); app.u.dump($tag.text().length); app.u.dump($tag.text());
 			},
 		
 			productImages : function($tag,data)	{
