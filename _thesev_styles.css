@@ -152,7 +152,7 @@ END PERSISTENT CONTENT
 homepageTemplate
 *************************************************************************************/
 
-.mushPot {height:300px; width:300px; background:#ffffff; box-shadow:0 0 2px 0px;}
+.mushPot {height:255px; width:255px; background:red; color:#ffffff; font-family:oswald; font-size:2.7em; font-weight:normal; padding:31px; text-align:center;} /*box-shadow:0 0 2px 0px;*/
 
 /*************************************************************************************
 categoryTemplate
