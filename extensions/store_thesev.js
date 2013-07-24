@@ -177,7 +177,7 @@ var store_thesev = function() {
 					//$tag.css('display','none');
 					//$('.workTape', $context).hide();
 				}
-				app.u.dump('The text is: '); app.u.dump(work.length); app.u.dump(work);
+				//app.u.dump('The text is: '); app.u.dump(work.length); app.u.dump(work);
 			},
 		
 			productImages : function($tag,data)	{
@@ -358,9 +358,9 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 				//initialize
 				setTimeout(function() {
 					$target.masonry({
-						columnWidth		:	177,
+						columnWidth		:	336,
 						itemSelector	:	'.anyMasonry',
-						gutterWidth		:	1,
+						gutter			:	8,
 						isFitWidth		:	true
 					});
 				},2000);
