@@ -243,7 +243,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 	</div>
 -->
 
-		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul> <!--  detail:max; -->
+		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'></ul> <!--  detail:max; -->
 
 	
 
@@ -282,9 +282,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'></ul><!-- outputs a list of subcategories -->
 
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'></ul><!-- outputs the product list -->
 
 	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 
@@ -303,7 +303,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class='pointer boxShadower' onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});"></div>
 	<div class='fullHeightWidth'>
 		<div class='thumbContainer'>
-			<img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='316' height='316' />
+			<img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='228' height='228' />
 			<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 		</div>
 	</div>
@@ -335,7 +335,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 	<div>
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
-			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' />
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='228' height='228' />
 		</div>
 
 		<div class='prodListDesc'>

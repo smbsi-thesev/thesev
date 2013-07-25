@@ -36,10 +36,17 @@ var store_thesev = function() {
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
 				app.ext.store_thesev.u.runFooterCarousel();
+				
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev.u.runHomepageMasonry($context);
+					app.ext.store_thesev.u.runMasonry($context);
 				}]);
+				
+				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev.u.runMasonry($context);
+				}]) 
+				
 				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runProductPageCarousel($context);
@@ -202,6 +209,7 @@ var store_thesev = function() {
 				var a = Math.random()*4+1;
 				var b = a.toString().split('.');
 				var number = b[0];
+				//decide which size the cat/prod list element should be
 				switch(number) {
 					case '1'	:	$tag.addClass('masonOne'); break;
 					case '2'	:	$tag.addClass('masonTwo'); break;
@@ -353,22 +361,20 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 				},2000);
 			},
 			
-			runHomepageMasonry : function($context) {
-				var $target = $('.categoryList', $context);
+			runMasonry : function($context) {
+				var $target = $('.masonList', $context);
 				//initialize
 				setTimeout(function() {
 					$target.masonry({
-						columnWidth		:	177,
+						columnWidth		:	264,
 						itemSelector	:	'.anyMasonry',
 						gutter			:	0,
 						isFitWidth		:	true
 					});
 				},2000);
-				var poo = $target.data('masonry');
-				app.u.dump("****"); app.u.dump(poo);
-			} //end runHomepageMasonry
+			}, //end runMasonry
 		
-			}, //u [utilities]
+		}, //u [utilities]
 
 //app-events are added to an element through data-app-event="extensionName|functionName"
 //right now, these are not fully supported, but they will be going forward. 
