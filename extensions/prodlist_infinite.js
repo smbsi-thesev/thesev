@@ -173,16 +173,13 @@ It is run once, executed by the renderFormat.
 						$tag.parent().anymessage({'message':rd});
 						}
 					else	{
+						var prodTags = []
 						for(var i = 0; i < L; i += 1)	{
-var tmp = app.data['appProductGet|'+pageCSV[i]];
-if(typeof app.data['appReviewsList|'+pageCSV[i]] == 'object'  && app.data['appReviewsList|'+pageCSV[i]]['@reviews'].length)	{
-	tmp['reviews'] = app.ext.store_prodlist.u.summarizeReviews(pageCSV[i]); //generates a summary object (total, average)
-	tmp['reviews']['@reviews'] = app.data['appReviewsList|'+pageCSV[i]]['@reviews']
-	}
-							//if you want this list inventory aware, do you check here and skip the append below.
-$tag.append(app.renderFunctions.transmogrify({'pid':pageCSV[i]},plObj.loadsTemplate,tmp));
+							var tagTuple = [false,false];
+							prodTags.push(tagTuple);
+							app.ext.prodlist_infinite.u.insertProduct(pageCSV[i], plObj, tagTuple);
 							}
-						app.ext.prodlist_infinite.u.handleScroll($tag);
+						app.ext.prodlist_infinite.u.appendAllProducts($tag, prodTags);
 						}				
 					}
 
@@ -195,7 +192,61 @@ $tag.append(app.renderFunctions.transmogrify({'pid':pageCSV[i]},plObj.loadsTempl
 					}
 
 				},
-
+			insertProduct : function(pid, plObj, tagTuple, attempts){
+				var data = app.data['appProductGet|'+pid];
+				attempts = attempts || 0;
+				if(data){
+					if(typeof app.data['appReviewsList|'+pid] == 'object'  && app.data['appReviewsList|'+pid]['@reviews'].length)	{
+						data['reviews'] = app.ext.store_prodlist.u.summarizeReviews(pid); //generates a summary object (total, average)
+						data['reviews']['@reviews'] = app.data['appReviewsList|'+pid]['@reviews']
+						}
+														//if you want this list inventory aware, do you check here and skip the append below.
+					tagTuple[0] = app.renderFunctions.transmogrify({'pid':pid},plObj.loadsTemplate,data).get(0);
+					//app.u.dump(pid);
+					tagTuple[1] = true;
+					}
+				else if(attempts < 50){
+					setTimeout(function(){
+						app.ext.prodlist_infinite.u.insertProduct(pid, plObj, tagTuple, attempts+1);
+						}, 250);
+					}
+				else {
+					app.u.dump("-> prodlist_infinite FAILED TO INSERT PRODUCT: "+pid)
+					tagTuple[1] = true;
+					}
+				},
+			
+			appendAllProducts : function($container, prodTags){
+				var allProdsRendered = false;
+				var renderedCount = 0;
+				for(var i in prodTags){
+					if(!prodTags[i][1]){
+						break;
+						}
+					else {
+						renderedCount++;
+						}
+					}
+				if(renderedCount == prodTags.length){
+					app.u.dump("-> prodlist_infinite APPENDING "+prodTags.length+" ITEMS");
+					for(var i in prodTags){
+						if(prodTags[i][0]){
+							$container.append(prodTags[i][0]);
+							if($container.data('masonry')){
+								$container.masonry('appended',prodTags[i][0]);
+								}
+							}
+						}
+					app.ext.prodlist_infinite.u.handleScroll($container);
+					}
+				else{
+					app.u.dump("-> prodlist_infinite REQUEUEING APPEND");
+					setTimeout(function(){
+						app.ext.prodlist_infinite.u.appendAllProducts($container,prodTags);
+						},500);
+					}
+				},
+			
 			handleScroll : function($tag)	{
 var plObj = $tag.data();
 if(plObj.prodlist.csv.length <= plObj.prodlist.items_per_page)	{$tag.parent().find("[data-app-role='infiniteProdlistLoadIndicator']").hide();} //do nothing. fewer than 1 page worth of items.

@@ -365,12 +365,13 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 				var $target = $('.masonList', $context);
 				//initialize
 				setTimeout(function() {
-					$target.masonry({
+					var masonry = $target.masonry({
 						columnWidth		:	177,
 						itemSelector	:	'.anyMasonry',
 						gutter			:	0,
 						isFitWidth		:	true
 					});
+					//$target.data('masonry',masonry);
 				},2000);
 			}, //end runMasonry
 		
