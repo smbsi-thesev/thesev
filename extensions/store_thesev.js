@@ -358,9 +358,9 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 				//initialize
 				setTimeout(function() {
 					$target.masonry({
-						columnWidth		:	336,
+						columnWidth		:	177,
 						itemSelector	:	'.anyMasonry',
-						gutter			:	8,
+						gutter			:	0,
 						isFitWidth		:	true
 					});
 				},2000);
