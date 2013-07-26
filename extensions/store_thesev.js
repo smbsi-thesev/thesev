@@ -112,6 +112,42 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
+			//activates drop down menus
+			showDropDown : function($tag) {
+				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow') === 'false') {
+					var $dropdown = $('.dropdown',$tag);
+					var height = 0;
+					$dropdown.show();
+					if($dropdown.data('height')) {
+						height = $dropdown.data('height');
+					}
+					else {
+						$dropdown.children().each(function() {
+							height += $(this).outerHeight();
+						});
+					}
+					if($tag.data('timeout') && $tag.data('timeout') !== 'false') {
+						clearTimeout($tag.data('timeout'));
+						$tag.data('timeout','false');
+					}
+					$dropdown.stop().animate({'height':height+'px'},500);
+					return true;
+				}
+				return false;
+			},
+			
+			hideDropDown : function($tag) {
+				$('.dropdown',$tag).stop().animate({'height':'0px'},500);
+				if($tag.data('timeout') && $tag.data('timeout') !== 'false') {
+					$tag.data('timeout');
+					$tag.data('timeout','false');
+				}
+				$tag.data('timeout',setTimeout(function() {
+					$('.dropdown',$tag).hide();
+				},500));
+				return true;
+			},
+			
 			//expands product page work with me container to show additional content (if it is there)
 			//by removing and adding classes to top section element to show and hide functional elements
 			showMoreWork : function(pid, _tag) {

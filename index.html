@@ -115,7 +115,29 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 <header>
 	<div class='dummyMargin'>
 		<div class='rightCol'>
-			<div class='headerLinks floatLeft'><img alt="info/help" src='images/info-icon_36x34.png' width="36" height="34" /></div>
+			<div class='headerLinks floatLeft' onMouseOver="app.ext.store_thesev.a.showDropDown($(this));"> <!--onMouseOut="app.ext.store_thesev.a.hideDropDown($(this));"-->
+				<img alt="info/help" src='images/info-icon_36x34.png' width="36" height="34" />
+				<div class='infoLink'>
+					<div class='dropdown displayNone infoDropdown'>
+						<div class='headline'>NEED HELP?<div class='iconHelp sprite'></div></div>
+						<ul class='listStyleNone noPadOrMargin'>
+							<li class='about'><span class='decoBar'></span><a href='#company?show=about'>About Us</a><span class='arrow sprite'></span></li>
+							<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+							<li class='faq'><span class='decoBar'></span><a href='#company?show=faq'>FAQ</a><span class='arrow sprite'></span></li>
+							<li class='paymnt'><span class='decoBar'></span><a href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
+							<li class='priv'><span class='decoBar'></span><a href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
+							<li class='return'><span class='decoBar'></span><a href='#company?show=return'>Return Policy</a><span class='arrow sprite'></span></li>
+							<li class='ship'><span class='decoBar'></span><a href='#company?show=shipping'>Shipping Policy</a><span class='arrow sprite'></span></li>
+						</ul>
+					</div>
+					<div class='socialNav'>
+						<ul class='listStyleNone noPadOrMargin'>
+							<li class='blackSecondaryColorHover'><span class='socialCont'><span class='socialTitle'>"LIKE" US ON</span><span class='socialMedia'>FACEBOOK</span></span></li>
+							<li class='blackSecondaryColorHover'><span class='socialCont'><span class='socialTitle'>FOLLOW US</span><span class='socialMedia'>TWITTER</span></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
 			<div class='headerLinks floatLeft'><img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" /></div>
 			<!-- duplicates cart if called more than once, must destroy first before this can be used
