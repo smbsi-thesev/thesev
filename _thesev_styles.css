@@ -7,7 +7,7 @@ html {height:auto; width:100%;}
 body {height:auto; width:100%; background-color:#999999; background-image:url(images/view-bkgrnd_2040x675.jpg); font-size: 62.5%; font-family:"open sans"; scrollbar-face-color:#777777;}
 * {margin:0; padding:0;}
 a {text-decoration:none;}
-img {max-width:100%;}
+/*img {max-width:100%;}*/
 
 /*Static app background colors (always the same color)*/
 .primaryColor {background-color:#ed0d53;}
@@ -420,11 +420,12 @@ CompanyTemplate
 
 /*sideline*/
 .sideline, .infoLink {height:auto; width:230px; margin:24px; font-family:montserrat; font-weight:normal;}
+.infoLink {margin:17px 0 0 0;}
 .sideline #companyNav, .infoLink .infoDropdown {background:#000000; border:1px solid #000000; padding:0 0 5px 0;}
 .sideline .headline, .infoDropdown .headline {height:70px; width:100%; line-height:70px; color:#ffffff; font-family:oswald; font-size:2.4em; font-weight:bold; padding:0 0 0 10px;}
 .sideline .headline .iconHelp, .infoDropdown .headline .iconHelp {height:28px; width:30px; background-position:-79px 0; float:right; margin:20px 30px 0 0;}
 .sideline #companyNav li, .infoLink .infoDropdown li {height:50px; width:100%; line-height:50px; background:#ffffff; color:#000000; font-size:1.8em; position:relative;}
-.sideline #companyNav li span, .infoLink .infoDropdown li span {height:100%; width:5px; float:left;}
+.sideline #companyNav li span, .infoLink .infoDropdown li span {height:100%; width:5px; float:left; position:static;}
 .sideline #companyNav li.about span, .infoLink .infoDropdown li.about span {background-color:#ffc70e;}
 .sideline #companyNav li.contact span, .infoLink .infoDropdown li.contact span {background-color:#ed0d53;}
 .sideline #companyNav li.faq span, .infoLink .infoDropdown li.faq span {background-color:#993f87;}
@@ -432,24 +433,27 @@ CompanyTemplate
 .sideline #companyNav li.priv span, .infoLink .infoDropdown li.priv span {background-color:#07adbd;}
 .sideline #companyNav li.return span, .infoLink .infoDropdown li.return span {background-color:#0c8a96;}
 .sideline #companyNav li.ship span, .infoLink .infoDropdown li.ship span {background-color:blue;}
-.sideline #companyNav li a, .infoLink .infoDropdown li a {padding:0 0 0 24px; color:#000000;}
-.sideline #companyNav li span.arrow, .infoLink .infoDropdown li span.arrow {height:25px; width:25px; background-color:transparent; overflow:hidden; background-position:-475px 0; background-repeat:no-repeat; position:absolute; bottom:13px; right:25px; display:none;}
+.sideline #companyNav li a, .infoLink .infoDropdown li a {padding:0 0 0 24px; color:#000000; display:block;}
+.sideline #companyNav li span.arrow, .infoLink .infoDropdown li span.arrow {height:25px; width:25px; background-color:transparent; overflow:hidden; background-position:-475px 0; background-repeat:no-repeat; position:absolute; top:auto; left:auto; bottom:13px; right:25px; display:none;}
 .sideline #companyNav li:hover span.decoBar, .infoLink .infoDropdown li:hover span.decoBar {width:20px; background-image:url(images/sprites-500x500.png); background-position:-361px -94px; background-color:transparent;}
 .sideline #companyNav li:hover a, .infoLink .infoDropdown li:hover a {color:#ffffff;}
 .sideline #companyNav li:hover span.arrow, .infoLink .infoDropdown li:hover span.arrow {display:inline;}
 .sideline #companyNav li.about:hover, .infoLink .infoDropdown li.about:hover {background-color:#ffc70e;}
 .sideline #companyNav li.contact:hover, .infoLink .infoDropdown li.contact:hover {background-color:#ed0d53;}
 .sideline #companyNav li.faq:hover, .infoLink .infoDropdown li.faq:hover {background-color:#993f87;}
-.sideline #companyNav li.paymnt:hover, .infoLink .infoDropdown li.payment:hover {background-color:#18abcd;}
+.sideline #companyNav li.paymnt:hover, .infoLink .infoDropdown li.paymnt:hover {background-color:#18abcd;}
 .sideline #companyNav li.priv:hover, .infoLink .infoDropdown li.priv:hover {background-color:#07adbd;}
 .sideline #companyNav li.return:hover, .infoLink .infoDropdown li.return:hover {background-color:#0c8a96;}
 .sideline #companyNav li.ship:hover, .infoLink .infoDropdown li.ship:hover {background-color:blue;}
 
+.socialNav {height:160px;}
 .sideline .socialNav li, .infoLink .socialNav li {height:70px; width:100%; margin:10px 0 0 0;}
-.sideline .socialNav li span, .infoLink .socialNav li span {font-weight:bold; text-align:center; color:#f5f1de; line-height:19px;}
+.sideline .socialNav li span, .infoLink .socialNav li span {width:auto; font-weight:bold; text-align:center; color:#f5f1de; line-height:19px; position:static;}
 .sideline .socialCont, .infoLink .socialCont {height:auto; width:115px; float:left; padding:12px 0 0 30px;}
 .sideline .socialTitle, .infoLink .socialTitle {font-family:montserrat; font-size:1.2em; display:block;}
+.infoLink .socialTitle {font-size:0.9em;}
 .sideline .socialMedia, .infoLink .socialMedia {font-size:2.4em; font-family:oswald; display:block;}
+.infoLink .socialMedia {font-size:1.8em;}
 
 /*contactArticle*/
 #contactForm {float:left; margin:20px 0 12px 12px;}
