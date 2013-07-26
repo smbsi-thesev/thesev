@@ -28,6 +28,7 @@ app.rq.push(['extension',1,'tools_ABtesting','extensions/tools_ABtesting.js']);
 app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.carouFredSel-6.2.0.min.js']); //used for carousels.
 app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.touchSwipe-1.3.3.min.js']); //used w/ carouFedSel.
 app.rq.push(['script',0,app.vars.baseURL+'resources/masonry.pkgd.min.js']); //allows varied sizing of items for cat & product lists
+app.rq.push(['script',0,app.vars.baseURL+'resources/kenburns.js']); //image effect for cat.prodlists, allows image sizes to vary and move
 app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.jscrollpane.min.js']);
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jquery/config.js' : app.vars.baseURL+'jquery/config.js']); //The config.js is dynamically generated.

@@ -79,8 +79,20 @@ var store_thesev_kbeffect = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+		
+			kbEffectize :  function($this) {
 			
-		}, //Actions
+				var images = [];
+				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
+				
+				app.u.dump(images);
+				$this.kenburns(
+					{
+						"images":images
+					});
+			}
+		
+			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
