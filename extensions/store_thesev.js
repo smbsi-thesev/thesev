@@ -252,6 +252,7 @@ var store_thesev = function() {
 					case '3'	:	$tag.addClass('masonThree'); break;
 					case '4'	:	$tag.addClass('masonFour'); break;
 				}
+
 			},
 		
 			getInfo : function($tag, data) {
