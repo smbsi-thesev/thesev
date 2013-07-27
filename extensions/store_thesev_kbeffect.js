@@ -83,12 +83,13 @@ var store_thesev_kbeffect = function() {
 			kbEffectize :  function($this) {
 			
 				var images = [];
-				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
+				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg","http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
 				
 				app.u.dump(images);
 				$this.kenburns(
 					{
-						"images":images
+						"images":images,
+						"background_color":"#ffffff"
 					});
 			}
 		
