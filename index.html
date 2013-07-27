@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130725143100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130727141000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "required",//can be passive, active or required
@@ -364,7 +364,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
 			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' /> -->
 			<div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> 
-			<canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> 
+			<!-- <canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> -->
 		</div>
 
 		<div class='prodListDesc'>

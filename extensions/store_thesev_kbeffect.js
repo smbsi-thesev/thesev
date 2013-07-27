@@ -80,8 +80,8 @@ var store_thesev_kbeffect = function() {
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
 		
-			kbEffectize :  function($this) {
-				var images = [];
+//			kbEffectize :  function($this) {
+//				var images = [];
 		//		var img = app.u.makeImage({
 		//				"name"	: '',
 		//				"w"		: 100,
@@ -91,7 +91,7 @@ var store_thesev_kbeffect = function() {
 		//				});
 		//		images.push(img,img);		
 				
-				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg","http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
+/*				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg","http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
 				
 				$this.kenburns(
 					{
@@ -101,7 +101,7 @@ var store_thesev_kbeffect = function() {
 						"display_time":20000
 					});
 			}
-		
+*/		
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
