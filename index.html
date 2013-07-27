@@ -360,9 +360,10 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 	<div class='prodThumbContainer'>
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
-			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='prodThumb masonImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='550' height='550' /> -->
-			<div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;" onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></div> 
-			<canvas class='kenBurns prodThumbContainer displayNone' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></canvas>		</div>
+			<!-- ORIG IMAGE CALL --> <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' /> 
+			<!-- <div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;" onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></div> -->
+			<!-- <canvas class='kenBurns prodThumbContainer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></canvas> -->
+		</div>
 
 		<div class='prodListDesc'>
 			<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
