@@ -356,14 +356,14 @@ remember to NOT put the button inside the 'onclick' container or two events will
 -->
 <li id='productListTemplate' class='loadingBG anyMasonry productListTemplate hovBorderWhite10px' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
-	<!-- <div class='boxShadower pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></div> -->
+	<div class='boxShadower pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></div>
 	
 	<button class='floatRight pointer quickView primaryColor displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
 
 	<div class='prodThumbContainer'>
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
-			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' /> -->
-			<div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> 
+			<!-- ORIG IMAGE CALL --> <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' />
+			<!-- <div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> -->
 			<!-- <canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> -->
 		</div>
 
