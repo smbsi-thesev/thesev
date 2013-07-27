@@ -328,7 +328,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class='pointer boxShadower' onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});"></div>
 	<div class='fullHeightWidth'>
 		<div class='thumbContainer'>
-			<img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='316' height='316' />
+			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='316' height='316' /> -->
+			<div class='masonImage' data-bind="var:category(%meta.CAT_THUMB); format:assignAttribute; attribute:data-imgsrc;"></div> 
+			<canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> 
 			<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 		</div>
 	</div>
@@ -360,9 +362,9 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 	<div class='prodThumbContainer'>
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
-			<!-- ORIG IMAGE CALL --> <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' /> 
-			<!-- <div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;" onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></div> -->
-			<!-- <canvas class='kenBurns prodThumbContainer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));"></canvas> -->
+			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='316' height='316' /> -->
+			<div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> 
+			<canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> 
 		</div>
 
 		<div class='prodListDesc'>
