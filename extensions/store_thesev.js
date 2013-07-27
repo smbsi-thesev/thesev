@@ -273,22 +273,34 @@ var store_thesev = function() {
 			},
 	*/	
 			handleAppLoginCreate : function($form)	{
-			/*	if($form)	{
+				if($form)	{
 					var formObj = $form.serializeJSON();
-					app.calls.appBuyerCreate.init(formObj,{'callback':function(rd){
-						if(app.model.responseHasErrors(rd)){
-							$form.anymessage({'message':rd});
+					
+					if(formObj.pass !== formObj.pass2) {
+						app.u.throwMessage('Sorry, your passwords do not match! Please re-enter your password');
+						return;
+					}
+					
+					var tagObj = {
+						'callback':function(rd) {
+							if(app.model.responseHasErrors(rd)) {
+								$form.anymessage({'message':rd});
 							}
-						else	{
-							$form.empty().anymessage({'message':'Thank you, your account request has been submitted. you will be notified by email when you are approved.'})
+							else {
+								showContent('customer',{'show':'myaccount'});
+								app.u.throwMessage(app.u.successMsgObject("Your account has been created!"));
 							}
-						}});
+						}
+					}
+					
+					formObj._vendor = "thesev";
+					app.calls.appBuyerCreate.init(formObj,tagObj,'immutable');
 					app.model.dispatchThis('immutable');
-					}
-				else	{
+				}
+				else {
 					$('#globalMessaging').anymessage({'message':'$form not passed into myRIA.u.handleBuyerAccountCreate','gMessage':true});
-					}
-			*/	},
+				}
+			},
 	
 			sansReviews : function($context) {
 				if($('.noReviews', $context).children().length === 0) {
