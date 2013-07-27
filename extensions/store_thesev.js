@@ -112,6 +112,20 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
+			//form for international shipping agreement in checkout
+			interShipWarningAcceptClick : function(){
+				if($('#interShipAgreeCheck').is(':checked')){
+					$('#noCheckWarning').hide();
+					$('#interShippingModal').dialog('close');
+					$('.interShippingModalCont').css('height','1045px');
+				}
+				else
+				{
+					$('#noCheckWarning').show();
+					$('.interShippingModalCont').css('height','1070px');
+				}
+			},
+			
 			//activates drop down menus
 			showDropDown : function($tag) {
 				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow') === 'false') {
