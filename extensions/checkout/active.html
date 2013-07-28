@@ -81,20 +81,24 @@ item list and summary are separate just to give more control over location.
 		</fieldset>
 
 	</div>
-
-	<fieldset data-app-role='chkoutMethodsShip' class='marginBottom checkoutRight'>
-		<legend class='headerPadding shipingMethods' >Shipping Methods</legend>
-		<div class='panelContent' data-bind='format:loadsTemplate; loadsTemplate: chkoutMethodsShipTemplate;'></div>
-	</fieldset>
-
-
 	
-<!-- totals et all -->
-	<fieldset data-app-role='chkoutCartSummary' class='marginBottom checkoutRight'>
-		<legend class='headerPadding' >Summary</legend>
-		<div class='panelContent' data-bind='format:loadsTemplate; loadsTemplate: chkoutCartSummaryTemplate;'></div>
-	</fieldset>
+	<div class='checkoutRight'>
 
+		<fieldset data-app-role='chkoutMethodsShip' class='marginBottom'>
+			<legend class='headerPadding shipingMethods' >Shipping Methods</legend>
+			<div class='panelContent' data-bind='format:loadsTemplate; loadsTemplate: chkoutMethodsShipTemplate;'></div>
+		</fieldset>
+
+
+		
+	<!-- totals et all -->
+		<fieldset data-app-role='chkoutCartSummary' class='marginBottom'>
+			<legend class='headerPadding' >Summary</legend>
+			<div class='panelContent' data-bind='format:loadsTemplate; loadsTemplate: chkoutCartSummaryTemplate;'></div>
+		</fieldset>
+
+	</div>
+	
 	</form>
 	
 	
