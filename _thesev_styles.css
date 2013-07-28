@@ -29,6 +29,7 @@ a {text-decoration:none;}
 .primaryCT {color:#ed0d53;}
 .secondaryCT  {color:#0c8a96;}
 .tertiaryCT {color:#ffc70e;}
+.blackColor {color:#000000;}
 
 /*Hoverable app font colors (change when mouse hovers over)*/
 .primaryCTH {color:#ed0d53;}
@@ -367,9 +368,19 @@ CHECKOUT
 
 .checkoutFormContainer fieldset {background: #ffffff; border: 1px solid #FFFFFF; box-shadow: 0 0 2px 2px #777777; padding: 20px; margin:0 0 25px 0;}
 .checkoutFormContainer fieldset legend {font-family:oswald; font-size:1.4em; background: #000000; position: absolute; margin: -36px 0 5px 0;}
-.checkoutFormContainer fieldset legend.shipingMethods {margin:-90px 0 0 0;}
+.checkoutFormContainer fieldset legend.shipingMethods {top:20px;}
 
 .chkoutCartContentsTemplate {font-size:1.3em;}
+.checkoutLeft td {padding:5px 0; border-bottom:1px solid #777777;}
+#checkoutContainer input, #checkoutContainer select {width:50%; padding:5px; border:2px solid #000000; background:#000000; color:#ffffff;}
+#checkoutContainer select {width:52.5%;}
+#checkoutContainer .couponEntryContainer input {width:auto;}
+#checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
+#checkoutContainer input[type="radio"] {width:auto;}
+.cartPlaceOrder:hover {background:#ED0D53; color:#ffffff;}
+
+.checkoutCosts {font-family:montserrat; font-size:1.6em;}
+
 
 /*************************************************************************************
 LOGIN MODAL
@@ -522,7 +533,6 @@ media querries
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block; }
 /*CHECKOUT*/
 	#checkoutContainer {width:770px;}
-	.checkoutFormContainer fieldset legend.shipingMethods {margin:-105px 0 0 0;}
 }
 
 @media screen and (max-width: 800px) {
@@ -560,7 +570,6 @@ media querries
 	#checkoutContainer {width:630px;}
 	.checkoutLeft {width:61%;}
 	.checkoutRight {width:35%;}
-	.checkoutFormContainer fieldset legend.shipingMethods {margin:-120px 0 0 0;
 }
 
 @media screen and (max-width: 650px) {
@@ -606,7 +615,7 @@ media querries
 	#checkoutContainer {width:425px;}
 	.checkoutLeft {width:100%;}
 	.checkoutRight {width:100%; float:left; clear:both;}
-	.checkoutFormContainer fieldset legend.shipingMethods {margin:-90 0 0 0;
+	.checkoutFormContainer fieldset legend.shipingMethods {top:700px;}
 }
 
 @media screen and (max-width: 425px) {
@@ -639,6 +648,7 @@ media querries
 	.workTape {margin:0 0 0 41%;}
 /*CHECKOUT*/
 	#checkoutContainer {width:320px;}
+	.checkoutFormContainer fieldset legend.shipingMethods {top:750px;}
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
