@@ -364,19 +364,12 @@ CHECKOUT
 #checkoutContainer {height:auto; width:940px; margin:30px auto 0 auto;}
 .checkoutLeft {height:auto; width:57%; float:left;}
 .checkoutRight {height:auto; width:36%; float:right;}
-.checkoutFormContainer fieldset {
-    background: #ffffff;
-    border: 1px solid #FFFFFF;
-    box-shadow: 0 0 2px 2px #777777;
-    padding: 20px; margin:0 0 25px 0;
-}
-.checkoutFormContainer fieldset legend {font-family:oswald; font-size:1.4em;
-    background: #000000;
-    position: absolute;
-    margin: -36px 0 5px 0;
-}
 
+.checkoutFormContainer fieldset {background: #ffffff; border: 1px solid #FFFFFF; box-shadow: 0 0 2px 2px #777777; padding: 20px; margin:0 0 25px 0;}
+.checkoutFormContainer fieldset legend {font-family:oswald; font-size:1.4em; background: #000000; position: absolute; margin: -36px 0 5px 0;}
 .checkoutFormContainer fieldset legend.shipingMethods {margin:-90px 0 0 0;}
+
+.chkoutCartContentsTemplate {font-size:1.3em;}
 
 /*************************************************************************************
 LOGIN MODAL
@@ -527,6 +520,8 @@ media querries
 	.workWithMe {margin:0 0 2% 6%; float:left;}
 	.priceContainer {width:33%; float:left; padding:30px 0 0 0;}
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block; }
+/*CHECKOUT*/
+	#checkoutContainer {width:770px;}
 }
 
 @media screen and (max-width: 800px) {
@@ -560,6 +555,8 @@ media querries
 	.prodAddedToCart  {height:73px;}
 	.productPage .iconATC  {top: auto; bottom:115px; left:42%;}
 	.productPage .iconATW  {top: auto; bottom:7px; left:42%;}
+/*CHECKOUT*/
+	#checkoutContainer {width:630px;}
 }
 
 @media screen and (max-width: 650px) {
