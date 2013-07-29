@@ -626,16 +626,16 @@ this will likely become more flexible in the future. ###
 			<div class='priceContainer marginBottom'>
 				<div class='displayNone priceFloat' data-bind='var:product(zoovy:prod_msrp; format:showIfSet;'>
 					<div class='halfPrice floatLeft'>
-						<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; hideZero:true;'></h4>
+						<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $; hideZero:true;'></h4>
 						<span class='primaryCT forYou'>FOR YOU</span>
 					</div>
 					<div class='halfPrice floatLeft'>
-						<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; hideZero:true;'></span></h5>
+						<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $; hideZero:true;'></span></h5>
 						<span class='primaryCT forRetail'>RETAIL</span>
 					</div>
 				</div>
 				<div class='priceFloat'>
-					<h4 class='basePriceAlone' data-bind='var: product(zoovy:base_price); format:money; hideZero:true;'></h4>
+					<h4 class='basePriceAlone' data-bind='var: product(zoovy:base_price); format:money; currencySign: $; hideZero:true;'></h4>
 					<span class='primaryCT forYou'>FOR YOU</span>
 				</div>
 			<!--
