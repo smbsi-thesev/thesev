@@ -28,7 +28,8 @@
         var frames_per_second = options.frames_per_second || 30;
         var frame_time = (1 / frames_per_second) * 1000;
         var zoom_level = 1 / (options.zoom || 2);
-        var clear_color = options.background_color || '#000000';
+		var padding_level = options.padding;	
+		var clear_color = options.background_color || '#000000';
 
         var images = [];
         $(image_paths).each(function(i, image_path){
@@ -141,7 +142,7 @@
                     var r1 = fit(iw, ih, width, height);
                     var r2 = scale_rect(r1, zoom_level);
 					
-					var r3 = myfit(iw,ih,width,height);
+					var r3 = myfit(iw,ih,width,height, padding_level);
 					var r4 = myscale(r3, zoom_level);
 					
 					app.u.dump(r3);
