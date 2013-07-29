@@ -84,7 +84,7 @@ var store_thesev_kbeffect = function() {
 		
 			holdKenBurnsEffect : function($this) {
 				if($this.is(':checked')) {
-					dontKenBurns = true;
+					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
 					//app.u.dump(dontKenBurns);
 				}
 				else {
@@ -131,9 +131,10 @@ var store_thesev_kbeffect = function() {
 						$canvas.show();
 						$canvas.kenburns({
 							"images":images,
-							"background_color":"transparent",
-							"frames_per_second":30,
-							"zoom_level":3,
+							"background_color":"#FFFFFF",
+							"zoom_level":5,
+							"padding":1.5,
+							"fade_time": 0,
 							"display_time":3000
 							});
 						$container.on('mouseleave.kenburns', function(){

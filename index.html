@@ -172,6 +172,7 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 			</div>
 		</div>
 	</div>
+	<a onClick='app.ext.myRIA.u.handleLogoutActions(); return false;' href='#'>Sign Out</a>
 </header>
 
 
@@ -1165,7 +1166,7 @@ subscribeListsArticle is used for authenticated buyers
 				<div id="gotAccount1"> 
 					<h1 class='smallcaps'>WELCOME BACK</h1>
 					<!-- Third parameter is id of message destination -->
-					<form action='#' onSubmit='app.ext.store_thesev.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessagingInline")); return false;' id='modalLoginForm'>
+					<form action='#' onSubmit='app.ext.store_thesev.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessagingInline")); return false;' id='modalLoginForm1'>
 						<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
 						<fieldset>
 							<input type='email' class='zform_textbox zform_email' name='login' id='modalLoginLogin' value='' size='39' placeholder='E-mail address' />
@@ -1736,32 +1737,26 @@ The 'data-action' attribute is used to assign an onclick.
 	<p id='loginMessaging' class='marginBottom appMessaging'></p>
 
 	<div id='loginFormContainer'>
-		<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("#modalLoginlogin1").val(),$("#modalLoginpassword").val()); return false;' id='modalLoginForm'>
-			<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-				<fieldset>
-				
-				<div class='createAccount'>
-					<h1 class='smallcaps'>First Time With Us?</h1>
-					<p>If you have never made a purchase at this web site and have never subscribed to this store's mailing list,
-						please choose this option.</p>
-					<button class='modalCreateButton tertiaryColorHover' onClick="return showContent('customer',{'show':'createaccount'});">Create an Account</button>
-				</div>
+		<div class='createAccount'>
+			<h1 class='smallcaps'>First Time With Us?</h1>
+			<p>If you have never made a purchase at this web site and have never subscribed to this store's mailing list,
+				please choose this option.</p>
+			<button class='modalCreateButton tertiaryColorHover' onClick="return showContent('customer',{'show':'createaccount'});">Create an Account</button>
+		</div>
 
-				<div id="gotAccount"> 
-					<h1 class='smallcaps'>Welcome Back</h1>
-					<!-- Third parameter is id of message destination -->
-					<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("input[name=login]", $(this)).val(),$("input[name=password]", $(this)).val(),$("#loginMessaging")); return false;' id='modalLoginForm'>
-						<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-						<fieldset>
-							<input type='email' class='zform_textbox zform_email' name='login' id='modalLoginlogin1' value='' size='20' placeholder='E-mail address' />
-							<input type='password' class='zform_textbox zform_password' name='password' id='modalLoginpassword1' value='' size='20' placeholder='Password' />
-							<input type='submit' value='Log In' class='smallcaps ui-button-text ui-button ui-corner-all secondaryColorHover' />
-						</fieldset>
-					</form>
-					<a href="#" onClick="app.calls.appBuyerPasswordRecover.init($('input[name=login]', $(this).parent()).val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'loginMessaging'}); app.model.dispatchThis('immutable'); return false;">Forgot your password?<br> Enter your username and click hear to retrieve it!</a>
-				</div>
-			</fieldset>
-		</form>
+		<div id="gotAccount"> 
+			<h1 class='smallcaps'>Welcome Back</h1>
+			<!-- Third parameter is id of message destination -->
+			<form action='#' onSubmit='app.ext.store_thesev.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessagingInline")); return false;' id='modalLoginForm'>
+				<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+				<fieldset>
+					<input type='email' class='zform_textbox zform_email' name='login' id='modalLoginlogin' value='' size='20' placeholder='E-mail address' />
+					<input type='password' class='zform_textbox zform_password' name='password' id='modalLoginpassword' value='' size='20' placeholder='Password' />
+					<input type='submit' value='Log In' class='smallcaps ui-button-text ui-button ui-corner-all secondaryColorHover' />
+				</fieldset>
+			</form>
+			<a href="#" onClick="app.calls.appBuyerPasswordRecover.init($('input[name=login]', $(this).parent()).val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'loginMessaging'}); app.model.dispatchThis('immutable'); return false;">Forgot your password?<br> Enter your username and click hear to retrieve it!</a>
+		</div>
 	</div><!-- /recoverPasswordContainer -->
 </div>
 
