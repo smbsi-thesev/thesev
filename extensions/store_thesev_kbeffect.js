@@ -84,23 +84,27 @@ var store_thesev_kbeffect = function() {
 		
 			holdKenBurnsEffect : function($this) {
 				if($this.is(':checked')) {
+					$('.kbCheckBox','#appView').val(':checked');
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
-					//app.u.dump(dontKenBurns);
+					app.storageFunctions.writeLocal(app.ext.store_thesev_kbeffect.vars.dontKenBurns,true);
+					//app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
 				}
 				else {
-					dontKenBurns = false;
-					//app.u.dump(dontKenBurns);
+					app.ext.store_thesev_kbeffect.vars.dontKenBurns = false;
+					app.storageFunctions.writeLocal(app.ext.store_thesev_kbeffect.vars.dontKenBurns,false);
+					//app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
 				}
 			},
 		
 			kbEffectize :  function($container) {
+				
 				var $canvas = $('canvas',$container);
 				//app.u.dump("kbeffectize");
-//				if(dontKenBurns === true) {
-//					return;
-//					}
-//				else {
+
 					if(!$canvas.data('kenburns')){
+					
+					if(!app.ext.store_thesev_kbeffect.vars.dontKenBurns) {
+										
 						$('.masonImage',$container).hide();
 						
 						var pid = $canvas.data('pid');
@@ -137,12 +141,15 @@ var store_thesev_kbeffect = function() {
 							"fade_time": 0,
 							"display_time":3000
 							});
+							
+							}
+							
+							
 						$container.on('mouseleave.kenburns', function(){
 							app.ext.store_thesev_kbeffect.a.kbUnEffectize($(this));
 							$(this).off('mouseleave.kenburns');
 							});
 						}
-//					}
 				},
 				
 			kbUnEffectize : function($container){
