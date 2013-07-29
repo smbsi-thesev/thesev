@@ -734,10 +734,12 @@ an existing user gets a list of previous addresses they've used and an option to
 					hasPredefShipAddr = app.ext.cco.u.buyerHasPredefinedAddresses('ship');
 					
 					if(formObj['want/bill_to_ship'] && hasPredefBillAddr && formObj['bill/shortcut']){
-						$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/				//$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/				$fieldset.anymessage({"message":"<p>Enter address to see shipping options.</p>","persistent":true});
 						}
 					else if(!formObj['want/bill_to_ship'] && app.ext.cco.u.buyerHasPredefinedAddresses('ship') == true && formObj['ship/shortcut']){
-						$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/				//$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/				$fieldset.anymessage({"message":"<p>Enter address to see shipping options.</p>","persistent":true});
 						}
 					else	{
 						$fieldset.anymessage({"message":"<p>Please enter/select an address for a list of shipping options.</p>","persistent":true});
@@ -752,7 +754,8 @@ an existing user gets a list of previous addresses they've used and an option to
 						$fieldset.anymessage({"message":"<p>Please enter a shipping zip code for a list of shipping options.</p>","persistent":true});
 						}
 					else	{
-						$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/					//$fieldset.anymessage({"message":"<p>No shipping methods are available.</p>","persistent":true});
+/*thesev*/					$fieldset.anymessage({"message":"<p>Enter address to see shipping options.</p>","persistent":true});
 						}
 					}
 				}, //chkoutMethodsShip
