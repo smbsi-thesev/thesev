@@ -237,6 +237,7 @@ It is run once, executed by the renderFormat.
 								}
 							}
 						}
+					app.ext.store_thesev_kbeffect.u.kenburnsInit($container);
 					app.ext.prodlist_infinite.u.handleScroll($container);
 					}
 				else{

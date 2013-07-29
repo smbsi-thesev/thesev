@@ -37,12 +37,12 @@ var store_thesev_kbeffect = function() {
 				
 		/*		app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.masonizeImages($context);
+					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]);
 		*/		
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.masonizeImages($context);
+					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]) 						
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
@@ -80,28 +80,66 @@ var store_thesev_kbeffect = function() {
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
 		
-//			kbEffectize :  function($this) {
-//				var images = [];
-		//		var img = app.u.makeImage({
-		//				"name"	: '',
-		//				"w"		: 100,
-		//				"h"		: 100,
-		//				"b"		: "tttttt",
-		//				"tag"	: 1
-		//				});
-		//		images.push(img,img);		
-				
-/*				images.push("http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg","http://www.8195b7aa5.dagobah.zoovy.net/media/img/smbsi/W140-H140-Btttttt/the_sev/amano_studio/mano_13fo.jpg");
-				
-				$this.kenburns(
-					{
+			kbEffectize :  function($container) {
+				var $canvas = $('canvas',$container);
+				//app.u.dump("kbeffectize");
+				if(!$canvas.data('kenburns')){
+					$('.masonImage',$container).hide();
+					
+					var pid = $canvas.data('pid');
+					
+					var images = $canvas.data('images') || [];
+					
+					if(images.length == 0){
+						var tmp = []
+						for(var i = 1; i<10; i++){
+							if(app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i]){
+								tmp.push(app.u.makeImage({
+									"name":app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i],
+									"b":"ffffff"
+									}));
+								}
+							}
+						
+						for(var i=0; i<3;i++){
+							for(var index in tmp){
+								images.push(tmp[index]);
+								}
+							}
+						
+						$canvas.data('images',images);
+						
+						}
+					
+					$canvas.show();
+					$canvas.kenburns({
 						"images":images,
 						"background_color":"transparent",
-						"frames_per_second":120,
-						"display_time":20000
+						"frames_per_second":30,
+						"zoom_level":3,
+						"display_time":3000
+						});
+					$container.on('mouseleave.kenburns', function(){
+						app.ext.store_thesev_kbeffect.a.kbUnEffectize($(this));
+						$(this).off('mouseleave.kenburns');
+						});
+					}
+				
+				},
+				
+			kbUnEffectize : function($container){
+				//app.u.dump("uneffectize");
+				var $canvas = $('canvas',$container);
+				clearInterval($canvas.data('kenburns'));
+				$canvas.removeData('kenburns');
+				$canvas.hide();
+				$('.masonImage', $container).show();
+				$container.on('mouseenter.kenburns', function(){
+					app.ext.store_thesev_kbeffect.a.kbEffectize($(this));
+					$(this).off('mouseenter.kenburns');
 					});
-			}
-*/		
+				}
+			
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -117,7 +155,7 @@ var store_thesev_kbeffect = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
-			masonizeImages : function($context) {
+			kenburnsInit : function($context) {
 				$('.masonImage', $context).each(function() {
 					//app.u.dump('Width: '); app.u.dump($(this).innerWidth()); app.u.dump('Height'); app.u.dump($(this).innerHeight()); 
 					$(this).append(app.u.makeImage({
@@ -127,7 +165,13 @@ var store_thesev_kbeffect = function() {
 						"b"		: "tttttt",
 						"tag"	: 1
 					}));
+					$(this).removeClass('masonImage');
 				});
+				$('.kenburnsMouseover',$context).on('mouseenter.kenburns', function(){
+					app.ext.store_thesev_kbeffect.a.kbEffectize($(this));
+					$(this).off('mouseenter.kenburns');
+					$(this).removeClass('kenburnsMouseover');
+					});
 			}
 		}, //u [utilities]
 

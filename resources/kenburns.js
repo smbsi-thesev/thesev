@@ -1,13 +1,15 @@
 (function($){
 
     $.fn.kenburns = function(options) {
-
+		//app.u.dump("kenburnsing");
         var $canvas = $(this);
+		$canvas.data('kenburns',true);
         var ctx = this[0].getContext('2d');
         var start_time = null;
-        var width = $canvas.width();
-        var height = $canvas.height();
-
+        var width = $canvas.outerWidth();
+        var height = $canvas.outerHeight();
+		ctx.canvas.width = width;
+		ctx.canvas.height = height;
         var image_paths = options.images;
         var display_time = options.display_time || 7000;
         var fade_time = Math.min(display_time / 2, options.fade_time || 1000);
@@ -58,7 +60,8 @@
 
         function fit(src_w, src_h, dst_w, dst_h) {
             // Finds the best-fit rect so that the destination can be covered
-            var src_a = src_w / src_h;
+            
+			var src_a = src_w / src_h;
             var dst_a = dst_w / dst_h;
             var w = src_h * dst_a;
             var h = src_h;
@@ -69,7 +72,9 @@
             }
             var x = (src_w - w) / 2;
             var y = (src_h - h) / 2;
+			//app.u.dump(x+".."+y+".."+w+".."+h);
             return [x, y, x+w, y+h];
+			
         }
 
         function get_image_info(image_index, load_callback) {
@@ -85,9 +90,10 @@
                     var iw = image.width;
                     var ih = image.height;
 
-                    var r1 = fit(iw, ih, width, height);;
+                    var r1 = fit(iw, ih, width, height);
                     var r2 = scale_rect(r1, zoom_level);
-
+					
+					
                     var align_x = Math.floor(Math.random() * 3) - 1;
                     var align_y = Math.floor(Math.random() * 3) - 1;
                     align_x /= 2;
@@ -100,7 +106,10 @@
                     var y = r2[1];
                     r2[1] += y * align_y;
                     r2[3] += y * align_y;
-
+					
+					//app.u.dump(r1);
+					//app.u.dump(r2);
+					
                     if (image_index % 2) {
                         image_info.r1 = r1;
                         image_info.r2 = r2;
@@ -129,11 +138,15 @@
             var image_info = get_image_info(image_index);
             if (image_info.loaded) {
                 var r = interpolate_rect(image_info.r1, image_info.r2, anim);
+				//app.u.dump(r);
                 var transparency = Math.min(1, fade);
 
                 if (transparency > 0) {
                     ctx.save();
                     ctx.globalAlpha = Math.min(1, transparency);
+					//app.u.dump(r);
+					//app.u.dump(width);
+					//app.u.dump(height);
                     ctx.drawImage(image_info.image, r[0], r[1], r[2] - r[0], r[3] - r[1], 0, 0, width, height);
                     ctx.restore();
                 }
@@ -189,7 +202,7 @@
         get_image_info(0, function(){
             get_image_info(1, function(){
                 start_time = get_time();
-                setInterval(update, frame_time);
+                $canvas.data('kenburns',setInterval(update, frame_time));
             })
         });
 
