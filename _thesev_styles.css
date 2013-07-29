@@ -383,8 +383,9 @@ CHECKOUT
 #checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
 #checkoutContainer input[type="radio"] {width:auto;}
 .cartPlaceOrder:hover {background:#ED0D53; color:#ffffff;}
-
 .checkoutCosts {font-family:montserrat; font-size:1.6em;}
+
+#checkoutContainer .keepShopin {height:80px; width:100%; font-family:oswald; font-size:3.2em; font-weight:bold; color:#ffffff; text-align:center; margin:0 0 20px 0; border:none;}
 
 /*************************************************************************************
 LOGIN MODAL
