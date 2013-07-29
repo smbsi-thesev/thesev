@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130727214000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130727141000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -849,7 +849,7 @@ So the cart template should contain these two elements and the extension should 
 			<div class='cartSummaryTotalsContainer floatRight'>
 				<div class='cartSummaryContainer'>
 					<section id='cartTemplateCostSummary' class='cartSummary'>
-						<div class='cartSubTot'data-bind="var: cart(sum/items_total); format:money; className:orderSubtotal; hideZero:false; currencySign: ; "></div>
+						<div class='cartSubTot'data-bind="var: cart(sum/items_total); format:money; className:orderSubtotal; hideZero:false; currencySign: $; "></div>
 						<div class='cartSubTotText'>SUBTOTAL</div>
 						<!--
 						<div data-bind='var: cart(sum/tax_total); format:money; className:orderTax; hideZero:true;currencySign: $; pretext:Tax: ; '></div>
@@ -905,12 +905,12 @@ So the cart template should contain these two elements and the extension should 
 			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='200' height='200' />
 			<div class='prodListDesc'>
 				<span data-bind='var: product(prod_name); format:text; '></span>
-				<span data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; pretext: x ;' ></span>
+				<span class='floatRight' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false;' ></span>
 			</div>
 		</div>
 		<!-- <span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span> -->
 		<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
-			
+		<div class='itemPrice2' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; posttext: / item;' ></div>
 		<div class='qtySelectStyler'>
 			<select type='number' class='qtyInput numberInput sprite' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;'>
 			<option value='1'>Quantity: 1</option>

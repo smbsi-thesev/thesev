@@ -29,7 +29,6 @@ a {text-decoration:none;}
 .primaryCT {color:#ed0d53;}
 .secondaryCT  {color:#0c8a96;}
 .tertiaryCT {color:#ffc70e;}
-.blackColor {color:#000000;}
 
 /*Hoverable app font colors (change when mouse hovers over)*/
 .primaryCTH {color:#ed0d53;}
@@ -345,6 +344,7 @@ Cart
 #cartStuffList.fluidList li {height:360px; width:220px; background:none; box-shadow:0 0 0 0; border:none; float:left;}
 #cartStuffList.lineItemProdlist > li {width:220px !important;}
 .cartImageCont {height:200px; width:200px; border:10px solid #ffffff; box-shadow:0 0 2px 0; position:relative;}
+.itemPrice2 {height:25px; width:auto; font-size:2.4em; text-align:center; padding:10px 0 0 0; clear:both;}
 .qtySelectStyler {height:28px; width:98%; margin:10px 0 0 0; color:#999999; border:2px solid #000000; border-right:3px solid #000; overflow:hidden; display:inline-block; font-size:1.2em;}
 .qtySelectStyler .qtyInput {height:28px; width:109%; padding:3% 1% 1% 1%; color:#999999; border:none; background-repeat:no-repeat; background-position:188px -100px;}
 .qtySelectStyler .qtyInput option {height:20px; width:100%; padding:4px 0 0 4px;}
@@ -353,33 +353,6 @@ Cart
 #cartStuffList .moveToWishlist {height:50px; width:170px; background:#000000; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right;}
 #cartStuffList .moveToWishlist:hover {background:#0c8a96;}
 #cartStuffList .moveToWishlist span {height:32px; width:38px; background-position:-205px -55px; position:absolute; bottom:22px; left:9px; z-index:1;}
-
-/*************************************************************************************
-END CART
-*************************************************************************************/
-
-/*************************************************************************************
-CHECKOUT
-*************************************************************************************/
-
-#checkoutContainer {height:auto; width:940px; margin:30px auto 0 auto;}
-.checkoutLeft {height:auto; width:59%; float:left;}
-.checkoutRight {height:auto; width:38%; float:right;}
-
-.checkoutFormContainer fieldset {background: #ffffff; border: 1px solid #FFFFFF; box-shadow: 0 0 2px 2px #777777; padding: 20px; margin:0 0 25px 0;}
-.checkoutFormContainer fieldset legend {font-family:oswald; font-size:1.4em; background: #000000; position: absolute; margin: -36px 0 5px 0;}
-.checkoutFormContainer fieldset legend.shipingMethods {top:20px;}
-
-.chkoutCartContentsTemplate {font-size:1.3em;}
-.checkoutLeft td {padding:5px 0; border-bottom:1px solid #777777;}
-#checkoutContainer input, #checkoutContainer select {width:50%; padding:5px; border:2px solid #000000; background:#000000; color:#ffffff;}
-#checkoutContainer select {width:52.5%;}
-#checkoutContainer .couponEntryContainer input {width:auto;}
-#checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
-#checkoutContainer input[type="radio"] {width:auto;}
-.cartPlaceOrder:hover {background:#ED0D53; color:#ffffff;}
-
-.checkoutCosts {font-family:montserrat; font-size:1.6em;}
 
 
 /*************************************************************************************
@@ -531,8 +504,6 @@ media querries
 	.workWithMe {margin:0 0 2% 6%; float:left;}
 	.priceContainer {width:33%; float:left; padding:30px 0 0 0;}
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block; }
-/*CHECKOUT*/
-	#checkoutContainer {width:770px;}
 }
 
 @media screen and (max-width: 800px) {
@@ -566,10 +537,6 @@ media querries
 	.prodAddedToCart  {height:73px;}
 	.productPage .iconATC  {top: auto; bottom:115px; left:42%;}
 	.productPage .iconATW  {top: auto; bottom:7px; left:42%;}
-/*CHECKOUT*/
-	#checkoutContainer {width:630px;}
-	.checkoutLeft {width:61%;}
-	.checkoutRight {width:35%;}
 }
 
 @media screen and (max-width: 650px) {
@@ -611,11 +578,6 @@ media querries
 	.prodBuyerContainer {width:100%;}
 	.workTape {margin:0 0 0 37%;}
 	.priceContainer, .prodViewerAddToCartForm {width:50%;}
-/*CHECKOUT*/
-	#checkoutContainer {width:425px;}
-	.checkoutLeft {width:100%;}
-	.checkoutRight {width:100%; float:left; clear:both;}
-	.checkoutFormContainer fieldset legend.shipingMethods {top:700px;}
 }
 
 @media screen and (max-width: 425px) {
@@ -646,9 +608,6 @@ media querries
 	.prodThumPad {margin:0 9% 5% 9%;}
 	.iconPubRev {display:none;}
 	.workTape {margin:0 0 0 41%;}
-/*CHECKOUT*/
-	#checkoutContainer {width:320px;}
-	.checkoutFormContainer fieldset legend.shipingMethods {top:750px;}
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
