@@ -353,11 +353,10 @@ Cart
 .qtySelectStyler .qtyInput {height:28px; width:109%; padding:3% 1% 1% 1%; color:#999999; border:none; background-repeat:no-repeat; background-position:188px -100px;}
 .qtySelectStyler .qtyInput option {height:20px; width:100%; padding:4px 0 0 4px;}
 #cartStuffList .removeButton.ui-state-default {height:25px; width:26px; background:url(images/sprites-500x500.png) 330px -59px transparent; border:none; margin:22px 12px 0 12px;}
-#cartStuffList .removeButton.ui-state-default span {display:none;}
-#cartStuffList .moveToWishlist {height:50px; width:170px; background:#000000; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right;}
+#cartStuffList .removeButton.ui-state-default span, #cartStuffList .moveToWishlist span.ui-button-icon-primary {display:none;}
+#cartStuffList .moveToWishlist {height:50px; width:170px; background:#000000; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right; position:relative;}
 #cartStuffList .moveToWishlist:hover {background:#0c8a96;}
-#cartStuffList .moveToWishlist span {height:32px; width:38px; background-position:-205px -55px; position:absolute; bottom:22px; left:9px; z-index:1;}
-
+#cartStuffList .moveToWishlist span.iconWish {height:32px; width:38px; background-position:-205px -55px; position:absolute; bottom:10px; left:9px; z-index:1;}
 
 /*************************************************************************************
 LOGIN MODAL
