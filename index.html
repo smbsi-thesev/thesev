@@ -309,7 +309,12 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'></ul><!-- outputs a list of subcategories -->
 
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'></ul><!-- outputs the product list -->
+	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
+		<form class='displayNone kbForm' data-bind="var: category(@products); format:showIfSet;">
+			<label for='dontKenBurns'>Turn off moving products</label>
+			<input type='checkbox' name='dontKenBurns' class='kbCheckBox' onClick='app.ext.store_thesev_kbeffect.a.holdKenBurnsEffect($(this));'></input>
+		</form>
+	</ul><!-- outputs the product list -->
 
 	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 

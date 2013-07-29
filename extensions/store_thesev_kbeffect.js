@@ -27,7 +27,9 @@ var store_thesev_kbeffect = function() {
 
 ////////////////////////////////////   CALLBACKS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
+	vars : { 
+		dontKenBurns : false
+	},
 
 	callbacks : {
 //executed when extension is loaded. should include any validation that needs to occur.
@@ -80,51 +82,66 @@ var store_thesev_kbeffect = function() {
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
 		
+			holdKenBurnsEffect : function($this) {
+				if($this.is(':checked')) {
+					dontKenBurns = true;
+					//app.u.dump(dontKenBurns);
+				}
+				else {
+					dontKenBurns = false;
+					//app.u.dump(dontKenBurns);
+				}
+			},
+		
 			kbEffectize :  function($container) {
 				var $canvas = $('canvas',$container);
 				//app.u.dump("kbeffectize");
-				if(!$canvas.data('kenburns')){
-					$('.masonImage',$container).hide();
-					
-					var pid = $canvas.data('pid');
-					
-					var images = $canvas.data('images') || [];
-					
-					if(images.length == 0){
-						var tmp = []
-						for(var i = 1; i<10; i++){
-							if(app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i]){
-								tmp.push(app.u.makeImage({
-									"name":app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i],
-									"b":"ffffff"
-									}));
+//				if(dontKenBurns === true) {
+//					return;
+//					}
+//				else {
+					if(!$canvas.data('kenburns')){
+						$('.masonImage',$container).hide();
+						
+						var pid = $canvas.data('pid');
+						
+						var images = $canvas.data('images') || [];
+						
+						if(images.length == 0){
+							var tmp = []
+							for(var i = 1; i<10; i++){
+								if(app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i]){
+									tmp.push(app.u.makeImage({
+										"name":app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i],
+										"b":"ffffff"
+										}));
+									}
 								}
+							
+							for(var i=0; i<3;i++){
+								for(var index in tmp){
+									images.push(tmp[index]);
+									}
+								}
+							
+							$canvas.data('images',images);
+							
 							}
 						
-						for(var i=0; i<3;i++){
-							for(var index in tmp){
-								images.push(tmp[index]);
-								}
-							}
-						
-						$canvas.data('images',images);
-						
+						$canvas.show();
+						$canvas.kenburns({
+							"images":images,
+							"background_color":"transparent",
+							"frames_per_second":30,
+							"zoom_level":3,
+							"display_time":3000
+							});
+						$container.on('mouseleave.kenburns', function(){
+							app.ext.store_thesev_kbeffect.a.kbUnEffectize($(this));
+							$(this).off('mouseleave.kenburns');
+							});
 						}
-					
-					$canvas.show();
-					$canvas.kenburns({
-						"images":images,
-						"background_color":"transparent",
-						"frames_per_second":30,
-						"zoom_level":3,
-						"display_time":3000
-						});
-					$container.on('mouseleave.kenburns', function(){
-						app.ext.store_thesev_kbeffect.a.kbUnEffectize($(this));
-						$(this).off('mouseleave.kenburns');
-						});
-					}
-				
+//					}
 				},
 				
 			kbUnEffectize : function($container){
