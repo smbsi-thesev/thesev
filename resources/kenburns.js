@@ -2,6 +2,16 @@
 
     $.fn.kenburns = function(options) {
 		//app.u.dump("kenburnsing");
+		
+		var requestAnimFrame = 	window.requestAnimationFrame       ||
+								window.webkitRequestAnimationFrame ||
+								window.mozRequestAnimationFrame    ||
+								window.oRequestAnimationFrame      ||
+								window.msRequestAnimationFrame     ||
+								function(callback) {
+									window.setTimeout(callback, 1000 / 60);
+								};
+		
         var $canvas = $(this);
 		$canvas.data('kenburns',true);
         var ctx = this[0].getContext('2d');
@@ -196,13 +206,17 @@
             // by the time we get to it
             var preload_image = wrap_index(top_frame + 1);
             get_image_info(preload_image);
+			
+			if(true){
+                requestAnimFrame(update);
+				}
         }
 
         // Pre-load the first two images then start a timer
         get_image_info(0, function(){
             get_image_info(1, function(){
                 start_time = get_time();
-                $canvas.data('kenburns',setInterval(update, frame_time));
+                requestAnimFrame(update);
             })
         });
 
