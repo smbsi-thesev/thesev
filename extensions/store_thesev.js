@@ -211,6 +211,18 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
+		
+			tillFreeShipping : function($tag, data) {
+				
+				if (data.value < 100) {
+					var diff = app.u.formatMoney(100-data.value,'$',2,true);
+					//app.u.dump('DIFF IS: '); app.u.dump(diff);
+					$tag.append('<p>Only <span class="primaryCT">'+diff+"</span> 'till your shipping is *FREE!</p>");
+				}
+				else {
+					$tag.append('<p>Congratulations, your shipping is <span class="primaryCT">*FREE!</span></p>');
+				}
+			},
 			
 			//puts "Work with me" text into div if present, and if more than 240 characters, adds ellipses and button
 			//to expand container to show rest of content.
