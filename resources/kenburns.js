@@ -158,7 +158,7 @@
             }
             var image_info = get_image_info(image_index);
             if (image_info.loaded) {
-				var r = interpolate_rect(image_info.r3, image_info.r4, anim);
+				var r = interpolate_rect(image_info.r1, image_info.r2, anim);
                 var transparency = Math.min(1, fade);
 
                 if (transparency > 0) {
