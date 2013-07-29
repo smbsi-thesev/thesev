@@ -1,7 +1,7 @@
 (function($){
 
     $.fn.kenburns = function(options) {
-		//app.u.dump("kenburnsing");
+		app.u.dump("kenburnsing");
 		
 		var requestAnimFrame = 	window.requestAnimationFrame       ||
 								window.webkitRequestAnimationFrame ||
@@ -53,6 +53,16 @@
             var p2 = interpolate_point(r1[2], r1[3], r2[2], r2[3], i);
             return [p1.x, p1.y, p2.x, p2.y];
         }
+		
+		function myinterpolate_rect(r1, r2, i){
+			var p1 = interpolate_point(r1[0],r1[1],r2[0],r2[1],i);
+			var p2 = interpolate_point(	r1[0]+r1[2],
+										r1[1]+ r1[3],
+										r2[0]+r2[2],
+										r2[1]+r2[3],
+										i); 
+			return[p1.x, p1.y, p2.x-p1.x, p2.y-p1.y];
+		}
 
         function scale_rect(r, scale) {
             // Scale a rect around its center
@@ -86,7 +96,35 @@
             return [x, y, x+w, y+h];
 			
         }
-
+		
+		function myfit(src_w, src_h, dst_w, dst_h, padding){
+			var w, h;
+			if((dst_w/src_w)*src_h <= dst_h){
+				w = dst_w;
+				h = (dst_w/src_w)*src_h;
+				}
+			else {
+				h = dst_h;
+				w = (dst_h/src_h)*src_w;
+				}
+			
+			padding = padding || 1;
+			
+			w *= padding;
+			h *= padding;
+			
+			return [(dst_w-w)/2,(dst_h-h)/2,w,h];
+			
+		}
+		
+		function myscale(rect, scale){
+			var w = rect[2] * scale;
+            var h = rect[3] * scale;
+            var cx = rect[0] + rect[2]/2;
+            var cy = rect[1] + rect[3]/2;
+			return [cx - w/2, cy - h/2, w, h];
+		}
+		
         function get_image_info(image_index, load_callback) {
             // Gets information structure for a given index
             // Also loads the image asynchronously, if required
@@ -103,6 +141,11 @@
                     var r1 = fit(iw, ih, width, height);
                     var r2 = scale_rect(r1, zoom_level);
 					
+					var r3 = myfit(iw,ih,width,height);
+					var r4 = myscale(r3, zoom_level);
+					
+					app.u.dump(r3);
+					app.u.dump(r4);
 					
                     var align_x = Math.floor(Math.random() * 3) - 1;
                     var align_y = Math.floor(Math.random() * 3) - 1;
@@ -117,16 +160,24 @@
                     r2[1] += y * align_y;
                     r2[3] += y * align_y;
 					
-					//app.u.dump(r1);
-					//app.u.dump(r2);
+					x = r4[0];
+                    r4[0] += x * align_x;
+                    
+					
+					y = r4[1];
+                    r4[1] += y * align_y;
 					
                     if (image_index % 2) {
                         image_info.r1 = r1;
                         image_info.r2 = r2;
+                        image_info.r3 = r3;
+                        image_info.r4 = r4;
                     }
                     else {
                         image_info.r1 = r2;
                         image_info.r2 = r1;
+                        image_info.r3 = r4;
+                        image_info.r4 = r3;
                     }
 
                     if(load_callback) {
@@ -147,7 +198,8 @@
             }
             var image_info = get_image_info(image_index);
             if (image_info.loaded) {
-                var r = interpolate_rect(image_info.r1, image_info.r2, anim);
+                //var r = interpolate_rect(image_info.r1, image_info.r2, anim);
+				var r = myinterpolate_rect(image_info.r3, image_info.r4, anim);
 				//app.u.dump(r);
                 var transparency = Math.min(1, fade);
 
@@ -157,7 +209,14 @@
 					//app.u.dump(r);
 					//app.u.dump(width);
 					//app.u.dump(height);
-                    ctx.drawImage(image_info.image, r[0], r[1], r[2] - r[0], r[3] - r[1], 0, 0, width, height);
+                    //ctx.drawImage(image_info.image, r[0], r[1], r[2] - r[0], r[3] - r[1], 0, 0, width, height);
+                    try{
+						ctx.drawImage(image_info.image, r[0], r[1], r[2], r[3]);
+						}
+					catch(e){
+						app.u.dump(e);
+						app.u.dump(r);
+						}
                     ctx.restore();
                 }
             }
@@ -167,13 +226,16 @@
             // Clear the canvas
             ctx.save();
             ctx.globalAlpha = 1;
-            ctx.fillStyle = clear_color;
-            ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            ctx.fillStyle = "#FFFFFF";
+            ctx.fillRect(0, 0, width, height);
             ctx.restore();
         }
 
         function update() {
             // Render the next frame
+			ctx.clearRect(0,0,width,height);
+            ctx.fillStyle = "#FFFFFF";
+			ctx.fillRect(0,0,width,height);
             var update_time = get_time();
 
             var top_frame = Math.floor(update_time / (display_time - fade_time));
@@ -192,7 +254,7 @@
                 if (update_time < fade_time) {
                     clear();
                 } else {
-                    render_image(wrap_index(bottom_frame), bottom_time_passed / display_time, 1);
+                    render_image(wrap_index(bottom_frame), bottom_time_passed / display_time, 1 - (time_passed/fade_time));
                 }
             }
 
