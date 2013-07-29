@@ -227,7 +227,7 @@
             // Clear the canvas
             ctx.save();
             ctx.globalAlpha = 1;
-            ctx.fillStyle = "#FFFFFF";
+            ctx.fillStyle = clear_color;
             ctx.fillRect(0, 0, width, height);
             ctx.restore();
         }
@@ -235,7 +235,7 @@
         function update() {
             // Render the next frame
 			ctx.clearRect(0,0,width,height);
-            ctx.fillStyle = "#FFFFFF";
+            ctx.fillStyle = clear_color;
 			ctx.fillRect(0,0,width,height);
             var update_time = get_time();
 
