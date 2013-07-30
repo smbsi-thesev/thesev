@@ -47,6 +47,7 @@ var store_thesev_kbeffect = function() {
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]) 						
 				
@@ -205,7 +206,8 @@ var store_thesev_kbeffect = function() {
 			
 			catImageInit : function($context) {
 				$('.catMasonImage', $context).each(function() {
-					//app.u.dump('Width: '); app.u.dump($(this).innerWidth()); app.u.dump('Height'); app.u.dump($(this).innerHeight()); 
+					//app.u.dump($(this));
+					app.u.dump('Width: '); app.u.dump($(this).parent().innerWidth()); app.u.dump('Height'); app.u.dump($(this).parent().innerHeight()); 
 					$(this).append(app.u.makeImage({
 						"name"	: $(this).data('imgsrc'),
 						"w"		: $(this).innerWidth(),
