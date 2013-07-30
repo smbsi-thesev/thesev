@@ -2436,6 +2436,10 @@ elasticsearch.size = 50;
 					else	{
 					
 						switch(infoObj.show)	{
+/*smbsi*/					case 'createaccount':
+/*smbsi*/						$(".customerSideline").hide();
+/*smbsi*/						break;
+						
 							case 'newsletter':
 								$article.showLoading({'message':'Fetching newsletter list'});
 								app.calls.appNewsletterList.init({callback : function(rd){

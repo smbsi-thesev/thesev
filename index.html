@@ -1121,21 +1121,19 @@ So the cart template should contain these two elements and the extension should 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
 <div id='customerTemplate' class='clearfix'>
 
-<!--	SET TO HIDE ON ACCT CREATION!!!			
-				<div class='sideline' >
-				<nav id='customerNav'>
-				<ul class='listStyleNone noPadOrMargin'>
-			<!-- before restoring this, test cuz news form on left was causing some conflicts
-					<li><a href='#customer?show=subscriberLists'>Newsletter Subscription</a></li> -->
-<!--					<li><a href='#customer?show=myaccount'>My Account</a></li>
-					<li><a href='#customer?show=changepassword'>Change Password</a></li>
-					<li><a href='#customer?show=orders'>Order History</a></li>
-					<li><a href='#customer?show=lists'>Manage Lists</a></li>
-					<li class='hideIfLoggedOut'><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a></li>
-				</ul>
-				</nav>
-				</div>
--->
+	<div class='sideline customerSideline' data-bind="useParentData:true; format:showMe; extension:store_thesev;">
+		<nav id='customerNav'>
+			<ul class='listStyleNone noPadOrMargin'>
+				<!-- before restoring this, test cuz news form on left was causing some conflicts
+				<li><a href='#customer?show=subscriberLists'>Newsletter Subscription</a></li> -->
+				<li><a href='#customer?show=myaccount'>My Account</a></li>
+				<li><a href='#customer?show=changepassword'>Change Password</a></li>
+				<li><a href='#customer?show=orders'>Order History</a></li>
+				<li><a href='#customer?show=lists'>Manage Lists</a></li>
+				<li class='hideIfLoggedOut'><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a></li>
+			</ul>
+		</nav>
+	</div>
 	<div class='mainColumn'>
 <!-- .textContentArea is used as a selector because IE8 doesn't play well  with tag type article as a selector -->
 
