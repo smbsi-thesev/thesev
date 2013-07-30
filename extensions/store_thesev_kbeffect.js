@@ -37,6 +37,9 @@ var store_thesev_kbeffect = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
+				//reads checkbox value to stop ken burns effect on cat/prod list images from local storage and puts in app accordingly
+				app.ext.store_thesev_kbeffect.u.whoIsKenBurns();
+				
 		/*		app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
@@ -88,6 +91,7 @@ var store_thesev_kbeffect = function() {
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
 					app.storageFunctions.writeLocal(app.ext.store_thesev_kbeffect.vars.dontKenBurns,true);
 					//app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
+					//app.u.dump('Now ken burns is: '); app.u.dump(app.storageFunctions.readLocal);
 				}
 				else {
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = false;
@@ -197,6 +201,19 @@ var store_thesev_kbeffect = function() {
 					$(this).off('mouseenter.kenburns');
 					$(this).removeClass('kenburnsMouseover');
 					});
+			},
+			
+			whoIsKenBurns : function() {
+				//app.u.dump('This is ken burns: '); app.u.dump(app.storageFunctions.readLocal("dontKenBurns"));
+				if(app.storageFunctions.readLocal("dontKenBurns") === true) {
+					app.u.dump('Ken Burns is local');
+					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
+				}
+				else {
+					app.u.dump('Ken Burns is NOT local');
+					app.ext.store_thesev_kbeffect.vars.dontKenBurns = false;
+				}
+	
 			}
 		}, //u [utilities]
 
