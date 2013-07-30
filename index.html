@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130728210100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130729181000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -161,18 +161,18 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 			<div class='logIn'>
 				<div>
 					<span class=''>Hey, <span class='username'>Guest! </span></span>
-					<span>(Not you?</span> 
-					<span class='lineBreak'>
+					<span class='hideIfLoggedIn'>( Not you?</span> 
+					<span class='lineBreak hideIfLoggedIn'>
 						<a href="#!customer?show=myaccount" class='bindByAnchor primaryCTH fontBold' title='Log into your account'> Sign In</a>
 						<span>or </span>
 						<a href="#!customer?show=newsletter" class='bindByAnchor primaryCTH fontBold' title='Create an account/sign up for our newsletter'> Sign Up!</a>
 						<span>)</span>
 					</span>
+					<span class='hideIfLoggedOut'><a class='primaryCTH logoutLink' onClick='app.ext.myRIA.u.handleLogoutActions(); return false;' href='#'>Sign Out</a></span>
 				</div>
 			</div>
 		</div>
 	</div>
-	<a onClick='app.ext.myRIA.u.handleLogoutActions(); return false;' href='#'>Sign Out</a>
 </header>
 
 

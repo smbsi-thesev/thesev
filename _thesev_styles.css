@@ -121,6 +121,7 @@ header .logIn {height:100%; width:78.048%; float:right; color:#ffffff; font-size
 .hideIfLoggedOut {display:none;}
 .buyerLoggedIn .hideIfLoggedOut {display: block;} /* may be 'block' */
 .buyerLoggedIn span.hideIfLoggedOut {display: inline;} /* ensures inline on span elements */
+.logoutLink {font-weight:bold;}
 
 /* END HEADER************************************************************************/
 
