@@ -40,11 +40,11 @@ var store_thesev_kbeffect = function() {
 				//reads checkbox value to stop ken burns effect on cat/prod list images from local storage and puts in app accordingly
 				app.ext.store_thesev_kbeffect.u.whoIsKenBurns();
 				
-		/*		app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
+				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 				}]);
-		*/		
+				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
@@ -201,6 +201,20 @@ var store_thesev_kbeffect = function() {
 					$(this).off('mouseenter.kenburns');
 					$(this).removeClass('kenburnsMouseover');
 					});
+			},
+			
+			catImageInit : function($context) {
+				$('.catMasonImage', $context).each(function() {
+					//app.u.dump('Width: '); app.u.dump($(this).innerWidth()); app.u.dump('Height'); app.u.dump($(this).innerHeight()); 
+					$(this).append(app.u.makeImage({
+						"name"	: $(this).data('imgsrc'),
+						"w"		: $(this).innerWidth(),
+						"h"		: $(this).innerHeight(),
+						"b"		: "tttttt",
+						"tag"	: 1
+					}));
+					$(this).removeClass('catMasonImage');
+				});
 			},
 			
 			whoIsKenBurns : function() {

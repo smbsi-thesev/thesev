@@ -335,8 +335,8 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class='fullHeightWidth'>
 		<div class='thumbContainer'>
 			<!-- ORIG IMAGE CALL --> <!-- <img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='316' height='316' /> -->
-			<div class='masonImage' data-bind="var:category(%meta.CAT_THUMB); format:assignAttribute; attribute:data-imgsrc;"></div> 
-			<canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> 
+			 <div class='catMasonImage' data-bind="var:category(%meta.CAT_THUMB); format:assignAttribute; attribute:data-imgsrc;"></div> 
+			<!-- <canvas class='kenBurns prodThumbContainer pointer' onMouseOver="app.ext.store_thesev_kbeffect.a.kbEffectize($(this));" onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> -->
 			<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 		</div>
 	</div>
