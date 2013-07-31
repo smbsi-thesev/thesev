@@ -142,7 +142,7 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 				</div>
 			</div>
 			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
-			<div class='headerLinks floatLeft'><img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" /></div>
+			<div class='headerLinks floatLeft pointer' onClick="return showContent('customer',{'show':'newsletter'});"><img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" /></div>
 			<!-- duplicates cart if called more than once, must destroy first before this can be used
 				<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{'show':'inline'});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>-->
 			<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>
@@ -260,7 +260,7 @@ COMMONLY EDITED TEMPLATES
 <!--
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
-<div id='homepageTemplate' class='templateWrapper'>
+<div id='homepageTemplate' class='templateWrapper homepageTemplate'>
 <!--<div class='mushPot'>
 		<div></div>
 		<img />
@@ -269,7 +269,31 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 	</div>
 -->
 
-		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:min;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'></ul> <!--  detail:max; -->
+		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:min;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'>
+			<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi">
+				<div class="mushPot">
+					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushContact pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
+					<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
+						<span class='cartItemCount'></span>
+					</div>
+					<div class='mushPotLogo'><img src='images/the-sev-logo_140x77.png'/></div>
+					<div class='mushPotCollection'>
+						<div class='sprite collectionArrow displayNone'></div>
+						<span>SHOP BY</span>
+						<span>YOU ARE SHOPPING</span>
+						<div class='mushHover'>Collections</div>
+					</div>
+					<div class='mushPotCategory pointer' onClick="return showContent('homepage',{})">
+						<div class='sprite categoryArrow displayNone'></div>
+						<span>YOU ARE SHOPPING</span>
+						<span>SHOP BY</span>
+						<div class='mushHover'>Categories</div>
+					</div>
+				</div>
+			</li>
+		</ul> <!--  detail:max; -->
 
 	
 
