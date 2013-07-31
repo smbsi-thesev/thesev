@@ -168,6 +168,7 @@ END PERSISTENT CONTENT
 homepageTemplate
 *************************************************************************************/
 
+.categoryListTemplate.anyMasonry.hovBorderWhite10px.masonOne.mushPotLi {display:none;}
 .mushPot {height:316px; width:316px; font-family:oswald; font-size:2.7em; font-weight:normal;} /*box-shadow:0 0 2px 0px;*/
 .mushPotLink {float:left;  margin:14px 22px 11px 22px;} 
 .mushPotLogo {height:77px; width:140px; margin:auto; padding:50px; clear:both;}
@@ -180,12 +181,8 @@ homepageTemplate
 .mushPotCategory  {right:0;}
 .mushPotCollection span, .mushPotCategory span {font-size:0.5em; color:#777777;}
 .mushPotCollection .collectionArrow, .mushPotCategory .categoryArrow {height:10px; width:17px; background-position:-86px -109px; position:absolute; top:0; left:50%; z-index:25;}
-.mushPotCollection:hover .collectionArrow {display:block;}
-.mushPotCategory:hover .categoryArrow {display:block;}
-.homepageTemplate .mushPotCollection span:Nth-child(2), .homepageTemplate .mushPotCategory span:Nth-child(2) {display:none;}
-.collectionsTemplate .mushPotCollection span:first-child, .collectionsTemplate .mushPotCategory {display:none;}
-.mushPotCollection:hover .mushHover{color:#ed0d53;}
-.mushPotCategory:hover .mushHover{color:#0c8a96;}
+.homepageTemplate .mushPotCollection:hover .mushHover{color:#ed0d53;}
+.collectionsTemplate .mushPotCategory:hover .mushHover{color:#0c8a96;}
 
 /*************************************************************************************
 categoryTemplate

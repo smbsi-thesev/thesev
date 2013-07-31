@@ -371,7 +371,7 @@ templateID - the template id used (from app.templates)
 								$tag.append(app.renderFunctions.transmogrify({'id':parentID,'catsafeid':data.value[i].id},data.bindData.loadsTemplate,data.value[i]));
 								}
 							}
-/*SMBSI*/					$('li:nth-child(5)', $tag).after('<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne"><div class="mushPot">This is the sample<br> to show how the<br> CATEGORY/COLLECTION<br> logo box will float.<br> It is inserted after the 5th item, that can be changed if prefered.</div></li>');
+/*SMBSI*/					//$('li:nth-child(5)', $tag).after('<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne"><div class="mushPot">This is the sample<br> to show how the<br> CATEGORY/COLLECTION<br> logo box will float.<br> It is inserted after the 5th item, that can be changed if prefered.</div></li>');
 						}
 					}
 				else	{

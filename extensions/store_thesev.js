@@ -40,6 +40,7 @@ var store_thesev = function() {
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runMasonry($context);
+					app.ext.store_thesev.u.addMushPot($context);
 				}]);
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
@@ -53,6 +54,12 @@ var store_thesev = function() {
 					app.ext.store_thesev.u.sansReviews($context);
 		//			app.ext.store_thesev.u.runScroll($context);
 				}]);
+				
+				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev.u.runMasonry($context);
+					app.ext.store_thesev.u.addMushPot($context);
+				}]) 
 				
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
@@ -299,6 +306,11 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			addMushPot : function($context) {
+				$('li:nth-child(4)', $context).after($('.mushPotLi',$context));
+				$('.mushPotLi',$context).show();
+			},
+			
 			handleAppLoginCreate : function($form)	{
 				if($form)	{
 					var formObj = $form.serializeJSON();

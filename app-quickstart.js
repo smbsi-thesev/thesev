@@ -27,6 +27,8 @@ var myRIA = function() {
 //a list of the templates used by this extension.
 //if this is a custom extension and you are loading system extensions (prodlist, etc), then load ALL templates you'll need here.
 		"templates" : [
+//custom templates added for this app
+			'collectionsTemplate',
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
 			'categoryListTemplate',
@@ -2717,8 +2719,8 @@ buyer to 'take with them' as they move between  pages.
 					else if(catSafeID == zGlobals.appSettings.rootcat || infoObj.pageType == 'homepage')	{
 						infoObj.templateID = 'homepageTemplate'
 						}
-					else if(catSafeID.indexOf('50_collections') == 0)  {
-						infoObj.templateID='collectionsTemplate';
+					else if(catSafeID.indexOf('.50_collections') == 0)  {
+						infoObj.templateID= 'collectionsTemplate';
 						}
 					else	{
 						infoObj.templateID = 'categoryTemplate'

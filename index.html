@@ -279,16 +279,13 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 						<span class='cartItemCount'></span>
 					</div>
 					<div class='mushPotLogo'><img src='images/the-sev-logo_140x77.png'/></div>
-					<div class='mushPotCollection pointer' onClick="return showContent('category',{'navcat':'[.50_collections]'});">
-						<div class='sprite collectionArrow displayNone'></div>
+					<div class='mushPotCollection pointer' onClick="return showContent('category',{'navcat':'.50_collections'});">
 						<span>SHOP BY</span>
-						<span>YOU ARE SHOPPING</span>
 						<div class='mushHover'>Collections</div>
 					</div>
-					<div class='mushPotCategory pointer' onClick="return showContent('homepage',{})">
-						<div class='sprite categoryArrow displayNone'></div>
+					<div class='mushPotCategory'> <!-- onClick="return showContent('homepage',{})"> -->
+						<div class='sprite categoryArrow'></div>
 						<span>YOU ARE SHOPPING</span>
-						<span>SHOP BY</span>
 						<div class='mushHover'>Categories</div>
 					</div>
 				</div>
@@ -348,7 +345,42 @@ don't modify the 'data-templateid' unless you are changing template names and up
 </div>
 
 
-
+<div id='collectionsTemplate' class='loadingBG categoryTemplate templateWrapper collectionsTemplate'>
+	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
+	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+	<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
+	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+	<!-- <ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'></ul><!-- outputs a list of subcategories --> 
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'>
+		<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi" data-bind="var: category(@products); format:hideIfSet;">
+				<div class="mushPot">
+					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushContact pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
+					<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
+						<span class='cartItemCount'></span>
+					</div>
+					<div class='mushPotLogo'><img src='images/the-sev-logo_140x77.png'/></div>
+					<div class='mushPotCollection'> <!-- onClick="return showContent('category',{'navcat':'.50_collections'});"> -->
+						<div class='sprite collectionArrow'></div>
+						<span>YOU ARE SHOPPING</span>
+						<div class='mushHover'>Collections</div>
+					</div>
+					<div class='mushPotCategory pointer' onClick="return showContent('homepage',{})">
+						<span>SHOP BY</span>
+						<div class='mushHover'>Categories</div>
+					</div>
+				</div>
+			</li>
+	</ul><!-- outputs a list of subcategories -->
+	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
+		<form class='displayNone kbForm' data-bind="var: category(@products); format:showIfSet;">
+			<label for='dontKenBurns'>Turn off moving products</label>
+			<input type='checkbox' name='dontKenBurns' class='kbCheckBox' onClick='app.ext.store_thesev_kbeffect.a.holdKenBurnsEffect($(this));'></input>
+		</form>
+	</ul><!-- outputs the product list -->
+	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+</div>
 
 
 
