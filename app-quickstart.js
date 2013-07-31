@@ -2717,6 +2717,9 @@ buyer to 'take with them' as they move between  pages.
 					else if(catSafeID == zGlobals.appSettings.rootcat || infoObj.pageType == 'homepage')	{
 						infoObj.templateID = 'homepageTemplate'
 						}
+					else if(catSafeID.indexOf('50_collections') == 0)  {
+						infoObj.templateID='collectionsTemplate';
+						}
 					else	{
 						infoObj.templateID = 'categoryTemplate'
 						}
@@ -3070,7 +3073,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('collectionsTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};
