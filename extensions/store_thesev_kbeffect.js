@@ -149,7 +149,7 @@ var store_thesev_kbeffect = function() {
 							"background_color":"#FFFFFF",
 							"zoom_level":5,
 							"padding":1.5,
-							"fade_time": 0,
+							"fade_time": 500,
 							"display_time":3000
 							});
 							
