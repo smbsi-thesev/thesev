@@ -111,17 +111,17 @@ HEADER
 
 header {height:50px; width:100%; background:#000000;}
 header .dummyMargin {height:50px; width:auto;}
-.rightCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
+.rightCol {height:100%; width:33.607%; float:right;} /* 410 / 1120*/
 .headerLinks  {margin:5px 4%; width:42px; position:relative;}/*{margin:1% 4%; width:10.7%; position:relative;}*/
 .headerLinks span {height:auto; width:37px; color:#ffffff; text-align:center; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; position:absolute; top:4px; left:0;}
 .headerLinks img {margin:6% 0 0 9%;}
 
 .infoLink {position:relative; z-index:500;}
 
-.midCol {height:100%; width:26.785%; float:right;} /* 410 / 1120*/
+.midCol {height:100%; width:29.785%; float:right;} /* 410 / 1120*/
 .productSearchForm {height:100%; width:100%;}
-.headerSearchButton {height:100%; width:50px; border:none; float:right;}
-.productSearchKeyword {border:none; float:right; height:100%; padding:0 0 0 8%; width:auto; font-size:1.2em; font-weight:normal; font-family:montserrat;}
+.headerSearchButton {height:100%; width:50px; border:none; float:right; background-position:-28px 9px;}
+.productSearchKeyword {height:100%; width:70%; border:none; float:right; padding:0 0 0 8%; font-size:1.2em; font-weight:normal; font-family:montserrat;}
 
 .leftCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
 .headerHomeLink {height:80%; width:69%; padding:10% 0 0 30%;} /*padding:40% 0 0 0;*/
@@ -573,8 +573,12 @@ media querries
 	header .logIn {line-height:120%;}
 	header .logIn > div {padding:4% 0 0 0;}
 	.lineBreak {width:100%; display:block;}
-	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
+	.rightCol {width:31.607%;}
+	.rightCol .headerLinks {width:12.7%; margin:3% 4%;}
 	.rightCol .headerLinks span {width:35px}
+	.rightCol .outerGutter {display:none;}
+	.midCol {width:31.785%;}
+	.productSearchKeyword {width:66%;}
 /*FOOTER*/
 	.copyright {padding:10px 0 0 0;}
 	.acwLink {padding:20px 0 0 0;}
@@ -615,7 +619,6 @@ media querries
 	.rightCol .headerLinks span {width:35px}
 	.rightCol .outerGutter {display:none;}
 	.midCol {height:50%; width:200px;}
-	.headerSearchButton {width:25%;}
 	.productSearchKeyword {width:66%;}
 	.leftCol {height:50%; width:400px;}
 	.headerHomeLink {padding:14% 0 0 30%;}
@@ -659,7 +662,6 @@ media querries
 	.rightCol .headerLinks span {width:37px}
 	.rightCol .outerGutter {display:none;}
 	.midCol {height:33%; width:320px;}
-	.headerSearchButton {width:17%;}
 	.productSearchKeyword {width:75%;}
 	.leftCol {height:34%; width:320px;}
 	.headerHomeLink {padding:17% 0 0 25%;}
