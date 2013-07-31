@@ -215,7 +215,7 @@ var store_thesev_kbeffect = function() {
 						"b"		: "tttttt",
 						"tag"	: 1
 					}));
-					$(this).removeClass('catMasonImage');
+					//$(this).removeClass('catMasonImage');
 				});
 			},
 			
