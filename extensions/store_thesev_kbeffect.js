@@ -216,8 +216,8 @@ var store_thesev_kbeffect = function() {
 					app.u.dump('Width: '); app.u.dump($(this).parent().innerWidth()); app.u.dump('Height'); app.u.dump($(this).parent().innerHeight()); 
 					$(this).append(app.u.makeImage({
 						"name"	: $(this).data('imgsrc'),
-						"w"		: 0, //$(this).innerWidth(),
-						"h"		: 0, //$(this).innerHeight(),
+						"w"		: $(this).innerWidth(),
+						"h"		: $(this).innerHeight(),
 						"b"		: "tttttt",
 						"tag"	: 1
 					}));
