@@ -79,7 +79,7 @@ img {vertical-align:middle;}
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .masonList.fluidList li {float:none;}
 .thumbContainer, .prodThumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative; overflow:hidden;}
-.catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding:5% 6%; font-family:montserrat; font-weight:bold; font-size:1.4em; text-align:center; position:absolute; bottom:0;}
+.catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding:5% 6%; font-family:montserrat; font-weight:normal; font-size:1.8em; text-align:center; position:absolute; bottom:0;}
 .anyMasonry.masonOne {height:316px; width:316px;}
 .anyMasonry.masonOne .masonImage, .anyMasonry.masonOne .catMasonImage {height:316px; width:316px;}
 		/*.anyMasonry.masonOne .catMasonImage img {height:316px; width:316px;}*/
@@ -202,9 +202,9 @@ productListTemplate
 
 .productListTemplate .prodListDesc, #cartStuffList .prodListDesc, .productListTemplateResults .prodListDesc 
 	{height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding:2% 6%; font-family:montserrat; position:absolute; bottom:0;}
-.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:bold; font-size:1.3em; text-align:left;}
-.productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:bold; font-size:1.4em; text-align:right; margin:5px 0 0 0;}
-.masonTwo .prodListDesc h5 {font-size:1.1em;}
+.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.6em; text-align:left;}
+.productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
+.masonTwo .prodListDesc h5 {font-size:1.3em;}
 
 /*************************************************************************************
 END productListTemplate
