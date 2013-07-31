@@ -202,7 +202,7 @@ productListTemplate
 
 .productListTemplate .prodListDesc, #cartStuffList .prodListDesc, .productListTemplateResults .prodListDesc 
 	{height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding:2% 6%; font-family:montserrat; position:absolute; bottom:0;}
-.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.6em; text-align:left;}
+.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.4em; text-align:left;}
 .productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
 .masonTwo .prodListDesc h5 {font-size:1.3em;}
 
