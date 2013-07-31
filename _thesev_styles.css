@@ -112,8 +112,8 @@ HEADER
 header {height:50px; width:100%; background:#000000;}
 header .dummyMargin {height:50px; width:auto;}
 .rightCol {height:100%; width:36.607%; float:right;} /* 410 / 1120*/
-.headerLinks {margin:1% 4%; width:10.7%; position:relative;}
-.headerLinks span {height:auto; width:93%; color:#ffffff; text-align:center; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; position:absolute; top:12%; left:0;}
+.headerLinks  {margin:5px 4%; width:42px; position:relative;}/*{margin:1% 4%; width:10.7%; position:relative;}*/
+.headerLinks span {height:auto; width:37px; color:#ffffff; text-align:center; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; position:absolute; top:4px; left:0;}
 .headerLinks img {margin:6% 0 0 9%;}
 
 .infoLink {position:relative; z-index:500;}
@@ -574,7 +574,7 @@ media querries
 	header .logIn > div {padding:4% 0 0 0;}
 	.lineBreak {width:100%; display:block;}
 	.rightCol .headerLinks {width:10.7%; margin:3% 4%;}
-	.rightCol .headerLinks span {width:100%; top:4%;}
+	.rightCol .headerLinks span {width:35px}
 /*FOOTER*/
 	.copyright {padding:10px 0 0 0;}
 	.acwLink {padding:20px 0 0 0;}
@@ -612,7 +612,7 @@ media querries
 	.lineBreak {width:auto; display:inline;}
 	.rightCol {height:50%; width:200px;}
 	.rightCol .headerLinks {width:15.7%; margin:3% 4%;}
-	.rightCol .headerLinks span {width:101%; top:5%;}
+	.rightCol .headerLinks span {width:35px}
 	.rightCol .outerGutter {display:none;}
 	.midCol {height:50%; width:200px;}
 	.headerSearchButton {width:25%;}
@@ -656,7 +656,7 @@ media querries
 	header {height:150px;}
 	.rightCol {height:33%; width:320px;}
 	.rightCol .headerLinks {width:15.7%; margin:2% 0 0 7%;}
-	.rightCol .headerLinks span {width:78%; top:12%;}
+	.rightCol .headerLinks span {width:37px}
 	.rightCol .outerGutter {display:none;}
 	.midCol {height:33%; width:320px;}
 	.headerSearchButton {width:17%;}
