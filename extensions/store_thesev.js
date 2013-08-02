@@ -221,10 +221,12 @@ var store_thesev = function() {
 		
 			//if inventory is 0, don't show in product list (not used w/ elastic because of pagination)
 			inventoryHide : function($tag, data) {
+				//app.u.dump('***PID:'); app.u.dump(data.value['@inventory']);
 				var pid = data.value.pid;
 				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
 					var inventory = data.value['@inventory'][pid]['inv'];
-					if(inventory == 0) {
+					//app.u.dump('***Name:'); app.u.dump('Inventory'); app.u.dump(data.value['@inventory'][pid]['inv']);
+					if(inventory < 1) {
 						//$tag.parent().addClass('displayNone');
 						$tag.parent().css('background','red');
 					}
