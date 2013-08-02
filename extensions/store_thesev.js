@@ -218,6 +218,18 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
+		
+			//if inventory is 0, don't show in product list (not used w/ elastic because of pagination)
+			inventoryHide : function($tag, data) {
+				var pid = data.value.pid;
+				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
+					var inventory = data.value['@inventory'][pid]['inv'];
+					if(inventory == 0) {
+						//$tag.parent().addClass('displayNone');
+						$tag.parent().css('background','red');
+					}
+				}	
+			},
 
 			//calculates and displays difference till order total is $100
 			tillFreeShipping : function($tag, data) {
@@ -274,6 +286,7 @@ var store_thesev = function() {
 				$tag.append(imgs);
 			}, //productImages
 		
+			//randomly assigns size of category and product list divs for masonry layout
 			pickClass : function($tag) {
 				//app.u.dump($tag);
 				var a = Math.random()*4+1;

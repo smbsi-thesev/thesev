@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130731123000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130802145700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -51,6 +51,9 @@ css files should be included before any .js file to ensure they are downloaded i
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Give+You+Glory' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -444,6 +447,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 <!--	<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span> -->
 <!-- 	<span data-bind='var: reviews(reviews.total); format:text; pretext: from ;posttext: reviews; className:numReviews;'></span> -->
 	</div>
+	<div data-bind="useParentData:true; format:inventoryHide; extension:store_thesev;"></div>
 <!--	
 	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'modal'}); return false;">
 		<input type='hidden' name='qty' value='1' />
@@ -685,7 +689,12 @@ this will likely become more flexible in the future. ###
 			<div class='workTape sprite'>Work with me...</div>
 			<div class='workWithMe' data-bind="useParentData:true; format:showMoreWork; extension:store_thesev;">
 				<p>
-					If there is no work with me data populated <br>A default message can be included here,<br>or the section can be hidden entirely, allowing the price and buttons to move into its position.
+					If there is no work with me data<br>
+					<style type="text/css">span.Abold {font-weight:bold; font-size:1.1em;}</style><span class='Abold'>populated, A default message</span><br>
+					<style type="text/css">span.Bnorm {font-family:yellowtail; font-weight:normal; font-size:1.4em;}</style><span class='Bnorm'>can be included here, or the</span><br>
+					<style type="text/css">span.Bbold {font-family:yellowtail; font-weight:bold; font-size:1.3em;}</style><span class='Bbold'>section can be hidden entirely,</span><br>
+					<style type="text/css">span.Cnorm {font-family:"indie flower"; font-weight:normal; font-size:1.2em;}</style><span class='Cnorm'>allowing the price and buttons</span><br>
+					<style type="text/css">span.Cbold {font-family:"indie flower"; font-weight:bold; font-size:1.2em;}</style><span class='Cbold'>to move into its position.</span>
 				</p>								<!--	onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;"><span class='iconATW sprite'></span>Favorite</button>-->
 				<div data-bind='var:product(pid); format:assignAttribute; attribute:data-pid;'>
 					<div class='workCorner workMore sprite' onClick="app.ext.store_thesev.a.showMoreWork($(this).parent().attr('data-pid'), $(this))"></div> 

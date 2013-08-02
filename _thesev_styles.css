@@ -322,7 +322,7 @@ a.prodPrev span, a.prodNext span {display:none;}
 /*less {background-position:-240px -95px;}  less:hover {background-position:-182px -95px;}*/
 .workWithMe.addMoreWork:hover .workCorner {background-position:-295px -94px;}
 .workWithMe.addLessWork:hover .workCorner {background-position:-182px -94px;}
-.workWithMe p {height:131px; width:100%; overflow:hidden; position:relative; font-family:"Give You Glory";}
+.workWithMe p {height:141px; width:100%; overflow:hidden; position:relative; font-family:"Give You Glory";}
 .elipsis {height:16px; width:85px; background-image:url(images/elipsis-shade_85x25.png); position:absolute; bottom:0; right:6px; text-align:right; line-height:10px; }
 .workWithMe.addLessWork .elipsis {display:none;}
 .priceContainer {height:68px; width:auto; padding:30px 25px 0 0; overflow:hidden;}
@@ -544,6 +544,10 @@ media querries
 	.copyright span {display:block;}
 /*MAIN CONTENT*/
 /*#mainContentArea .templateWrapper {width:890px;}	*/
+}
+
+@media screen and (max-width: 1060px) {
+	#mainContentArea .templateWrapper {width:900px;}
 }
 
 @media screen and (max-width: 900px) {
