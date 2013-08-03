@@ -218,20 +218,6 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
-		
-			//if inventory is 0, don't show in product list (not used w/ elastic because of pagination)
-			inventoryHide : function($tag, data) {
-				//app.u.dump('***PID:'); app.u.dump(data.value['@inventory']);
-				var pid = data.value.pid;
-				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
-					var inventory = data.value['@inventory'][pid]['inv'];
-					//app.u.dump('***Name:'); app.u.dump('Inventory'); app.u.dump(data.value['@inventory'][pid]['inv']);
-					if(inventory < 1) {
-						//$tag.parent().addClass('displayNone');
-						$tag.parent().css('background','red');
-					}
-				}	
-			},
 
 			//calculates and displays difference till order total is $100
 			tillFreeShipping : function($tag, data) {
@@ -289,7 +275,9 @@ var store_thesev = function() {
 			}, //productImages
 		
 			//randomly assigns size of category and product list divs for masonry layout
-			pickClass : function($tag) {
+			//hides any product in list with inventory < 1
+			pickClass : function($tag, data) {
+				//ASSIGN SIZING CLASSES
 				//app.u.dump($tag);
 				var a = Math.random()*4+1;
 				var b = a.toString().split('.');
@@ -301,9 +289,26 @@ var store_thesev = function() {
 					case '3'	:	$tag.addClass('masonThree'); break;
 					case '4'	:	$tag.addClass('masonFour'); break;
 				}
-
+				
+				//HIDE ZERO INVENTORY IN PRODUCT LISTS
+				var pid = data.value.pid;
+				//app.u.dump('***PID:'); app.u.dump(pid);
+				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
+					app.u.dump('THERE IS INVENTORY FOR!!!!'+pid); app.u.dump(data.value['@inventory'][pid]['inv']);
+					var inventory = data.value['@inventory'][pid]['inv'];
+					if(inventory == 1) {
+						//$tag.addClass('displayNone');
+						//$tag.css('background','red');
+					}
+				}
+				
+				//SHOW ZERO INVENTORY CLASS IN SEARCH RESULTS
+				app.u.dump(data.value); //['%attribs']['user:prod_outofstock']
+				if(data.value['%attribs'] && data.value['%attribs']['user:prod_outofstock'] == 1) {
+					$tag.css('background','pink');
+				}
 			},
-		
+			
 			getInfo : function($tag, data) {
 				//app.u.dump('*** '); app.u.dump(data.value);
 			}
