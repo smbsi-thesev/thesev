@@ -49,13 +49,18 @@ var store_thesev_kbeffect = function() {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
-				}]) 	
+				}]); 	
 
 				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
-				}]) 	
+				}]);	
+				
+		//		app.rq.push(['templateFunction','productListTemplateResults','onCompletes',function(infoObj) {
+		//			var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+		//			app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+		//		}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;

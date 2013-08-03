@@ -55,6 +55,11 @@ var store_thesev = function() {
 		//			app.ext.store_thesev.u.runScroll($context);
 				}]);
 				
+		//		app.rq.push(['templateFunction','productListTemplateResults','onCompletes',function(infoObj) {
+		//			var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+		//			app.ext.store_thesev.u.runMasonry($context);
+		//		}]);
+				
 				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev.u.runMasonry($context);

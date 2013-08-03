@@ -538,7 +538,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
-<li id='productListTemplateResults' class='loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
+<li id='productListTemplateResults' class='kenburnsMouseover loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
 	<div class='boxShadower pointer' onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));">
 		<div class='invGone'></div>
@@ -546,7 +546,9 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 	
 	<div>
 		<div class='prodThumbContainer'>
-			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='316' height='316' />
+			 <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='316' height='316' /> 
+			<!-- <div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> 
+			<canvas class='kenBurns prodThumbContainer pointer'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> -->
 		</div>
 		
 		<div class='prodListDesc'>
