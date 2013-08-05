@@ -918,6 +918,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 	
 					case 'homepage':
 						infoObj.pageType = 'homepage';
+/*smbsi*/				infoObj.performJumpToTop = false;
 						infoObj.navcat = zGlobals.appSettings.rootcat;
 						infoObj.parentID = app.ext.myRIA.u.showPage(infoObj);
 						break;
@@ -929,7 +930,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 						if(app.ext.myRIA.vars.session.recentCategories[0] != infoObj.navcat)	{
 							app.ext.myRIA.vars.session.recentCategories.unshift(infoObj.navcat);
 							}
-						
+/*smbsi*/				infoObj.performJumpToTop = false;					
 						infoObj.parentID = app.ext.myRIA.u.showPage(infoObj); //### look into having showPage return infoObj instead of just parentID.
 						break;
 	
