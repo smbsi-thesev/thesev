@@ -548,9 +548,13 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 	
 	<div>
 		<div class='prodThumbContainer'>
+			 <!--
 			 <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='316' height='316' /> 
-			<!-- <div class='masonImage' data-bind="var:product(zoovy:prod_image1); format:assignAttribute; attribute:data-imgsrc;"></div> 
-			<canvas class='kenBurns prodThumbContainer pointer'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas> -->
+			-->
+			<div class='masonImage' data-bind="var:product(images); index:0; format:assignElasticImgSrc; extension:store_thesev_kbeffect;"></div> 
+			<!--
+			<canvas class='kenBurns prodThumbContainer pointer'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas>
+			-->
 		</div>
 		
 		<div class='prodListDesc'>
@@ -1036,7 +1040,7 @@ So the cart template should contain these two elements and the extension should 
 
 	<div class='previewListContainer'>
 		<!-- productListTemplateResults gets loaded into here -->
-		<ul id='resultsProductListContainer' class='listStyleNone fluidList noPadOrMargin productList templateWrapper'></ul>
+		<ul id='resultsProductListContainer' class='masonList listStyleNone fluidList noPadOrMargin productList templateWrapper'></ul>
 	</div>
 
 </div>

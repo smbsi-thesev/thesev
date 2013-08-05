@@ -56,12 +56,11 @@ var store_thesev_kbeffect = function() {
 					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]);	
-				
-		//		search onCompltes, doesn't work the same w/ context. 		
-		//		app.rq.push(['templateFunction','productListTemplateResults','onCompletes',function(infoObj) {
-		//			var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-		//			app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
-		//		}]);
+				 		
+				app.rq.push(['templateFunction','searchTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -118,7 +117,7 @@ var store_thesev_kbeffect = function() {
 				var $canvas = $('canvas',$container);
 				//app.u.dump("kbeffectize");
 
-					if(!$canvas.data('kenburns')){
+					if($canvas.length > 0 && !$canvas.data('kenburns')){
 					
 					if(!app.ext.store_thesev_kbeffect.vars.dontKenBurns) {
 										
@@ -190,7 +189,11 @@ var store_thesev_kbeffect = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
-			
+			assignElasticImgSrc : function($tag, data){
+				app.u.dump(data.value);
+				app.u.dump(data.value[data.bindData.index]);
+				$tag.data('imgsrc',data.value[data.bindData.index]);
+				}
 		}, //renderFormats
 ////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

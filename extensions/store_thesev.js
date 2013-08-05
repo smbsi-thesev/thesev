@@ -39,8 +39,11 @@ var store_thesev = function() {
 				
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev.u.runMasonry($context);
-					app.ext.store_thesev.u.addMushPot($context);
+					if(!$context.data('masonized')){
+						app.ext.store_thesev.u.runMasonry($context);
+						app.ext.store_thesev.u.addMushPot($context);
+						$context.data('masonized',true);
+						}
 				}]);
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
