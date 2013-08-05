@@ -259,7 +259,7 @@ else if(plObj.prodlist.page_in_focus >= plObj.prodlist.total_page_count)	{
 else	{
 	$(window).on('scroll.infiniteScroll',function(){
 		//will load data when two rows from bottom.
-		if( $(window).scrollTop() >= ( $(document).height() - $(window).height() - ($tag.children().first().height() * 2) ) )	{
+/*smbsi*/if( $(window).scrollTop() >= ( $(document).height() - 100 - $(window).height() - ($tag.children().first().height() * 2) ) )	{
 			if($tag.data('isDispatching') == true)	{}
 			else	{
 				plObj.prodlist.page_in_focus += 1;
