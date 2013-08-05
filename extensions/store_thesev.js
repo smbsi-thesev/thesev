@@ -300,18 +300,18 @@ var store_thesev = function() {
 				var pid = data.value.pid;
 				//app.u.dump('***PID:'); app.u.dump(pid);
 				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
-					app.u.dump('THERE IS INVENTORY FOR!!!!'+pid); app.u.dump(data.value['@inventory'][pid]['inv']);
+					//app.u.dump('THERE IS INVENTORY FOR!!!!'+pid); app.u.dump(data.value['@inventory'][pid]['inv']);
 					var inventory = data.value['@inventory'][pid]['inv'];
-					if(inventory == 1) {
-						//$tag.addClass('displayNone');
+					if(inventory < 1) {
+						$tag.addClass('displayNone');
 						//$tag.css('background','red');
 					}
 				}
 				
-				//SHOW ZERO INVENTORY CLASS IN SEARCH RESULTS
-				app.u.dump(data.value); //['%attribs']['user:prod_outofstock']
+				//SHOW ZERO INVENTORY CLASS IN SEARCH RESULTS (only if prod_outofstock is remove from elastic not filter in store search)
+				//app.u.dump(data.value); //['%attribs']['user:prod_outofstock']
 				if(data.value['%attribs'] && data.value['%attribs']['user:prod_outofstock'] == 1) {
-					$tag.css('background','pink');
+					$('.invGone',$tag).css('display','block');
 				}
 			},
 			

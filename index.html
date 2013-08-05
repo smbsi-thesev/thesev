@@ -335,7 +335,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<!-- <ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'></ul><!-- outputs a list of subcategories --> 
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList anyMasonry masonList'></ul><!-- outputs a list of subcategories -->
 
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
+	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; withInventory:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
 		<form class='displayNone kbForm' data-bind="var: category(@products); format:showIfSet;">
 			<label for='dontKenBurns'>Turn off moving products</label>
 			<input type='checkbox' name='dontKenBurns' class='kbCheckBox' onClick='app.ext.store_thesev_kbeffect.a.holdKenBurnsEffect($(this));'></input>
@@ -541,7 +541,9 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 <li id='productListTemplateResults' class='kenburnsMouseover loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
 	<div class='boxShadower pointer' onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));">
-		<div class='invGone'></div>
+		<div class='invGone'>
+			<div><span>GONE!</span><p>BUT IT'LL BE BACK</p></div>
+		</div>
 	</div>
 	
 	<div>
