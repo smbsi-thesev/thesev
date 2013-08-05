@@ -80,6 +80,8 @@ img {vertical-align:middle;}
 .masonList.fluidList li {float:none;}
 .thumbContainer, .prodThumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative; overflow:hidden;}
 .catName {height:auto; width:88%; background-color:rgba(0,0,0,0.25); padding:5% 6%; font-family:montserrat; font-weight:normal; font-size:1.8em; text-align:center; position:absolute; bottom:0;}
+.homepageTemplate .categoryListTemplate:hover .catName, .collectionsTemplate .categoryListTemplate:hover .catName, .categoryTemplate .categoryListTemplate:hover .catName {color:#ffffff;} 
+.categoryTemplate .productListTemplate:hover .prodListDesc {color:#000000;}
 .anyMasonry.masonOne {height:316px; width:316px;}
 .anyMasonry.masonOne .masonImage, .anyMasonry.masonOne .catMasonImage {height:316px; width:316px;}
 		/*.anyMasonry.masonOne .catMasonImage img {height:316px; width:316px;}*/
