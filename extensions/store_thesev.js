@@ -482,7 +482,8 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 						columnWidth		:	177,
 						itemSelector	:	'.anyMasonry',
 						gutter			:	0,
-						isFitWidth		:	true
+						isFitWidth		:	true,
+						transitionDuration : '2s'
 					});
 					//$target.data('masonry',masonry);
 				},2000);
