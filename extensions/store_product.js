@@ -621,7 +621,7 @@ NOTES
 					if($parent.length)	{$parent.empty()}
 					else	{
 						$parent = $("<div \/>").attr({"id":'product-modal',"title":""}).appendTo('body');
-						$parent.dialog({modal: true,width:'86%',height:$(window).height() - 100,autoOpen:false});
+/*smbsi*/				$parent.dialog({modal: true,width:'86%',height:$(window).height() - 300,autoOpen:false}); /*was 100*/
 						}
 					
 					
