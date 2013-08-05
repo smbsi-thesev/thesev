@@ -42,13 +42,19 @@ var store_thesev_kbeffect = function() {
 				
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.catImageInit($context);
+					if(!$context.data('kenburnsed')){
+						app.ext.store_thesev_kbeffect.u.catImageInit($context);
+						$context.data('kenburnsed',true);
+					}
 				}]);
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.catImageInit($context);
-					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+					if(!$context.data('kenburnsed')){
+						app.ext.store_thesev_kbeffect.u.catImageInit($context);
+						app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+						$context.data('kenburnsed',true);
+					}
 				}]); 	
 
 				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
@@ -59,7 +65,10 @@ var store_thesev_kbeffect = function() {
 				 		
 				app.rq.push(['templateFunction','searchTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+					if(!$context.data('kenburnsed')){
+						app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
+						$context.data('kenburnsed',true);
+					}
 				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
