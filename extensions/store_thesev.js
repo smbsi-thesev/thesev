@@ -314,6 +314,44 @@ var store_thesev = function() {
 				}
 			},
 			
+			processListAlt : function($tag,data){
+//			app.u.dump("BEGIN renderFormats.processList");
+			$tag.removeClass('loadingBG');
+			if(data.bindData.loadsTemplate)	{
+				var $o, //recycled. what gets added to $tag for each iteration.
+				int = 0;
+				for(var i in data.value)	{
+					if(data.bindData.limit && int >= Number(data.bindData.limit)) {break;}
+					else	{
+						$o = app.renderFunctions.transmogrify(data.value[i],data.bindData.loadsTemplate,data.value[i]);
+						if(typeof $o == 'object')	{
+							if(data.value[i].id){} //if an id was set, do nothing.
+							else	{$o.attr('data-obj_index',i)} //set index for easy lookup later.
+							$tag.append($o);
+							}
+						else	{
+							$tag.anymessage({'message':'Issue creating template using '+data.bindData.loadsTemplate,'persistant':true});
+							}
+						}
+					int += 1;				
+					}
+				
+				}
+			else	{
+				$tag.anymessage({'message':'Unable to render list item - no loadsTemplate specified.','persistant':true});
+				}
+				//hides or shows the order message based on whether orders are present or not.
+				app.u.dump('Hide if set function running');
+				if($('.orderHistoryList').children().length > 0){
+					//app.u.dump('Hiding .ordersNoOrdersMess');
+					$('.ordersNoOrdersMess').hide();
+				}
+				else{
+					//app.u.dump('Showing .ordersNoOrdersMess. Length is =< 0');
+					$('.ordersNoOrdersMess').show().css('display','block');
+				}
+			}, //processListAlt
+			
 			getInfo : function($tag, data) {
 				//app.u.dump('*** '); app.u.dump(data.value);
 			}

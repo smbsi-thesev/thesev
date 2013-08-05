@@ -444,6 +444,10 @@ LOGIN MODAL
 customerTemplate
 *************************************************************************************/
 
+/* sideline styles w/ CompanyTemplate */
+
+.customerTemplate .mainColumn {width:65%; margin:24px 0 0 0;}
+
 /*createaccountArticle*/
 #loginMessagingInline.appMessaging {margin:0 0 12px 40px;}
 .buyerLoggedIn .hideIfLoggedIn{display:none;}
@@ -482,6 +486,8 @@ customerTemplate
 .fieldM input.textfphone {width:180px;}
 .Account .createButton {color:#ffffff; padding:15px; margin:10px auto; border:none; display:block; font-family:montserrat; font-weight:bold; font-size:1.8em;}
 
+/*My Account*/
+#myaccountArticle h1, #changepasswordArticle  h1, #ordersArticle h1, #listsArticle h1{font-family:oswald; font-size:2.5em; margin:0 0 20px 0;}
 
 /*************************************************************************************
 CompanyTemplate
