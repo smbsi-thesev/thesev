@@ -43,19 +43,25 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.runMasonry($context);
 						app.ext.store_thesev.u.addMushPot($context);
 						$context.data('masonized',true);
-						}
+					}
 				}]);
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev.u.runMasonry($context);
+					if(!$context.data('masonized')){
+						app.ext.store_thesev.u.runMasonry($context);
+						$context.data('masonized',true);
+					}
 				}]) 
 				
 				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev.u.runProductPageCarousel($context);
-					app.ext.store_thesev.u.sansReviews($context);
-		//			app.ext.store_thesev.u.runScroll($context);
+					if(!$context.data('masonized')){
+						app.ext.store_thesev.u.runProductPageCarousel($context);
+						app.ext.store_thesev.u.sansReviews($context);
+						$context.data('masonized',true);
+					}
+			//			app.ext.store_thesev.u.runScroll($context);
 				}]);
 				
 		//		search onCompltes, doesn't work the same w/ context. 
@@ -66,8 +72,11 @@ var store_thesev = function() {
 				
 				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_thesev.u.runMasonry($context);
-					app.ext.store_thesev.u.addMushPot($context);
+					if(!$context.data('masonized')){
+						app.ext.store_thesev.u.runMasonry($context);
+						app.ext.store_thesev.u.addMushPot($context);
+						$context.data('masonized',true);
+					}
 				}]) 
 				
 				
