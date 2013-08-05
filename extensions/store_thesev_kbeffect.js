@@ -57,6 +57,7 @@ var store_thesev_kbeffect = function() {
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]);	
 				
+		//		search onCompltes, doesn't work the same w/ context. 		
 		//		app.rq.push(['templateFunction','productListTemplateResults','onCompletes',function(infoObj) {
 		//			var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 		//			app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
