@@ -300,11 +300,10 @@ var store_thesev = function() {
 				var pid = data.value.pid;
 				//app.u.dump('***PID:'); app.u.dump(pid);
 				if(data.value['@inventory'] && data.value['@inventory'][pid]) {
-					//app.u.dump('THERE IS INVENTORY FOR!!!!'+pid); app.u.dump(data.value['@inventory'][pid]['inv']);
 					var inventory = data.value['@inventory'][pid]['inv'];
 					if(inventory < 1) {
-						$tag.addClass('displayNone');
-						//$tag.css('background','red');
+						$tag.addClass('hideMe');
+						//$('.boxShadower',$tag).css('background','red');
 					}
 				}
 				

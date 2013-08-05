@@ -205,6 +205,7 @@ productListTemplate
 .productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.4em; text-align:left;}
 .productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
 .masonTwo .prodListDesc h5 {font-size:1.3em;}
+.hideMe.anyMasonry.productListTemplate.hovBorderWhite10px {display:none;}
 
 /*************************************************************************************
 END productListTemplate
