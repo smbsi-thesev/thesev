@@ -495,6 +495,9 @@ customerTemplate
 /*My Account*/
 #myaccountArticle h1, #changepasswordArticle  h1, #ordersArticle h1, #listsArticle h1{font-family:oswald; font-size:2.5em; margin:0 0 20px 0;}
 
+.chkoutAddr input, .chkoutAddr select, .addrID  {height:30px; width:70%; margin:2px; padding:0 0 0 5px; border:2px solid #000000;}
+.chkoutAddr span.zhint.hint {display:block;}
+
 /*************************************************************************************
 CompanyTemplate
 *************************************************************************************/

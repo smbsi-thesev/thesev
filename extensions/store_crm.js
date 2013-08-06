@@ -472,7 +472,7 @@ else{
 						$editor.append("<input type='hidden' name='shortcut' value='"+vars.addressID+"' \/>");
 						$editor.append("<input type='hidden' name='type' value='"+vars.addressType+"' \/>");
 						if(vars.addressType == 'bill')	{
-							$editor.append("<label><span>email:<\/span><input type='email' name='bill/email' data-bind='var: address(bill/email); format:popVal;' value='"+( addressData['bill/email'] || "" )+"' required='required' \/><\/label>");
+/*smbsi*/					$editor.append("<label class='chkoutAddr'><span><\/span><input type='email' name='bill/email' data-bind='var: address(bill/email); format:popVal;' placeholder='E-mail' value='"+( addressData['bill/email'] || "" )+"' required='required' \/><\/label>");
 							}
 						$editor.wrapInner('<form \/>'); //needs this for serializeJSON later.
 						
@@ -540,7 +540,7 @@ else{
 
 					r = true;
 					var $editor = $("<div \/>");
-					$editor.append("<input type='text' maxlength='6' data-minlength='6' name='shortcut' placeholder='address id (6 characters)' \/>");
+/*smbsi*/			$editor.append("<input class='addrID' type='text' maxlength='6' data-minlength='6' name='shortcut' placeholder='address id (6 characters)' \/>");
 					$editor.append("<input type='hidden' name='type' value='"+vars.addressType.toUpperCase()+"' \/>");
 					$editor.anycontent({'templateID':(vars.addressType == 'ship') ? 'chkoutAddressShipTemplate' : 'chkoutAddressBillTemplate','data':{},'showLoading':false});
 					$editor.wrapInner('<form \/>'); //needs this for serializeJSON later.
