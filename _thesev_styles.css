@@ -208,10 +208,10 @@ categoryListTemplate
 productListTemplate
 *************************************************************************************/
 
-.productListTemplate .prodListDesc, #cartStuffList .prodListDesc, .productListTemplateResults .prodListDesc 
+.productListTemplate .prodListDesc, #cartStuffList .prodListDesc, .productListTemplateResults .prodListDesc, .prodListDesc 
 	{height:auto; width:88%; color:#ffffff; background-color:rgba(0,0,0,0.35); padding:2% 6%; font-family:montserrat; position:absolute; bottom:0;}
-.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5 {font-weight:normal; font-size:1.4em; text-align:left;}
-.productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
+.productListTemplate .prodListDesc h5, #cartStuffList .prodListDesc h5, .productListTemplateResults .prodListDesc h5, .prodListDesc h5 {font-weight:normal; font-size:1.4em; text-align:left;}
+.productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6, .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
 .masonTwo .prodListDesc h5 {font-size:1.3em;}
 .hideMe.anyMasonry.productListTemplate.hovBorderWhite10px {display:none;}
 
@@ -497,6 +497,16 @@ customerTemplate
 
 .chkoutAddr input, .chkoutAddr select, .addrID  {height:30px; width:70%; margin:2px; padding:0 0 0 5px; border:2px solid #000000;}
 .chkoutAddr span.zhint.hint {display:block;}
+
+
+/*Wislist*/
+#listsArticle .ui-widget-content {background:transparent; border:none;}
+#listsArticle .anyMasonry {width:280px !important;}
+#listsArticle .prodThumbContainer {width:260px;}
+#listsArticle .qtySelectStyler {width:275px;}
+#listsArticle .qtySelectStyler .qtyInput {background-position:246px -100px; padding:2% 1% 1% 1%;}
+#listsArticle .addToCart {height:50px; width:170px; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right;}
+#listsArticle .removeButton {height:25px; width:26px; background:url(images/sprites-500x500.png) 330px -59px transparent; border:none; margin:22px 12px 0 12px;}
 
 /*************************************************************************************
 CompanyTemplate

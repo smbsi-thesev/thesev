@@ -126,13 +126,15 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 						<div class='infoDropdown'>
 							<div class='headline'>NEED HELP?<div class='iconHelp sprite'></div></div>
 							<ul class='listStyleNone noPadOrMargin'>
-								<li class='about'><span class='decoBar'></span><a href='#company?show=about'>About Us</a><span class='arrow sprite'></span></li>
-								<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
-								<li class='faq'><span class='decoBar'></span><a href='#company?show=faq'>FAQ</a><span class='arrow sprite'></span></li>
-								<li class='paymnt'><span class='decoBar'></span><a href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
-								<li class='priv'><span class='decoBar'></span><a href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
-								<li class='return'><span class='decoBar'></span><a href='#company?show=return'>Return Policy</a><span class='arrow sprite'></span></li>
-								<li class='ship'><span class='decoBar'></span><a href='#company?show=shipping'>Shipping Policy</a><span class='arrow sprite'></span></li>
+								<li class='about'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=about'>About Us</a><span class='arrow sprite'></span></li>
+								<li class='contact'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+								<li class='faq'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=faq'>FAQ</a><span class='arrow sprite'></span></li>
+								<li class='paymnt'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
+								<li class='priv'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
+								<li class='return'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=return'>Return Policy</a><span class='arrow sprite'></span></li>
+								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=lists'>Wishlist</a><span class='arrow sprite'></span></li>
+								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
+								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=shipping'>Shipping Policy</a><span class='arrow sprite'></span></li>
 							</ul>
 						</div>
 						<div class='socialNav'>
@@ -500,40 +502,68 @@ container ul should have lineItemProdlist class on it instead of productList
 </li>
 
 
-<li id='productListTemplateBuyerList' class='loadingBG clearfix' >
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' >
+<li id='productListTemplateBuyerList' class='loadingBG clearfix anyMasonry masonOne' >
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
-		<div class='prodThumbContainer floatLeft'>
-			<div class='ui-widget ui-widget-content ui-corner-all'>
-				<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='160' height='160' />
-				<div class='buttonList ui-widget ui-widget-header ui-corner-all alignCenter'>
-
-<button class='ui-state-default ui-corner-all' title='add item to cart' onClick="showContent('product',{'pid':$(this).closest('[data-pid]').attr('data-pid')});">
-<span class="ui-icon ui-icon-cart"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">
-<span class="ui-icon ui-icon-info"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='write a review for this item' onClick="app.ext.store_crm.u.showReviewFrmInModal({'pid':$(this).closest('[data-pid]').attr('data-pid'),'templateID':'reviewFrmTemplate'});">
-<span class="ui-icon ui-icon-star"></span>
-</button>
-
-<button class='ui-state-default ui-corner-all' title='remove item from list' onClick="app.ext.myRIA.a.removeItemFromBuyerList({'stid':$(this).closest('[data-pid]').attr('data-pid'),'listID':$(this).closest('[data-buyerlistid]').attr('data-buyerlistid')},{'parentID':$(this).closest('li').attr('id')});">
-<span class="ui-icon ui-icon-trash"></span>
-</button>
-
-				</div>
-			</div>
+	<div class='prodThumbContainer hovBorderWhite10px pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+		<div class='prodThumbContainer'>
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='260' height='260' />
 		</div>
-		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite floatRight' ></span>
 
-		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+		<div class='prodListDesc'>
+			<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+			<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price;'></h6>
+		</div>
+	</div>
+	
+	<button class='ui-state-default ui-corner-all seeMore' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">See More Details</button>
+	
+	<div class='itemPrice2' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; posttext: / item;' ></div>
+		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
+			<div class='qtySelectStyler'>
+				<select type='number' name='qty' class='qtyInput numberInput sprite' data-bind='format:atcQuantityInput;extension:store_product;useParentData:true;'>
+					<option value='1'>Quantity: 1</option>
+					<option value='2'>Quantity: 2</option>
+					<option value='3'>Quantity: 3</option>
+					<option value='4'>Quantity: 4</option>
+					<option value='5'>Quantity: 5</option>
+					<option value='6'>Quantity: 6</option>
+				</select>
+			</div>	
+			<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
+			<button class='floatRight removeButton' onClick="app.ext.myRIA.a.removeItemFromBuyerList({'stid':$(this).closest('[data-pid]').attr('data-pid'),'listID':$(this).closest('[data-buyerlistid]').attr('data-buyerlistid')},{'parentID':$(this).closest('li').attr('id')});" ></button>
+			<input type='submit' class='floatRight addToCart primaryColorHover' data-bind='var: product(pid); format:addToCartButton; extension:store_product;' value='ADD TO CART'><span class='sprite iconWish'></span></input>
+		</form>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--
+	<button class='ui-state-default ui-corner-all' title='add item to cart' onClick="showContent('product',{'pid':$(this).closest('[data-pid]').attr('data-pid')});">
+	<span class="ui-icon ui-icon-cart"></span>
+	</button>
 
-		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
+	<button class='ui-state-default ui-corner-all' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">
+	<span class="ui-icon ui-icon-info"></span>
+	</button>
 
+	<button class='ui-state-default ui-corner-all' title='write a review for this item' onClick="app.ext.store_crm.u.showReviewFrmInModal({'pid':$(this).closest('[data-pid]').attr('data-pid'),'templateID':'reviewFrmTemplate'});">
+	<span class="ui-icon ui-icon-star"></span>
+	</button>
 
+	<button class='ui-state-default ui-corner-all' title='remove item from list' onClick="app.ext.myRIA.a.removeItemFromBuyerList({'stid':$(this).closest('[data-pid]').attr('data-pid'),'listID':$(this).closest('[data-buyerlistid]').attr('data-buyerlistid')},{'parentID':$(this).closest('li').attr('id')});">
+	<span class="ui-icon ui-icon-trash"></span>
+	</button>
+				
+	<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite floatRight' ></span>
+	-->
 	</div>
 </li>
 
@@ -1417,7 +1447,7 @@ subscribeListsArticle is used for authenticated buyers
 			</div>
 		</div>
 
-		<div id='listsArticle' class='displayNone textContentArea'>
+		<div id='listsArticle' class='displayNone textContentArea listsArticle floatLeft'>
 			<h1>List Manager</h1>
 			<div id='listsContainer' class='prodlist loadingBG'></div>
 
