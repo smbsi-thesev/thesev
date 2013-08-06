@@ -151,7 +151,7 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 					<div class='dropdown displayNone'>
 						<div class='infoDropdown'>
 							<div class='headline'>STAY UPDATED<div class='iconNews sprite'></div></div>
-							<form action='#' class='headerSubscribe' id='subscribeFrm' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe('subscribeFrm'); return false">
+							<form action='#' class='headerSubscribe' id='subscribeFrm' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
 								<input type='text'  maxlength='50' size='30' name='fullname' placeholder='  Full Name' />
 								<input type='email'  maxlength='50' size='30' name='login' placeholder='  E-mail Address' />
 								<input type='submit' value='SIGN ME UP!' class='primaryColorHover sprite pointer' />
