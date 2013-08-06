@@ -516,9 +516,9 @@ container ul should have lineItemProdlist class on it instead of productList
 		</div>
 	</div>
 	
-	<button class='ui-state-default ui-corner-all seeMore' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">See More Details</button>
+	<button class='secondaryColorHover seeMore' title='more information' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">See More Details</button>
 	
-	<div class='itemPrice2' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; posttext: / item;' ></div>
+	<!-- <div class='itemPrice2' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; posttext: / item;' ></div> -->
 		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
 			<div class='qtySelectStyler'>
 				<select type='number' name='qty' class='qtyInput numberInput sprite' data-bind='format:atcQuantityInput;extension:store_product;useParentData:true;'>
@@ -532,7 +532,7 @@ container ul should have lineItemProdlist class on it instead of productList
 			</div>	
 			<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
 			<button class='floatRight removeButton' onClick="app.ext.myRIA.a.removeItemFromBuyerList({'stid':$(this).closest('[data-pid]').attr('data-pid'),'listID':$(this).closest('[data-buyerlistid]').attr('data-buyerlistid')},{'parentID':$(this).closest('li').attr('id')});" ></button>
-			<input type='submit' class='floatRight addToCart primaryColorHover' data-bind='var: product(pid); format:addToCartButton; extension:store_product;' value='ADD TO CART'><span class='sprite iconWish'></span></input>
+			<input type='submit' class='floatRight addToCart primaryColorHover' data-bind='var: product(pid); format:addToCartButton; extension:store_product;' value='ADD TO CART' />
 		</form>
 	
 	

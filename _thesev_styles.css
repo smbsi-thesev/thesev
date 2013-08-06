@@ -501,11 +501,12 @@ customerTemplate
 
 /*Wislist*/
 #listsArticle .ui-widget-content {background:transparent; border:none;}
-#listsArticle .anyMasonry {width:280px !important;}
-#listsArticle .prodThumbContainer {width:260px;}
-#listsArticle .qtySelectStyler {width:275px;}
-#listsArticle .qtySelectStyler .qtyInput {background-position:246px -100px; padding:2% 1% 1% 1%;}
-#listsArticle .addToCart {height:50px; width:170px; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:right;}
+#listsArticle .anyMasonry {width:220px !important;}
+#listsArticle .prodThumbContainer {width:200px;}
+#listsArticle .seeMore {width:100%; padding:15px; margin:10px 0 0 0; border:none; color:#ffffff; font-size:1.3em;}
+#listsArticle .qtySelectStyler {width:215px;}
+#listsArticle .qtySelectStyler .qtyInput {background-position:186px -100px; padding:2% 1% 1% 1%;}
+#listsArticle .addToCart {height:50px; width:170px; border:none; color:#ffffff; font-family:montserrat; font-size:1.6em; margin:10px 0 0 0; padding:10px; text-align:center;}
 #listsArticle .removeButton {height:25px; width:26px; background:url(images/sprites-500x500.png) 330px -59px transparent; border:none; margin:22px 12px 0 12px;}
 
 /*************************************************************************************
