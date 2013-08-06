@@ -913,7 +913,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 							//the item is already in the list. move it to the front.
 							app.ext.myRIA.vars.session.recentlyViewedItems.splice(0, 0, app.ext.myRIA.vars.session.recentlyViewedItems.splice(app.ext.myRIA.vars.session.recentlyViewedItems.indexOf(infoObj.pid), 1)[0]);
 							}
-						infoObj.performJumpToTop = false;
+/*smbsi*/				infoObj.performJumpToTop = false;
 						infoObj.parentID = app.ext.myRIA.u.showProd(infoObj);
 						break;
 	

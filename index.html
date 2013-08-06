@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130805151800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130805175200",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -145,7 +145,21 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 				</div>
 			</div>
 			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
-			<div class='headerLinks floatLeft pointer' onClick="return showContent('customer',{'show':'newsletter'});"><img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" /></div>
+			<div class='headerLinks floatLeft' onMouseOver="app.ext.store_thesev.a.showDropDown($(this));" onMouseOut="app.ext.store_thesev.a.hideDropDown($(this));"> <!-- onClick="return showContent('customer',{'show':'newsletter'});" -->
+				<img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" />
+				<div class='newsLink'>
+					<div class='dropdown displayNone'>
+						<div class='infoDropdown'>
+							<div class='headline'>STAY UPDATED<div class='iconNews sprite'></div></div>
+							<form action='#' class='headerSubscribe' id='subscribeFrm' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe('subscribeFrm'); return false">
+								<input type='text'  maxlength='50' size='30' name='fullname' placeholder='  Full Name' />
+								<input type='email'  maxlength='50' size='30' name='login' placeholder='  E-mail Address' />
+								<input type='submit' value='SIGN ME UP!' class='primaryColorHover sprite pointer' />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- duplicates cart if called more than once, must destroy first before this can be used
 				<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{'show':'inline'});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>-->
 			<div class='headerLinks floatLeft pointer' onClick="return showContent('cart',{});"><span class='cartItemCount'></span><img alt="cart" src='images/cart-icon_36x34.png' width="36" height="34" /></div>
