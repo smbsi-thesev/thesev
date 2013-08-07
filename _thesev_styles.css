@@ -118,8 +118,10 @@ header .dummyMargin {height:50px; width:auto;}
 .headerLinks span {height:auto; width:37px; color:#ffffff; text-align:center; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; position:absolute; top:4px; left:0;}
 .headerLinks img {margin:6% 0 0 9%;}
 
-.infoLink, .newsLink {position:relative; z-index:500;}
+.infoLink, .newsLink {position:relative; z-index:500; left:-110px;}
+.blackArrow {height:9px; width:17px; background-position:-125px -107px; position:absolute; top:-8px; left:124px;}
 .newsLink {left:-140px;}
+.newsLink .blackArrow {left:155px;}
 .iconNews {height:22px; width:36px; background-position:-160px 1px; float:right; margin:24px 28px 0 0;}
 .headerSubscribe {height:auto; width:100%;}
 .headerSubscribe input[type='text'], .headerSubscribe input[type='email'] {height:50px; width:96%; border-top:none; border-right:none; border-left:9px solid #cccccc; border-bottom:5px dotted #cccccc; font-family:montserrat; font-size:1.2em;}
@@ -535,7 +537,7 @@ CompanyTemplate
 
 /*sideline*/
 .sideline, .infoLink, .newsLink {height:auto; width:230px; margin:24px; font-family:montserrat; font-weight:normal;}
-.infoLink {margin:17px 0 0 0;}
+.infoLink, .newsLink {margin:17px 0 0 0;}
 .sideline #companyNav, .sideline #customerNav, .infoLink .infoDropdown, .newsLink .infoDropdown {background:#000000; border:1px solid #000000; padding:0 0 5px 0;}
 .sideline .headline, .infoDropdown .headline {height:70px; width:100%; line-height:70px; color:#ffffff; font-family:oswald; font-size:2.4em; font-weight:bold; padding:0 0 0 10px;}
 .sideline .headline .iconHelp, .infoDropdown .headline .iconHelp {height:28px; width:30px; background-position:-79px 0; float:right; margin:20px 30px 0 0;}
