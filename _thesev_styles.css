@@ -444,6 +444,9 @@ CHECKOUT CONFIRMATION
 .checkoutFormContainer .orderSummaryDetails a {color:#0c8a96; text-decoration:underline;}
 .checkoutFormContainer .orderSummaryDetails .invoice_has_balancedue {color: red;	margin: 10px 0 0 0;}
 
+.orderHistProdContainer {height:150px; width:150px;}
+.orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}
+.orderHistProdContainer .writeReview {height:auto; width:100%;}
 
 /*************************************************************************************
 LOGIN MODAL
