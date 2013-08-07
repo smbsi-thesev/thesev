@@ -170,6 +170,7 @@ var store_thesev = function() {
 						$tag.data('timeout','false');
 					}
 					$dropdown.stop().animate({'height':height+'px'},500);
+					$('#mainContentArea').css('opacity','.25');
 					return true;
 				}
 				return false;
@@ -183,6 +184,7 @@ var store_thesev = function() {
 				}
 				$tag.data('timeout',setTimeout(function() {
 					$('.dropdown',$tag).hide();
+					$('#mainContentArea').css('opacity','1');
 				},500));
 				return true;
 			},
