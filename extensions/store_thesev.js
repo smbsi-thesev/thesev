@@ -154,12 +154,12 @@ var store_thesev = function() {
 					}
 					else{
 						$('#shippingWarning').show();
-						$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal"});
+						$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
 					}
 				}
 				else{
 					$('#shippingWarning').show();
-					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal"});
+					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
 				}
 				},
 			
