@@ -568,9 +568,8 @@ CompanyTemplate
 .sideline #companyNav li.return:hover, .sideline #customerNav li.return:hover, .infoLink .infoDropdown li.return:hover {background-color:#0c8a96;}
 .sideline #companyNav li.ship:hover, .sideline #customerNav li.ship:hover, .infoLink .infoDropdown li.ship:hover {background-color:blue;}
 
-.socialNav {height:160px;}
 .sideline .socialNav li, .infoLink .socialNav li {height:70px; width:100%; margin:10px 0 0 0; position:relative;}
-.sideline .socialNav li a {height:100%; width:100%; margin:0; display:block;}
+.sideline .socialNav li a, .infoLink .socialNav li a {height:100%; width:100%; margin:0; position:absolute;}
 .sideline .socialNav li span, .infoLink .socialNav li span {width:auto; font-weight:bold; text-align:center; color:#f5f1de; line-height:19px; position:static;}
 .sideline .socialCont, .infoLink .socialCont {height:auto; width:115px; float:left; padding:12px 0 0 30px;}
 .sideline .socialTitle, .infoLink .socialTitle {font-family:montserrat; font-size:1.2em; display:block;}
