@@ -137,7 +137,33 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
-			//form for international shipping agreement in checkout
+			showInterShipWarning : function(val){
+				//countrySelectorShipping
+				//console.debug(val);
+				
+				$("#countrySelectorShipping").val(val);
+				//$("#countrySelectorBilling").val(val);
+				
+				//var $options = $("#countrySelectorBilling > option").clone();
+				//$('#countrySelectorShipping').append($options);
+				//app.u.dump('Here is what is stored in countrySelectorBilling ' + abcd);
+				
+				if ($('#countrySelectorBilling').val() === "US"){
+					$('#shippingWarning').hide();
+					if ($('#countrySelectorShipping').val() === "US"){
+					}
+					else{
+						$('#shippingWarning').show();
+						$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal"});
+					}
+				}
+				else{
+					$('#shippingWarning').show();
+					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal"});
+				}
+				},
+			
+			//form for international shipping agreement acceptance in checkout
 			interShipWarningAcceptClick : function(){
 				if($('#interShipAgreeCheck').is(':checked')){
 					$('#noCheckWarning').hide();

@@ -1219,7 +1219,11 @@ note - the order object is available at app.data['order|'+P.orderID]
 						}
 					
 					obj[$sel.attr('name')] = $sel.val();
+					app.u.dump($sel.val());
 					app.calls.cartSet.init(obj); //update the cart w/ the country.
+/*smbsi*/			if ($sel.val() !== 'US') {   //show international shipping agreement if country is not US
+/*smbsi*/				app.ext.store_thesev.a.showInterShipWarning(); 
+/*smbsi*/			}
 					app.ext.orderCreate.u.handleCommonPanels($form);
 					app.model.dispatchThis('immutable');
 					})
