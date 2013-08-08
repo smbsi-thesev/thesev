@@ -756,11 +756,12 @@ media querries
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
-	.anyMasonry.masonOne img {height:296px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonOne img {height:296px; width:296px;}
+	.anyMasonry.masonOne .mushPotLogo img {height:60px; width:117px; margin:0 0 0 4px;}
 	.anyMasonry.masonTwo  {height:120px; width:115px; margin:8px 11px;}
-	.anyMasonry.masonTwo img {height:120px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonTwo img {height:120px; width:115px;}
 	.anyMasonry.masonThree {height:120px; width:296px;}
-	.anyMasonry.masonThree img {height:120px; width:120px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonThree img {height:120px; width:296px;}
 	.anyMasonry.masonFour {height:296px; width:115px;}
-	.anyMasonry.masonFour img {height:115px; width:115px; box-shadow: inset 0px 0px 86px -34px;}
+	.anyMasonry.masonFour img {height:296px; width:115px;}
 }
