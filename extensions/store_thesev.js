@@ -46,6 +46,18 @@ var store_thesev = function() {
 					}
 				}]);
 				
+				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
+					var $sideline = $('.customerSideline', $(app.u.jqSelector('#',infoObj.parentID)));
+					app.u.dump("SIDELINING");
+					app.u.dump(infoObj);
+					if(infoObj.show == "createaccount"){
+						$sideline.hide();
+						}
+					else {
+						$sideline.show();
+						}
+					}])
+				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					if(!$context.data('masonized')){

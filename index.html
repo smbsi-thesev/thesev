@@ -1244,7 +1244,7 @@ So the cart template should contain these two elements and the extension should 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
 <div id='customerTemplate' class='clearfix templateWrapper customerTemplate'>
 
-	<div class='sideline customerSideline' data-bind="useParentData:true; format:showMe; extension:store_thesev;">
+	<div class='sideline customerSideline' >
 		<nav id='customerNav'>
 			<div class='headline'>NEED HELP?<span class='iconHelp sprite'></span></div>
 			<ul class='listStyleNone noPadOrMargin'>
@@ -1886,13 +1886,14 @@ The 'data-action' attribute is used to assign an onclick.
 			<a href="#" onClick="app.calls.appBuyerPasswordRecover.init($('input[name=login]', $(this).parent()).val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','targetID':'loginMessaging'}); app.model.dispatchThis('immutable'); return false;">Forgot your password?<br> Enter your username and click hear to retrieve it!</a>
 		</div>
 	</div><!-- /recoverPasswordContainer -->
-</div>
-
-<!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
 	<div id='loginSuccessContainer' class='center displayNone'>
 		<button class='ui-button-text ui-button ui-state-default ui-corner-all ' id='modalLoginContinueButton' onClick="$('#loginFormForModal').dialog('close');">Continue</button>
 	</div>
 </div>
+
+<!-- 
+</div>
+this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
 
 
 

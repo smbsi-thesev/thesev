@@ -1491,6 +1491,7 @@ if(ps.indexOf('?') >= 1)	{
 				if(app.u.getUsernameFromCart())	{
 					$('.username').text(app.u.getUsernameFromCart());
 					}
+				showContent('customer',{'show':'myaccount'});
 				},
 			
 			
@@ -2440,10 +2441,6 @@ elasticsearch.size = 50;
 					else	{
 					
 						switch(infoObj.show)	{
-/*smbsi*/					case 'createaccount':
-/*smbsi*/						$(".customerSideline").hide();
-/*smbsi*/						break;
-						
 							case 'newsletter':
 								$article.showLoading({'message':'Fetching newsletter list'});
 								app.calls.appNewsletterList.init({callback : function(rd){
