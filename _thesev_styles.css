@@ -369,7 +369,7 @@ Cart
 
 /*cartTemplate*/
 #modalCart.ui-dialog-content.ui-widget-content {background:url(images/view-bkgrnd_2040x675.jpg);}
-.cartLogo {height:32px; width:60px; background-image:url(images/the-sev-logo_60x32.png); background-repeat:no-repeat; margin:10px auto 0 auto;}
+.cartLogo, .shipLogo {height:32px; width:60px; background-image:url(images/the-sev-logo_60x32.png); background-repeat:no-repeat; margin:10px auto 0 auto;}
 .cartSummaryTotalsContainer {height:auto; width:220px; margin:20px 8px 0 0; padding:0; background:#000000;}
 .cartSummaryTotalsContainer .cartSummaryContainer {padding:0;}
 .cartSummary {font-family:montserrat; font-size:1.2em; font-weight:normal;}
@@ -429,6 +429,11 @@ CHECKOUT
 .checkoutCosts {font-family:montserrat; font-size:1.6em;}
 
 #checkoutContainer .keepShopin {height:80px; width:100%; font-family:oswald; font-size:3.2em; font-weight:bold; color:#ffffff; text-align:center; margin:0 0 20px 0; border:none;}
+
+/*international shipping modal*/
+#interShippingModal {background-image:url(images/view-bkgrnd_2040x675.jpg); padding:1em 3em;}
+#interShippingForm p {padding:0 0 0 1em;}
+#interShippingForm #interShipAgreeButton {border:none; color:#ffffff; padding:1em 2em; margin:auto; display:block; clear:both;}
 
 /*************************************************************************************
 CHECKOUT CONFIRMATION
