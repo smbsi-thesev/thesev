@@ -137,41 +137,35 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
+			//shows modal in checkout with international shipping agreement when US is not selected
+			//doesn't close unless agree checkbox is checked
 			showInterShipWarning : function(val){
-				//countrySelectorShipping
 				//console.debug(val);
 				
 				$("#countrySelectorShipping").val(val);
-				//$("#countrySelectorBilling").val(val);
-				
-				//var $options = $("#countrySelectorBilling > option").clone();
-				//$('#countrySelectorShipping').append($options);
-				//app.u.dump('Here is what is stored in countrySelectorBilling ' + abcd);
-				
-				if ($('#countrySelectorBilling').val() === "US"){
+				if ($('#countrySelectorBilling').val() === "US") {
 					$('#shippingWarning').hide();
-					if ($('#countrySelectorShipping').val() === "US"){
+					if ($('#countrySelectorShipping').val() === "US") {
 					}
-					else{
+					else {
 						$('#shippingWarning').show();
 						$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
 					}
 				}
-				else{
+				else {
 					$('#shippingWarning').show();
 					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:700, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
 				}
-				},
+			},
 			
 			//form for international shipping agreement acceptance in checkout
-			interShipWarningAcceptClick : function(){
-				if($('#interShipAgreeCheck').is(':checked')){
+			interShipWarningAcceptClick : function() {
+				if($('#interShipAgreeCheck').is(':checked')) {
 					$('#noCheckWarning').hide();
 					$('#interShippingModal').dialog('close');
 					$('.interShippingModalCont').css('height','1045px');
 				}
-				else
-				{
+				else {
 					$('#noCheckWarning').show();
 					$('.interShippingModalCont').css('height','1070px');
 				}
