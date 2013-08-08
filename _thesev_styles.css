@@ -148,8 +148,8 @@ header .logIn {height:100%; width:78.048%; float:right; color:#ffffff; font-size
 /*************************************************************************************
 FOOTER
 *************************************************************************************/
-
-footer {height:175px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; font-weight:normal; clear:both;}
+/*footer height was changed when footer carousel was temporarily hidden. Check all media queries for sizing when it's restored*/
+footer {height:75px; width:100%; background:#ffffff; font-family:"Open Sans"; font-size:1.1em; font-weight:normal; clear:both;} /*height:175px; height for footer w/ carousel*/
 /*FOOTER CAROUSEL*/
 footer .logoCarouselCont {height:100px; width:100%; border-bottom:4px dotted #cccccc;}/*57.142%;*/
 footer .footerFredWrap {height:auto; width:83%;}
@@ -693,7 +693,7 @@ media querries
 	.headerHomeLink {padding:14% 0 0 30%;}
 	header .logIn {line-height:170%;}
 /*FOOTER*/	
-	footer {height:225px;}
+	footer {height:125px;} /*height:225px; height for footer w/ carousel*/
 	footer .dummyMargin {height:125px; width:400px; margin:auto;}
 	footer .leftCol {height:30%;}
 	footer .leftCol .outerGutter {display:none}
@@ -737,7 +737,7 @@ media querries
 	.headerHomeLink {padding:17% 0 0 25%;}
 	header .logIn {line-height:290%;}
 /*FOOTER*/
-	footer {height:250px;}
+	/*footer {height:250px;} height for footer w/ carousel*/
 	footer .dummyMargin {height:150px; width:100%;}
 	footer .leftCol {width:100%;}
 	footer .midCol {float:left; width:100%;}
