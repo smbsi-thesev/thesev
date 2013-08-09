@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130808134700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130808183100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -526,7 +526,8 @@ container ul should have lineItemProdlist class on it instead of productList
 	<!-- <div class='itemPrice2' data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; posttext: / item;' ></div> -->
 		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
 			<div class='qtySelectStyler'>
-				<select type='number' name='qty' class='qtyInput numberInput sprite' data-bind='format:atcQuantityInput;extension:store_product;useParentData:true;'>
+				<input type='hidden' name='qty' />
+				<select type='number' name='wishSelectQty' onChange="app.ext.store_thesev.a.wishListPopVal($(this), $(this).parent());" class='qtyInput numberInput sprite' data-bind='format:atcQuantityInput;extension:store_product;useParentData:true;'>
 					<option value='1'>Quantity: 1</option>
 					<option value='2'>Quantity: 2</option>
 					<option value='3'>Quantity: 3</option>

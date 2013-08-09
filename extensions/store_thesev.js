@@ -149,6 +149,11 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
+			wishListPopVal : function($this, $parent) {
+				$("input[name='qty']", $parent).val($this.val());
+				app.u.dump('++++++++++++++'); app.u.dump($this.siblings($("input[name='qty']")).val());
+			},
+			
 			//shows modal in checkout with international shipping agreement when US is not selected and Ship to billing is checked
 			//doesn't close unless agree checkbox is checked
 			showInterShipWarningBill : function(val){

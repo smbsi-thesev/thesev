@@ -720,6 +720,7 @@ NOTES
 					obj = false;
 					$('#globalMessaging').anymessage({'message':'In store_product.u.buildCartItemAppendObj, $form not passed.','gMessage':true});
 					}
+				app.u.dump('QtyInput:'); app.u.dump(obj); 
 				return obj;
 				}, //buildCartItemAppendObj
 
