@@ -42,6 +42,7 @@ var store_thesev = function() {
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
 						app.ext.store_thesev.u.addMushPot($context);
+						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
 					}
 				}]);
@@ -428,10 +429,30 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			addHomeBanner : function($context) {
+				
+				
+				var a = Math.random()*3+1;
+				var b = a.toString().split('.');
+				var number = b[0];
+				var image = ""; //used to hold image path in switch
+
+				//decide which img to append to the bannerLi
+				switch(number) {
+					case '1'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-black_316x316.jpg" height:316; width:316; />'; 	break;
+					case '2'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-pink_316x316.jpg" height:316; width:316; />'; 		break;
+					case '3'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-teal_316x316.jpg" height:316; width:316; />';	 	break;
+				}
+				
+				$('li:nth-child(3)', $context).after($('.bannerLi',$context));
+				$('.bannerLi',$context).append(image);
+				$('.bannerLi',$context).show();
+			},
+			
 			addMushPot : function($context) {
 				$('li:nth-child(4)', $context).after($('.mushPotLi',$context));
 				$('.mushPotLi',$context).show();
-				
+
 				//if collection, only show on top level cat
 				var $catID = ($context[0]['attributes']['data-catsafeid'].value);
 				if($catID.indexOf('.50_collections.') != -1) {

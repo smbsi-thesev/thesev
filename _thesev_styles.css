@@ -179,6 +179,7 @@ homepageTemplate
 *************************************************************************************/
 
 .categoryListTemplate.anyMasonry.hovBorderWhite10px.masonOne.mushPotLi {display:none;}
+.categoryListTemplate.anyMasonry.hovBorderWhite10px.masonOne.bannerLi {display:none;}
 .mushPot {height:316px; width:316px; font-family:oswald; font-size:2.7em; font-weight:normal;} /*box-shadow:0 0 2px 0px;*/
 .mushPotLink {float:left;  margin:14px 22px 11px 22px;} 
 .mushPotLogo {height:77px; width:140px; margin:auto; padding:50px; clear:both;}
