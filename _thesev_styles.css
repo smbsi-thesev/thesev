@@ -257,6 +257,7 @@ productTemplateQuickView
 .tempQV .prodSummaryContainer h6 span,.tempQV .prodSummaryContainer h5 span, .tempQV .prodSummaryContainer h3 span {color:#666666;}
 .tempQV .prodSummaryContainer span.cents {color:#ffffff; font-size:50%;}
 .tempQV .prodSummaryContainer .priceContainer {height:auto;}
+.tempQV .quickViewButton {border:none; color:#ffffff; font-family:oswald; font-size; 1.4em; padding:10px;}
 .tempQV .productReviewsList {height:auto; width:100%; clear:both; background:#000000;}
 
 .buttonBar button.ui-button {padding:0.5em 1em; margin:2em 0.8em 0 0;}

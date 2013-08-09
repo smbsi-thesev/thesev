@@ -852,9 +852,9 @@ this will likely become more flexible in the future. ###
 	<div class='prodViewerContainer'>
 			
 			<div class='imageContainer'>
-				<div class='boxShadower' ></div> <!-- ADD IN CORRECT PLACE... onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});"  -->
+				<div class='boxShadower pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></div>
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-				<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='280' height='280' /></div>
+				<div data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'><img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='270' height='270' /></div>
 			</div>
 
 			<div class='prodSummaryContainer marginBottom no_underline'>
@@ -879,6 +879,9 @@ this will likely become more flexible in the future. ###
 				</section>
 
 				<div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
+				
+				<button class='quickViewButton primaryColorHover' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>SEE MORE DETAILS</button>
+				
 			</div>
 
 			<div>
