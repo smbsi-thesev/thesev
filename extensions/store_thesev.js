@@ -309,7 +309,8 @@ var store_thesev = function() {
 					//if there's content, add it; someone will read it.
 					$('.workWithMe p', $context).text(work);
 					//if there's more content than space, make it obvious and add stuff to show that content.
-					if(work.length > 240) {
+					app.u.dump('Work length: '); app.u.dump(work.length);
+					if(work.length > 135) {
 						$('.workWithMe p', $context).append("<span class='elipsis'>. . . .</span>");
 						$tag.addClass('addMoreWork');
 					}
