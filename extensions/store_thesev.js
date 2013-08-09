@@ -430,8 +430,6 @@ var store_thesev = function() {
 			},
 	*/	
 			addHomeBanner : function($context) {
-				
-				
 				var a = Math.random()*3+1;
 				var b = a.toString().split('.');
 				var number = b[0];
@@ -440,7 +438,7 @@ var store_thesev = function() {
 				//decide which img to append to the bannerLi
 				switch(number) {
 					case '1'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-black_316x316.jpg" height:316; width:316; />'; 	break;
-					case '2'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-pink_316x316.jpg" height:316; width:316; />'; 		break;
+					case '2'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-pink_316x316.jpg" height:316; width:316; />'; 	break;
 					case '3'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-teal_316x316.jpg" height:316; width:316; />';	 	break;
 				}
 				
