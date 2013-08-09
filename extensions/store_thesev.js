@@ -302,16 +302,15 @@ var store_thesev = function() {
 			//to expand container to show rest of content.
 			showMoreWork : function($tag, data) {
 				var pid = data.value.pid;
-				var work = data.value['%attribs']['zoovy:prod_detail'];
 				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
 				
 				if(data.value['%attribs']['zoovy:prod_detail']) {
 					//if there's content, add it; someone will read it.
-					$('.workWithMe p', $context).text(work);
-					//if there's more content than space, make it obvious and add stuff to show that content.
-					app.u.dump('Work length: '); app.u.dump(work.length);
-					if(work.length > 135) {
-						$('.workWithMe p', $context).append("<span class='elipsis'>. . . .</span>");
+					var work = data.value['%attribs']['zoovy:prod_detail'];
+					$('p', '.workWithMe', $context).text(work);
+					//if there's more content than space, make it obvious and add stuff to show that content
+					if(work.length > 191) {
+						$('p', '.workWithMe', $context).append("<span class='elipsis'>. . . .</span>");
 						$tag.addClass('addMoreWork');
 					}
 				}
