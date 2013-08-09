@@ -431,11 +431,10 @@ var store_thesev = function() {
 			addMushPot : function($context) {
 				$('li:nth-child(4)', $context).after($('.mushPotLi',$context));
 				$('.mushPotLi',$context).show();
+				
+				//if collection, only show on top level cat
 				var $catID = ($context[0]['attributes']['data-catsafeid'].value);
-				app.u.dump($catID.indexOf('.50_collections'));
-				app.u.dump(($context[0]['attributes']['data-catsafeid'].value));
 				if($catID.indexOf('.50_collections.') != -1) {
-					app.u.dump('condition worked');
 					$('.mushPotLi',$context).hide();
 				}
 			},
