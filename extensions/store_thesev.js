@@ -149,26 +149,34 @@ var store_thesev = function() {
 					}
 			}, //loginFrmSubmit
 			
-			//shows modal in checkout with international shipping agreement when US is not selected
+			//shows modal in checkout with international shipping agreement when US is not selected and Ship to billing is checked
 			//doesn't close unless agree checkbox is checked
-			showInterShipWarning : function(val){
+			showInterShipWarningBill : function(val){
 				//console.debug(val);
+				//app.u.dump('Bill value: '); app.u.dump($('select[name="bill/countrycode"]').val()); 
+				//app.u.dump('Ship value: '); app.u.dump($('select[name="ship/countrycode"]').val());
+				//app.u.dump('Check value: '); app.u.dump($('input[name="want/bill_to_ship"]:checked').length);
 				
-				$("#countrySelectorShipping").val(val);
-				if ($('#countrySelectorBilling').val() === "US") {
-					$('#shippingWarning').hide();
-					if ($('#countrySelectorShipping').val() === "US") {
-					}
-					else {
-						$('#shippingWarning').show();
-						$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:570, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
-					}
-				}
-				else {
+				if($('input[name="want/bill_to_ship"]:checked').length == 1 && $('select[name="bill/countrycode"]').val() != "US") {
 					$('#shippingWarning').show();
 					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:570, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
 				}
-			},
+				else { //nothing needs to happen, destination is 'Merca, but jus in case...
+					$('#shippingWarning').hide();
+				}
+			}, //showInterShipWarningBill
+			
+			//shows modal in checkout with international shipping agreement when US is not selected and Ship to billing isn't checked
+			//doesn't close unless agree checkbox is checked
+			showInterShipWarningShip : function(val){
+				if ($('select[name="ship/countrycode"]').val() != "US") {
+					$('#shippingWarning').show();
+					$('#interShippingModal').dialog({'modal':'true', 'title':'','width':868, height:570, closeOnEscape: false, "dialogClass" : "intShippingModal", open:function(event, ui) {$(".ui-dialog-titlebar-close").hide();}});
+				}
+				else if ($('input[name="want/bill_to_ship"]:checked').length == 0 && $('select[name="ship/countrycode"]').val() != "US") {
+					('#shippingWarning').hide();
+				}
+			}, //showInterShipWarningShip
 			
 			//form for international shipping agreement acceptance in checkout
 			interShipWarningAcceptClick : function() {
