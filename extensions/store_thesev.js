@@ -284,6 +284,22 @@ var store_thesev = function() {
 //on a data-bind, format: is equal to a renderformat. extension: tells the rendering engine where to look for the renderFormat.
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
+		
+			//adds brand image under product image on product page, if one is populated in image99
+			addBrandToProductPage : function($tag, data) {
+				app.u.dump(data.value['%attribs']['zoovy:prod_image99']);
+				if(data.value['%attribs'] && data.value['%attribs']['zoovy:prod_image99']) {
+					$tag.append(app.u.makeImage({
+						"name"	: data.value['%attribs']['zoovy:prod_image99'],
+						"w"		: 125,
+						"h"		: 50,
+						"b"		: "tttttt",
+						"tag"	: 1
+					}));
+				}
+				else { //no image, no showee
+				}
+			},
 
 			//calculates and displays difference till order total is $100
 			tillFreeShipping : function($tag, data) {

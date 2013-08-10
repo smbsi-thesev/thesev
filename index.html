@@ -679,7 +679,7 @@ this will likely become more flexible in the future. ###
 			</div>
 
 			<div class='addtnlProdInfo'>
-				<div class='thumbLogo'><img width='125' height='50' src='images/crazy-rumors-logo_125x50.png' /></div>
+				<div class='thumbLogo' data-bind="useParentData:true; format:addBrandToProductPage; extension:store_thesev;"></div> <!-- <img width='125' height='50' src='images/crazy-rumors-logo_125x50.png' /> -->
 				<div class='thumbText'>
 					<span>Item/SKU #</span>
 					<div data-bind='var: product(pid); format:text;'></div>
