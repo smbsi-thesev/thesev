@@ -352,7 +352,6 @@ a.prodPrev span, a.prodNext span {display:none;}
 .basePriceAlone {height:auto; width:100%; font-size:3.0em;}
 .forYou {font-size:1.2em;}
 .forRetail {font-size:1.2em; color:#666666;}
-.productPage  .cents {text-decoration:underline;}
 .prodViewerAddToCartForm {margin:0 0 5px 0; position:relative;}
 .notAvailableForPurchase {height:auto; width:90%; color:#ffffff; display:block; font-size:1.8em; font-family:oswald; padding:15px 10px; text-align:center;}
 .productPage .addToCartButton, .productPage .addToWishlistButton {height:80px; width:100%; font-family:montserrat; font-size:1.8em; font-weight:bold; border:none; color:#ffffff; margin:0 0 10px 0; position:relative;}
