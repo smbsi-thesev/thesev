@@ -3020,7 +3020,13 @@ else	{
 /*THESEV*/					app.calls.cartItemAppend.init(cartObj,{'callback':function(rd){
 /*THESEV*/						if(obj.action === 'message') {
 /*THESEV*/			//				app.u.throwMessage('Product successfully added to cart');
-/*THESEV*/							}
+/*THESEV*/							$('.addToCartButtonProdItem', $form).css('background-position','-201px 0');
+/*THESEV*/							$('.addToCartButtonProdItem', $form).removeClass('primaryColorHover');
+/*THESEV*/							$('.addToCartButtonProdItem', $form).addClass('tertiaryColorHover');
+/*THESEV*/							$('.cartItemCount',$form).removeClass('displayNone');
+/*THESEV*/							$form.removeClass('noProductListForm');
+/*THESEV*/							$form.removeClass('displayNone');
+/*THESEV*/						}
 /*THESEV*/					}},'immutable');
 /*THESEV*/					app.model.destroy('cartDetail');
 /*THESEV*/					$('.prodAddedToCart').show();

@@ -217,7 +217,11 @@ productListTemplate
 .productListTemplate .prodListDesc h6, #cartStuffList .prodListDesc h6, .productListTemplateResults .prodListDesc h6, .prodListDesc h6 {font-weight:normal; font-size:1.4em; text-align:right; margin:0;}
 .masonTwo .prodListDesc h5 {font-size:1.3em;}
 .hideMe.anyMasonry.productListTemplate.hovBorderWhite10px {display:none;}
-.productListForm {position:absolute; top:5px; left:5px; z-index:1001; width:20px; height:20px; background:green;}
+
+/*add to cart button*/
+.productListForm {position:absolute; top:5px; left:5px; z-index:99; color:#ffffff; }
+.productListForm button {height:36px; width:45px; background-position:-322px 5px; background-repeat:no-repeat; border:none;}
+.productListForm span {height:auto; width:39px; position:absolute; color:#ffffff; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; left:0; text-align:center; top:5px;}
 
 /*************************************************************************************
 END productListTemplate
