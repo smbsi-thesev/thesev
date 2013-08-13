@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130813115800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130813143300",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -446,7 +446,13 @@ remember to NOT put the button inside the 'onclick' container or two events will
 	
 	<div class='boxShadower pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></div>
 	
-	<button class='floatRight pointer quickView primaryColor displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
+
+	
+<!--<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='productListForm displayNone' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'message'}); return false;">
+            <input type='hidden' name='qty' value='1' />
+            <button class='addToCartButton addToCartButtonProdItem displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'>Bag It!</button>
+    </form>
+-->	<button class='floatRight pointer quickView primaryColorHover displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
 
 	<div class='prodThumbContainer' >
 		<div class='prodThumbContainer'> <!--data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>-->
