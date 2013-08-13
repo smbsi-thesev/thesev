@@ -553,18 +553,18 @@ note - dispatch isn't IN the function to give more control to developer. (you ma
 	//expiration is less of a concern
 					case 'CREDIT':
 
-						tmp += "<div><label>Credit Card #<input type='text' size='30' name='payment/CC' class=' creditCard' value='";
+/*smbsi*/				tmp += "<div><input type='text' size='30' name='payment/CC' placeholder='Credit Card #' class=' creditCard' value='";
 						if(data['payment/CC']){tmp += data['payment/CC']}
-						tmp += "' onKeyPress='' required='required' /><\/label><\/div>";
+/*smbsi*/				tmp += "' onKeyPress='' required='required' /><\/div>";
 						
-						tmp += "<div><label>Expiration<\/label><select name='payment/MM' class='creditCardMonthExp' required='required'><option><\/option>";
+/*smbsi*/				tmp += "<div><select name='payment/MM' class='creditCardMonthExp' required='required'><option value='' select='selected'>Expiration Month<\/option>";
 						tmp += app.u.getCCExpMonths(data['payment/MM']);
 						tmp += "<\/select>";
-						tmp += "<select name='payment/YY' class='creditCardYearExp'  required='required'><option value=''><\/option>"+app.u.getCCExpYears(data['payment/YY'])+"<\/select><\/div>";
+/*smbsi*/				tmp += "<select name='payment/YY' class='creditCardYearExp'  required='required'><option value='' select='selected'>Expiration Year<\/option>"+app.u.getCCExpYears(data['payment/YY'])+"<\/select><\/div>";
 						
-						tmp += "<div><label for='payment/CV'>CVV/CID<input type='text' size='4' name='payment/CV' class=' creditCardCVV' onKeyPress='return app.u.numbersOnly(event);' value='";
+/*smbsi*/				tmp += "<div><input type='text' size='4' name='payment/CV' class=' creditCardCVV' onKeyPress='return app.u.numbersOnly(event);' placeholder='CVV/CID' value='";
 						if(data['payment/CV']){tmp += data['payment/CV']}
-						tmp += "'  required='required' /><\/label> <span class='ui-icon ui-icon-help creditCardCVVIcon' onClick=\"$('#cvvcidHelp').dialog({'modal':true,height:400,width:550});\"></span><\/div>";
+						tmp += "'  required='required' /><span class='ui-icon ui-icon-help creditCardCVVIcon pointer' onClick=\"$('#cvvcidHelp').dialog({'modal':true,height:400,width:550});\"></span><\/div>";
 						
 						if(isAdmin === true)	{
 							tmp += "<div><label><input type='radio' name='VERB' value='AUTHORIZE'>Authorize<\/label><\/div>"
