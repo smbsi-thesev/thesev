@@ -288,6 +288,8 @@ app.u.dump(" -> pageInFocus: "+pageInFocus);
 						app.ext.store_search.u.updateDataOnListElement($list,query,newPage);
 						app.ext.store_search.calls.appPublicSearch.init(query,_tag);
 						app.model.dispatchThis();
+						app.ext.store_thesev_kbeffect.u.kenburnsInit($list);
+						app.ext.store_thesev.u.runMasonry($list);
 						}
 					else	{
 						$('#globalMessaging').anymessage({'message':'In store_search.u.changePage, $list set but missing data(elastic-query).','gMessage':true});
