@@ -3057,16 +3057,21 @@ else	{
 				var itemCount = 0;
 				var subtotal = 0;
 				var total = 0;
-				if(app.data[tagObj.datapointer] && app.data[tagObj.datapointer].sum)	{
-					r = true;
-					var itemCount = app.u.isSet(app.data[tagObj.datapointer].sum.items_count) || 0;
+				
+/*smbsi*/		if(app.data[tagObj.datapointer] && app.data[tagObj.datapointer].sum)	{
+/*smbsi*/			r = true;
+/*smbsi*/			if(app.u.isSet(app.data[tagObj.datapointer].sum.items_count) >= 1) {
+/*smbsi*/				var itemCount = app.u.isSet(app.data[tagObj.datapointer].sum.items_count)
+/*smbsi*/			} else {
+/*smbsi*/				var itemCount = 0;
+/*smbsi*/			}
 					var subtotal = app.data[tagObj.datapointer].sum.items_total;
 					var total = app.data[tagObj.datapointer].sum.order_total;
 					}
 				else	{
 					//cart not in memory yet. use defaults.
 					}
-
+				
 				$('.cartItemCount',$appView).text(itemCount);
 				$('.cartSubtotal',$appView).text(app.u.formatMoney(subtotal,'$',2,false));
 				$('.cartTotal',$appView).text(app.u.formatMoney(total,'$',2,false));
