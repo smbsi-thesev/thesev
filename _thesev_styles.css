@@ -450,15 +450,21 @@ CHECKOUT CONFIRMATION
 .checkoutFormContainer .floatRight.ocmThirdParty .rightOrderTotal h6 {font-family:montserrat; color:#cccccc; font-size:1.2em; font-weight:normal;}
 
 .checkoutSuccess .checkoutLeft {width:73%;}
+/*top section*/
 .checkoutFormContainer .orderSummaryDetails {padding:15px; text-align:center; font-family:"open sans"; color:#ffffff; background:#000000;}
 .checkoutFormContainer .orderSummaryDetails h2 {font-family:oswald; font-size:3.0em;}
 .checkoutFormContainer .orderSummaryDetails h3 {font-size:1.4em;}
 .checkoutFormContainer .orderSummaryDetails a {color:#0c8a96; text-decoration:underline;}
 .checkoutFormContainer .orderSummaryDetails .invoice_has_balancedue {color: red;	margin: 10px 0 0 0;}
 
+/*address/totals section*/
+.orderContentsTable address {height:auto; width:30%;}
+.orderContentsTable td.addressTotalsTableData {background:#000000; color:#ffffff; font-family:montserrat; padding:15px; margin:0 0 20px 0;}
+
 .orderHistProdContainer {height:150px; width:150px;}
 .orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}
 .orderHistProdContainer .writeReview {height:auto; width:100%;}
+
 
 /*************************************************************************************
 LOGIN MODAL
