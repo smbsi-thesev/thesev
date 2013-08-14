@@ -321,7 +321,7 @@ var store_thesev = function() {
 			showMoreWork : function($tag, data) {
 				var pid = data.value.pid;
 				var $context = $(app.u.jqSelector("#","productTemplate_"+pid));
-				
+
 				if(data.value['%attribs']['zoovy:prod_detail']) {
 					//if there's content, add it; someone will read it.
 					var work = data.value['%attribs']['zoovy:prod_detail'];

@@ -338,10 +338,10 @@ a.prodPrev span, a.prodNext span {display:none;}
 .prodBuyerContainer {width:24.5957%; padding:10px 0 0 0; position:relative;}
 .workWithMe {height:140px; width:180px; margin:15px 10px 0 0; background:#fff65d; padding:35px 20px 20px 20px; font-size:1.2em; overflow:hidden; position:relative;} /*background:url(images/work-with-me_220x210.png) no-repeat scroll 0 0 transparent;*/
 .workTape {height:34px; width:140px; background-position:-360px -53px; position:absolute; top:10px; left:-70px; margin:0 0 0 50%; z-index:1; font-family:yellowtail; font-size:1.8em; font-weight:bold; line-height:35px; text-align:center;}
-.workWithMe .workCorner {height:45px; width:50px; background-position:-295px -44px; position:absolute; right:0; bottom:0; display:none;}
-.workWithMe .workCorner.workLess {background-position:-240px -95px;}
-.workWithMe.addMoreWork .workCorner.workMore {display:block;}
-.workWithMe.addLessWork .workCorner.workLess {display:block;}
+.workWithMe .workCorner {height:45px; width:50px; background-position:-1px -193px; position:absolute; right:0; bottom:0;}
+.workWithMe .workCorner.workLess {background-position:-240px -95px; display:none;}
+.workWithMe.addMoreWork .workCorner.workMore {background-position:-295px -44px;}
+.workWithMe.addLessWork .workCorner.workLess {background-position:-240px -95px; display:block;}
 .workWithMe.addLessWork, .workWithMe.addLessWork p {height:auto;}
 /*less {background-position:-240px -95px;}  less:hover {background-position:-182px -95px;}*/
 .workWithMe.addMoreWork:hover .workCorner {background-position:-295px -94px;}
