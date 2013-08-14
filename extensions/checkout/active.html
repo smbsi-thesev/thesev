@@ -465,9 +465,8 @@ do NOT change the input name or id or checkout will likely break.
 <div id='chkoutCompletedTemplate' class='checkoutSuccess'>
 
 	<div class='floatRight ocmThirdParty'>
-		<div class='rightOrderTotal' data-bind="var:order(order/sum/order_total);format:money;  hideZero:false; pretext:Order Total: ;">
-			<h6>order total</h6>
-		</div>
+		<div class='rightOrderTotal' data-bind="var:order(order/sum/order_total);format:money;  hideZero:false; currencySign:$;"></div>
+		<h6>ORDER TOTAL</h6>
 		<h2>SHARE THIS</h2>
 <!-- the twitter and facebook actions are added post checkout. The order contents are included as part of the message -->
 		<div class='ocm ocmFacebookComment pointer zlink marginBottom'><img src='fb_comment-133x32.png' width='132' height='32' alt='Comment on Facebook' /></div>
@@ -592,9 +591,9 @@ note - on the write review button, var:product(product) will use the pid, not th
 If this gets recycled, test in order history after making changes.
 -->
 <div>
-	<div id='chkoutInvoiceItemTemplate' class='padMargBorderBottom'>
+	<div id='chkoutInvoiceItemTemplate' class='padMargBorderBottom floatLeft'>
 		<div class='prodThumbContainer marginRight hovBorderWhite10px'>
-			<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='150' height='150' />
+			<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='170' height='170' />
 			<div class='prodListDesc'>
 				<h5 data-bind='var: product(prod_name); format:text;'></h5>
 				<h6 data-bind='var: product(price); format:money; currencySign: $;  hideZero:false;'></h6>
@@ -616,7 +615,7 @@ If this gets recycled, test in order history after making changes.
 			</div>
 		</div>
 	
-		<div class='alignRight hide4Print'>
+		<div class='floatLeft hide4Print'>
 			<button class='writeReview' data-app-event="store_crm|showWriteReview" data-bind='var:product(product);format:assignAttribute; attribute:data-pid;'>WRITE REVIEW</button>	
 		</div>
 	</div>

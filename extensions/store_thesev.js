@@ -477,7 +477,7 @@ var store_thesev = function() {
 					case '3'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-pink_316x316.jpg" height:316; width:316; />';	 	break;
 					case '4'	:	image = '<img alt="the sev grand opening" src="thesev-discountshipping-black_316x316.jpg" height:316; width:316; />';	 	break;
 					case '5'	:	image = '<img alt="the sev grand opening" src="images/thesev-grandopening-teal_316x316.jpg" height:316; width:316; />';	 	break;
-					case '6'	:	image = '<img alt="the sev grand opening" src="thesev-discountshipping-pink_316x316.jpg" height:316; width:316; />';	 	break;
+					case '6'	:	image = '<img alt="the sev grand opening" src="images/thesev-discountshipping-pink_316x316.jpg" height:316; width:316; />';	 	break;
 				}
 				
 				$('li:nth-child(3)', $context).after($('.bannerLi',$context));

@@ -446,8 +446,8 @@ CHECKOUT CONFIRMATION
 
 .checkoutSuccess .checkoutRight {width:200px;}
 .checkoutFormContainer .floatRight.ocmThirdParty {height: auto; width: 23%; background-color: #000000; color: #ffffff; text-align: center;}
-.checkoutFormContainer .floatRight.ocmThirdParty .rightOrderTotal {font-size:4.8em; margin;10px 0;}
-.checkoutFormContainer .floatRight.ocmThirdParty .rightOrderTotal h6 {font-family:montserrat; color:#cccccc; font-size:1.2em; font-weight:normal;}
+.checkoutFormContainer .floatRight.ocmThirdParty .rightOrderTotal {font-size:4.8em; padding:10px 0;}
+.checkoutFormContainer .floatRight.ocmThirdParty h6 {font-family:montserrat; color:#cccccc; font-size:1.2em; font-weight:normal; margin:0 0 20px 0;}
 
 .checkoutSuccess .checkoutLeft {width:73%;}
 /*top section*/
@@ -460,6 +460,11 @@ CHECKOUT CONFIRMATION
 /*address/totals section*/
 .orderContentsTable address {height:auto; width:30%;}
 .orderContentsTable td.addressTotalsTableData {background:#000000; color:#ffffff; font-family:montserrat; padding:15px; margin:0 0 20px 0;}
+.orderContentsProdlistContainer .prodThumbContainer {margin:0 18px 5px 22px; width:auto;}
+.orderContentsProdlistContainer .prodThumbContainer .prodThumb {margin:0;}
+.orderContentsProdlistContainer .prodThumbContainer .prodListDesc {width:auto;}
+.orderContentsProdlistContainer .ztable_row .infoContainer {text-align:center;}
+#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 60px;}
 
 .orderHistProdContainer {height:150px; width:150px;}
 .orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}
