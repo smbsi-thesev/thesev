@@ -3017,20 +3017,20 @@ else	{
 					var cartObj = app.ext.store_product.u.buildCartItemAppendObj($form);
 					if(cartObj)	{
 						if(cartObj)	{
-/*THESEV*/					app.calls.cartItemAppend.init(cartObj,{'callback':function(rd){
-/*THESEV*/						if(obj.action === 'message') {
-/*THESEV*/			//				app.u.throwMessage('Product successfully added to cart');
-/*THESEV*/							$('.addToCartButtonProdItem', $form).css('background-position','-201px 0');
-/*THESEV*/							$('.addToCartButtonProdItem', $form).removeClass('primaryColorHover');
-/*THESEV*/							$('.addToCartButtonProdItem', $form).addClass('tertiaryColorHover');
-/*THESEV*/							$('.cartItemCount',$form).removeClass('displayNone');
-/*THESEV*/							$form.removeClass('noProductListForm');
-/*THESEV*/							$form.removeClass('displayNone');
-/*THESEV*/						}
-/*THESEV*/					}},'immutable');
-/*THESEV*/					app.model.destroy('cartDetail');
-/*THESEV*/					$('.prodAddedToCart').show();
-/*THESEV*/					setTimeout(function() {$('.prodAddedToCart').hide();},10000);
+/*smbsi*/					app.calls.cartItemAppend.init(cartObj,{'callback':function(rd){
+/*smbsi*/						if(obj.action === 'message') {
+/*smbsi*/			//				app.u.throwMessage('Product successfully added to cart');
+/*smbsi*/							$('.addToCartButtonProdItem', $form).css('background-position','-201px 0');
+/*smbsi*/							$('.addToCartButtonProdItem', $form).removeClass('primaryColorHover');
+/*smbsi*/							$('.addToCartButtonProdItem', $form).addClass('tertiaryColorHover');
+/*smbsi*/							$('.cartItemCount',$form).removeClass('displayNone');
+/*smbsi*/							$form.removeClass('noProductListForm');
+/*smbsi*/							$form.removeClass('displayNone');
+/*smbsi*/						}
+/*smbsi*/					}},'immutable');
+/*smbsi*/					app.model.destroy('cartDetail');
+/*smbsi*/					$('.prodAddedToCart').show();
+/*smbsi*/					setTimeout(function() {$('.prodAddedToCart').hide();},4000);
 							app.calls.cartDetail.init({'callback':function(rd){
 								if(obj.action === "modal"){
 									showContent('cart',obj);
