@@ -476,7 +476,7 @@ CHECKOUT CONFIRMATION
 .orderContentsProdlistContainer .prodThumbContainer .prodThumb {margin:0;}
 .orderContentsProdlistContainer .prodThumbContainer .prodListDesc {width:auto; font-size:0.8em;}
 .orderContentsProdlistContainer .ztable_row .infoContainer {text-align:center;}
-#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 -50%; position:relative; left:50px;}
+#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 15px -50%; position:relative; left:50px;}
 
 .orderHistProdContainer {height:150px; width:150px;}
 .orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}
@@ -671,6 +671,11 @@ media querries
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block;}
 /*CHECKOUT*/
 	#checkoutContainer {width:770px;}
+/*CONFIRMATION*/
+	.checkoutFormContainer .floatRight.ocmThirdParty {width:177px;}
+	.orderContentsProdlistContainer .prodThumbContainer {margin:0 14% 5px 14%;}
+	#checkoutContainer .iconSocial {margin:5.25% 0 0 -66%;}
+	.checkoutSuccess .checkoutLeft {width:69%;}
 }
 
 @media screen and (max-width: 800px) {
@@ -712,6 +717,8 @@ media querries
 	#checkoutContainer {width:630px;}
 	.checkoutLeft {width:61%;}
 	.checkoutRight {width:35%;}
+/*CONFIRMATION*/
+	.orderContentsProdlistContainer .prodThumbContainer {margin:0 6% 5px 6%;}
 }
 
 @media screen and (max-width: 650px) {
@@ -758,6 +765,10 @@ media querries
 	.checkoutRight {width:100%; float:left; clear:both;}
 	.checkoutFormContainer fieldset legend.shipingMethods {top:700px;}
 	.checkoutSuccess .checkoutRight {width:100%;}
+/*CONFIRMATION*/
+	.checkoutFormContainer .floatRight.ocmThirdParty, .checkoutSuccess .checkoutLeft {width:100%;}
+	#checkoutContainer .iconSocial {margin:2.25% 0 0 -3.5%;} 
+	.orderContentsProdlistContainer .prodThumbContainer {margin:0 5% 5px 5%;}
 }
 
 @media screen and (max-width: 425px) {
@@ -790,6 +801,11 @@ media querries
 /*CHECKOUT*/
 	#checkoutContainer {width:320px;}
 	.checkoutFormContainer fieldset legend.shipingMethods {top:750px;}
+/*CONFIRMATION*/
+	#checkoutContainer .iconSocial {margin:2.25% 0 0 -15%;} 	
+	.orderContentsProdlistContainer .prodThumbContainer {margin:0 21% 5px 21%;}
+	#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {left:100px;}
+		
 /*MASONRY*/
 	.fluidList li {margin:8px 0;}
 	.anyMasonry.masonOne {height:296px; width:296px;}
