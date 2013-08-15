@@ -467,11 +467,20 @@ do NOT change the input name or id or checkout will likely break.
 	<div class='floatRight ocmThirdParty'>
 		<div class='rightOrderTotal' data-bind="var:order(order/sum/order_total);format:money;  hideZero:false; currencySign:$;"></div>
 		<h6>ORDER TOTAL</h6>
-		<h2>SHARE THIS</h2>
 <!-- the twitter and facebook actions are added post checkout. The order contents are included as part of the message -->
-		<div class='ocm ocmFacebookComment pointer zlink marginBottom'><img src='fb_comment-133x32.png' width='132' height='32' alt='Comment on Facebook' /></div>
-		<div class='ocm ocmTwitterComment pointer zlink marginBottom' ><img src='tweet-133x32.png' width='132' height='32' alt='Tweet about it!' /></div>
-		<div class='ocm ocmContinue pointer zlink marginBottom'><img src='continue_shopping-133x32.png' width='132' height='32' alt='continue shopping' /></div>
+		<!-- <div class='ocm ocmFacebookComment pointer zlink marginBottom'><img src='fb_comment-133x32.png' width='132' height='32' alt='Comment on Facebook' /></div>
+		<div class='ocm ocmTwitterComment pointer zlink marginBottom' ><img src='tweet-133x32.png' width='132' height='32' alt='Tweet about it!' /></div> -->
+		<div class='ocmShareCont primaryColorHover' >
+			<h2>SHARE THIS</h2>
+			<a href='https://www.facebook.com/pages/Thesevcom/426780774108050?fref=ts' target='_blank' alt='facebook'><span class='iconSocial iconFB sprite'></span></a>
+			<a href='https://twitter.com/shopthesev' target='_blank' alt='twitter'><span class='iconSocial iconTwitter sprite'></span></a>
+			<a href='https://instagram.com/shopthesev' target='_blank' alt='instagram'><span class='iconSocial iconInstagram sprite'></span></a>
+		</div>
+		<div class='hide4Print ocmPrint'>
+			<button data-app-event="orderCreate|execInvoicePrint" onClick='javascript:window.print()'>PRINT INVOICE</button>
+		</div>
+		<button class='tertiaryColorHover keepShopin' onClick="return showContent('homepage',{});">KEEP SHOPPING</button>
+		<!-- <div class='ocm ocmContinue pointer zlink marginBottom'><img src='continue_shopping-133x32.png' width='132' height='32' alt='continue shopping' /></div> -->
 	</div>
 
 	<div class='checkoutLeft'>
@@ -479,7 +488,7 @@ do NOT change the input name or id or checkout will likely break.
 			<h2>SUCCESS! YOUR ORDER IS BEING PROCESSED</h2>
 			<h3 data-bind='var: order(orderid); format:text; <span class='primaryCT'>pretext:Sale Confirmation ID No. ;</span>'></h3>
 			<div class='pointer marginBottom' data-app-role='paymentMessaging'>
-				Click here to view/print your invoice.
+				<span onClick='javascript:window.print()'>Click here to view/print your invoice.</span>
 				<div class='zwarn' data-bind="var: order(payment_status_msg); format:text;"></div><!-- displays payment issues/errors -->
 			</div>
 			<div data-bind="var:order(payment_status_detail); format:text;" class='marginBottom'></div>
@@ -493,15 +502,8 @@ do NOT change the input name or id or checkout will likely break.
 		<div data-app-role='invoiceContainer'>
 			<table class='orderContentsTable fullWidth'>
 				<tr>
-					<td colspan='3'>
-						<div class='floatRight hide4Print'>
-							<button data-app-event="orderCreate|execInvoicePrint">Print Invoice</button>
-						</div>
-						<h3 data-bind='var:order(order/data/pool);format:text; pretext:Order Status: ;'></h3>
-					</td>
-				</tr>
-				<tr>
 					<td class='orderContentsProdlistContainer'>
+						<h3 data-bind='var:order(order/data/pool);format:text; pretext:Order Status: ;'></h3>
 						<ul data-bind='var:order(order/tracking); format:orderTrackingLinks; extension:store_crm;before:<h4>Shipping:</h4>;' class='displayNone noListStyle marginBottom'></ul>
 						<div  class='listStyleNone lineItemProdlist'>
 							<div data-bind="var: order(order/@ITEMS); format:stuffList; loadsTemplate:chkoutInvoiceItemTemplate;"></div>
