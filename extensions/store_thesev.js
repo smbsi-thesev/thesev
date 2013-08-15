@@ -377,8 +377,8 @@ var store_thesev = function() {
 					number = number + 1;		// it's the same, make it one bigger
 				}
 				app.ext.store_thesev.vars.repeater = number; //store this iteration to compare next time
-				app.u.dump('Previous is: '); app.u.dump(previous);
-				app.u.dump('Number is: '); app.u.dump(number);
+				//app.u.dump('Previous is: '); app.u.dump(previous);
+				//app.u.dump('Number is: '); app.u.dump(number);
 				
 				//decide which size the cat/prod list element should be
 				switch(number) {
