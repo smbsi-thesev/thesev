@@ -453,10 +453,10 @@ CHECKOUT CONFIRMATION
 .checkoutFormContainer .floatRight.ocmThirdParty button.ui-button-icon-only span.ui-button-icon-primary {left:25%; display:none;}
 .checkoutFormContainer .floatRight.ocmThirdParty button.ui-button-icon-only span.ui-button-text {text-indent:0;}
 #checkoutContainer .ocmThirdParty .keepShopin {font-size:2.4em;}
-#checkoutContainer .iconSocial {height:33px; width:34px; margin:5.25% 8.25%; float:left;} 
-#checkoutContainer .iconSocial.iconFB {background-position:-268px -147px;}
-#checkoutContainer .iconSocial.iconTwitter {background-position:-182px -147px;}
-#checkoutContainer .iconSocial.iconInstagram {background-position:-225px -147px;}
+#checkoutContainer .iconSocial {height:33px; width:34px; margin:5.25% 0 0 -50%; float:left; position:relative;} 
+#checkoutContainer .iconSocial.iconFB {background-position:-268px -147px; left:125px;}
+#checkoutContainer .iconSocial.iconTwitter {background-position:-182px -147px; left:192px;}
+#checkoutContainer .iconSocial.iconInstagram {background-position:-225px -147px; left:255px;}
 
 
 /*left section*/
@@ -472,11 +472,11 @@ CHECKOUT CONFIRMATION
 .orderContentsTable address {height:auto; width:30%;}
 .orderContentsTable td.addressTotalsTableData {background:#000000; color:#ffffff; font-family:montserrat; padding:15px;}
 #checkoutContainer td.orderContentsProdlistContainer {padding:15px 0;}
-.orderContentsProdlistContainer .prodThumbContainer {margin:0 8% 5px 8%; width:auto;}
+.orderContentsProdlistContainer .prodThumbContainer {margin:0 6% 5px 6%; width:auto;}
 .orderContentsProdlistContainer .prodThumbContainer .prodThumb {margin:0;}
 .orderContentsProdlistContainer .prodThumbContainer .prodListDesc {width:auto; font-size:0.8em;}
 .orderContentsProdlistContainer .ztable_row .infoContainer {text-align:center;}
-#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 58px;}
+#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 -50%; position:relative; left:50px;}
 
 .orderHistProdContainer {height:150px; width:150px;}
 .orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}

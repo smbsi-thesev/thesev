@@ -593,8 +593,8 @@ note - on the write review button, var:product(product) will use the pid, not th
 If this gets recycled, test in order history after making changes.
 -->
 <div>
-	<div id='chkoutInvoiceItemTemplate' class='padMargBorderBottom floatLeft'>
-		<div class='prodThumbContainer marginRight hovBorderWhite10px'>
+	<div id='chkoutInvoiceItemTemplate' class='padMargBorderBottom floatLeft' onClick="showContent('product',{'pid':$(this).attr('data-stid')})">
+		<div class='prodThumbContainer marginRight hovBorderWhite10px pointer'>
 			<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='170' height='170' />
 			<div class='prodListDesc'>
 				<h5 data-bind='var: product(prod_name); format:text;'></h5>
