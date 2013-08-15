@@ -476,12 +476,21 @@ CHECKOUT CONFIRMATION
 .orderContentsProdlistContainer .prodThumbContainer .prodThumb {margin:0;}
 .orderContentsProdlistContainer .prodThumbContainer .prodListDesc {width:auto; font-size:0.8em;}
 .orderContentsProdlistContainer .ztable_row .infoContainer {text-align:center;}
-#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 60px;}
+#checkoutContainer .orderContentsProdlistContainer .hide4Print button.ui-state-default.ui-button {margin:5px  0 0 58px;}
 
 .orderHistProdContainer {height:150px; width:150px;}
 .orderHistProdContainer .prodListDesc h5 {font-size:1.1em;}
 .orderHistProdContainer .writeReview {height:auto; width:100%;}
 
+
+/*************************************************************************************
+CHECKOUT CONFIRMATION
+*************************************************************************************/
+
+#ordersArticle div.ui-accordion-content {background:#000000; color:#ffffff;}
+#ordersArticle .orderContentsTable td{padding:10px;}
+#ordersArticle .orderContentsTable address {width:100%;}
+#ordersArticle .orderContentsTable button.writeReview.ui-state-default.ui-button  {margin:5px  0 0 58px;}
 
 /*************************************************************************************
 LOGIN MODAL

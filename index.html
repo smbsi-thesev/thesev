@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130814191300",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130815092900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -133,9 +133,10 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 								<li class='paymnt'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
 								<li class='priv'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
 								<li class='return'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=return'>Return Policy</a><span class='arrow sprite'></span></li>
-								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=lists'>Wishlist</a><span class='arrow sprite'></span></li>
-								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
-								<li class='ship'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=shipping'>Shipping Policy</a><span class='arrow sprite'></span></li>
+								<li class='about'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=lists'>Wishlist</a><span class='arrow sprite'></span></li>
+								<li class='contact'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
+								<li class='faq'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=shipping'>Shipping Policy</a><span class='arrow sprite'></span></li>
+								<li class='paymnt'><span class='decoBar'></span><a class='bindByAnchor' href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
 							</ul>
 						</div>
 						<div class='socialNav'>
@@ -1262,7 +1263,8 @@ So the cart template should contain these two elements and the extension should 
 				<li class='faq'><span class='decoBar'></span><a href='#customer?show=changepassword'>Change Password</a><span class='arrow sprite'></span></li>
 				<li class='paymnt'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
 				<li class='priv'><span class='decoBar'></span><a href='#customer?show=lists'>Manage Lists</a><span class='arrow sprite'></span></li>
-				<li class='return hideIfLoggedOut'><span class='decoBar'></span><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a><span class='arrow sprite'></span></li>
+				<li class='return'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
+				<li class='about hideIfLoggedOut'><span class='decoBar'></span><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a><span class='arrow sprite'></span></li>
 			</ul>
 		</nav>
 		<nav class='socialNav'>
