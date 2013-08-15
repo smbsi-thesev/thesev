@@ -1251,30 +1251,6 @@ So the cart template should contain these two elements and the extension should 
 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
 <div id='customerTemplate' class='clearfix templateWrapper customerTemplate'>
-
-	<div class='sideline customerSideline' >
-		<nav id='customerNav'>
-			<div class='headline'>NEED HELP?<span class='iconHelp sprite'></span></div>
-			<ul class='listStyleNone noPadOrMargin'>
-				<!-- before restoring this, test cuz news form on left was causing some conflicts
-				<li><a href='#customer?show=subscriberLists'>Newsletter Subscription</a></li> -->
-				<li class='about'><span class='decoBar'></span><a href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
-				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
-				<li class='faq'><span class='decoBar'></span><a href='#customer?show=changepassword'>Change Password</a><span class='arrow sprite'></span></li>
-				<li class='paymnt'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
-				<li class='priv'><span class='decoBar'></span><a href='#customer?show=lists'>Manage Lists</a><span class='arrow sprite'></span></li>
-				<li class='return'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
-				<li class='about hideIfLoggedOut'><span class='decoBar'></span><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a><span class='arrow sprite'></span></li>
-			</ul>
-		</nav>
-		<nav class='socialNav'>
-			<ul class='listStyleNone noPadOrMargin'>
-				<li class='blackSecondaryColorHover'><a href='https://www.facebook.com/pages/Thesevcom/426780774108050?fref=ts' target='_blank' alt='facebook'></a><span class='socialCont'><span class='socialTitle'>"LIKE" US ON</span><span class='socialMedia'>FACEBOOK</span></span><span class='iconSocial iconFB sprite'></span></li>
-				<li class='blackSecondaryColorHover'><a href='https://twitter.com/shopthesev' target='_blank' alt='twitter'></a><span class='socialCont'><span class='socialTitle'>FOLLOW US</span><span class='socialMedia'>TWITTER</span></span><span class='iconSocial iconTwitter sprite'></span></li>
-				<li class='blackSecondaryColorHover'><a href='https://instagram.com/shopthesev' target='_blank' alt='instagram'></a><span class='socialCont'><span class='socialTitle'>#THESEV</span><span class='socialMedia'>INSTAGRAM</span></span><span class='iconSocial iconInstagram sprite'></span></li>
-			</ul>
-		</nav>
-	</div>
 	
 	<div class='mainColumn'>
 <!-- .textContentArea is used as a selector because IE8 doesn't play well  with tag type article as a selector -->
@@ -1478,6 +1454,30 @@ subscribeListsArticle is used for authenticated buyers
 			</ul>
 		</div>
 
+	</div>
+	
+	<div class='sideline customerSideline' >
+		<nav id='customerNav'>
+			<div class='headline'>NEED HELP?<span class='iconHelp sprite'></span></div>
+			<ul class='listStyleNone noPadOrMargin'>
+				<!-- before restoring this, test cuz news form on left was causing some conflicts
+				<li><a href='#customer?show=subscriberLists'>Newsletter Subscription</a></li> -->
+				<li class='about'><span class='decoBar'></span><a href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
+				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+				<li class='faq'><span class='decoBar'></span><a href='#customer?show=changepassword'>Change Password</a><span class='arrow sprite'></span></li>
+				<li class='paymnt'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
+				<li class='priv'><span class='decoBar'></span><a href='#customer?show=lists'>Manage Lists</a><span class='arrow sprite'></span></li>
+				<li class='return'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
+				<li class='about hideIfLoggedOut'><span class='decoBar'></span><a href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a><span class='arrow sprite'></span></li>
+			</ul>
+		</nav>
+		<nav class='socialNav'>
+			<ul class='listStyleNone noPadOrMargin'>
+				<li class='blackSecondaryColorHover'><a href='https://www.facebook.com/pages/Thesevcom/426780774108050?fref=ts' target='_blank' alt='facebook'></a><span class='socialCont'><span class='socialTitle'>"LIKE" US ON</span><span class='socialMedia'>FACEBOOK</span></span><span class='iconSocial iconFB sprite'></span></li>
+				<li class='blackSecondaryColorHover'><a href='https://twitter.com/shopthesev' target='_blank' alt='twitter'></a><span class='socialCont'><span class='socialTitle'>FOLLOW US</span><span class='socialMedia'>TWITTER</span></span><span class='iconSocial iconTwitter sprite'></span></li>
+				<li class='blackSecondaryColorHover'><a href='https://instagram.com/shopthesev' target='_blank' alt='instagram'></a><span class='socialCont'><span class='socialTitle'>#THESEV</span><span class='socialMedia'>INSTAGRAM</span></span><span class='iconSocial iconInstagram sprite'></span></li>
+			</ul>
+		</nav>
 	</div>
 
 </div>

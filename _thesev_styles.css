@@ -516,7 +516,7 @@ customerTemplate
 
 /* sideline styles w/ CompanyTemplate */
 
-.customerTemplate .mainColumn {width:65%; margin:24px 0 0 0;}
+.customerTemplate .mainColumn {width:65%; margin:24px 0 0 0; float:left;}
 
 /*createaccountArticle*/
 #loginMessagingInline.appMessaging {margin:0 0 12px 40px;}
@@ -669,6 +669,8 @@ media querries
 	.workWithMe {margin:0 0 2% 6%; float:left;}
 	.priceContainer {width:33%; float:left; padding:30px 0 0 0;}
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block;}
+/*CUSTOMER TEMPLATE ARTICLES*/
+	.customerTemplate .mainColumn {width:60%;}
 /*CHECKOUT*/
 	#checkoutContainer {width:770px;}
 /*CONFIRMATION*/
@@ -713,6 +715,8 @@ media querries
 	.prodAddedToCart  {height:73px;}
 	.productPage .iconATC  {top: auto; bottom:115px; left:42%;}
 	.productPage .iconATW  {top: auto; bottom:7px; left:42%;}
+/*CUSTOMER TEMPLATE ARTICLES*/
+	.customerTemplate .mainColumn {width:48%;}
 /*CHECKOUT*/
 	#checkoutContainer {width:630px;}
 	.checkoutLeft {width:61%;}
@@ -759,6 +763,9 @@ media querries
 	.prodBuyerContainer {width:100%;}
 	.workTape {margin:0 0 0 37%;}
 	.priceContainer, .prodViewerAddToCartForm {width:50%;}
+/*CUSTOMER TEMPLATE ARTICLES*/
+	.customerTemplate .mainColumn {width:100%;}
+	.sideline.customerSideline {float:none; clear:both; margin:24px auto;}
 /*CHECKOUT*/
 	#checkoutContainer {width:425px;}
 	.checkoutLeft {width:100%;}
