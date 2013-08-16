@@ -51,8 +51,8 @@ var store_thesev = function() {
 				
 				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
 					var $sideline = $('.customerSideline', $(app.u.jqSelector('#',infoObj.parentID)));
-					app.u.dump("SIDELINING");
-					app.u.dump(infoObj);
+//					app.u.dump("SIDELINING");
+//					app.u.dump(infoObj);
 					if(infoObj.show == "createaccount"){
 						$sideline.hide();
 						}
