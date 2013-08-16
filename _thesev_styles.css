@@ -565,8 +565,10 @@ customerTemplate
 
 /*Wislist*/
 #listsArticle .ui-widget-content {background:transparent; border:none;}
-#listsArticle .anyMasonry {width:220px !important;}
+#listsArticle .ui-tabs-panel.ui-widget-content {padding:0;}
+#listsArticle .anyMasonry {width:220px !important; margin:0 0 0 10px;}
 #listsArticle .prodThumbContainer {width:200px;}
+#listsArticle .prodThumbContainer .prodThumb {margin:0;}
 #listsArticle .seeMore {width:100%; padding:15px; margin:10px 0 0 0; border:none; color:#ffffff; font-size:1.3em;}
 #listsArticle .qtySelectStyler {width:215px;}
 #listsArticle .qtySelectStyler .qtyInput {background-position:186px -100px; padding:2% 1% 1% 1%;}
