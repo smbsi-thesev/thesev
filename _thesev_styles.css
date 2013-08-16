@@ -566,7 +566,7 @@ customerTemplate
 /*Wislist*/
 #listsArticle .ui-widget-content {background:transparent; border:none;}
 #listsArticle .ui-tabs-panel.ui-widget-content {padding:0;}
-#listsArticle .anyMasonry {width:220px !important; margin:0 0 0 10px;}
+#listsArticle .anyMasonry {width:220px !important; margin:0 10px 0 0;}
 #listsArticle .prodThumbContainer {width:200px;}
 #listsArticle .prodThumbContainer .prodThumb {margin:0;}
 #listsArticle .seeMore {width:100%; padding:15px; margin:10px 0 0 0; border:none; color:#ffffff; font-size:1.3em;}
@@ -673,6 +673,8 @@ media querries
 	.prodViewerAddToCartForm {width:30%; clear:none; float:right; display:inline-block;}
 /*CUSTOMER TEMPLATE ARTICLES*/
 	.customerTemplate .mainColumn {width:60%;}
+/****WISHLIST*/
+	#listsArticle .anyMasonry {margin:0 0 0 21%;}
 /*CHECKOUT*/
 	#checkoutContainer {width:770px;}
 /*CONFIRMATION*/
@@ -719,6 +721,8 @@ media querries
 	.productPage .iconATW  {top: auto; bottom:7px; left:42%;}
 /*CUSTOMER TEMPLATE ARTICLES*/
 	.customerTemplate .mainColumn {width:48%;}
+/****WISHLIST*/
+	#listsArticle .anyMasonry {margin:0;}
 /*CHECKOUT*/
 	#checkoutContainer {width:630px;}
 	.checkoutLeft {width:61%;}
@@ -768,6 +772,8 @@ media querries
 /*CUSTOMER TEMPLATE ARTICLES*/
 	.customerTemplate .mainColumn {width:100%;}
 	.sideline.customerSideline {float:none; clear:both; margin:24px auto;}
+/****WISHLIST*/
+	#listsArticle .anyMasonry {margin:0 0 0 19%;}
 /*CHECKOUT*/
 	#checkoutContainer {width:425px;}
 	.checkoutLeft {width:100%;}
@@ -810,6 +816,9 @@ media querries
 	.prodThumPad {margin:0 9% 5% 9%;}
 	.iconPubRev {display:none;}
 	.workTape {margin:0 0 0 41%;}
+/*CUSTOMER ARTICLES*/
+/****WISHLIST*/
+	#listsArticle .anyMasonry {margin:0 0 0 16%;}	
 /*CHECKOUT*/
 	#checkoutContainer {width:320px;}
 	.checkoutFormContainer fieldset legend.shipingMethods {top:750px;}
