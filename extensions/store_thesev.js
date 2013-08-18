@@ -29,6 +29,10 @@ var store_thesev = function() {
 
 	vars : { 
 		repeater : 0
+	//	theSevDestinations : [
+	//		{Z:"United States", ISO:"US", ISOX:"USA"},
+	//		{Z:"Albania", ISO:"AL", ISOX:"AL"}
+	//	]
 	},
 
 	callbacks : {
@@ -302,6 +306,29 @@ var store_thesev = function() {
 				else { //no image, no showee
 				}
 			},
+			
+				//value is set to ISO and sent to API that way. however, cart object returned is in 'pretty'.
+				//so a check occurs to set selectedCountry to the selected ISO value so it can be 'selected'
+		//	countriesAsOptions : function($tag,data)	{
+//				app.u.dump("BEGIN app.ext.cco.renderFormats.countriesAsOptions");
+//				app.u.dump(" -> Country: "+data.value);
+		//		var r = '';
+		//		var L = app.data.appCheckoutDestinations['@destinations'].length;
+			//var L = app.ext.cco.vars.theSevDestinations.length;
+//				app.u.dump(" -> number of countries = "+L);
+		//		for(var i = 0; i < L; i += 1)	{
+		//			r += "<option value='"+app.data.appCheckoutDestinations['@destinations'][i].ISO+"' ";
+			//r += "<option value='"+app.ext.cco.vars.theSevDestinations[i].ISO+"' ";
+		//			if(data.value == app.data.appCheckoutDestinations['@destinations'][i].ISO)	{
+		//				r += " selected='selected' ";
+		//				}
+		//			r += ">"+app.data.appCheckoutDestinations['@destinations'][i].Z+"</option>";
+		//			}
+				
+		//		$tag.html(r);
+			//dump for cco...
+			//app.u.dump('{Z="'+app.data.appCheckoutDestinations['@destinations'][i].Z+'", ISO="'+app.data.appCheckoutDestinations['@destinations'][i].ISO+'", ISOX="'+app.data.appCheckoutDestinations['@destinations'][i].ISOX+'"}');
+		//		},
 
 			//calculates and displays difference till order total is $100
 			tillFreeShipping : function($tag, data) {

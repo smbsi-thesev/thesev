@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130816121400",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130818151800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -399,7 +399,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 				</div>
 			</li>
 	</ul><!-- outputs a list of subcategories -->
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
+	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; withInventory:1; withVariations:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList anyMasonry masonList'>
 		<form class='displayNone kbForm' data-bind="var: category(@products); format:showIfSet;">
 			<label for='dontKenBurns'>Turn off moving products</label>
 			<input type='checkbox' name='dontKenBurns' class='kbCheckBox' onClick='app.ext.store_thesev_kbeffect.a.holdKenBurnsEffect($(this));'></input>
