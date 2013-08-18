@@ -426,6 +426,11 @@ $display.appendTo($tag);
 				else	{
 					$tag.hide().addClass('displayNone').before("<span class='notAvailableForPurchase'>This item is not available for purchase<\/span>"); //hide button, item is not purchaseable.
 /*SMBSI*/			$('.iconATC', $context).addClass('displayNone');
+/*SMBSI*/			//some pid's had a dash in them, but the selector on the DOM didn't so the displayNone class wasn't getting added. 
+/*SMBSI*/			var tempID = pid.split('-');
+/*SMBSI*/			var tempContext = tempID[0] + tempID[1];
+/*SMBSI*/			app.u.dump(tempID[0]); app.u.dump(tempID[1]);
+/*SMBSI*/			$('.iconATC', '#productTemplate_'+tempContext).addClass('displayNone');
 					}
 
 //				app.u.dump(" -> ID at end: "+$tag.attr('id'));
