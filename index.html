@@ -23,7 +23,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130819141000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130819145600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -296,8 +296,9 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 		<div></div>
 	</div>
 -->
-
+		
 		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:min;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'>
+			<span class="displayNone" data-bind="var: category(%page.page_title); format:text;"></span>
 			<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi">
 				<div class="mushPot">
 					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
@@ -349,7 +350,7 @@ each of the 'sections' are used to load another template. don't change the id.
 don't modify the 'data-templateid' unless you are changing template names and updating everywhere appropriate.
 -->
 <div id='categoryTemplate' class='loadingBG categoryTemplate templateWrapper'>
-
+	
 	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
 
 	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />

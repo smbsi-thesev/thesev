@@ -51,10 +51,22 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
 					}
-					
+					//app.u.dump('&&&&&&&&&&&&&&'); app.u.dump(infoObj.navcat);
 					var title = "Home";
 					app.ext.store_thesev.u.setTitle(title);
 				}]);
+				
+				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					if(!$context.data('masonized')){
+						app.ext.store_thesev.u.runMasonry($context);
+						$context.data('masonized',true);
+					}
+					
+					//app.u.dump('&&&&&&&&&&&&&&'); app.u.dump(app.data["appPageGet|"+infoObj.navcat]);
+					var title = ""; //app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
+					app.ext.store_thesev.u.setTitle(title);
+				}]); 
 				
 				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
 					var $sideline = $('.customerSideline', $(app.u.jqSelector('#',infoObj.parentID)));
@@ -76,16 +88,7 @@ var store_thesev = function() {
 					app.ext.store_thesev.u.setTitle(title);
 				}]);
 				
-				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
-					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					if(!$context.data('masonized')){
-						app.ext.store_thesev.u.runMasonry($context);
-						$context.data('masonized',true);
-					}
-					
-					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
-					app.ext.store_thesev.u.setTitle(title);
-				}]); 
+				
 				
 				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
