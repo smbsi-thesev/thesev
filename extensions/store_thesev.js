@@ -51,6 +51,9 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
 					}
+					
+					var title = "Home";
+					app.ext.store_thesev.u.setTitle(title);
 				}]);
 				
 				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
@@ -63,7 +66,15 @@ var store_thesev = function() {
 					else {
 						$sideline.show();
 						}
-					}])
+						
+					var title = "My theSev";
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
+					
+				app.rq.push(["templateFunction","companyTemplate","onCompletes",function(infoObj){
+					var title = "theSev Information";
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
@@ -71,7 +82,10 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.runMasonry($context);
 						$context.data('masonized',true);
 					}
-				}]) 
+					
+					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
+					app.ext.store_thesev.u.setTitle(title);
+				}]); 
 				
 				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
@@ -80,6 +94,9 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.sansReviews($context);
 						$context.data('masonized',true);
 					}
+					
+					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
+					app.ext.store_thesev.u.setTitle(title);
 			//			app.ext.store_thesev.u.runScroll($context);
 				}]);
 				
@@ -96,8 +113,25 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addMushPot($context);
 						$context.data('masonized',true);
 					}
-				}]) 
+					
+					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
 				
+				app.rq.push(['templateFunction', 'pageNotFoundTemplate','onCompletes',function(infoObj){
+					var title = "Page not found";
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
+				
+				app.rq.push(['templateFunction', 'checkoutTemplate','onCompletes',function(infoObj){
+					var title = "Check out";
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
+				
+				app.rq.push(['templateFunction', 'searchTemplate','onCompletes',function(infoObj){
+					var title = "Search";
+					app.ext.store_thesev.u.setTitle(title);
+				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -154,6 +188,7 @@ var store_thesev = function() {
 				else {
 					$errorDiv.anymessage({'message':errors});
 					}
+				showContent('customer',{'show':'myaccount'})
 			}, //loginFrmSubmit
 			
 			wishListPopVal : function($this, $parent) {
@@ -491,6 +526,17 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			setTitle : function(title) {
+				if(title && typeof title === "string") {
+					//This is what is expected
+				}
+				else {
+					//set title
+					title = "theSev Merchandise"
+				}
+				document.title = title+" | theSev";
+			}, //end setTitle
+			
 			addHomeBanner : function($context) {
 				var a = Math.random()*6+1;
 				var b = a.toString().split('.');

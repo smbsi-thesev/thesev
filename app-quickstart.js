@@ -1491,7 +1491,7 @@ if(ps.indexOf('?') >= 1)	{
 				if(app.u.getUsernameFromCart())	{
 					$('.username').text(app.u.getUsernameFromCart());
 					}
-				app.ext.myRIA.a.showContent('customer',{'show':'myaccount'});
+				//app.ext.myRIA.a.showContent('customer',{'show':'myaccount'});
 				},
 			
 			
