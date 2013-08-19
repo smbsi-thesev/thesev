@@ -51,7 +51,7 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
 					}
-					//app.u.dump('&&&&&&&&&&&&&&'); app.u.dump(infoObj.navcat);
+					
 					var title = "Home";
 					app.ext.store_thesev.u.setTitle(title);
 				}]);
@@ -62,10 +62,18 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.runMasonry($context);
 						$context.data('masonized',true);
 					}
-					
-					//app.u.dump('&&&&&&&&&&&&&&'); app.u.dump(app.data["appPageGet|"+infoObj.navcat]);
-					var title = ""; //app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
-					app.ext.store_thesev.u.setTitle(title);
+		
+		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
+					var title = "";
+		//			var title = app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
+					if(title){
+						app.ext.store_thesev.u.setTitle(title);
+					}
+					else {
+						title = "";
+						app.ext.store_thesev.u.setTitle();
+					}
+						
 				}]); 
 				
 				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
@@ -98,16 +106,18 @@ var store_thesev = function() {
 						$context.data('masonized',true);
 					}
 					
-					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
-					app.ext.store_thesev.u.setTitle(title);
-			//			app.ext.store_thesev.u.runScroll($context);
+		//			var title = "";
+					var title = app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
+					if(title){
+						app.ext.store_thesev.u.setTitle(title);
+					}
+					else {
+						title = "";
+						app.ext.store_thesev.u.setTitle(title);
+					}
+					
+			//		app.ext.store_thesev.u.runScroll($context);
 				}]);
-				
-		//		search onCompltes, doesn't work the same w/ context. 
-		//		app.rq.push(['templateFunction','productListTemplateResults','onCompletes',function(infoObj) {
-		//			var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-		//			app.ext.store_thesev.u.runMasonry($context);
-		//		}]);
 				
 				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
@@ -116,9 +126,18 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addMushPot($context);
 						$context.data('masonized',true);
 					}
+		
+		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
+					var title = "theSev Collections";
+		//			var title = app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
+					if(title){
+						app.ext.store_thesev.u.setTitle(title);
+					}
+					else {
+						title = "theSev Collections";
+						app.ext.store_thesev.u.setTitle(title);
+					}
 					
-					var title = ""; //"theSev Merchandise"; //app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
-					app.ext.store_thesev.u.setTitle(title);
 				}]);
 				
 				app.rq.push(['templateFunction', 'pageNotFoundTemplate','onCompletes',function(infoObj){
