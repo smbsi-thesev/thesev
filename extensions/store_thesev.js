@@ -45,11 +45,17 @@ var store_thesev = function() {
 				
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					//if these functions have been run before, no need to run them again
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
 						app.ext.store_thesev.u.addMushPot($context);
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
+					}
+					//except for masonry, if it has been run it is best to reload it to be sure elements don't stack
+					else if($context.data('masonized')) {
+						app.ext.store_thesev.u.reloadMasonry($context);
+						//app.u.dump('RELOADED');
 					}
 					
 					var title = "Home";
@@ -61,6 +67,9 @@ var store_thesev = function() {
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
 						$context.data('masonized',true);
+					}
+					else if($context.data('masonized')) {
+						app.ext.store_thesev.u.reloadMasonry($context);
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
@@ -106,12 +115,11 @@ var store_thesev = function() {
 						$context.data('masonized',true);
 					}
 					
-		//			var title = "";
 					var title = app.data["appProductGet|"+infoObj.pid]['%attribs']['zoovy:prod_name']
 					if(title){
 						app.ext.store_thesev.u.setTitle(title);
 					}
-					else {
+					else { //use default title
 						title = "";
 						app.ext.store_thesev.u.setTitle(title);
 					}
@@ -125,6 +133,9 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.runMasonry($context);
 						app.ext.store_thesev.u.addMushPot($context);
 						$context.data('masonized',true);
+					}
+					else if($context.data('masonized')) {
+						app.ext.store_thesev.u.reloadMasonry($context);
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
@@ -743,6 +754,11 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 					//$target.data('masonry',masonry);
 				},2000);
 			}, //end runMasonry
+			
+			reloadMasonry : function($context) {
+				var $target = $('.masonList', $context);
+				$target.masonry('reloadItems')
+			}
 		
 		}, //u [utilities]
 
