@@ -104,6 +104,7 @@ img {vertical-align:middle;}
 ::-webkit-scrollbar-button {display:none;}
 
 /*WEBKIT BORDER RADIUS RESETS*/
+input[type="checkbox"] {-webkit-appearance:checkbox;}
 input, button {
 	-webkit-appearance:none;
 	-webkit-border-radius:0;
