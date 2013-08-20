@@ -653,6 +653,27 @@ NOTES
 					
 					
 					$parent.dialog('open');
+					
+					//handler to allow modal to close when clicked outside of, removed when modal is closed
+/*smbsi*/			var handler = (function(mod){
+/*smbsi*/				if(!$(mod.target).parents().filter('.ui-dialog').length) {
+/*smbsi*/				$parent.dialog('close');
+/*smbsi*/					$(document).unbind('click', handler);
+/*smbsi*/					app.u.dump('clicking outside worked this way');
+/*smbsi*/				}
+/*smbsi*/			});
+/*smbsi*/					
+/*smbsi*/			//handler to be sure the above handler is removed when the close button is used other wise
+/*smbsi*/			//modals will not open again.
+/*smbsi*/			var handler2 = (function(){
+/*smbsi*/				$(document).unbind('click', handler);
+/*smbsi*/				app.u.dump('CLOSE UNBIND WORKED');
+/*smbsi*/			});
+/*smbsi*/			
+/*smbsi*/			//binds handlers for modal close on click outside of modal
+/*smbsi*/			setTimeout(function(){$(document).bind('click', handler);},500);
+/*smbsi*/			setTimeout(function(){$('.ui-dialog-titlebar-close', $parent.parent()).bind('click', handler2);},500);
+/*smbsi*/									
 
 					app.ext.store_product.calls.appProductGet.init(P.pid,{'callback': function(rd){
 						if(app.model.responseHasErrors(rd)){
