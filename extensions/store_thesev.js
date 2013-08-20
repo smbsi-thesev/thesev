@@ -53,10 +53,10 @@ var store_thesev = function() {
 						$context.data('masonized',true);
 					}
 					//except for masonry, if it has been run it is best to reload it to be sure elements don't stack
-					else if($context.data('masonized')) {
-						app.ext.store_thesev.u.reloadMasonry($context);
-						//app.u.dump('RELOADED');
-					}
+					//else if($context.data('masonized')) {
+					//	app.ext.store_thesev.u.reloadMasonry($context);
+					//	app.u.dump('RELOADED');
+					//}
 					
 					var title = "Home";
 					app.ext.store_thesev.u.setTitle(title);
@@ -757,8 +757,10 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 			
 			reloadMasonry : function($context) {
 				var $target = $('.masonList', $context);
-				$target.masonry('reloadItems')
-			}
+				setTimeout(function() {
+					var masonry = $target.masonry('reloadItems');
+				},2000);
+			},
 		
 		}, //u [utilities]
 
