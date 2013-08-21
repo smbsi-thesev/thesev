@@ -749,7 +749,14 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 						itemSelector	:	'.anyMasonry',
 						gutter			:	0,
 						isFitWidth		:	true,
-						transitionDuration : '2s'
+						transitionDuration : '2s',
+						containerStyle	:
+						{
+							position	:	'relative',
+							opacity		:	1,
+							transition	:	'opacity 1s',
+							'-webkit-transition' : 'opacity 2s 2s'
+						}
 					});
 					//$target.data('masonry',masonry);
 				},2000);

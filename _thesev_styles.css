@@ -76,6 +76,7 @@ img {vertical-align:middle;}
 .templateWrapper {height:auto; width:1070px; margin:0 auto;} 
 
 .quickView {border:none; color:#ffffff; font-family:montserrat; padding:4px;}
+.masonList {opacity:0.05;}
 .fluidList li {margin:8px; box-shadow:0 0 2px 0px; position:relative; background:#ffffff;}
 .masonList.fluidList li {float:none;}
 .thumbContainer, .prodThumbContainer {/*REMOVE THESE ONCE IMGS ARE PRESENT*/height:100%; width:100%;/*END REMOVE*/position:relative; overflow:hidden;}
