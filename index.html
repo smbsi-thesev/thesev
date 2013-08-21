@@ -23,7 +23,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130821122700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130821123100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -70,6 +70,8 @@ css files should be included before any .js file to ensure they are downloaded i
 app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 </script>
 
+<!-- temp for analytics not validating issue. Remove when solved -->
+<meta name="google-site-verification" content="fNe-vZh9CnqiXmZYLFuEiP1oZ3AFD_fOLD22vQJePTY" />
 
 </head>
 
