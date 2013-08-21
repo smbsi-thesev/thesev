@@ -201,6 +201,11 @@ var store_thesev = function() {
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
 	
+			showContactPID : function (pid) {
+				//app.u.dump('the pid is: '); app.u.dump(pid);
+				$('#contactFormOID', 'div', '#contactForm', '#mainContentArea_company').val('SKU: '+pid);
+			},
+
 			//copied from app-quickstart.js so additional parameter could be used to assign the error location (for diff. login screens)
 			loginFrmSubmit : function(email,password,errorDiv)	{
 				var errors = '';

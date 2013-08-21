@@ -696,7 +696,7 @@ this will likely become more flexible in the future. ###
 				<div class='thumbText'>
 					<span>Item/SKU #</span>
 					<div data-bind='var: product(pid); format:text;'></div>
-					<button class='tertiaryColorHover' onClick="return showContent('company',{'show':'contact'});">ASK A ? ABOUT<BR>THIS PRODUCT</button>
+					<button class='tertiaryColorHover' onClick="app.ext.store_thesev.a.showContactPID($(this).attr('data-pid')); return showContent('company',{'show':'contact'});" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>ASK A ? ABOUT<BR>THIS PRODUCT</button> 
 					<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
 				</div>
 			</div>
