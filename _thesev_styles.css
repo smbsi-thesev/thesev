@@ -232,6 +232,7 @@ productListTemplate
 .productListForm {position:absolute; top:5px; left:5px; z-index:99; color:#ffffff; }
 .productListForm button {height:36px; width:45px; background-position:-322px 5px; background-repeat:no-repeat; border:none;}
 .productListForm span {height:auto; width:39px; position:absolute; color:#ffffff; font-family:"Open Sans"; font-size:1.4em; font-weight:bold; left:0; text-align:center; top:5px;}
+.productListForm span.notAvailableForPurchase {display:none;}
 
 /*************************************************************************************
 END productListTemplate
