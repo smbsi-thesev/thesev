@@ -131,7 +131,7 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 							<div class='headline'>NEED HELP?<div class='iconHelp sprite'></div></div>
 							<ul class='listStyleNone noPadOrMargin'>
 								<li class='about'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=about'>About Us</a><span class='arrow sprite'></span></li>
-								<li class='contact'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+								<li class='contact'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=contact' onClick="app.ext.store_thesev.a.resetContactPID();">Contact Us</a><span class='arrow sprite'></span></li>
 								<li class='faq'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=faq'>FAQ</a><span class='arrow sprite'></span></li>
 								<li class='paymnt'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
 								<li class='priv'><span class='decoBar'></span><a class='bindByAnchor' href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
@@ -152,7 +152,7 @@ app.u.loadScript(app.vars.baseURL+"_thesev_app-quickstart-init.js");
 					</div>
 				</div>
 			</div>
-			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
+			<div class='headerLinks floatLeft'><a class="bindByAnchor" href="#!company?show=contact" onClick="app.ext.store_thesev.a.resetContactPID();"><img alt="contact us" src='images/email-icon_36x34.png' width="36" height="34" /></a></div>
 			<div class='headerLinks floatLeft' onMouseOver="app.ext.store_thesev.a.showDropDown($(this));" onMouseOut="app.ext.store_thesev.a.hideDropDown($(this));"> <!-- onClick="return showContent('customer',{'show':'newsletter'});" -->
 				<img alt="newsletter" src='images/newsletter-icon_36x34.png' width="36" height="34" />
 				<div class='newsLink'>
@@ -302,7 +302,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi">
 				<div class="mushPot">
 					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
-					<div class='mushPotLink sprite mushContact pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushContact pointer' onClick="app.ext.store_thesev.a.resetContactPID(); return showContent('company',{'show':'contact'});"></div>
 					<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
 					<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
 						<span class='cartItemCount'></span>
@@ -388,7 +388,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 		<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi" data-bind="var: category(@products); format:hideIfSet;">
 				<div class="mushPot">
 					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
-					<div class='mushPotLink sprite mushContact pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+					<div class='mushPotLink sprite mushContact pointer' onClick="app.ext.store_thesev.a.resetContactPID(); return showContent('company',{'show':'contact'});"></div>
 					<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
 					<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
 						<span class='cartItemCount'></span>
@@ -1129,7 +1129,7 @@ So the cart template should contain these two elements and the extension should 
 			<div class='headline'>NEED HELP?<span class='iconHelp sprite'></span></div>
 			<ul class='listStyleNone noPadOrMargin'>
 				<li class='about'><span class='decoBar'></span><a href='#company?show=about'>About Us</a><span class='arrow sprite'></span></li>
-				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact' onClick="app.ext.store_thesev.a.resetContactPID();">Contact Us</a><span class='arrow sprite'></span></li>
 				<li class='faq'><span class='decoBar'></span><a href='#company?show=faq'>FAQ</a><span class='arrow sprite'></span></li>
 				<li class='paymnt'><span class='decoBar'></span><a href='#company?show=payment'>Payment Policy</a><span class='arrow sprite'></span></li>
 				<li class='priv'><span class='decoBar'></span><a href='#company?show=privacy'>Privacy Policy</a><span class='arrow sprite'></span></li>
@@ -1470,7 +1470,7 @@ subscribeListsArticle is used for authenticated buyers
 				<!-- before restoring this, test cuz news form on left was causing some conflicts
 				<li><a href='#customer?show=subscriberLists'>Newsletter Subscription</a></li> -->
 				<li class='about'><span class='decoBar'></span><a href='#customer?show=myaccount'>My Account</a><span class='arrow sprite'></span></li>
-				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact'>Contact Us</a><span class='arrow sprite'></span></li>
+				<li class='contact'><span class='decoBar'></span><a href='#company?show=contact' onClick="app.ext.store_thesev.a.resetContactPID();">Contact Us</a><span class='arrow sprite'></span></li>
 				<li class='faq'><span class='decoBar'></span><a href='#customer?show=changepassword'>Change Password</a><span class='arrow sprite'></span></li>
 				<li class='paymnt'><span class='decoBar'></span><a href='#customer?show=orders'>Order History</a><span class='arrow sprite'></span></li>
 				<li class='priv'><span class='decoBar'></span><a href='#customer?show=lists'>Manage Lists</a><span class='arrow sprite'></span></li>
