@@ -659,7 +659,6 @@ NOTES
 /*smbsi*/				if(!$(mod.target).parents().filter('.ui-dialog').length) {
 /*smbsi*/				$parent.dialog('close');
 /*smbsi*/					$(document).unbind('click', handler);
-/*smbsi*/					app.u.dump('clicking outside worked this way');
 /*smbsi*/				}
 /*smbsi*/			});
 /*smbsi*/					
@@ -667,7 +666,6 @@ NOTES
 /*smbsi*/			//modals will not open again.
 /*smbsi*/			var handler2 = (function(){
 /*smbsi*/				$(document).unbind('click', handler);
-/*smbsi*/				app.u.dump('CLOSE UNBIND WORKED');
 /*smbsi*/			});
 /*smbsi*/			
 /*smbsi*/			//binds handlers for modal close on click outside of modal
