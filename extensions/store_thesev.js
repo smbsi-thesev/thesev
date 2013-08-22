@@ -509,6 +509,23 @@ var store_thesev = function() {
 					}
 				}
 				
+				//HIDE INCOGNITO IN PRODUCT LISTS
+				if(data.value['%attribs'] && data.value['%attribs']['user:incog_neat_o']) {
+					var incognito = data.value['%attribs']['user:incog_neat_o'];
+					if(incognito == 1) {
+						$tag.addClass('hideMe');
+					}
+				}
+				
+				//HIDE SEV-SITE-OWNERSHIP IN PRODUCT LISTS
+				//app.u.dump('data.value: '); app.u.dump(data.value['%attribs']['user:site_ownership_sev']);
+				if(data.value['%attribs'] && data.value['%attribs']['user:site_ownership_sev']) {
+					var ownership = data.value['%attribs']['user:site_ownership_sev'];
+					if(ownership == 1) {
+						$tag.addClass('hideMe');
+					}
+				}
+				
 				//SHOW ZERO INVENTORY CLASS IN SEARCH RESULTS (only if prod_outofstock is remove from elastic not filter in store search)
 				//app.u.dump(data.value); //['%attribs']['user:prod_outofstock']
 				if(data.value['%attribs'] && data.value['%attribs']['user:prod_outofstock'] == 1) {
