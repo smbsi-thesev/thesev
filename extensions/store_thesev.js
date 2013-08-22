@@ -48,6 +48,7 @@ var store_thesev = function() {
 					//if these functions have been run before, no need to run them again
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
+					//	setTimeout(function(){app.ext.store_thesev.u.bindMasonryResize($context)},2000);
 						app.ext.store_thesev.u.addMushPot($context);
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
@@ -760,7 +761,7 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 						columnWidth		:	177,
 						itemSelector	:	'.anyMasonry',
 						gutter			:	0,
-						isFitWidth		:	true,
+					//	isFitWidth		:	true,
 						transitionDuration : '2s',
 						containerStyle	:
 						{
@@ -780,6 +781,11 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 					var masonry = $target.masonry('reloadItems');
 				},2000);
 			},
+			
+			bindMasonryResize : function($context) {
+				var $target = $('.masonList', $context);
+				$target.masonry('bindResize');
+			}
 		
 		}, //u [utilities]
 
