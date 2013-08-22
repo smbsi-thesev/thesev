@@ -48,7 +48,6 @@ var store_thesev = function() {
 					//if these functions have been run before, no need to run them again
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
-					//	setTimeout(function(){app.ext.store_thesev.u.bindMasonryResize($context)},2000);
 						app.ext.store_thesev.u.addMushPot($context);
 						app.ext.store_thesev.u.addHomeBanner($context);
 						$context.data('masonized',true);
@@ -56,7 +55,7 @@ var store_thesev = function() {
 					//except for masonry, if it has been run it is best to reload it to be sure elements don't stack
 					else {
 						setTimeout(function(){app.ext.store_thesev.u.reloadMasonry($context);},2000);
-						app.u.dump('RELOADED');
+						//app.u.dump('RELOADED');
 					}
 					
 					var title = "Home";
@@ -69,8 +68,8 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.runMasonry($context);
 						$context.data('masonized',true);
 					}
-					else if($context.data('masonized')) {
-						app.ext.store_thesev.u.reloadMasonry($context);
+					else {
+						setTimeout(function(){app.ext.store_thesev.u.reloadMasonry($context);},2000);
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
@@ -135,8 +134,8 @@ var store_thesev = function() {
 						app.ext.store_thesev.u.addMushPot($context);
 						$context.data('masonized',true);
 					}
-					else if($context.data('masonized')) {
-						app.ext.store_thesev.u.reloadMasonry($context);
+					else {
+						setTimeout(function(){app.ext.store_thesev.u.reloadMasonry($context);},2000);
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
@@ -779,11 +778,6 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 				var $target = $('.masonList', $context);
 				var masonry = $target.masonry('layout');
 			},
-			
-			bindMasonryResize : function($context) {
-				var $target = $('.masonList', $context);
-				$target.masonry('bindResize');
-			}
 		
 		}, //u [utilities]
 
