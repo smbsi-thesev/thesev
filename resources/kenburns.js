@@ -1,7 +1,7 @@
 (function($){
 
     $.fn.kenburns = function(options) {
-		app.u.dump("kenburnsing");
+		//app.u.dump("kenburnsing");
 		
 		var requestAnimFrame = 	window.requestAnimationFrame       ||
 								window.webkitRequestAnimationFrame ||
@@ -36,7 +36,7 @@
 				
 				}
 			}
-		app.u.dump(images);
+		//app.u.dump(images);
         var images = [];
         $(image_paths).each(function(i, image_path){
             images.push({path:image_path,
