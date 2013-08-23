@@ -199,9 +199,9 @@ var store_thesev_kbeffect = function() {
 //that way, two render formats named the same (but in different extensions) don't overwrite each other.
 		renderFormats : {
 			assignElasticImgSrc : function($tag, data){
-				app.u.dump(data.value);
-				app.u.dump(data.value[data.bindData.index]);
-				$tag.data('imgsrc',data.value[data.bindData.index]);
+				//app.u.dump(data.value);
+				//app.u.dump(data.value[data.bindData.index]);
+				$tag.attr('data-imgsrc',data.value[data.bindData.index]);
 				}
 		}, //renderFormats
 ////////////////////////////////////   UTIL [u]   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
