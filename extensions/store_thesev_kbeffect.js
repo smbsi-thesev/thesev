@@ -212,13 +212,7 @@ var store_thesev_kbeffect = function() {
 			kenburnsInit : function($context) {
 				$('.masonImage', $context).each(function() {
 					//app.u.dump('Width: '); app.u.dump($(this).innerWidth()); app.u.dump('Height'); app.u.dump($(this).innerHeight()); 
-					$(this).append(app.u.makeImage({
-						"name"	: $(this).data('imgsrc'),
-						"w"		: $(this).innerWidth(),
-						"h"		: $(this).innerHeight(),
-						"b"		: "tttttt",
-						"tag"	: 1
-					}));
+					app.ext.store_thesev_kbeffect.u.makeImageFromImgSrc($(this));
 					$(this).removeClass('masonImage');
 				});
 				$('.kenburnsMouseover',$context).on('mouseenter.kenburns', function(){
@@ -230,18 +224,34 @@ var store_thesev_kbeffect = function() {
 			
 			catImageInit : function($context) {
 				$('.catMasonImage', $context).each(function() {
+					
 					//app.u.dump($(this));
 					//app.u.dump('Width: '); app.u.dump($(this).parent().innerWidth()); app.u.dump('Height'); app.u.dump($(this).parent().innerHeight()); 
-					$(this).append(app.u.makeImage({
-						"name"	: $(this).data('imgsrc'),
-						"w"		: $(this).innerWidth(),
-						"h"		: $(this).innerHeight(),
-						"b"		: "tttttt",
-						"tag"	: 1
-					}));
+					app.ext.store_thesev_kbeffect.u.makeImageFromImgSrc($(this));
 					//$(this).removeClass('catMasonImage');
 				});
 			},
+			
+			makeImageFromImgSrc : function($tag, attempts){
+				attempts = attempts || 0;
+				if($tag.attr('data-imgsrc')){
+					$tag.append(app.u.makeImage({
+						"name"	: $tag.data('imgsrc'),
+						"w"		: $tag.innerWidth(),
+						"h"		: $tag.innerHeight(),
+						"b"		: "tttttt",
+						"tag"	: 1
+						}));
+					}
+				else if(attempts < 50){
+					setTimeout(function(){
+						app.ext.store_thesev_kbeffect.u.makeImageFromImgSrc($tag, attempts +1);
+						}, 250);
+					}
+				else {
+					app.u.dump("-> ERROR app.ext.store_thesev_kbeffect.u.makeImageFromImgSrc failed to load an image for following tag:"); app.u.dump($tag);
+					}
+				},
 			
 			whoIsKenBurns : function() {
 				//app.u.dump('This is ken burns: '); app.u.dump(app.storageFunctions.readLocal("dontKenBurns"));
