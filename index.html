@@ -23,7 +23,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130823171000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130823172900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -626,7 +626,7 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 			-->
 		</div>
 		
-		<div class='prodListDesc'>
+		<div class='prodListDesc hideInMinimalMode'>
 			<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
 			<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price;'></h6>
 		</div>
