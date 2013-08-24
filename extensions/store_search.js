@@ -144,28 +144,38 @@ P.query = { 'and':{ 'filters':[ {'term':{'profile':'E31'}},{'term':{'tags':'IS_S
 							delete _tag.status; //the status would already be 'requesting' or 'completed', which means this request wouldn't run.
 					
 							var $header = app.ext.store_search.u.buildResultsHeader($list,_rtag.datapointer), //# of results and keyword display.
+							$headerBottom = app.ext.store_search.u.buildResultsHeader($list,_rtag.datapointer), //# of results and keyword display.
 //							$sortMenu = app.ext.store_search.u.buildSortMenu($list,_rtag), //sorting options as ul
 							$pageMenu = app.ext.store_search.u.buildPagination($list,_tag), //pagination as ul
+							$pageMenuBottom = app.ext.store_search.u.buildPagination($list,_tag), //pagination as ul
 							$multipage = app.ext.store_search.u.buildPaginationButtons($list,_tag), //next/prev buttons
+							$multipageBottom = app.ext.store_search.u.buildPaginationButtons($list,_tag), //next/prev buttons
 							$menuContainer = $("<div \/>").addClass('resultsMenuContainer'), //used to hold menus. imp for abs. positioning.
+							$menuContainerBottom = $("<div \/>").addClass('resultsMenuContainer'), //used to hold menus. imp for abs. positioning.
 							$controlsContainer = $("<div \/>").addClass('ui-widget ui-widget-content resultsHeader clearfix ui-corner-bottom'); //used to hold menus and buttons.
+							$controlsContainerBottom = $("<div \/>").addClass('ui-widget ui-widget-content resultsHeader clearfix ui-corner-bottom'); //used to hold menus and buttons.
 							
 //							$menuContainer.append($sortMenu); //sorting not working. commented out for now. !!!
-							$header.prependTo($parent);
+							
+							$headerBottom.appendTo($parent);
 //pageMenu will be false if there are no pages. If there's no pagination, no further output is needed.
 							if($pageMenu)	{
 	
 								$menuContainer.append($pageMenu);
+								$menuContainerBottom.append($pageMenu);
 								$menuContainer.appendTo($controlsContainer);
+								$menuContainerBottom.appendTo($controlsContainerBottom);
 								$multipage.appendTo($controlsContainer); //multipage nav is at the top and bottom
+								$multipageBottom.appendTo($controlsContainerBottom); //multipage nav is at the top and bottom
 								
 								
 								$controlsContainer.prependTo($parent);
+								$controlsContainerBottom.appendTo($parent);
 //add to DOM prior to running menu. helps it to not barf.
 								$pageMenu.menu();
 //								$sortMenu.menu();
 								}
-	
+							$header.prependTo($parent);
 							
 							
 							}
@@ -288,8 +298,8 @@ app.u.dump(" -> pageInFocus: "+pageInFocus);
 						app.ext.store_search.u.updateDataOnListElement($list,query,newPage);
 						app.ext.store_search.calls.appPublicSearch.init(query,_tag);
 						app.model.dispatchThis();
-						app.ext.store_thesev_kbeffect.u.kenburnsInit($list);
-						app.ext.store_thesev.u.runMasonry($list);
+//app.ext.store_thesev_kbeffect.u.kenburnsInit($list);
+//app.ext.store_thesev.u.runMasonry($list);
 						}
 					else	{
 						$('#globalMessaging').anymessage({'message':'In store_search.u.changePage, $list set but missing data(elastic-query).','gMessage':true});
