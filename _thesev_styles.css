@@ -816,6 +816,9 @@ media querries
 	.rightCol .outerGutter {display:none;}
 	.midCol {height:33%; width:320px;}
 	.productSearchKeyword {width:75%;}
+	@media only screen and (-webkit-min-device-pixel-ratio:0) {
+		.productSearchKeyword {width:84%;} 
+	}
 	.leftCol {height:34%; width:320px;}
 	.headerHomeLink {padding:17% 0 0 25%;}
 	header .logIn {line-height:290%;}
