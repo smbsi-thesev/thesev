@@ -10,6 +10,8 @@
 <meta property="og:image" content="" id='ogImage' >
 <meta property="og:description" content="" id='ogDescription' >
 
+<!-- prevents mobile browsers from shrinking content to fit screen, allowing fluidity -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
 <base href='' /><!-- leave blank so it works for a local file. updated to / if protocol is not file: -->
 
@@ -23,7 +25,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130823172900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130823180200",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
