@@ -520,7 +520,14 @@ var store_thesev = function() {
 				//HIDE SEV-SITE-OWNERSHIP IN PRODUCT LISTS
 				//app.u.dump('data.value: '); app.u.dump(data.value['%attribs']['user:site_ownership_sev']);
 				if(data.value['%attribs'] && data.value['%attribs']['user:site_ownership_sev']) {
-					var ownership = data.value['%attribs']['user:site_ownership_sev'];
+					var ownership2 = data.value['%attribs']['user:site_ownership_sev'];
+					if(ownership2 == 1) {
+						$tag.addClass('hideMe');
+					}
+				}
+				
+				if(data.value['%attribs'] && data.value['%attribs']['user:block_product_from_sev']) {
+					var ownership = data.value['%attribs']['user:block_product_from_sev'];
 					if(ownership == 1) {
 						$tag.addClass('hideMe');
 					}

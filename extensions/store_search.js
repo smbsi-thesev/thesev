@@ -499,6 +499,7 @@ P.parentID - The parent ID is used as the pointer in the multipage controls obje
 								"and" : [
 									{"not" : {"term" : {"prod_outofstock":"1"}}},
 									{"not" : {"term" : {"site_ownership_sev":"1"}}},
+									{"not" : {"term" : {"block_product_from_sev":"1"}}},
 									{"not" : {"term" : {"incog_neat_o":"1"}}}
 								]
 							}
