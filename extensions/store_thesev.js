@@ -595,6 +595,16 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			removeDash : function(pid) {
+				if(pid.indexOf('-') != -1) {
+						var newPid = pid.split('-');
+						var outputPid = newPid[0] + newPid[1];
+				//		app.u.dump(outputPid);
+						return outputPid;
+					}
+				return pid;	
+			},
+	
 			setTitle : function(title) {
 				if(title && typeof title === "string") {
 					//This is what is expected
@@ -717,8 +727,11 @@ if the P.pid and data-pid do not match, empty the modal before openeing/populati
 //the only data needed in the reviews form is the pid.
 //the entire product record isn't passed in because it may not be available (such as in invoice or order history, or a third party site).
 					$parent.append(app.renderFunctions.transmogrify({id:'review-wrapper_'+P.pid},P.templateID,{'pid':P.pid}));
-					$(hide,'#productTemplate_'+P.pid).css('display','none');
-					$('.prodWriteReviewContainer','#productTemplate_'+P.pid).css('display','block');
+			//		app.u.dump('#productTemplate_'+P.pid);
+					var outPid = app.ext.store_thesev.u.removeDash(P.pid);
+			//		app.u.dump(outPid);
+					$('.prodSummaryContainer','#productTemplate_'+outPid).css('display','none');
+					$('.prodWriteReviewContainer','#productTemplate_'+outPid).css('display','block');
 					}
 				},
 		
