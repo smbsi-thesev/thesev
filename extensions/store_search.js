@@ -116,8 +116,18 @@ P.query = { 'and':{ 'filters':[ {'term':{'profile':'E31'}},{'term':{'tags':'IS_S
 //				app.u.dump("BEGIN myRIA.callbacks.handleElasticResults.onSuccess.");
 				var L = app.data[_rtag.datapointer]['_count'];
 				
+				var $oldList = _rtag.list;
+				
+				if($oldList && $oldList.length)	{
+					var $list = $($oldList.get(0).outerHTML);
+					$list.data('elastic-query',$oldList.data('elastic-query'));
+					$oldList.before($list);
+					_rtag.list = $list;
+					$oldList.remove();
+				/*
 				var $list = _rtag.list;
 				if($list && $list.length)	{
+				*/
 					$list.empty().removeClass('loadingBG').attr('data-app-role','searchResults');
 					$list.closest('.previewListContainer').find('.resultsHeader').empty().remove(); //remove any previous results multipage headers
 
