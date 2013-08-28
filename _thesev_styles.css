@@ -243,8 +243,8 @@ END productListTemplate
 productListTemplateResults
 *************************************************************************************/
 
-#resultsProductListContainer.templateWrapper {width:900px;} /*temp style till masonry works w/ search*/
-#resultsProductListContainer.productList > li {height:188px; width:188px;} /*temp style till masonry works w/ search*/
+/*#resultsProductListContainer.templateWrapper {width:900px;} temp style till masonry works w/ search*/
+/*#resultsProductListContainer.productList > li {height:188px; width:188px;} temp style till masonry works w/ search*/
 #resultsProductListContainer .hovBorderWhiteBlue10px {border:10px solid #FFFFFF !important;}
 #resultsProductListContainer .hovBorderWhiteBlue10px:hover {border:10px solid #0c8a96 !important;}
 .searchResultsProduct .moreDetails {height:10px; width:60px; color:#ffffff; position:absolute; bottom:-10px; left:0; font-family:montserrat; font-size:1.1em; line-height:10px; text-align:center;}

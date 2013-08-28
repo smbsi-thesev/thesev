@@ -120,6 +120,7 @@ P.query = { 'and':{ 'filters':[ {'term':{'profile':'E31'}},{'term':{'tags':'IS_S
 				
 				if($oldList && $oldList.length)	{
 					var $list = $($oldList.get(0).outerHTML);
+					$list.data('page-in-focus',$oldList.data('page-in-focus'));
 					$list.data('elastic-query',$oldList.data('elastic-query'));
 					$oldList.before($list);
 					_rtag.list = $list;
@@ -157,7 +158,7 @@ P.query = { 'and':{ 'filters':[ {'term':{'profile':'E31'}},{'term':{'tags':'IS_S
 							$headerBottom = app.ext.store_search.u.buildResultsHeader($list,_rtag.datapointer), //# of results and keyword display.
 //							$sortMenu = app.ext.store_search.u.buildSortMenu($list,_rtag), //sorting options as ul
 							$pageMenu = app.ext.store_search.u.buildPagination($list,_tag), //pagination as ul
-							$pageMenuBottom = app.ext.store_search.u.buildPagination($list,_tag), //pagination as ul
+						//	$pageMenuBottom = app.ext.store_search.u.buildPagination($list,_tag), //pagination as ul
 							$multipage = app.ext.store_search.u.buildPaginationButtons($list,_tag), //next/prev buttons
 							$multipageBottom = app.ext.store_search.u.buildPaginationButtons($list,_tag), //next/prev buttons
 							$menuContainer = $("<div \/>").addClass('resultsMenuContainer'), //used to hold menus. imp for abs. positioning.
@@ -172,7 +173,7 @@ P.query = { 'and':{ 'filters':[ {'term':{'profile':'E31'}},{'term':{'tags':'IS_S
 							if($pageMenu)	{
 	
 								$menuContainer.append($pageMenu);
-								$menuContainerBottom.append($pageMenu);
+							//	$menuContainerBottom.append($pageMenuBottom);
 								$menuContainer.appendTo($controlsContainer);
 								$menuContainerBottom.appendTo($controlsContainerBottom);
 								$multipage.appendTo($controlsContainer); //multipage nav is at the top and bottom
@@ -308,8 +309,8 @@ app.u.dump(" -> pageInFocus: "+pageInFocus);
 						app.ext.store_search.u.updateDataOnListElement($list,query,newPage);
 						app.ext.store_search.calls.appPublicSearch.init(query,_tag);
 						app.model.dispatchThis();
-//app.ext.store_thesev_kbeffect.u.kenburnsInit($list);
-//app.ext.store_thesev.u.runMasonry($list);
+						app.ext.store_thesev_kbeffect.u.kenburnsInit($list);
+						app.ext.store_thesev.u.runMasonry($list);
 						}
 					else	{
 						$('#globalMessaging').anymessage({'message':'In store_search.u.changePage, $list set but missing data(elastic-query).','gMessage':true});

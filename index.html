@@ -25,7 +25,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130826153900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130827170400",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -607,7 +607,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
-<li id='productListTemplateResults' class='kenburnsMouseover loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' > <!-- data-bind='useParentData:true; format:pickClass; extension:store_thesev;' -->
+<li id='productListTemplateResults' class='kenburnsMouseover loadingBG searchResultsProduct anyMasonry hovBorderWhiteBlue10px productListTemplateResults' data-bind='useParentData:true; format:pickClass; extension:store_thesev;'>
 	
 	<div class='boxShadower pointer' onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));">
 		<div class='invGone'>
@@ -617,12 +617,12 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 	
 	<div>
 		<div class='prodThumbContainer'>
-			 
-			 <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='188' height='188' /> <!-- width='316' height='316' -->
-			
-			<!--
-			<div class='masonImage' data-bind="var:product(images); index:0; format:assignElasticImgSrc; extension:store_thesev_kbeffect;"></div> 
+			<!-- 
+			 <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='188' height='188' />  width='316' height='316' 
 			-->
+			
+			<div class='masonImage' data-bind="var:product(images); index:0; format:assignElasticImgSrc; extension:store_thesev_kbeffect;"></div> 
+			
 			<!--
 			<canvas class='kenBurns prodThumbContainer pointer'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'></canvas>
 			-->
@@ -1110,7 +1110,7 @@ So the cart template should contain these two elements and the extension should 
 
 	<div class='previewListContainer'>
 		<!-- productListTemplateResults gets loaded into here -->
-		<ul id='resultsProductListContainer' class='listStyleNone fluidList noPadOrMargin productList templateWrapper'></ul> <!-- masonList -->
+		<ul id='resultsProductListContainer' class='masonList listStyleNone fluidList noPadOrMargin productList templateWrapper'></ul>
 	</div>
 
 </div>
