@@ -471,28 +471,28 @@ var store_thesev = function() {
 				//ASSIGN SIZING CLASSES
 				//app.u.dump($tag);
 				var previous = app.ext.store_thesev.vars.repeater;
-				var a = Math.random()*4+1;
+				var a = Math.random()*3+1;
 				var b = a.toString().split('.');
 				var number = b[0];
 				
-				if (number != previous){ //go on with your bad self
-				}
-				else if (number == previous && number == 4) {
-					number = number - 1;		//it's the same but also already the highest number, make it smaller 
-				}
-				else {
-					number = number + 1;		// it's the same, make it one bigger
-				}
-				app.ext.store_thesev.vars.repeater = number; //store this iteration to compare next time
+		//		if (number != previous){ //go on with your bad self
+		//		}
+		//		else if (number == previous && number == 4) {
+		//			number = number - 1;		//it's the same but also already the highest number, make it smaller 
+		//		}
+		//		else {
+		//			number = number + 1;		// it's the same, make it one bigger
+		//		}
+		//		app.ext.store_thesev.vars.repeater = number; //store this iteration to compare next time
 				//app.u.dump('Previous is: '); app.u.dump(previous);
 				//app.u.dump('Number is: '); app.u.dump(number);
 				
 				//decide which size the cat/prod list element should be
 				switch(number) {
 					case '1'	:	$tag.addClass('masonOne'); break;
-					case '2'	:	$tag.addClass('masonTwo'); break;
-					case '3'	:	$tag.addClass('masonThree'); break;
-					case '4'	:	$tag.addClass('masonFour'); break;
+		//			case '2'	:	$tag.addClass('masonTwo'); break;
+					case '2'	:	$tag.addClass('masonThree'); break;
+					case '3'	:	$tag.addClass('masonFour'); break;
 						//for some reason the above logic concatenates the numbers to be added sometimes,
 						//default case adds largest image because that case is acceptable for repetition.
 					default		:	$tag.addClass('masonOne');
