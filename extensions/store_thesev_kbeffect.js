@@ -57,7 +57,7 @@ var store_thesev_kbeffect = function() {
 					}
 				}]); 	
 
-				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
+				app.rq.push(['templateFunction','brandsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);

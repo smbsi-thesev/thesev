@@ -28,7 +28,7 @@ var myRIA = function() {
 //if this is a custom extension and you are loading system extensions (prodlist, etc), then load ALL templates you'll need here.
 		"templates" : [
 //custom templates added for this app
-			'collectionsTemplate',
+			'brandsTemplate',
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
 			'categoryListTemplate',
@@ -2718,9 +2718,9 @@ buyer to 'take with them' as they move between  pages.
 					else if(catSafeID == zGlobals.appSettings.rootcat || infoObj.pageType == 'homepage')	{
 						infoObj.templateID = 'homepageTemplate'
 						}
-					else if(catSafeID.indexOf('.50_collections') == 0)  {
-						infoObj.templateID= 'collectionsTemplate';
-						}
+/*smbsi*/				else if(catSafeID.indexOf('.30_accessories') == 0)  {
+/*smbsi*/					infoObj.templateID= 'brandsTemplate';
+/*smbsi*/				}
 					else	{
 						infoObj.templateID = 'categoryTemplate'
 						}
@@ -3085,7 +3085,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('collectionsTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('brandsTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};

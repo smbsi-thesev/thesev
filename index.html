@@ -25,7 +25,7 @@ _gaq.push(['_trackPageview']);
 var myCreole;
 
 var app = {vars:{
-	"release":"201318.20130828102600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201318.20130829133200",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc",
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -294,50 +294,32 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='templateWrapper homepageTemplate'>
-<!--<div class='mushPot'>
-		<div></div>
-		<img />
-		<div></div>
-		<div></div>
-	</div>
--->
 		
-		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:min;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'>
-			<span class="displayNone" data-bind="var: category(%page.page_title); format:text;"></span>
-			<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi">
-				<div class="mushPot">
-					<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
-					<div class='mushPotLink sprite mushContact pointer' onClick="app.ext.store_thesev.a.resetContactPID(); return showContent('company',{'show':'contact'});"></div>
-					<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
-					<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
-						<span class='cartItemCount'></span>
-					</div>
-					<div class='mushPotLogo'><img src='images/the-sev-logo_140x77.png'/></div>
-					<div class='mushPotCollection pointer' onClick="return showContent('category',{'navcat':'.50_collections'});">
-						<span>SHOP BY</span>
-						<div class='mushHover tertiaryCTH'>Collections</div>
-					</div>
-					<div class='mushPotCategory'> <!-- onClick="return showContent('homepage',{})"> -->
-						<div class='sprite categoryArrow'></div>
-						<span>YOU ARE SHOPPING</span>
-						<div class='mushHover'>Categories</div>
-					</div>
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:min;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList masonList'>
+		<span class="displayNone" data-bind="var: category(%page.page_title); format:text;"></span>
+		<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne mushPotLi">
+			<div class="mushPot">
+				<div class='mushPotLink sprite mushInfo pointer' onClick="return showContent('company',{'show':'contact'});"></div>
+				<div class='mushPotLink sprite mushContact pointer' onClick="app.ext.store_thesev.a.resetContactPID(); return showContent('company',{'show':'contact'});"></div>
+				<div class='mushPotLink sprite mushNews pointer' onClick="return showContent('customer',{'show':'newsletter'});"></div>
+				<div class='mushPotLink sprite mushCart pointer' onClick="return showContent('cart',{});">
+					<span class='cartItemCount'></span>
 				</div>
-			</li>
-			<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne bannerLi"></li>
-		</ul> <!--  detail:max; -->
+				<div class='mushPotLogo'><img src='images/the-sev-logo_140x77.png'/></div>
+				<div class='mushPotCollection pointer' onClick="return showContent('category',{'navcat':'.30_accessories'});">
+					<span>SHOP BY</span>
+					<div class='mushHover tertiaryCTH'>Brands</div>
+				</div>
+				<div class='mushPotCategory'> <!-- onClick="return showContent('homepage',{})"> -->
+					<div class='sprite categoryArrow'></div>
+					<span>YOU ARE SHOPPING</span>
+					<div class='mushHover'>Categories</div>
+				</div>
+			</div>
+		</li>
+		<li class="categoryListTemplate anyMasonry hovBorderWhite10px masonOne bannerLi"></li>
+	</ul> <!--  detail:max; -->
 
-	
-
-<!--	ORIG HOMEPAGE CONTENT:
-		<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; hide_summary:1; before:<h2>Featured Items</h2>; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-		<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
-	<!-- a sample of how to format an elastic native search in a data-bind -->
-<!--		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"4","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview; before:<h2>Best Sellers</h2>;' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-		<a href="#" onClick="return showContent('search',{'TAG':'IS_BESTSELLER'});">See all Best Sellers</a>
-	<!-- a sample of how to get a 'list' src onto the page. -->
-<!--		<ul data-bind="var: list($models.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
--->
 </div>
 
 
@@ -381,8 +363,8 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 </div>
 
-
-<div id='collectionsTemplate' class='loadingBG categoryTemplate templateWrapper collectionsTemplate'>
+<!-- collectionsTemplate -->
+<div id='brandsTemplate' class='loadingBG categoryTemplate templateWrapper brandsTemplate'>
 	<span class="displayNone" data-bind="var: category(%page.page_title); format:text;"></span>
 	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
 	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
@@ -402,7 +384,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 					<div class='mushPotCollection'> <!-- onClick="return showContent('category',{'navcat':'.50_collections'});"> -->
 						<div class='sprite collectionArrow'></div>
 						<span>YOU ARE SHOPPING</span>
-						<div class='mushHover'>Collections</div>
+						<div class='mushHover'>Brands</div>
 					</div>
 					<div class='mushPotCategory pointer' onClick="return showContent('homepage',{})">
 						<span>SHOP BY</span>

@@ -127,7 +127,7 @@ var store_thesev = function() {
 			//		app.ext.store_thesev.u.runScroll($context);
 				}]);
 				
-				app.rq.push(['templateFunction','collectionsTemplate','onCompletes',function(infoObj) {
+				app.rq.push(['templateFunction','brandsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					if(!$context.data('masonized')){
 						app.ext.store_thesev.u.runMasonry($context);
@@ -139,7 +139,7 @@ var store_thesev = function() {
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
-					var title = "theSev Collections";
+					var title = "theSev Brands";
 		//			var title = app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
 					if(title){
 						app.ext.store_thesev.u.setTitle(title);
@@ -640,10 +640,12 @@ var store_thesev = function() {
 			addMushPot : function($context) {
 				$('li:nth-child(4)', $context).after($('.mushPotLi',$context));
 				$('.mushPotLi',$context).show();
+				
+				app.u.dump('**************'); app.u.dump($('.mushPotLi',$context));
 
-				//if collection, only show on top level cat
+				//if brands, only show on top level cat
 				var $catID = ($context[0]['attributes']['data-catsafeid'].value);
-				if($catID.indexOf('.50_collections.') != -1) {
+				if($catID.indexOf('.30_accessories.') != -1) {
 					$('.mushPotLi',$context).hide();
 				}
 			},
