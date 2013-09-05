@@ -598,7 +598,7 @@ var store_thesev = function() {
 			},
 	*/	
 			addPaypalExpLogo : function($context){
-				setTimeout(function(){$('input[value="PAYPALEC"]',$context).parent().after('<img src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif" width="145" height="42" border="0" alt="">');},1000);
+				setTimeout(function(){$('input[value="PAYPALEC"]',$context).parent().append('<img class="pointer" src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif" width="145" height="42" border="0" alt="">');},1000);
 			},
 	
 			removeDash : function(pid) {
