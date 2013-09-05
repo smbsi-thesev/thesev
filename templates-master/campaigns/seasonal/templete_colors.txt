@@ -1,0 +1,65 @@
+Spring-
+.h1 { background-color: #FFFFFF; }
+.h2 { background-color: #0066b1; }
+.container { background-color: #007510; }
+.contentContainer { background-color: #e9e5c0; }
+
+Sunny Field-
+.h1 { background-color: #FFFFFF; }
+.h2 { background-color: #0066b1; }
+.container { background-color: #b7cf3f; }
+.contentContainer { background-color: #FFFFFF; }
+
+Winter-
+.h1 { background-color: #595959; }
+.h2 { background-color: #595959; }
+.container { background-color: #95c6d5; }
+.contentContainer { background-color: #FFFFFF; }
+
+Winter2-
+.h1 { background-color: #feffd5; }
+.h2 { background-color: #3a5759; }
+.container { background-color: #3a5759; }
+.contentContainer { background-color: #cccdb9; }
+
+Spooky-
+.h1 { background-color: #ffe401; }
+.h2 { background-color: #edbc15; }
+.container { background-color: #000000; }
+.contentContainer { background-color: #d26533; }
+
+Spooky2-
+.h1 { background-color: #fadf02; }
+.h2 { background-color: #fadf02; }
+.container { background-color: #e26100; }
+.contentContainer { background-color: #e26100; }
+
+Summer-
+.h1 { background-color: #006ba9; }
+.h2 { background-color: #006ba9; }
+.container { background-color: #007510; }
+.contentContainer { background-color: #fceed7; }
+
+Summer2-
+.h1 { background-color: #006ba9; }
+.h2 { background-color: #6eb6f4; }
+.container { background-color: #1551ff; }
+.contentContainer { background-color: #fceed7; }
+
+School-
+.h1 { background-color: #ffffff; }
+.h2 { background-color: #ff0020; }
+.container { background-color: #ffa51f; }
+.contentContainer { background-color: #fef1d5; }
+
+Fall-
+.h1 { background-color: #ffffff; }
+.h2 { background-color: #7a3428; }
+.container { background-color: #7a3428; }
+.contentContainer { background-color: #fef1d5; }
+
+Fall2-
+.h1 { background-color: #ffffff; }
+.h2 { background-color: #7a3428; }
+.container { background-color: #553b22; }
+.contentContainer { background-color: #fef1d5; }
