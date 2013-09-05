@@ -139,8 +139,8 @@ var store_thesev = function() {
 					}
 		
 		//Title is forced to default until they are set properly or customer decides the "GOO-0" format is what will display
-					var title = "theSev Brands";
-		//			var title = app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
+		//			var title = "theSev Brands";
+					var title = app.data["appPageGet|"+infoObj.navcat]['%page'].page_title;
 					if(title){
 						app.ext.store_thesev.u.setTitle(title);
 					}
