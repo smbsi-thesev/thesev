@@ -157,8 +157,10 @@ var store_thesev = function() {
 				}]);
 				
 				app.rq.push(['templateFunction', 'checkoutTemplate','onCompletes',function(infoObj){
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					var title = "Check out";
 					app.ext.store_thesev.u.setTitle(title);
+					app.ext.store_thesev.u.addPaypalExpLogo($context);
 				}]);
 				
 				app.rq.push(['templateFunction', 'searchTemplate','onCompletes',function(infoObj){
@@ -595,6 +597,10 @@ var store_thesev = function() {
 					});
 			},
 	*/	
+			addPaypalExpLogo : function($context){
+				setTimeout(function(){$('input[value="PAYPALEC"]',$context).parent().after('<img src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif" width="145" height="42" border="0" alt="">');},1000);
+			},
+	
 			removeDash : function(pid) {
 				if(pid.indexOf('-') != -1) {
 						var newPid = pid.split('-');
