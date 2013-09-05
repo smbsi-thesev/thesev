@@ -443,6 +443,7 @@ CHECKOUT
 #checkoutContainer .couponEntryContainer input {width:auto;}
 #checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
 #checkoutContainer input[type="radio"] {width:auto;}
+.cartPlaceOrder {height:auto; width:100%;}
 .cartPlaceOrder:hover {background:#ED0D53; color:#ffffff;}
 .checkoutCosts {font-family:montserrat; font-size:1.6em;}
 
