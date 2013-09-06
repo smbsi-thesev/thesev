@@ -1968,7 +1968,10 @@ if(ps.indexOf('?') >= 1)	{
 			handlePopState : function(infoObj)	{
 //				app.u.dump("BEGIN handlePopState");
 //				app.u.dump(infoObj);
-
+				
+				//used to remember page position to return to when back is hit
+				app.ext.store_thesev.vars.scrollPosBackHit = 1;
+				
 //on initial load, infoObj will be blank.
 				if(infoObj)	{
 					infoObj.back = 0;

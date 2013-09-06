@@ -28,7 +28,10 @@ var store_thesev = function() {
 ////////////////////////////////////   CALLBACKS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 	vars : { 
-		repeater : 0
+		repeater : 0,
+		scrollPosHist : "",
+		scrollPosBackHit : "",
+		scrollPosArrayIndex : ""
 	//	theSevDestinations : [
 	//		{Z:"United States", ISO:"US", ISOX:"USA"},
 	//		{Z:"Albania", ISO:"AL", ISOX:"AL"}
@@ -182,6 +185,8 @@ var store_thesev = function() {
 				onSuccess : function() {
 					if(app.ext.myRIA && app.ext.myRIA.template){
 						app.u.dump("store_thesev Extension Started");
+						setTimeout(function(){app.ext.store_thesev.u.addScrollPosSet(); app.u.dump('scrollityrun');}, 5000);
+						setTimeout(function(){app.ext.store_thesev.u.addScrollPosStoring(); app.u.dump('scrollitystore');}, 5000);
 					} else	{
 						setTimeout(function(){app.ext.store_thesev.callbacks.startExtension.onSuccess()},250);
 					}
@@ -655,7 +660,7 @@ var store_thesev = function() {
 				$('li:nth-child(4)', $context).after($('.mushPotLi',$context));
 				$('.mushPotLi',$context).show();
 				
-				app.u.dump('**************'); app.u.dump($('.mushPotLi',$context));
+			//	app.u.dump('**************'); app.u.dump($('.mushPotLi',$context));
 
 				//if brands, only show on top level cat
 				var $catID = ($context[0]['attributes']['data-catsafeid'].value);
@@ -711,6 +716,91 @@ var store_thesev = function() {
 				}
 				else {
 					app.u.dump('Reviews exist, function aborted. Reviews length: '+$('.reviewsBind').children.length);
+				}
+			},
+			
+			addScrollPosSet : function () {
+				for( var t in app.ext.myRIA.template ) {
+					if(app.ext.myRIA.template[t].onDeparts) {
+						app.ext.myRIA.template[t].onDeparts.push(function() {
+							if(app.ext.store_thesev.vars.scrollPosBackHit === 1) {
+								app.u.dump("Begin returning scroll position to previous location");
+								app.u.dump("back button was hit.");
+								app.u.dump(app.ext.store_thesev.vars.scrollPosBackHit);
+								app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+								app.u.dump("app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex] = " + app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex]);
+								if(app.ext.store_thesev.vars.scrollPosArrayIndex === 0){
+									function scrollToPosition1() {
+										$('html, body').animate({scrollTop : app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex]},1000);
+										app.ext.store_thesev.vars.scrollPosBackHit = 0;
+										app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex = 0");
+										app.u.dump("app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex] = " + app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex]);
+										app.u.dump("Ran scrollToPosition1");
+									}
+									setTimeout(scrollToPosition1, 2000);
+								}
+								else{
+									function scrollToPosition2(){
+										app.u.dump("Begin returning scroll position to previous location");
+										//app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex before reduction = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+										app.ext.store_thesev.vars.scrollPosArrayIndex = app.ext.store_thesev.vars.scrollPosArrayIndex - 1;
+										app.u.dump("index passed into scrollTo = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+										app.u.dump("app.ext.store_thesev.vars.scrollPosHist = " + app.ext.store_thesev.vars.scrollPosHist);
+										app.u.dump("app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex] = " + app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex]);
+										$('html, body').animate({scrollTop : app.ext.store_thesev.vars.scrollPosHist[app.ext.store_thesev.vars.scrollPosArrayIndex]},1000);
+										app.ext.store_thesev.vars.scrollPosBackHit = 0;
+										app.ext.store_thesev.vars.scrollPosArrayIndex = app.ext.store_thesev.vars.scrollPosArrayIndex - 1;
+										app.u.dump("Ran scrollToPosition2");
+									}
+									setTimeout(scrollToPosition2, 2000);
+								}
+							}
+						});
+					}
+				}
+			},
+			
+			addScrollPosStoring : function() {
+				for( var t in app.ext.myRIA.template ){
+					if(app.ext.myRIA.template[t].onCompletes){
+						app.ext.myRIA.template[t].onCompletes.push(function(){
+							app.u.dump("Begin adding scroll position to array");
+							app.u.dump("app.ext.store_thesev.vars.scrollPosBackHit = " + app.ext.store_thesev.vars.scrollPosBackHit);
+							if(app.ext.store_thesev.vars.scrollPosHist === ""){
+								app.u.dump("app.ext.store_thesev.vars.scrollPosHist is null");
+								app.ext.store_thesev.vars.scrollPosHist = window.pageYOffset;
+								app.ext.store_thesev.vars.scrollPosArrayIndex = 0;
+								app.u.dump("app.ext.store_thesev.vars.scrollPosHist = " + app.ext.store_thesev.vars.scrollPosHist);
+								app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+							}
+							else{
+								if(app.ext.store_thesev.vars.scrollPosArrayIndex === 0){
+									app.u.dump("app.ext.store_thesev.vars.scrollPosHist is 0");
+									var newArray = new Array();
+									var currentIndex = app.ext.store_thesev.vars.scrollPosArrayIndex;
+									newArray[0] = app.ext.store_thesev.vars.scrollPosHist;
+									newArray[1] = window.pageYOffset;
+									app.ext.store_thesev.vars.scrollPosHist = newArray;
+									currentIndex = currentIndex + 1;
+									app.ext.store_thesev.vars.scrollPosArrayIndex = currentIndex;
+									app.u.dump("app.ext.store_thesev.vars.scrollPosHist = " + app.ext.store_thesev.vars.scrollPosHist);
+									app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+								}
+								else{
+									app.u.dump("app.ext.store_thesev.vars.scrollPosHist does not = 0");
+									var oldArray = new Array();
+									var currentIndex = app.ext.store_thesev.vars.scrollPosArrayIndex;
+									oldArray = app.ext.store_thesev.vars.scrollPosHist;
+									currentIndex = currentIndex + 1;
+									oldArray[currentIndex] = window.pageYOffset;
+									app.ext.store_thesev.vars.scrollPosHist = oldArray;
+									app.ext.store_thesev.vars.scrollPosArrayIndex = currentIndex;
+									app.u.dump("app.ext.store_thesev.vars.scrollPosHist = " + app.ext.store_thesev.vars.scrollPosHist);
+									app.u.dump("app.ext.store_thesev.vars.scrollPosArrayIndex = " + app.ext.store_thesev.vars.scrollPosArrayIndex);
+								}
+							}
+						});
+					}
 				}
 			},
 		
