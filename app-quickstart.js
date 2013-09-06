@@ -913,7 +913,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 							//the item is already in the list. move it to the front.
 							app.ext.myRIA.vars.session.recentlyViewedItems.splice(0, 0, app.ext.myRIA.vars.session.recentlyViewedItems.splice(app.ext.myRIA.vars.session.recentlyViewedItems.indexOf(infoObj.pid), 1)[0]);
 							}
-/*smbsi*/				infoObj.performJumpToTop = false;
+/*smbsi*/				infoObj.performJumpToTop = true;
 						infoObj.parentID = app.ext.myRIA.u.showProd(infoObj);
 						break;
 	
@@ -939,6 +939,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 	//					app.u.dump(" -> Got to search case.");	
 						app.ext.myRIA.u.showSearch(infoObj);
 						infoObj.parentID = 'mainContentArea_search';
+						infoObj.performJumpToTop = false;
 						break;
 	
 					case 'customer':
@@ -1017,7 +1018,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 						app.ext.myRIA.u.handleTemplateFunctions(infoObj);
 					}
 //this is low so that the individual 'shows' above can set a different default and if nothing is set, it'll default to true here.
-				infoObj.performJumpToTop = (infoObj.performJumpToTop === false) ? false : true; //specific instances jump to top. these are passed in (usually related to modals).
+			 	infoObj.performJumpToTop = (infoObj.performJumpToTop === false) ? false : true; //specific instances jump to top. these are passed in (usually related to modals).
 
 //				app.u.dump(" -> infoObj.performJumpToTop: "+infoObj.performJumpToTop);
 				r = app.ext.myRIA.u.addPushState(infoObj);

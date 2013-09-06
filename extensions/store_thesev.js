@@ -185,8 +185,8 @@ var store_thesev = function() {
 				onSuccess : function() {
 					if(app.ext.myRIA && app.ext.myRIA.template){
 						app.u.dump("store_thesev Extension Started");
-						setTimeout(function(){app.ext.store_thesev.u.addScrollPosSet(); app.u.dump('scrollityrun');}, 5000);
-						setTimeout(function(){app.ext.store_thesev.u.addScrollPosStoring(); app.u.dump('scrollitystore');}, 5000);
+						setTimeout(function(){app.ext.store_thesev.u.addScrollPosSet();}, 5000);
+						setTimeout(function(){app.ext.store_thesev.u.addScrollPosStoring();}, 5000);
 					} else	{
 						setTimeout(function(){app.ext.store_thesev.callbacks.startExtension.onSuccess()},250);
 					}

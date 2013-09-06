@@ -160,8 +160,3 @@ $(document).ready(function(){
 	app.u.handleRQ(0)
 	});
 
-
-
-
-
-
