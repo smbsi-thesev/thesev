@@ -433,6 +433,7 @@ CHECKOUT
 .checkoutRight {height:auto; width:38%; float:right;}
 
 .checkoutFormContainer fieldset {background: #ffffff; border: 1px solid #FFFFFF; box-shadow: 0 0 2px 2px #777777; padding: 20px; margin:0 0 25px 0;}
+.checkoutFormContainer fieldset.shipMeth {position:relative;}
 .checkoutFormContainer fieldset legend {font-family:oswald; font-size:1.4em; background: #000000; position: absolute; margin: -36px 0 5px 0;}
 .checkoutFormContainer fieldset legend.shipingMethods {top:20px;}
 
@@ -443,8 +444,8 @@ CHECKOUT
 #checkoutContainer .couponEntryContainer input {width:auto;}
 #checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
 #checkoutContainer input[type="radio"] {width:auto;}
-.cartPlaceOrder {height:auto; width:100%;}
-.cartPlaceOrder:hover {background:#ED0D53; color:#ffffff;}
+#checkoutContainer .cartPlaceOrder.ui-state-highlight.ui-button  {height:50px; width:100%; background:#ffc70e; margin:16px 0 0 0;}
+#checkoutContainer .cartPlaceOrder.ui-state-highlight.ui-button:hover {background:#ED0D53; color:#ffffff;}
 .checkoutCosts {font-family:montserrat; font-size:1.6em;}
 
 #checkoutContainer .keepShopin {height:80px; width:100%; font-family:oswald; font-size:3.2em; font-weight:bold; color:#ffffff; text-align:center; margin:0 0 20px 0; border:none;}
@@ -794,7 +795,6 @@ media querries
 	#checkoutContainer {width:425px;}
 	.checkoutLeft {width:100%;}
 	.checkoutRight {width:100%; float:left; clear:both;}
-	.checkoutFormContainer fieldset legend.shipingMethods {top:700px;}
 	.checkoutSuccess .checkoutRight {width:100%;}
 /*CONFIRMATION*/
 	.checkoutFormContainer .floatRight.ocmThirdParty, .checkoutSuccess .checkoutLeft {width:100%;}
@@ -842,7 +842,6 @@ media querries
 	#listsArticle .anyMasonry {margin:0 0 0 16%;}	
 /*CHECKOUT*/
 	#checkoutContainer {width:320px;}
-	.checkoutFormContainer fieldset legend.shipingMethods {top:750px;}
 /*CONFIRMATION*/
 	#checkoutContainer .iconSocial {margin:2.25% 0 0 -15%;} 	
 	.orderContentsProdlistContainer .prodThumbContainer {margin:0 21% 5px 21%;}
