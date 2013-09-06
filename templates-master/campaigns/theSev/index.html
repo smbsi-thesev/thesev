@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta name="version" content="kiss/1.0" />
+<meta name="wizard" content="wizard.html">
+
+
+<style type="text/css">
+
+html,body	{font-size:100%; background-color:#999999;}
+body	{padding:0; margin:0;}
+
+h1 	{color: #054438; margin-bottom: 0px;}
+
+.displayNone	{display:none;}
+.container 	{background-color:#999999; font-size: 1.2em; font-family: 'montserrat', sans-serif; text-align: center;} /* set background color again here in case email reader strips body tag */
+.clear 	{clear:both;}
+
+.topBar, .bottomBar 	{position:relative; width:100%; height:50px; overflow:hidden; background-color:#000000;}
+.logoCont	{margin:0 auto; max-width:545px;}
+
+#KISS_LOGO	{float:left; margin:9px 0; position:relative; z-index:10;}
+#KISS_HEADER_INFO, #KISS_HEADER_EMAIL, #KISS_HEADER_NEWSLETTER		{float:right; margin:9px 10px 0 0; z-index:8; cursor:pointer;} /* zindex to put pic behind logo on small screens */
+
+
+a 	{text-decoration: none;}
+ul 	{padding:0px;}
+
+
+#SECTION1	{margin: 20px auto 0 auto;}
+.bannerLeft 	{float: left; border:10px solid #ffffff; margin:0 0 0 10px;}
+.bannerRight 	{height:336px; width:149px; float:right; border:10px solid #ffffff; background-color:#ffffff; margin:0 10px 0 0;}
+#SECTION1 p 	{font-size:0.8em;}
+
+
+.contentContainer	{margin:0 20px;} /* applies a min amount of padding on the left and right of contentSections */
+.contentSection	{margin: 0 auto 40px auto; max-width:565px;} /* applied to each content area. max-width aligns content edges */
+.contentSection p	{margin: 0 0 20px 0;}
+
+
+.productArea li 	{ background-color: #ffffff; border: 1px solid #c2c2c2; margin: 8px 4px; width: 130px; min-height: 170px; _height: 170px; *display: inline; display: -moz-inline-stack; display: inline-block; vertical-align: top; zoom: 1;}
+.productArea h4,h5		{margin:5px;}
+
+.browserLink 	{padding: 10px 0px;}
+.browserLink a, .unsubscribeLink a:hover	{color:#ED0D53;}
+.browserLink a:hover, .unsubscribeLink a	{color:#0C8A96;}
+.unsubscribeLink 	{padding: 0px 0px 15px 0px;}
+
+
+/*
+narrow columns of text are easier to read. centering big blocks of text makes them hard to read.
+*/
+#SECTION2 p	{text-align:justify; margin:10px}
+
+#SECTION2 .productList	{
+	list-style:none;
+	}
+#SECTION2 .productList li	{float:left; margin:0 10px 10px 10px; padding:0; height:149px; width:149px; border:10px solid #FFFFFF; position:relative;}
+#SECTION2 .productList li:hover	{border:10px solid #ED0D53;}
+.namePriceCont {background-color:rgba(0,0,0,0.25); padding:1% 3%; position:absolute; bottom:0; color:#ffffff;}
+.productList .prodName	{font-size:0.65em; text-align:left;}
+.productList .prodPrice	{font-size:0.75em; font-weight:bold; text-align:right;}
+
+.icons {margin:10px 0 0 0;}
+.icons li 	{display: inline-block; float:right; margin:0 5px 0 0;}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- strip this protocol before template is live !!! -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<div class="container">
+	<div class="topBar">
+		<div class="logoCont">
+			<a href='#' id='KISS_URL_LOGO' data-object='KISS'><img class="logo" src="the-sev-logo-white_60x32.png" id='KISS_LOGO' width='60' height='32' data-object='KISS' /></a>
+			<a href='#' id='KISS_URL_HEADER_NEWSLETTER' data-object='KISS'><img src='newsletter-icon_36x34.png' id='KISS_HEADER_NEWSLETTER' width="36" height="34" alt='' data-object='KISS' /></a>
+			<a href='#' id='KISS_URL_HEADER_EMAIL' data-object='KISS'><img src='email-icon_36x34.png' id='KISS_HEADER_EMAIL' width="36" height="34" alt='' data-object='KISS' /></a>
+			<a href='#' id='KISS_URL_HEADER_INFO' data-object='KISS'><img src='info-icon_36x34.png' id='KISS_HEADER_INFO' width="36" height="34" alt='' data-object='KISS' /></a>
+		</div>
+	</div>
+	
+	<!--
+	<div class="browserLink"><a href="http://www.leekspin.com/" target="_blank">Click here</a> to view in browser</div>
+	-->
+	
+	
+	<section class='contentContainer clear'>
+	
+		<div class="contentSection clear" id='SECTION1'>
+			<a href='#' id='KISS_URL_BANNER1' data-object='KISS'><img class="bannerLeft" src="thesev-grandopening-black_336x336.jpg" width='336' height='336' alt='' id='KISS_BANNER1' data-object='KISS' /></a>
+			<div class="bannerRight">
+				<p id='KISS_SECTION1_TEXTBLOB1' data-object='KISS' class='clear'>Ehendae dolupta quossimet ut iur aliciet facepudipis etur rem aceptatias unt lab ipsum et quaepelitas prehendia pa estrum aute plab ipita nossi nulparum abo. Rae. Nequiat emporum rest quis autatet quias nihicim incipsandae. Nequia dolor accum harit qibus.</p>
+			</div>
+		</div>
+	
+		<div class="clear"></div>
+		
+		<div class="contentSection clear" id='SECTION2'>
+
+			<div id='KISS_SECTION2_PRODLIST1' data-object='KISS' class='clear'>
+			
+			<ul id='wizardProdlistTemplate' data-bind="var: prodlist(@products); format: productList; useChildAsTemplate:true; extension: store_prodlist; hide_summary:true; hide_pagination:true; isWizard:true;" class='clearfix productList'>
+	<li data-wizard-object='PRODUCT'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
+		<div class='prodThumbContainer'>
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); bgcolor:efe6d1; format:imageURL;' width='150' height='150' />
+		</div>
+		<div class="namePriceCont">
+			<div class='prodName' data-bind='var: product(zoovy:prod_name); format:text;'>This is prod description</div>
+			<div class='prodPrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'>$45.<span>99</span></div>
+		</div>
+	</div>
+	</li>
+	
+	<li data-wizard-object='PRODUCT'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
+		<div class='prodThumbContainer'>
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); bgcolor:efe6d1; format:imageURL;' width='150' height='150' />
+		</div>
+		<div class="namePriceCont">
+			<div class='prodName' data-bind='var: product(zoovy:prod_name); format:text;'>This is another prod description</div>
+			<div class='prodPrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'>$1000.<span>10</span></div>
+		</div>
+	</div>
+	</li>
+	
+	<li data-wizard-object='PRODUCT'>
+	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
+		<div class='prodThumbContainer'>
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); bgcolor:efe6d1; format:imageURL;' width='150' height='150' />
+		</div>	
+		<div class="namePriceCont">
+			<div class='prodName' data-bind='var: product(zoovy:prod_name); format:text;'>This is yet another prod description</div>
+			<div class='prodPrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'>$953.<span>47</span></div>
+		</div>
+	</div>
+	</li>
+</ul>
+			
+			</div>
+		
+			<p id='KISS_SECTION2_TEXTBLOB2' data-object='KISS' class='clear'>Ehendae dolupta quossimet ut iur aliciet facepudipis etur rem aceptatias unt lab ipsum et quaepelitas prehendia pa estrum aute plab ipita nossi nulparum abo. Rae. Nequiat emporum rest quis autatet quias nihicim incipsandae. Nequia dolor accum harit qibus.</p>
+		
+		</div>
+	
+	</section>
+	
+	<div class="browserLink"><a href="#" target="_blank">Click here</a> to view in browser</div>
+	<div class="unsubscribeLink">If you no longer wish to receive this newsletter, please unsubscribe 
+	<a data-object="MAGIC" data-attrib="unsubscribe" href="#!unsubscribe" target="_blank">here</a>
+	</div>
+	
+	
+	
+	<div class="bottomBar">
+		<div class="logoCont">
+			<ul class="icons">
+				<li><a href='#' id='KISS_SOCIAL_URL_FACEBOOK' data-object='KISS' ><img src="facebook_32x32.png" width='32' height='32' alt='' id='KISS_SOCIAL_ICON_FACEBOOK' data-object='KISS' /></a></li>
+				<li><a href='#' id='KISS_SOCIAL_URL_INSTAGRAM' data-object='KISS' ><img src="instagram_32x32.png" width='32' height='32' alt='' id='KISS_SOCIAL_ICON_FACEBOOK' data-object='KISS' /></a></li>
+				<li><a href='#' id='KISS_SOCIAL_URL_TWITTER' data-object='KISS' ><img src="twitter_32x32.png" width='32' height='32' alt='' id='KISS_SOCIAL_ICON_TWITTER' data-object='KISS' /></a></li>
+				
+				<!-- <li class="appStore"><a href='#' id='KISS_APP_URL_IOS' data-object='KISS' ><img src="app_store.png" width='81' height='28' alt='' id='KISS_APP_ICON_IOS' data-object='KISS' /></a></li> -->
+				<!-- <li><a href='#' id='KISS_SOCIAL_URL_GOOGLE' data-object='KISS' ><img src="google.png" width='22' height='22' alt='' id='KISS_SOCIAL_ICON_GOOGLE' data-object='KISS' /></a></li>
+				<li><a href='#' id='KISS_SOCIAL_URL_PINTEREST' data-object='KISS' ><img src="pintrest.png" width='22' height='22' alt=''  id='KISS_SOCIAL_ICON_PINTEREST' data-object='KISS' /></a></li>
+				<li><a href='#' id='KISS_SOCIAL_URL_YOUTUBE' data-object='KISS' ><img src="youtube.png" width='22' height='22' alt='' id='KISS_SOCIAL_ICON_YOUTUBE' data-object='KISS' /></a></li>
+				<li class="googlePlay"><a href='#' id='KISS_APP_URL_ANDROID' data-object='KISS' ><img src="google_play_store.png" width='82' height='26' alt='' id='KISS_APP_ICON_ANDROID' data-object='KISS' /></a></li> -->
+			</ul>
+		</div>
+	</div>
+	
+	
+</div>
+</body>
+
+</html>
