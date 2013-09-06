@@ -594,9 +594,19 @@ var store_thesev = function() {
 					autoReinitialise : true
 					});
 			},
-	*/	
+	*/		
+			//adds paypal button to checkout payment methods with same function as cart so users don't have to 
+				//fill out the information in the cart unnecessarily 
 			addPaypalExpLogo : function($context){
-				setTimeout(function(){$('input[value="PAYPALEC"]',$context).parent().append('<img class="pointer" src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif" width="145" height="42" border="0" alt="">');},1000);
+				//setTimeout(function(){$('input[value="PAYPALEC"]',$context).parent().append('<img class="pointer" src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckoutsm.gif" width="145" height="42" border="0" alt="">');},1000);
+				setTimeout(function(){
+					//add a place for the button in checkout
+					$('input[value="PAYPALEC"]',$context).parent().parent().parent().parent().parent().after("<div id='paypalECButtonChekou'></div>"); 
+					//get rid of  radio option
+					$('input[value="PAYPALEC"]',$context).parent().parent().remove();
+					//add the button
+					app.renderFormats.paypalECButton($('#paypalECButtonChekou',$context));
+				},1000);
 			},
 	
 			removeDash : function(pid) {

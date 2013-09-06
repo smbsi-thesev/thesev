@@ -444,6 +444,7 @@ CHECKOUT
 #checkoutContainer .couponEntryContainer input {width:auto;}
 #checkoutContainer button.ui-button {padding:2px; margin:0 0 2px 0;}
 #checkoutContainer input[type="radio"] {width:auto;}
+#checkoutContainer #paypalECButtonChekou {margin:10px 0 0 10px;}
 #checkoutContainer .cartPlaceOrder.ui-state-highlight.ui-button  {height:50px; width:100%; background:#ffc70e; margin:16px 0 0 0;}
 #checkoutContainer .cartPlaceOrder.ui-state-highlight.ui-button:hover {background:#ED0D53; color:#ffffff;}
 .checkoutCosts {font-family:montserrat; font-size:1.6em;}
