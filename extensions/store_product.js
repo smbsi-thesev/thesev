@@ -589,7 +589,18 @@ NOTES
 					//app.u.dump('****************'); app.u.dump($parent);
 //parent may not exist. empty if it does, otherwise create it.
 					if($parent.length)	{$parent.empty()}
-					else	{$parent = $("<div \/>").attr({"id":parentID,"title":"Product Images"}).appendTo('body')}
+					else	{
+						$parent = $("<div \/>").attr({"id":parentID,"title":"Product Images"}).appendTo('body')
+						$parent.dialog({
+/*smbsi*/					modal: true,width:'auto',
+/*smbsi*/					height:'auto',
+/*smbsi*/					autoOpen:false,
+/*smbsi*/					open : function(event, ui){ $('.ui-widget-overlay').on('click.closeModal', function(){$parent.dialog('close')});},
+/*smbsi*/					close : function(event, ui){ 
+/*smbsi*/						$('.ui-widget-overlay').off('click.closeModal');
+/*smbsi*/					}
+/*smbsi*/				});
+					}
 
 					if(P.templateID)	{
 						$parent.append(app.renderFunctions.createTemplateInstance(P.templateID,"imageViewer_"+parentID));
@@ -599,29 +610,9 @@ NOTES
 						$parent.append(app.u.makeImage({"class":"imageViewerSoloImage","h":"550","w":"550","bg":"ffffff","name":app.data['appProductGet|'+P.pid]['%attribs'][imageAttr],"tag":1}));
 						}	
 					$parent.dialog({modal: true,width:P.width ,height:P.height});
-					$parent.dialog('option', 'title', app.data["appProductGet|"+P.pid]['%attribs']['zoovy:prod_name']); //proper way to set title. otherwise doesn't update after first dialog is opened.
+					$parent.dialog('option', 'title', app.data["appProductGet|"+P.pid]['%attribs']['zoovy:prod_name']+"dooda"); //proper way to set title. otherwise doesn't update after first dialog is opened.
 					$parent.dialog('open'); //here to solve an issue where the modal would only open once.
-					
-					//handler to allow modal to close when clicked outside of, removed when modal is closed
-/*smbsi*/			var handler = (function(mod){
-/*smbsi*/				if(!$(mod.target).parents().filter('.ui-dialog').length) {
-/*smbsi*/				$parent.dialog('close');
-/*smbsi*/					$(document).unbind('click', handler);
-/*smbsi*/					app.u.dump('clicking outside worked this way');
-/*smbsi*/				}
-/*smbsi*/			});
-/*smbsi*/					
-/*smbsi*/			//handler to be sure the above handler is removed when the close button is used other wise
-/*smbsi*/			//modals will not open again.
-/*smbsi*/			var handler2 = (function(){
-/*smbsi*/				$(document).unbind('click', handler);
-/*smbsi*/				app.u.dump('CLOSE UNBIND WORKED');
-/*smbsi*/			});
-/*smbsi*/			
-/*smbsi*/			//binds handlers for modal close on click outside of modal
-/*smbsi*/			setTimeout(function(){$(document).bind('click', handler);},500);
-/*smbsi*/			setTimeout(function(){$('.ui-dialog-titlebar-close', $parent.parent()).bind('click', handler2);},500);
-/*smbsi*/				
+	
 					}
 				else	{
 					app.u.dump(" -> no pid specified for image viewer.  That little tidbit is required.");
@@ -648,30 +639,20 @@ NOTES
 					if($parent.length)	{$parent.empty()}
 					else	{
 						$parent = $("<div \/>").attr({"id":'product-modal',"title":""}).appendTo('body');
-/*smbsi*/				$parent.dialog({modal: true,width:'65%',height:$(window).height() / 2 ,autoOpen:false}); /*width was 85%, height was (- 100)*/
-						}
-					
-					
+/*smbsi*/				$parent.dialog({
+/*smbsi*/					modal: true,
+/*smbsi*/					width:'65%',
+/*smbsi*/					height: $(window).height() / 2 ,
+/*smbsi*/					autoOpen:false,
+/*smbsi*/					open : function(event, ui){ $('.ui-widget-overlay').on('click.closeModal', function(){$parent.dialog('close')});},
+/*smbsi*/					close : function(event, ui){ 
+/*smbsi*/						$('.ui-widget-overlay').off('click.closeModal');
+							}
+						}); /*width was 85%, height was (- 100)*/
+					}
+
 					$parent.dialog('open');
-					
-					//handler to allow modal to close when clicked outside of, removed when modal is closed
-/*smbsi*/			var handler = (function(mod){
-/*smbsi*/				if(!$(mod.target).parents().filter('.ui-dialog').length) {
-/*smbsi*/				$parent.dialog('close');
-/*smbsi*/					$(document).unbind('click', handler);
-/*smbsi*/				}
-/*smbsi*/			});
-/*smbsi*/					
-/*smbsi*/			//handler to be sure the above handler is removed when the close button is used other wise
-/*smbsi*/			//modals will not open again.
-/*smbsi*/			var handler2 = (function(){
-/*smbsi*/				$(document).unbind('click', handler);
-/*smbsi*/			});
-/*smbsi*/			
-/*smbsi*/			//binds handlers for modal close on click outside of modal
-/*smbsi*/			setTimeout(function(){$(document).bind('click', handler);},500);
-/*smbsi*/			setTimeout(function(){$('.ui-dialog-titlebar-close', $parent.parent()).bind('click', handler2);},500);
-/*smbsi*/									
+						
 
 					app.ext.store_product.calls.appProductGet.init(P.pid,{'callback': function(rd){
 						if(app.model.responseHasErrors(rd)){

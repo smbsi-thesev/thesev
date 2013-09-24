@@ -386,8 +386,16 @@ either templateID needs to be set OR showloading must be true. TemplateID will t
 					else	{
 						$modal = $("<div \/>").attr({"id":"modalCart","title":"Your Shopping Cart"}).appendTo('body');
 						$modal.append("<div id='cartMessaging' class='appMessaging'><\/div><div id='modalCartContents'><\/div>");
-/*smbsi*/				$modal.dialog({modal: true,width:'70%',height:$(window).height() / 2});  //was 80%width, height - 200 high. browser doesn't like percentage for height
-						}
+						$modal.dialog({
+/*smbsi*/					modal: true,
+/*smbsi*/					width:'70%',	//was 80%width, height - 200 high. browser doesn't like percentage for height
+/*smbsi*/					height:$(window).height() / 2,
+/*smbsi*/					open : function(event, ui){ $('.ui-widget-overlay').on('click.closeModal', function(){$modal.dialog('close')});},
+/*smbsi*/					close : function(event, ui){ 
+/*smbsi*/						$('.ui-widget-overlay').off('click.closeModal');
+/*smbsi*/					}
+						});  
+					}
 
 					if(P.showLoading === true)	{
 						$('#modalCartContents',$modal).append("<div class='loadingBG' \/>"); //have to add child because the modal classes already have bg assigned
