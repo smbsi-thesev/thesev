@@ -168,7 +168,7 @@ item list and summary are separate just to give more control over location.
 
 	<div data-app-role='login'>
 		<div>If you have an account with us, please enter your password below to login</div>
-		<input type='email' name='bill/email' size='30' placeholder="email address" data-bind="var:cart(bill/email); defaultVar:cart(customer/login); format:popVal;" data-app-event='orderCreate|execBuyerEmailUpdate' />
+		<input type='email' required='required' name='bill/email' size='30' placeholder="email address" data-bind="var:cart(bill/email); defaultVar:cart(customer/login); format:popVal;" data-app-event='orderCreate|execBuyerEmailUpdate' />
 
 		<div data-app-role='loginPasswordContainer' class='displayNone'>
 			<input type='password' placeholder='password' size='30' name='password' /><button data-app-event='orderCreate|execBuyerLogin'>login</button><br />
