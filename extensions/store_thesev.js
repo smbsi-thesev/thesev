@@ -207,12 +207,12 @@ var store_thesev = function() {
 		a : {
 	
 			showContactPID : function (pid) {
-				app.u.dump('the pid is: '); app.u.dump(pid);
+				//app.u.dump('the pid is: '); app.u.dump(pid);
 				setTimeout(function(){$('#contactFormOID','#mainContentArea_company').val('SKU: '+pid)},1000);
 			},
 			
 			resetContactPID : function() {
-				app.u.dump('Got Here');
+				//app.u.dump('Got Here');
 				var $field = $('#contactFormOID','#mainContentArea_company');
 				$field.val('');
 				$field.attr('placeholder', 'Order Number (if applicable)');
