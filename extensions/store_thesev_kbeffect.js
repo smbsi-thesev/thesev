@@ -38,7 +38,7 @@ var store_thesev_kbeffect = function() {
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
 				//reads checkbox value to stop ken burns effect on cat/prod list images from local storage and puts in app accordingly
-				app.ext.store_thesev_kbeffect.u.whoIsKenBurns();
+				
 				
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
@@ -50,6 +50,7 @@ var store_thesev_kbeffect = function() {
 				
 				app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev_kbeffect.u.whoIsKenBurns($context);
 					if(!$context.data('kenburnsed')){
 						app.ext.store_thesev_kbeffect.u.catImageInit($context);
 						app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
@@ -59,6 +60,7 @@ var store_thesev_kbeffect = function() {
 
 				app.rq.push(['templateFunction','brandsTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_thesev_kbeffect.u.whoIsKenBurns($context);
 					app.ext.store_thesev_kbeffect.u.catImageInit($context);
 					app.ext.store_thesev_kbeffect.u.kenburnsInit($context);
 				}]);	
@@ -108,16 +110,15 @@ var store_thesev_kbeffect = function() {
 		
 			holdKenBurnsEffect : function($this) {
 				if($this.is(':checked')) {
-					$('.kbCheckBox','#appView').val(':checked');
+					//$('.kbCheckBox','#appView').val(':checked');
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
-					app.storageFunctions.writeLocal(app.ext.store_thesev_kbeffect.vars.dontKenBurns,true);
-					//app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
-					//app.u.dump('Now ken burns is: '); app.u.dump(app.storageFunctions.readLocal);
+					app.storageFunctions.writeLocal('dontKenBurns',true);
+	//				app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
 				}
 				else {
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = false;
-					app.storageFunctions.writeLocal(app.ext.store_thesev_kbeffect.vars.dontKenBurns,false);
-					//app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
+					app.storageFunctions.writeLocal('dontKenBurns',false);
+	//				app.u.dump(app.ext.store_thesev_kbeffect.vars.dontKenBurns);
 				}
 			},
 		
@@ -255,14 +256,16 @@ var store_thesev_kbeffect = function() {
 					}
 				},
 			
-			whoIsKenBurns : function() {
-				//app.u.dump('This is ken burns: '); app.u.dump(app.storageFunctions.readLocal("dontKenBurns"));
-				if(app.storageFunctions.readLocal("dontKenBurns") === true) {
+			whoIsKenBurns : function($context) {
+	//			app.u.dump('This is ken burns: '); app.u.dump(app.storageFunctions.readLocal("dontKenBurns"));
+				if(app.storageFunctions.readLocal("dontKenBurns") == 'true' || app.storageFunctions.readLocal("dontKenBurns") === true) {
 					app.u.dump('Ken Burns is local');
+					$('.kbCheckBox',$context).prop('checked',true);
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = true;
 				}
 				else {
 					app.u.dump('Ken Burns is NOT local');
+					$('.kbCheckBox',$context).prop('checked',false);
 					app.ext.store_thesev_kbeffect.vars.dontKenBurns = false;
 				}
 	
