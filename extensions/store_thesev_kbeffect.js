@@ -125,9 +125,9 @@ var store_thesev_kbeffect = function() {
 				
 				var $canvas = $('canvas',$container);
 				//app.u.dump("kbeffectize");
-
+			
 					if($canvas.length > 0 && !$canvas.data('kenburns')){
-					
+			
 					if(!app.ext.store_thesev_kbeffect.vars.dontKenBurns) {
 										
 						$('.masonImage',$container).hide();
@@ -142,6 +142,8 @@ var store_thesev_kbeffect = function() {
 								if(app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i]){
 									tmp.push(app.u.makeImage({
 										"name":app.data["appProductGet|"+pid]["%attribs"]["zoovy:prod_image"+i],
+										"w":$canvas.innerWidth(),
+										"h":$canvas.innerHeight(),
 										"b":"ffffff"
 										}));
 									}
